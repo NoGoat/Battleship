@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Battleshipbutinjava:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Battleshipbutinjava_jar</output-path>
+    <root id="archive" name="Battleshipbutinjava.jar">
+      <element id="module-output" name="Battleshipbutinjava" />
+    </root>
+  </artifact>
+</component>
