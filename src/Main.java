@@ -4909,7 +4909,7 @@ public class Main
                     path_v = "submarine/submarine-v.png";
                     path_h = "submarine/submarine-h.png";
                 }
-                else if (flag == 0 && cur_aircraft == "submarine" && j31.isEnabled() && j41.isEnabled())
+                else if (flag == 0 && cur_aircraft == "submarine" && j32.isEnabled() && j42.isEnabled())
                 {
                     cur_aircraft = "cruiser";
                     j22.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
