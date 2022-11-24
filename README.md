@@ -15,7 +15,7 @@ As for the Python version - I still have the files - I don't think I'll ever rel
 The only remaining remnant of the Python version is the logo of this game - The logo was made as an ASCII art for that game.
 
 # Dependencies
-JDK 19.1
+JDK 1.8.0_202
 
 # IDE
 IntelliJ IDEA
