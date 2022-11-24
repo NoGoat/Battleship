@@ -7729,7 +7729,7 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 if(c == j1 && j1.isEnabled())
                 {
-                    j11Call();
+                    j1Call();
                 }
                 else if (c == j11 && j11.isEnabled())
                 {
