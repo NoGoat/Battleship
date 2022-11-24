@@ -12,7 +12,7 @@ public class Main extends JFrame implements MouseMotionListener
     JLabel cur = new JLabel(new ImageIcon("aircraft-carrier/aircraft-v.png"));
     JPanel p = new JPanel();
     int flag = 0;
-    int x_or = 50, y_or = 250, xpos = 0 , ypos = 0;
+    int xpos = 0 , ypos = 0;
     String[] aircraft_pos = new String[5];
     String[] battleship_pos = new String[4];
     String[] submarine_pos = new String[3];
@@ -461,6 +461,7 @@ public class Main extends JFrame implements MouseMotionListener
         p.setOpaque(false);
         p.setVisible(true);
         p.setFocusable(true);
+        p.add(cur);
         p.grabFocus();
         p.addKeyListener(new KeyAdapter()
         {
@@ -481,11 +482,48 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 1;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setPreferredSize(cur.getPreferredSize());
-                            cur.setBounds(xpos, ypos, 250, 50);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
-                            x_or = 250;
-                            y_or = 50;
+                        }
+                        else if (cur_aircraft.equals("battleship"))
+                        {
+                            System.out.println("Hello for the final time");
+                            cur.setIcon(new ImageIcon("battleship/battleship-h.png"));
+                            flag = 1;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
+                        }
+                        else if (cur_aircraft.equals("submarine"))
+                        {
+                            System.out.println("Hello for the final time");
+                            cur.setIcon(new ImageIcon("submarine/submarine-h.png"));
+                            flag = 1;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
+                        }
+                        else if (cur_aircraft.equals("cruiser"))
+                        {
+                            System.out.println("Hello for the final time");
+                            cur.setIcon(new ImageIcon("cruiser/cruiser-h.png"));
+                            flag = 1;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
+                        }
+                        else if (cur_aircraft.equals("destroyer"))
+                        {
+                            System.out.println("Hello for the final time");
+                            cur.setIcon(new ImageIcon("destroyer/destroyer-h.png"));
+                            flag = 1;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
                         }
                     }
                     else
@@ -496,11 +534,44 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 0;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setPreferredSize(cur.getPreferredSize());
-                            cur.setBounds(xpos, ypos, 50, 250);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
-                            x_or = 50;
-                            y_or = 250;
+                        }
+                        else if(cur_aircraft.equals("battleship"))
+                        {
+                            cur.setIcon(new ImageIcon("battleship/battleship-v.png"));
+                            flag = 0;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
+                        }
+                        else if(cur_aircraft.equals("submarine"))
+                        {
+                            cur.setIcon(new ImageIcon("submarine/submarine-v.png"));
+                            flag = 0;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
+                        }
+                        else if(cur_aircraft.equals("cruiser"))
+                        {
+                            cur.setIcon(new ImageIcon("cruiser/cruiser-v.png"));
+                            flag = 0;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
+                        }
+                        else if(cur_aircraft.equals("destroyer"))
+                        {
+                            cur.setIcon(new ImageIcon("destroyer/destroyer-v.png"));
+                            flag = 0;
+                            System.out.println("XPOS : " + xpos);
+                            System.out.println("YPOS : " + ypos);
+                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            p.repaint();
                         }
                     }
                 }
@@ -513,3133 +584,6 @@ public class Main extends JFrame implements MouseMotionListener
 
     public void play_ship_place()
     {
-        //j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon(path_v).getImage(), new Point(0,0), "custom cursor"));
-        //I have to copy and paste the below code a hundred times and rewrite the JButton names. Hope I don't go insane before this ends
-//        j1.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j1.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j1.setBorderPainted(false);
-//            }
-//        });
-//        j2.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j2.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j2.setBorderPainted(false);
-//            }
-//        });
-//        j3.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j3.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j3.setBorderPainted(false);
-//            }
-//        });
-//        j4.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j4.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j4.setBorderPainted(false);
-//            }
-//        });
-//        j5.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j5.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j5.setBorderPainted(false);
-//            }
-//        });
-//        j6.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j6.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j6.setBorderPainted(false);
-//            }
-//        });
-//        j7.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j7.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j7.setBorderPainted(false);
-//            }
-//        });
-//        j8.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j8.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j8.setBorderPainted(false);
-//            }
-//        });
-//        j9.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j9.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j9.setBorderPainted(false);
-//            }
-//        });
-//        j10.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j10.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j10.setBorderPainted(false);
-//            }
-//        });
-//        j11.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j11.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j11.setBorderPainted(false);
-//            }
-//        });
-//        j12.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j12.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j12.setBorderPainted(false);
-//            }
-//        });
-//        j13.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j13.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j13.setBorderPainted(false);
-//            }
-//        });
-//        j14.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j14.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j14.setBorderPainted(false);
-//            }
-//        });
-//        j15.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j15.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j15.setBorderPainted(false);
-//            }
-//        });
-//        j16.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j16.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j16.setBorderPainted(false);
-//            }
-//        });
-//        j17.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j17.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j17.setBorderPainted(false);
-//            }
-//        });
-//        j18.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j18.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j18.setBorderPainted(false);
-//            }
-//        });
-//        j19.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j19.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j19.setBorderPainted(false);
-//            }
-//        });
-//        j20.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j20.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j20.setBorderPainted(false);
-//            }
-//        });
-//        j21.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j21.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j21.setBorderPainted(false);
-//            }
-//        });
-//        j22.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j22.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j22.setBorderPainted(false);
-//            }
-//        });
-//        j22.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j22.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j22.setBorderPainted(false);
-//            }
-//        });
-//        j23.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j23.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j23.setBorderPainted(false);
-//            }
-//        });
-//        j24.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j24.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j24.setBorderPainted(false);
-//            }
-//        });
-//        j25.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j25.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j25.setBorderPainted(false);
-//            }
-//        });
-//        j26.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j26.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j26.setBorderPainted(false);
-//            }
-//        });
-//        j27.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j27.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j27.setBorderPainted(false);
-//            }
-//        });
-//        j28.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j28.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j28.setBorderPainted(false);
-//            }
-//        });
-//        j29.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j29.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j29.setBorderPainted(false);
-//            }
-//        });
-//        j30.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j30.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j30.setBorderPainted(false);
-//            }
-//        });
-//        j31.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j31.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j31.setBorderPainted(false);
-//            }
-//        });
-//        j32.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j32.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j32.setBorderPainted(false);
-//            }
-//        });
-//
-//        j33.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j33.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j33.setBorderPainted(false);
-//            }
-//        });
-//        j34.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j34.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j34.setBorderPainted(false);
-//            }
-//        });
-//        j35.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j35.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j35.setBorderPainted(false);
-//            }
-//        });
-//        j36.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j36.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j36.setBorderPainted(false);
-//            }
-//        });
-//        j37.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j37.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j37.setBorderPainted(false);
-//            }
-//        });
-//        j38.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j38.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j38.setBorderPainted(false);
-//            }
-//        });
-//        j39.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j39.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j39.setBorderPainted(false);
-//            }
-//        });
-//        j40.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j40.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j40.setBorderPainted(false);
-//            }
-//        });
-//        j41.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j41.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j41.setBorderPainted(false);
-//            }
-//        });
-//        j42.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j42.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j42.setBorderPainted(false);
-//            }
-//        });
-//        j43.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j43.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j43.setBorderPainted(false);
-//            }
-//        });
-//        j44.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j44.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j44.setBorderPainted(false);
-//            }
-//        });
-//        j45.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j45.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j45.setBorderPainted(false);
-//            }
-//        });
-//        j46.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j46.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j46.setBorderPainted(false);
-//            }
-//        });
-//        j47.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j47.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j47.setBorderPainted(false);
-//            }
-//        });
-//        j48.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j48.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j48.setBorderPainted(false);
-//            }
-//        });
-//        j49.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j49.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j49.setBorderPainted(false);
-//            }
-//        });
-//        j50.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j50.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j50.setBorderPainted(false);
-//            }
-//        });
-//        j51.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j51.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j51.setBorderPainted(false);
-//            }
-//        });
-//        j52.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j52.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j52.setBorderPainted(false);
-//            }
-//        });
-//        j53.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j53.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j53.setBorderPainted(false);
-//            }
-//        });
-//        j54.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j54.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j54.setBorderPainted(false);
-//            }
-//        });
-//        j55.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j55.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j55.setBorderPainted(false);
-//            }
-//        });
-//        j56.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j56.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j56.setBorderPainted(false);
-//            }
-//        });
-//        j57.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j57.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j57.setBorderPainted(false);
-//            }
-//        });
-//        j58.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j58.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j58.setBorderPainted(false);
-//            }
-//        });
-//        j59.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j59.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j59.setBorderPainted(false);
-//            }
-//        });
-//        j60.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j60.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j60.setBorderPainted(false);
-//            }
-//        });
-//        j61.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j61.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j61.setBorderPainted(false);
-//            }
-//        });
-//        j62.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j62.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j62.setBorderPainted(false);
-//            }
-//        });
-//        j63.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j63.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j63.setBorderPainted(false);
-//            }
-//        });
-//        j64.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j64.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j64.setBorderPainted(false);
-//            }
-//        });
-//        j65.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j65.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j65.setBorderPainted(false);
-//            }
-//        });
-//        j66.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j66.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j66.setBorderPainted(false);
-//            }
-//        });
-//        j67.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j67.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j67.setBorderPainted(false);
-//            }
-//        });
-//        j68.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j68.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j68.setBorderPainted(false);
-//            }
-//        });
-//        j69.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j69.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j69.setBorderPainted(false);
-//            }
-//        });
-//        j70.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j70.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j70.setBorderPainted(false);
-//            }
-//        });
-//        j71.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j71.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j71.setBorderPainted(false);
-//            }
-//        });
-//        j72.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j72.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j72.setBorderPainted(false);
-//            }
-//        });
-//        j73.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j73.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j73.setBorderPainted(false);
-//            }
-//        });
-//        j74.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j74.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j74.setBorderPainted(false);
-//            }
-//        });
-//        j75.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j75.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j75.setBorderPainted(false);
-//            }
-//        });
-//        j76.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j76.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j76.setBorderPainted(false);
-//            }
-//        });
-//        j77.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j77.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j77.setBorderPainted(false);
-//            }
-//        });
-//        j78.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j78.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j78.setBorderPainted(false);
-//            }
-//        });
-//        j79.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j79.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j79.setBorderPainted(false);
-//            }
-//        });
-//        j80.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j80.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j80.setBorderPainted(false);
-//            }
-//        });
-//        j81.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j81.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j81.setBorderPainted(false);
-//            }
-//        });
-//        j82.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j82.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j82.setBorderPainted(false);
-//            }
-//        });
-//        j83.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j83.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j83.setBorderPainted(false);
-//            }
-//        });
-//        j84.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j84.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j84.setBorderPainted(false);
-//            }
-//        });
-//        j85.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j85.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j85.setBorderPainted(false);
-//            }
-//        });
-//        j86.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j86.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j86.setBorderPainted(false);
-//            }
-//        });
-//        j87.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j87.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j87.setBorderPainted(false);
-//            }
-//        });
-//        j88.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j88.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j88.setBorderPainted(false);
-//            }
-//        });
-//        j89.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j89.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j89.setBorderPainted(false);
-//            }
-//        });
-//        j90.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j90.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j90.setBorderPainted(false);
-//            }
-//        });
-//        j91.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j91.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j91.setBorderPainted(false);
-//            }
-//        });
-//        j92.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j92.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j92.setBorderPainted(false);
-//            }
-//        });
-//        j93.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j93.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j93.setBorderPainted(false);
-//            }
-//        });
-//        j94.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j94.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j94.setBorderPainted(false);
-//            }
-//        });
-//        j95.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j95.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j95.setBorderPainted(false);
-//            }
-//        });
-//        j96.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j96.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j96.setBorderPainted(false);
-//            }
-//        });
-//        j97.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j97.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j97.setBorderPainted(false);
-//            }
-//        });
-//        j98.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j98.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j98.setBorderPainted(false);
-//            }
-//        });
-//        j99.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j99.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j99.setBorderPainted(false);
-//            }
-//        });
-//        j100.addMouseListener(new MouseAdapter()
-//        {
-//            @Override
-//            public void mouseEntered(MouseEvent e)
-//            {
-//                j100.setBorderPainted(true);
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e)
-//            {
-//                j100.setBorderPainted(false);
-//            }
-//        });
-//        KeyListener k = new KeyAdapter()
-//        {
-//            @Override
-//            public void keyReleased(KeyEvent e)
-//            {
-//                if(e.getKeyChar() == 'r' || e.getKeyChar() == 'R')
-//                {
-//                    if(flag == 0)
-//                    {
-//                        j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon(path_h).getImage(), new Point(0, 0), "custom cursor"));
-//                        flag = 1;
-//                    }
-//                    else
-//                    {
-//                        j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon(path_v).getImage(), new Point(0, 0), "custom cursor"));
-//                        flag = 0;
-//                    }
-//                }
-//            }
-//        };
-//        j1.addKeyListener(k);
-//        j1.setFocusable(true);
-//        j2.addKeyListener(k);
-//        j2.setFocusable(true);
-//        j3.addKeyListener(k);
-//        j3.setFocusable(true);
-//        j4.addKeyListener(k);
-//        j4.setFocusable(true);
-//        j5.addKeyListener(k);
-//        j5.setFocusable(true);
-//        j6.addKeyListener(k);
-//        j6.setFocusable(true);
-//        j7.addKeyListener(k);
-//        j7.setFocusable(true);
-//        j8.addKeyListener(k);
-//        j8.setFocusable(true);
-//        j9.addKeyListener(k);
-//        j9.setFocusable(true);
-//        j10.addKeyListener(k);
-//        j10.setFocusable(true);
-//        j11.addKeyListener(k);
-//        j11.setFocusable(true);
-//        j12.addKeyListener(k);
-//        j12.setFocusable(true);
-//        j13.addKeyListener(k);
-//        j13.setFocusable(true);
-//        j14.addKeyListener(k);
-//        j14.setFocusable(true);
-//        j15.addKeyListener(k);
-//        j15.setFocusable(true);
-//        j16.addKeyListener(k);
-//        j16.setFocusable(true);
-//        j17.addKeyListener(k);
-//        j17.setFocusable(true);
-//        j18.addKeyListener(k);
-//        j18.setFocusable(true);
-//        j19.addKeyListener(k);
-//        j19.setFocusable(true);
-//        j20.addKeyListener(k);
-//        j20.setFocusable(true);
-//        j21.addKeyListener(k);
-//        j21.setFocusable(true);
-//        j22.addKeyListener(k);
-//        j22.setFocusable(true);
-//        j23.addKeyListener(k);
-//        j23.setFocusable(true);
-//        j24.addKeyListener(k);
-//        j24.setFocusable(true);
-//        j25.addKeyListener(k);
-//        j25.setFocusable(true);
-//        j26.addKeyListener(k);
-//        j26.setFocusable(true);
-//        j27.addKeyListener(k);
-//        j27.setFocusable(true);
-//        j28.addKeyListener(k);
-//        j28.setFocusable(true);
-//        j29.addKeyListener(k);
-//        j29.setFocusable(true);
-//        j30.addKeyListener(k);
-//        j30.setFocusable(true);
-//        j31.addKeyListener(k);
-//        j31.setFocusable(true);
-//        j32.addKeyListener(k);
-//        j32.setFocusable(true);
-//        j33.addKeyListener(k);
-//        j33.setFocusable(true);
-//        j34.addKeyListener(k);
-//        j34.setFocusable(true);
-//        j35.addKeyListener(k);
-//        j35.setFocusable(true);
-//        j36.addKeyListener(k);
-//        j36.setFocusable(true);
-//        j37.addKeyListener(k);
-//        j37.setFocusable(true);
-//        j38.addKeyListener(k);
-//        j38.setFocusable(true);
-//        j39.addKeyListener(k);
-//        j39.setFocusable(true);
-//        j40.addKeyListener(k);
-//        j40.setFocusable(true);
-//        j41.addKeyListener(k);
-//        j41.setFocusable(true);
-//        j42.addKeyListener(k);
-//        j42.setFocusable(true);
-//        j43.addKeyListener(k);
-//        j43.setFocusable(true);
-//        j44.addKeyListener(k);
-//        j44.setFocusable(true);
-//        j45.addKeyListener(k);
-//        j45.setFocusable(true);
-//        j46.addKeyListener(k);
-//        j46.setFocusable(true);
-//        j47.addKeyListener(k);
-//        j47.setFocusable(true);
-//        j48.addKeyListener(k);
-//        j48.setFocusable(true);
-//        j49.addKeyListener(k);
-//        j49.setFocusable(true);
-//        j50.addKeyListener(k);
-//        j50.setFocusable(true);
-//        j51.addKeyListener(k);
-//        j51.setFocusable(true);
-//        j52.addKeyListener(k);
-//        j52.setFocusable(true);
-//        j53.addKeyListener(k);
-//        j53.setFocusable(true);
-//        j54.addKeyListener(k);
-//        j54.setFocusable(true);
-//        j55.addKeyListener(k);
-//        j55.setFocusable(true);
-//        j56.addKeyListener(k);
-//        j56.setFocusable(true);
-//        j57.addKeyListener(k);
-//        j57.setFocusable(true);
-//        j58.addKeyListener(k);
-//        j58.setFocusable(true);
-//        j59.addKeyListener(k);
-//        j59.setFocusable(true);
-//        j60.addKeyListener(k);
-//        j60.setFocusable(true);
-//        j61.addKeyListener(k);
-//        j61.setFocusable(true);
-//        j62.addKeyListener(k);
-//        j62.setFocusable(true);
-//        j63.addKeyListener(k);
-//        j63.setFocusable(true);
-//        j64.addKeyListener(k);
-//        j64.setFocusable(true);
-//        j65.addKeyListener(k);
-//        j65.setFocusable(true);
-//        j66.addKeyListener(k);
-//        j66.setFocusable(true);
-//        j67.addKeyListener(k);
-//        j67.setFocusable(true);
-//        j68.addKeyListener(k);
-//        j68.setFocusable(true);
-//        j69.addKeyListener(k);
-//        j69.setFocusable(true);
-//        j70.addKeyListener(k);
-//        j70.setFocusable(true);
-//        j71.addKeyListener(k);
-//        j71.setFocusable(true);
-//        j72.addKeyListener(k);
-//        j72.setFocusable(true);
-//        j73.addKeyListener(k);
-//        j73.setFocusable(true);
-//        j74.addKeyListener(k);
-//        j74.setFocusable(true);
-//        j75.addKeyListener(k);
-//        j75.setFocusable(true);
-//        j76.addKeyListener(k);
-//        j76.setFocusable(true);
-//        j77.addKeyListener(k);
-//        j77.setFocusable(true);
-//        j78.addKeyListener(k);
-//        j78.setFocusable(true);
-//        j79.addKeyListener(k);
-//        j79.setFocusable(true);
-//        j80.addKeyListener(k);
-//        j80.setFocusable(true);
-//        j81.addKeyListener(k);
-//        j81.setFocusable(true);
-//        j82.addKeyListener(k);
-//        j82.setFocusable(true);
-//        j83.addKeyListener(k);
-//        j83.setFocusable(true);
-//        j84.addKeyListener(k);
-//        j84.setFocusable(true);
-//        j85.addKeyListener(k);
-//        j85.setFocusable(true);
-//        j86.addKeyListener(k);
-//        j86.setFocusable(true);
-//        j87.addKeyListener(k);
-//        j87.setFocusable(true);
-//        j88.addKeyListener(k);
-//        j88.setFocusable(true);
-//        j89.addKeyListener(k);
-//        j89.setFocusable(true);
-//        j90.addKeyListener(k);
-//        j90.setFocusable(true);
-//        j91.addKeyListener(k);
-//        j91.setFocusable(true);
-//        j92.addKeyListener(k);
-//        j92.setFocusable(true);
-//        j93.addKeyListener(k);
-//        j93.setFocusable(true);
-//        j94.addKeyListener(k);
-//        j94.setFocusable(true);
-//        j95.addKeyListener(k);
-//        j95.setFocusable(true);
-//        j96.addKeyListener(k);
-//        j96.setFocusable(true);
-//        j97.addKeyListener(k);
-//        j97.setFocusable(true);
-//        j98.addKeyListener(k);
-//        j98.setFocusable(true);
-//        j99.addKeyListener(k);
-//        j99.setFocusable(true);
-//        j100.addKeyListener(k);
-//        j100.setFocusable(true);
-//        j.getContentPane().addKeyListener(k);
-//        j1.requestFocus();
-//        j1.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                j.remove(l);
-//                j.getContentPane().revalidate();
-//                j.getContentPane().repaint();
-//                if (flag == 0 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j1.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    aircraft_pos[0] = "j1";
-//                    aircraft_pos[1] = "j11";
-//                    aircraft_pos[2] = "j21";
-//                    aircraft_pos[3] = "j31";
-//                    aircraft_pos[4] = "j41";
-//                    j1.setEnabled(false);
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j11.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j1.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j2.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j3.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j4.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j5.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
-//                    aircraft_pos[0] = "j1";
-//                    aircraft_pos[1] = "j2";
-//                    aircraft_pos[2] = "j3";
-//                    aircraft_pos[3] = "j4";
-//                    aircraft_pos[4] = "j5";
-//                    j1.setEnabled(false);
-//                    j2.setEnabled(false);
-//                    j3.setEnabled(false);
-//                    j4.setEnabled(false);
-//                    j5.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j2.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j3.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j4.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j5.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "battleship" && j11.isEnabled() && j21.isEnabled() && j31.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j1.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j11.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j21.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j31.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    battleship_pos[0] = "j1";
-//                    battleship_pos[1] = "j11";
-//                    battleship_pos[2] = "j21";
-//                    battleship_pos[3] = "j31";
-//                    j1.setEnabled(false);
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j11.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j21.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "battleship" && j2.isEnabled() && j3.isEnabled() && j4.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j1.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j2.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j3.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j4.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    battleship_pos[0] = "j1";
-//                    battleship_pos[1] = "j2";
-//                    battleship_pos[2] = "j3";
-//                    battleship_pos[3] = "j4";
-//                    j1.setEnabled(false);
-//                    j2.setEnabled(false);
-//                    j3.setEnabled(false);
-//                    j4.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j2.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j3.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j4.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "submarine" && j11.isEnabled() && j21.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j1.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j11.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j21.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    submarine_pos[0] = "j1";
-//                    submarine_pos[1] = "j11";
-//                    submarine_pos[2] = "j21";
-//                    j1.setEnabled(false);
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j11.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j21.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "submarine" && j2.isEnabled() && j3.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j1.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j2.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j3.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    submarine_pos[0] = "j1";
-//                    submarine_pos[1] = "j2";
-//                    submarine_pos[2] = "j3";
-//                    j1.setEnabled(false);
-//                    j2.setEnabled(false);
-//                    j3.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j2.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j3.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "cruiser" && j11.isEnabled() && j21.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j1.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j11.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j21.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    cruiser_pos[0] = "j1";
-//                    cruiser_pos[1] = "j11";
-//                    cruiser_pos[2] = "j21";
-//                    j1.setEnabled(false);
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j11.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "cruiser" && j2.isEnabled() && j3.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j1.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j2.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j3.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    cruiser_pos[0] = "j1";
-//                    cruiser_pos[1] = "j2";
-//                    cruiser_pos[2] = "j3";
-//                    j1.setEnabled(false);
-//                    j2.setEnabled(false);
-//                    j3.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j2.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j3.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "destroyer" && j11.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j1.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j11.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    destroyer_pos[0] = "j1";
-//                    destroyer_pos[1] = "j11";
-//                    j1.setEnabled(false);
-//                    j11.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else if (flag == 1 && cur_aircraft == "destroyer" && j2.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j1.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j2.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    destroyer_pos[0] = "j1";
-//                    destroyer_pos[1] = "j2";
-//                    j1.setEnabled(false);
-//                    j2.setEnabled(false);
-//                    j1.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j2.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else
-//                {
-//                    l.setBounds(200,540,600,50);
-//                    l.setForeground(Color.WHITE);
-//                    j.add(l);
-//                    j.getContentPane().revalidate();
-//                    j.getContentPane().repaint();
-//                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
-//                }
-//                System.out.println("Aircraft Carrier : ");
-//                for(int i = 0 ; i < 5 ; i ++)
-//                {
-//                    System.out.println(aircraft_pos[i]);
-//                }
-//                System.out.println("Battleship : ");
-//                for(int i = 0 ; i < 4 ; i ++)
-//                {
-//                    System.out.println(battleship_pos[i]);
-//                }
-//                System.out.println("Submarine : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(submarine_pos[i]);
-//                }
-//                System.out.println("Cruiser : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(cruiser_pos[i]);
-//                }
-//                System.out.println("Destroyer : ");
-//                for(int i = 0 ; i < 2 ; i ++)
-//                {
-//                    System.out.println(destroyer_pos[i]);
-//                }
-//            }
-//        });
-//        j11.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                j.remove(l);
-//                j.getContentPane().revalidate();
-//                j.getContentPane().repaint();
-//                if (flag == 0 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    aircraft_pos[0] = "j11";
-//                    aircraft_pos[1] = "j21";
-//                    aircraft_pos[2] = "j31";
-//                    aircraft_pos[3] = "j41";
-//                    aircraft_pos[4] = "j51";
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j12.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j13.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j14.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j15.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
-//                    aircraft_pos[0] = "j11";
-//                    aircraft_pos[1] = "j12";
-//                    aircraft_pos[2] = "j13";
-//                    aircraft_pos[3] = "j14";
-//                    aircraft_pos[4] = "j15";
-//                    j11.setEnabled(false);
-//                    j12.setEnabled(false);
-//                    j13.setEnabled(false);
-//                    j14.setEnabled(false);
-//                    j15.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j12.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j13.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j14.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j15.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "battleship" && j21.isEnabled() && j31.isEnabled() && j41.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j11.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j21.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j31.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j41.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    battleship_pos[0] = "j11";
-//                    battleship_pos[1] = "j21";
-//                    battleship_pos[2] = "j31";
-//                    battleship_pos[3] = "j41";
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j21.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "battleship" && j12.isEnabled() && j13.isEnabled() && j14.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j11.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j12.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j13.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j14.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    battleship_pos[0] = "j11";
-//                    battleship_pos[1] = "j12";
-//                    battleship_pos[2] = "j13";
-//                    battleship_pos[3] = "j14";
-//                    j11.setEnabled(false);
-//                    j12.setEnabled(false);
-//                    j13.setEnabled(false);
-//                    j14.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j12.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j13.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j14.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "submarine" && j21.isEnabled() && j31.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j11.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j21.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j31.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    submarine_pos[0] = "j11";
-//                    submarine_pos[1] = "j21";
-//                    submarine_pos[2] = "j31";
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j21.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j31.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "submarine" && j12.isEnabled() && j13.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j11.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j12.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j13.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    submarine_pos[0] = "j11";
-//                    submarine_pos[1] = "j12";
-//                    submarine_pos[2] = "j13";
-//                    j11.setEnabled(false);
-//                    j12.setEnabled(false);
-//                    j13.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j12.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j13.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "cruiser" && j21.isEnabled() && j31.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j11.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j21.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j31.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    cruiser_pos[0] = "j11";
-//                    cruiser_pos[1] = "j21";
-//                    cruiser_pos[2] = "j31";
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "cruiser" && j12.isEnabled() && j13.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j11.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j12.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j13.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    cruiser_pos[0] = "j11";
-//                    cruiser_pos[1] = "j12";
-//                    cruiser_pos[2] = "j13";
-//                    j11.setEnabled(false);
-//                    j12.setEnabled(false);
-//                    j13.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j12.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j13.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "destroyer" && j21.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j11.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j21.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    destroyer_pos[0] = "j11";
-//                    destroyer_pos[1] = "j21";
-//                    j11.setEnabled(false);
-//                    j21.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else if (flag == 1 && cur_aircraft == "destroyer" && j12.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j11.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j12.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    destroyer_pos[0] = "j11";
-//                    destroyer_pos[1] = "j12";
-//                    j11.setEnabled(false);
-//                    j12.setEnabled(false);
-//                    j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else
-//                {
-//                    l.setBounds(200,540,600,50);
-//                    l.setForeground(Color.WHITE);
-//                    j.add(l);
-//                    j.getContentPane().revalidate();
-//                    j.getContentPane().repaint();
-//                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
-//                }
-//                System.out.println("Aircraft Carrier : ");
-//                for(int i = 0 ; i < 5 ; i ++)
-//                {
-//                    System.out.println(aircraft_pos[i]);
-//                }
-//                System.out.println("Battleship : ");
-//                for(int i = 0 ; i < 4 ; i ++)
-//                {
-//                    System.out.println(battleship_pos[i]);
-//                }
-//                System.out.println("Submarine : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(submarine_pos[i]);
-//                }
-//                System.out.println("Cruiser : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(cruiser_pos[i]);
-//                }
-//                System.out.println("Destroyer : ");
-//                for(int i = 0 ; i < 2 ; i ++)
-//                {
-//                    System.out.println(destroyer_pos[i]);
-//                }
-//            }
-//        });
-//        j21.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                j.remove(l);
-//                j.getContentPane().revalidate();
-//                j.getContentPane().repaint();
-//                if (flag == 0 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    aircraft_pos[0] = "j21";
-//                    aircraft_pos[1] = "j31";
-//                    aircraft_pos[2] = "j41";
-//                    aircraft_pos[3] = "j51";
-//                    aircraft_pos[4] = "j61";
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j22.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j23.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j24.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j25.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
-//                    aircraft_pos[0] = "j21";
-//                    aircraft_pos[1] = "j22";
-//                    aircraft_pos[2] = "j23";
-//                    aircraft_pos[3] = "j24";
-//                    aircraft_pos[4] = "j25";
-//                    j21.setEnabled(false);
-//                    j22.setEnabled(false);
-//                    j23.setEnabled(false);
-//                    j24.setEnabled(false);
-//                    j25.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j22.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j23.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j24.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j25.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "battleship" && j31.isEnabled() && j41.isEnabled() && j51.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j21.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j31.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j41.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j51.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    battleship_pos[0] = "j21";
-//                    battleship_pos[1] = "j31";
-//                    battleship_pos[2] = "j41";
-//                    battleship_pos[3] = "j51";
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "battleship" && j22.isEnabled() && j23.isEnabled() && j24.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j21.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j22.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j23.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j24.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    battleship_pos[0] = "j21";
-//                    battleship_pos[1] = "j22";
-//                    battleship_pos[2] = "j23";
-//                    battleship_pos[3] = "j24";
-//                    j21.setEnabled(false);
-//                    j22.setEnabled(false);
-//                    j23.setEnabled(false);
-//                    j24.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j22.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j23.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j24.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "submarine" && j31.isEnabled() && j41.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j21.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j31.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j41.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    submarine_pos[0] = "j21";
-//                    submarine_pos[1] = "j31";
-//                    submarine_pos[2] = "j41";
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j31.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j41.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "submarine" && j22.isEnabled() && j23.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j21.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j22.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j23.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    submarine_pos[0] = "j21";
-//                    submarine_pos[1] = "j22";
-//                    submarine_pos[2] = "j23";
-//                    j21.setEnabled(false);
-//                    j22.setEnabled(false);
-//                    j23.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j22.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j23.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "cruiser" && j31.isEnabled() && j41.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j21.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j31.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j41.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    cruiser_pos[0] = "j21";
-//                    cruiser_pos[1] = "j31";
-//                    cruiser_pos[2] = "j41";
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "cruiser" && j22.isEnabled() && j23.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j21.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j22.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j23.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    cruiser_pos[0] = "j21";
-//                    cruiser_pos[1] = "j22";
-//                    cruiser_pos[2] = "j23";
-//                    j21.setEnabled(false);
-//                    j22.setEnabled(false);
-//                    j23.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j22.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j23.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "destroyer" && j31.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j21.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j31.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    destroyer_pos[0] = "j21";
-//                    destroyer_pos[1] = "j31";
-//                    j21.setEnabled(false);
-//                    j31.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else if (flag == 1 && cur_aircraft == "destroyer" && j22.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j21.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j22.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    destroyer_pos[0] = "j21";
-//                    destroyer_pos[1] = "j22";
-//                    j21.setEnabled(false);
-//                    j22.setEnabled(false);
-//                    j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else
-//                {
-//                    l.setBounds(200,540,600,50);
-//                    l.setForeground(Color.WHITE);
-//                    j.add(l);
-//                    j.getContentPane().revalidate();
-//                    j.getContentPane().repaint();
-//                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
-//                }
-//                System.out.println("Aircraft Carrier : ");
-//                for(int i = 0 ; i < 5 ; i ++)
-//                {
-//                    System.out.println(aircraft_pos[i]);
-//                }
-//                System.out.println("Battleship : ");
-//                for(int i = 0 ; i < 4 ; i ++)
-//                {
-//                    System.out.println(battleship_pos[i]);
-//                }
-//                System.out.println("Submarine : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(submarine_pos[i]);
-//                }
-//                System.out.println("Cruiser : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(cruiser_pos[i]);
-//                }
-//                System.out.println("Destroyer : ");
-//                for(int i = 0 ; i < 2 ; i ++)
-//                {
-//                    System.out.println(destroyer_pos[i]);
-//                }
-//            }
-//        });
-//        j31.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                j.remove(l);
-//                j.getContentPane().revalidate();
-//                j.getContentPane().repaint();
-//                if (flag == 0 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j71.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    aircraft_pos[0] = "j31";
-//                    aircraft_pos[1] = "j41";
-//                    aircraft_pos[2] = "j51";
-//                    aircraft_pos[3] = "j61";
-//                    aircraft_pos[4] = "j71";
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j71.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j71.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j32.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j33.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j34.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j35.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
-//                    aircraft_pos[0] = "j31";
-//                    aircraft_pos[1] = "j32";
-//                    aircraft_pos[2] = "j33";
-//                    aircraft_pos[3] = "j34";
-//                    aircraft_pos[4] = "j35";
-//                    j31.setEnabled(false);
-//                    j32.setEnabled(false);
-//                    j33.setEnabled(false);
-//                    j34.setEnabled(false);
-//                    j35.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j32.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j33.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j34.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j35.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "battleship" && j41.isEnabled() && j51.isEnabled() && j61.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j31.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j41.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j51.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j61.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    battleship_pos[0] = "j31";
-//                    battleship_pos[1] = "j41";
-//                    battleship_pos[2] = "j51";
-//                    battleship_pos[3] = "j61";
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j61.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "battleship" && j32.isEnabled() && j33.isEnabled() && j34.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j31.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j32.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j33.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j34.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    battleship_pos[0] = "j31";
-//                    battleship_pos[1] = "j32";
-//                    battleship_pos[2] = "j33";
-//                    battleship_pos[3] = "j34";
-//                    j31.setEnabled(false);
-//                    j32.setEnabled(false);
-//                    j33.setEnabled(false);
-//                    j34.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j32.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j33.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j34.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "submarine" && j41.isEnabled() && j51.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j31.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j41.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j51.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    submarine_pos[0] = "j31";
-//                    submarine_pos[1] = "j41";
-//                    submarine_pos[2] = "j51";
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j41.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j51.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "submarine" && j32.isEnabled() && j33.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j31.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j32.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j33.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    submarine_pos[0] = "j31";
-//                    submarine_pos[1] = "j32";
-//                    submarine_pos[2] = "j33";
-//                    j31.setEnabled(false);
-//                    j32.setEnabled(false);
-//                    j33.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j32.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j33.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "cruiser" && j41.isEnabled() && j51.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j31.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j41.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j51.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    cruiser_pos[0] = "j31";
-//                    cruiser_pos[1] = "j41";
-//                    cruiser_pos[2] = "j51";
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "cruiser" && j32.isEnabled() && j33.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j31.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j32.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j33.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    cruiser_pos[0] = "j31";
-//                    cruiser_pos[1] = "j32";
-//                    cruiser_pos[2] = "j33";
-//                    j31.setEnabled(false);
-//                    j32.setEnabled(false);
-//                    j33.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j32.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j33.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "destroyer" && j41.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j31.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j41.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    destroyer_pos[0] = "j31";
-//                    destroyer_pos[1] = "j41";
-//                    j31.setEnabled(false);
-//                    j41.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j31.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j32.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    destroyer_pos[0] = "j31";
-//                    destroyer_pos[1] = "j32";
-//                    j31.setEnabled(false);
-//                    j32.setEnabled(false);
-//                    j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else
-//                {
-//                    l.setBounds(200,540,600,50);
-//                    l.setForeground(Color.WHITE);
-//                    j.add(l);
-//                    j.getContentPane().revalidate();
-//                    j.getContentPane().repaint();
-//                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
-//                }
-//                System.out.println("Aircraft Carrier : ");
-//                for(int i = 0 ; i < 5 ; i ++)
-//                {
-//                    System.out.println(aircraft_pos[i]);
-//                }
-//                System.out.println("Battleship : ");
-//                for(int i = 0 ; i < 4 ; i ++)
-//                {
-//                    System.out.println(battleship_pos[i]);
-//                }
-//                System.out.println("Submarine : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(submarine_pos[i]);
-//                }
-//                System.out.println("Cruiser : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(cruiser_pos[i]);
-//                }
-//                System.out.println("Destroyer : ");
-//                for(int i = 0 ; i < 2 ; i ++)
-//                {
-//                    System.out.println(destroyer_pos[i]);
-//                }
-//            }
-//        });
-//        j41.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                j.remove(l);
-//                j.getContentPane().revalidate();
-//                j.getContentPane().repaint();
-//                if (flag == 0 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j71.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j81.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    aircraft_pos[0] = "j41";
-//                    aircraft_pos[1] = "j51";
-//                    aircraft_pos[2] = "j61";
-//                    aircraft_pos[3] = "j71";
-//                    aircraft_pos[4] = "j81";
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j71.setEnabled(false);
-//                    j81.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j71.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j81.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j42.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j43.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j44.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j45.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
-//                    aircraft_pos[0] = "j41";
-//                    aircraft_pos[1] = "j42";
-//                    aircraft_pos[2] = "j43";
-//                    aircraft_pos[3] = "j44";
-//                    aircraft_pos[4] = "j45";
-//                    j41.setEnabled(false);
-//                    j42.setEnabled(false);
-//                    j43.setEnabled(false);
-//                    j44.setEnabled(false);
-//                    j45.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j42.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j43.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j44.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j45.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "battleship" && j51.isEnabled() && j61.isEnabled() && j71.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j41.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j51.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j61.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j71.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    battleship_pos[0] = "j41";
-//                    battleship_pos[1] = "j51";
-//                    battleship_pos[2] = "j61";
-//                    battleship_pos[3] = "j71";
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j71.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j61.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j71.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "battleship" && j42.isEnabled() && j43.isEnabled() && j44.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j41.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j42.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j43.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j44.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    battleship_pos[0] = "j41";
-//                    battleship_pos[1] = "j42";
-//                    battleship_pos[2] = "j43";
-//                    battleship_pos[3] = "j44";
-//                    j41.setEnabled(false);
-//                    j42.setEnabled(false);
-//                    j43.setEnabled(false);
-//                    j44.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j42.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j43.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j44.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "submarine" && j51.isEnabled() && j61.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j41.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j51.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j61.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    submarine_pos[0] = "j41";
-//                    submarine_pos[1] = "j51";
-//                    submarine_pos[2] = "j61";
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j51.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j61.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "submarine" && j42.isEnabled() && j43.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j41.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j42.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j43.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    submarine_pos[0] = "j41";
-//                    submarine_pos[1] = "j42";
-//                    submarine_pos[2] = "j43";
-//                    j41.setEnabled(false);
-//                    j42.setEnabled(false);
-//                    j43.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j42.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j43.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "cruiser" && j51.isEnabled() && j61.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j41.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j51.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j61.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    cruiser_pos[0] = "j41";
-//                    cruiser_pos[1] = "j51";
-//                    cruiser_pos[2] = "j61";
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j61.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "cruiser" && j42.isEnabled() && j43.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j41.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j42.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j43.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    cruiser_pos[0] = "j41";
-//                    cruiser_pos[1] = "j42";
-//                    cruiser_pos[2] = "j43";
-//                    j41.setEnabled(false);
-//                    j42.setEnabled(false);
-//                    j43.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j42.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j43.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "destroyer" && j51.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j41.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j51.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    destroyer_pos[0] = "j41";
-//                    destroyer_pos[1] = "j51";
-//                    j41.setEnabled(false);
-//                    j51.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else if (flag == 1 && cur_aircraft == "destroyer" && j42.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j41.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j42.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    destroyer_pos[0] = "j41";
-//                    destroyer_pos[1] = "j42";
-//                    j41.setEnabled(false);
-//                    j42.setEnabled(false);
-//                    j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else
-//                {
-//                    l.setBounds(200,540,600,50);
-//                    l.setForeground(Color.WHITE);
-//                    j.add(l);
-//                    j.getContentPane().revalidate();
-//                    j.getContentPane().repaint();
-//                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
-//                }
-//                System.out.println("Aircraft Carrier : ");
-//                for(int i = 0 ; i < 5 ; i ++)
-//                {
-//                    System.out.println(aircraft_pos[i]);
-//                }
-//                System.out.println("Battleship : ");
-//                for(int i = 0 ; i < 4 ; i ++)
-//                {
-//                    System.out.println(battleship_pos[i]);
-//                }
-//                System.out.println("Submarine : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(submarine_pos[i]);
-//                }
-//                System.out.println("Cruiser : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(cruiser_pos[i]);
-//                }
-//                System.out.println("Destroyer : ");
-//                for(int i = 0 ; i < 2 ; i ++)
-//                {
-//                    System.out.println(destroyer_pos[i]);
-//                }
-//            }
-//        });
-//        j51.addActionListener(new ActionListener()
-//        {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                j.remove(l);
-//                j.getContentPane().revalidate();
-//                j.getContentPane().repaint();
-//                if (flag == 0 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j71.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j81.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j91.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    aircraft_pos[0] = "j51";
-//                    aircraft_pos[1] = "j61";
-//                    aircraft_pos[2] = "j71";
-//                    aircraft_pos[3] = "j81";
-//                    aircraft_pos[4] = "j91";
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j71.setEnabled(false);
-//                    j81.setEnabled(false);
-//                    j91.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
-//                    j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
-//                    j71.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
-//                    j81.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
-//                    j91.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "aircraft-carrier")
-//                {
-//                    cur_aircraft = "battleship";
-//                    j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j52.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j53.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j54.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j55.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
-//                    aircraft_pos[0] = "j51";
-//                    aircraft_pos[1] = "j52";
-//                    aircraft_pos[2] = "j53";
-//                    aircraft_pos[3] = "j54";
-//                    aircraft_pos[4] = "j55";
-//                    j51.setEnabled(false);
-//                    j52.setEnabled(false);
-//                    j53.setEnabled(false);
-//                    j54.setEnabled(false);
-//                    j55.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
-//                    j52.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
-//                    j53.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
-//                    j54.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
-//                    j55.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    path_v = "battleship/battleship-v.png";
-//                    path_h = "battleship/battleship-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "battleship" && j61.isEnabled() && j71.isEnabled() && j81.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j51.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j61.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j71.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j81.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    battleship_pos[0] = "j51";
-//                    battleship_pos[1] = "j61";
-//                    battleship_pos[2] = "j71";
-//                    battleship_pos[3] = "j81";
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j71.setEnabled(false);
-//                    j81.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
-//                    j61.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
-//                    j71.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
-//                    j81.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "battleship" && j52.isEnabled() && j53.isEnabled() && j54.isEnabled())
-//                {
-//                    cur_aircraft = "submarine";
-//                    j51.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j52.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j53.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j54.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    battleship_pos[0] = "j51";
-//                    battleship_pos[1] = "j52";
-//                    battleship_pos[2] = "j53";
-//                    battleship_pos[3] = "j54";
-//                    j51.setEnabled(false);
-//                    j52.setEnabled(false);
-//                    j53.setEnabled(false);
-//                    j54.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
-//                    j52.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
-//                    j53.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
-//                    j54.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
-//                    path_v = "submarine/submarine-v.png";
-//                    path_h = "submarine/submarine-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "submarine" && j61.isEnabled() && j71.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j51.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j61.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j71.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    submarine_pos[0] = "j51";
-//                    submarine_pos[1] = "j61";
-//                    submarine_pos[2] = "j71";
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j71.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
-//                    j61.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
-//                    j71.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "submarine" && j52.isEnabled() && j53.isEnabled())
-//                {
-//                    cur_aircraft = "cruiser";
-//                    j51.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j52.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j53.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    submarine_pos[0] = "j51";
-//                    submarine_pos[1] = "j52";
-//                    submarine_pos[2] = "j53";
-//                    j51.setEnabled(false);
-//                    j52.setEnabled(false);
-//                    j53.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
-//                    j52.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
-//                    j53.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "cruiser/cruiser-v.png";
-//                    path_h = "cruiser/cruiser-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "cruiser" && j61.isEnabled() && j71.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j51.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j61.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j71.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    cruiser_pos[0] = "j51";
-//                    cruiser_pos[1] = "j61";
-//                    cruiser_pos[2] = "j71";
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j71.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
-//                    j61.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
-//                    j71.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 1 && cur_aircraft == "cruiser" && j52.isEnabled() && j53.isEnabled())
-//                {
-//                    cur_aircraft = "destroyer";
-//                    j51.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j52.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j53.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    cruiser_pos[0] = "j51";
-//                    cruiser_pos[1] = "j52";
-//                    cruiser_pos[2] = "j53";
-//                    j51.setEnabled(false);
-//                    j52.setEnabled(false);
-//                    j53.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
-//                    j52.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
-//                    j53.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
-//                    path_v = "destroyer/destroyer-v.png";
-//                    path_h = "destroyer/destroyer-h.png";
-//                }
-//                else if (flag == 0 && cur_aircraft == "destroyer" && j61.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j51.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j61.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    destroyer_pos[0] = "j51";
-//                    destroyer_pos[1] = "j61";
-//                    j51.setEnabled(false);
-//                    j61.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
-//                    j61.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else if (flag == 1 && cur_aircraft == "destroyer" && j52.isEnabled())
-//                {
-//                    cur_aircraft = "finished";
-//                    j51.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j52.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    destroyer_pos[0] = "j51";
-//                    destroyer_pos[1] = "j52";
-//                    j51.setEnabled(false);
-//                    j52.setEnabled(false);
-//                    j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
-//                    j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
-//                    ai_place();
-//                }
-//                else
-//                {
-//                    l.setBounds(200,540,600,50);
-//                    l.setForeground(Color.WHITE);
-//                    j.add(l);
-//                    j.getContentPane().revalidate();
-//                    j.getContentPane().repaint();
-//                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
-//                }
-//                System.out.println("Aircraft Carrier : ");
-//                for(int i = 0 ; i < 5 ; i ++)
-//                {
-//                    System.out.println(aircraft_pos[i]);
-//                }
-//                System.out.println("Battleship : ");
-//                for(int i = 0 ; i < 4 ; i ++)
-//                {
-//                    System.out.println(battleship_pos[i]);
-//                }
-//                System.out.println("Submarine : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(submarine_pos[i]);
-//                }
-//                System.out.println("Cruiser : ");
-//                for(int i = 0 ; i < 3 ; i ++)
-//                {
-//                    System.out.println(cruiser_pos[i]);
-//                }
-//                System.out.println("Destroyer : ");
-//                for(int i = 0 ; i < 2 ; i ++)
-//                {
-//                    System.out.println(destroyer_pos[i]);
-//                }
-//            }
-//        });
 //        j61.addActionListener(new ActionListener()
 //        {
 //            @Override
@@ -3656,7 +600,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j64.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j65.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j61";
 //                    aircraft_pos[1] = "j62";
 //                    aircraft_pos[2] = "j63";
@@ -3694,7 +638,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j71.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j81.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j91.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -3717,7 +661,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j63.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j64.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -3736,7 +680,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j61.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j71.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j81.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -3755,7 +699,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j61.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j62.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j63.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -3774,7 +718,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j61.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j71.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j81.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -3793,7 +737,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j61.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j62.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j63.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -3808,7 +752,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j71.setEnabled(false);
 //                    j61.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j71.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j62.isEnabled())
@@ -3822,7 +766,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setEnabled(false);
 //                    j61.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -3877,7 +821,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j74.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j75.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j71";
 //                    aircraft_pos[1] = "j72";
 //                    aircraft_pos[2] = "j73";
@@ -3915,7 +859,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j73.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j74.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -3934,7 +878,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j71.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j81.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j91.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -3953,7 +897,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j71.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j72.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j73.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -3972,7 +916,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j71.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j81.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j91.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -3991,7 +935,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j71.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j72.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j73.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -4006,7 +950,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j81.setEnabled(false);
 //                    j71.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j81.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j72.isEnabled())
@@ -4020,7 +964,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setEnabled(false);
 //                    j71.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -4075,7 +1019,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j83.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j84.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j85.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j81";
 //                    aircraft_pos[1] = "j82";
 //                    aircraft_pos[2] = "j83";
@@ -4132,7 +1076,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j81.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j82.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j83.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -4151,7 +1095,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j81.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j82.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j83.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -4166,7 +1110,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j91.setEnabled(false);
 //                    j81.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j91.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j82.isEnabled())
@@ -4180,7 +1124,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j82.setEnabled(false);
 //                    j81.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -4235,7 +1179,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j93.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j94.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j95.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j91";
 //                    aircraft_pos[1] = "j92";
 //                    aircraft_pos[2] = "j93";
@@ -4292,7 +1236,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j91.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j92.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j93.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -4311,7 +1255,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j91.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j92.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j93.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -4326,7 +1270,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j92.setEnabled(false);
 //                    j91.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j92.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -4396,7 +1340,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j22.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j32.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j42.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -4408,7 +1352,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j4.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j5.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j6.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j2";
 //                    aircraft_pos[1] = "j3";
 //                    aircraft_pos[2] = "j4";
@@ -4446,7 +1390,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j12.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j22.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j32.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -4469,7 +1413,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j3.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j4.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j5.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -4488,7 +1432,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j2.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j12.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j22.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -4507,7 +1451,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j2.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j3.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j4.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -4526,7 +1470,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j2.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j12.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j22.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -4545,7 +1489,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j2.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j3.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j4.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -4560,7 +1504,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j12.setEnabled(false);
 //                    j2.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j3.isEnabled())
@@ -4574,7 +1518,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j3.setEnabled(false);
 //                    j2.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j3.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -4644,7 +1588,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j32.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j42.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j52.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -4656,7 +1600,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j14.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j15.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j16.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j12";
 //                    aircraft_pos[1] = "j13";
 //                    aircraft_pos[2] = "j14";
@@ -4694,7 +1638,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j22.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j32.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j42.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -4717,7 +1661,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j14.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j15.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -4736,7 +1680,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j12.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j22.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j32.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -4755,7 +1699,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j12.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j13.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j14.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -4774,7 +1718,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j12.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j22.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j32.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -4793,7 +1737,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j12.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j13.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j14.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -4808,7 +1752,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j22.setEnabled(false);
 //                    j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j13.isEnabled())
@@ -4822,7 +1766,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setEnabled(false);
 //                    j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -4892,7 +1836,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j42.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j52.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j62.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -4904,7 +1848,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j24.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j25.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j26.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j22";
 //                    aircraft_pos[1] = "j23";
 //                    aircraft_pos[2] = "j24";
@@ -4942,7 +1886,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j32.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j42.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j52.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -4965,7 +1909,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j24.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j25.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -4984,7 +1928,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j22.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j32.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j42.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5003,7 +1947,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j22.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j23.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j24.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5022,7 +1966,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j22.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j32.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j42.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5041,7 +1985,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j22.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j23.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j24.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5056,7 +2000,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j32.setEnabled(false);
 //                    j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j23.isEnabled())
@@ -5070,7 +2014,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setEnabled(false);
 //                    j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -5140,7 +2084,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j52.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j62.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j72.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -5152,7 +2096,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j34.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j35.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j36.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j32";
 //                    aircraft_pos[1] = "j33";
 //                    aircraft_pos[2] = "j34";
@@ -5190,7 +2134,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j42.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j52.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j62.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5213,7 +2157,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j34.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j35.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5232,7 +2176,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j32.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j42.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j52.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5251,7 +2195,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j32.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j33.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j34.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5270,7 +2214,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j32.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j42.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j52.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5289,7 +2233,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j32.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j33.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j34.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5304,7 +2248,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j42.setEnabled(false);
 //                    j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
@@ -5318,7 +2262,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setEnabled(false);
 //                    j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -5388,7 +2332,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j72.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j82.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -5400,7 +2344,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j44.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j45.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j46.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j42";
 //                    aircraft_pos[1] = "j43";
 //                    aircraft_pos[2] = "j44";
@@ -5438,7 +2382,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j52.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j62.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j72.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5461,7 +2405,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j44.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j45.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5480,7 +2424,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j42.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j52.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j62.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5499,7 +2443,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j42.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j43.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j44.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5518,7 +2462,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j42.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j52.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j62.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5537,7 +2481,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j42.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j43.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j44.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5552,7 +2496,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j52.setEnabled(false);
 //                    j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j43.isEnabled())
@@ -5566,7 +2510,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setEnabled(false);
 //                    j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -5636,7 +2580,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j82.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j92.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -5648,7 +2592,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j54.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j55.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j56.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j52";
 //                    aircraft_pos[1] = "j53";
 //                    aircraft_pos[2] = "j54";
@@ -5686,7 +2630,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j72.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j82.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5709,7 +2653,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j54.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j55.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5728,7 +2672,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j52.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j62.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j72.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5747,7 +2691,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j52.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j53.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j54.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5766,7 +2710,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j52.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j62.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j72.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5785,7 +2729,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j52.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j53.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j54.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -5800,7 +2744,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setEnabled(false);
 //                    j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j53.isEnabled())
@@ -5814,7 +2758,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setEnabled(false);
 //                    j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -5869,7 +2813,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j64.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j65.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j66.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j62";
 //                    aircraft_pos[1] = "j63";
 //                    aircraft_pos[2] = "j64";
@@ -5907,7 +2851,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j82.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j92.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5930,7 +2874,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j64.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j65.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -5949,7 +2893,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j72.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j82.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5968,7 +2912,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j63.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j64.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -5987,7 +2931,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j72.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j82.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6006,7 +2950,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j62.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j63.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j64.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6021,7 +2965,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setEnabled(false);
 //                    j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j63.isEnabled())
@@ -6035,7 +2979,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setEnabled(false);
 //                    j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -6090,7 +3034,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j74.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j75.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j76.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j72";
 //                    aircraft_pos[1] = "j73";
 //                    aircraft_pos[2] = "j74";
@@ -6128,7 +3072,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j74.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j75.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -6147,7 +3091,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j82.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j92.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6166,7 +3110,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j73.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j74.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6185,7 +3129,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j82.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j92.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6204,7 +3148,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j72.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j73.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j74.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6219,7 +3163,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j82.setEnabled(false);
 //                    j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j73.isEnabled())
@@ -6233,7 +3177,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setEnabled(false);
 //                    j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -6288,7 +3232,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j84.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j85.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j86.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j82";
 //                    aircraft_pos[1] = "j83";
 //                    aircraft_pos[2] = "j84";
@@ -6345,7 +3289,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j82.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j83.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j84.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6364,7 +3308,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j82.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j83.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j84.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6379,7 +3323,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j92.setEnabled(false);
 //                    j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j92.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j83.isEnabled())
@@ -6393,7 +3337,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j83.setEnabled(false);
 //                    j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -6448,7 +3392,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j94.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j95.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j96.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j92";
 //                    aircraft_pos[1] = "j93";
 //                    aircraft_pos[2] = "j94";
@@ -6505,7 +3449,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j92.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j93.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j94.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6524,7 +3468,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j92.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j93.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j94.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6539,7 +3483,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j93.setEnabled(false);
 //                    j92.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j93.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -6609,7 +3553,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j33.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j43.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -6621,7 +3565,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j5.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j6.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j7.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j3";
 //                    aircraft_pos[1] = "j4";
 //                    aircraft_pos[2] = "j5";
@@ -6659,7 +3603,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j23.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j33.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -6682,7 +3626,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j4.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j5.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j6.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -6701,7 +3645,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j3.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j13.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j23.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6720,7 +3664,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j3.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j4.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j5.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6739,7 +3683,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j3.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j13.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j23.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6758,7 +3702,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j3.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j4.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j5.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -6773,7 +3717,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setEnabled(false);
 //                    j3.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j4.isEnabled())
@@ -6787,7 +3731,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j4.setEnabled(false);
 //                    j3.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j4.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -6857,7 +3801,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j43.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j53.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -6869,7 +3813,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j15.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j16.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j17.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j13";
 //                    aircraft_pos[1] = "j14";
 //                    aircraft_pos[2] = "j15";
@@ -6907,7 +3851,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j33.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j43.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -6930,7 +3874,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j14.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j15.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j16.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -6949,7 +3893,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j23.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j33.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6968,7 +3912,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j14.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j15.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -6987,7 +3931,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j23.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j33.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7006,7 +3950,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j13.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j14.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j15.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7021,7 +3965,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setEnabled(false);
 //                    j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j14.isEnabled())
@@ -7035,7 +3979,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j14.setEnabled(false);
 //                    j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j14.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -7105,7 +4049,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j53.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j63.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -7117,7 +4061,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j25.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j26.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j27.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j23";
 //                    aircraft_pos[1] = "j24";
 //                    aircraft_pos[2] = "j25";
@@ -7155,7 +4099,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j43.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j53.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7178,7 +4122,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j24.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j25.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j26.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7197,7 +4141,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j33.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j43.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7216,7 +4160,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j24.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j25.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7235,7 +4179,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j33.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j43.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7254,7 +4198,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j23.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j24.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j25.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7269,7 +4213,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setEnabled(false);
 //                    j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j24.isEnabled())
@@ -7283,7 +4227,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j24.setEnabled(false);
 //                    j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j24.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -7353,7 +4297,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j63.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j73.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -7365,7 +4309,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j35.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j36.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j37.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j33";
 //                    aircraft_pos[1] = "j34";
 //                    aircraft_pos[2] = "j35";
@@ -7403,7 +4347,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j53.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j63.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7426,7 +4370,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j34.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j35.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j36.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7445,7 +4389,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j43.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j53.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7464,7 +4408,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j34.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j35.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7483,7 +4427,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j43.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j53.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7502,7 +4446,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j33.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j34.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j35.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7517,7 +4461,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setEnabled(false);
 //                    j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j33.isEnabled())
@@ -7531,7 +4475,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j34.setEnabled(false);
 //                    j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j34.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -7601,7 +4545,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j73.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j83.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -7613,7 +4557,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j45.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j46.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j47.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j43";
 //                    aircraft_pos[1] = "j44";
 //                    aircraft_pos[2] = "j45";
@@ -7651,7 +4595,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j63.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j73.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7674,7 +4618,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j44.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j45.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j46.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7693,7 +4637,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j53.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j63.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7712,7 +4656,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j44.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j45.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7731,7 +4675,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j53.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j63.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7750,7 +4694,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j43.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j44.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j45.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7765,7 +4709,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setEnabled(false);
 //                    j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j44.isEnabled())
@@ -7779,7 +4723,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j44.setEnabled(false);
 //                    j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j44.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -7849,7 +4793,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
 //                    j83.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
 //                    j93.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "battleship/battleship-v.png";
 //                    path_h = "battleship/battleship-h.png";
 //                }
@@ -7861,7 +4805,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j55.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j56.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j57.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j53";
 //                    aircraft_pos[1] = "j54";
 //                    aircraft_pos[2] = "j55";
@@ -7899,7 +4843,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j73.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j83.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7922,7 +4866,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j54.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j55.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j56.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -7941,7 +4885,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j63.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j73.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7960,7 +4904,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j54.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j55.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -7979,7 +4923,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j63.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j73.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -7998,7 +4942,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j53.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j54.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j55.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -8013,7 +4957,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setEnabled(false);
 //                    j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j54.isEnabled())
@@ -8027,7 +4971,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j54.setEnabled(false);
 //                    j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j54.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -8082,7 +5026,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j65.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j66.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j67.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j63";
 //                    aircraft_pos[1] = "j64";
 //                    aircraft_pos[2] = "j65";
@@ -8120,7 +5064,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
 //                    j83.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
 //                    j93.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-v.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -8143,7 +5087,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j64.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j65.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j66.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -8162,7 +5106,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j73.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j83.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -8181,7 +5125,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j64.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j65.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -8200,7 +5144,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j73.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j83.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -8219,7 +5163,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j63.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j64.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j65.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -8234,7 +5178,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setEnabled(false);
 //                    j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j64.isEnabled())
@@ -8248,7 +5192,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j64.setEnabled(false);
 //                    j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j64.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -8303,7 +5247,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j75.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j76.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j77.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j73";
 //                    aircraft_pos[1] = "j74";
 //                    aircraft_pos[2] = "j75";
@@ -8341,7 +5285,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j74.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
 //                    j75.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
 //                    j76.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0,0), "battleship-v"));
+//                    
 //                    path_v = "submarine/submarine-v.png";
 //                    path_h = "submarine/submarine-h.png";
 //                }
@@ -8360,7 +5304,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
 //                    j83.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
 //                    j93.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -8379,7 +5323,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j74.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j75.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -8398,7 +5342,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
 //                    j83.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
 //                    j93.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-v.png").getImage(), new Point(0,0), "cruiser-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -8417,7 +5361,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j73.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j74.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j75.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -8432,7 +5376,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j83.setEnabled(false);
 //                    j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j74.isEnabled())
@@ -8446,7 +5390,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j74.setEnabled(false);
 //                    j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j74.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -8501,7 +5445,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j85.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j86.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j87.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j83";
 //                    aircraft_pos[1] = "j84";
 //                    aircraft_pos[2] = "j85";
@@ -8558,7 +5502,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j83.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j84.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j85.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -8577,7 +5521,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j83.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j84.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j85.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -8592,7 +5536,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j93.setEnabled(false);
 //                    j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
 //                    j93.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else if (flag == 1 && cur_aircraft == "destroyer" && j84.isEnabled())
@@ -8606,7 +5550,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j84.setEnabled(false);
 //                    j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j84.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -8661,7 +5605,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j95.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
 //                    j96.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
 //                    j97.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("battleship/battleship-h.png").getImage(), new Point(0,0), "battleship-h"));
+//                    
 //                    aircraft_pos[0] = "j93";
 //                    aircraft_pos[1] = "j94";
 //                    aircraft_pos[2] = "j95";
@@ -8718,7 +5662,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j93.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
 //                    j94.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
 //                    j95.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("cruiser/cruiser-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "cruiser/cruiser-v.png";
 //                    path_h = "cruiser/cruiser-h.png";
 //                }
@@ -8737,7 +5681,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j93.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
 //                    j94.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
 //                    j94.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
-//                    j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("destroyer/destroyer-h.png").getImage(), new Point(0,0), "submarine-v"));
+//                    
 //                    path_v = "destroyer/destroyer-v.png";
 //                    path_h = "destroyer/destroyer-h.png";
 //                }
@@ -8752,7 +5696,7 @@ public class Main extends JFrame implements MouseMotionListener
 //                    j94.setEnabled(false);
 //                    j93.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
 //                    j94.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-//                    j.setCursor(Cursor.getDefaultCursor());
+//                    p.remove(cur);
 //                    ai_place();
 //                }
 //                else
@@ -8796,9 +5740,1612 @@ public class Main extends JFrame implements MouseMotionListener
             @Override
             public void mouseClicked(MouseEvent e)
             {
-                if(c == j1)
+                if(c == j1 && j1.isEnabled())
                 {
-                    JOptionPane.showMessageDialog(j, "YES AS USUAL", "Is it working?", JOptionPane.INFORMATION_MESSAGE);
+                    j.remove(l);
+                    j.getContentPane().revalidate();
+                    j.getContentPane().repaint();
+                    if (flag == 0 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j1.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+                        aircraft_pos[0] = "j1";
+                        aircraft_pos[1] = "j11";
+                        aircraft_pos[2] = "j21";
+                        aircraft_pos[3] = "j31";
+                        aircraft_pos[4] = "j41";
+                        j1.setEnabled(false);
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j11.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j1.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j2.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j3.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j4.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j5.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+                        aircraft_pos[0] = "j1";
+                        aircraft_pos[1] = "j2";
+                        aircraft_pos[2] = "j3";
+                        aircraft_pos[3] = "j4";
+                        aircraft_pos[4] = "j5";
+                        j1.setEnabled(false);
+                        j2.setEnabled(false);
+                        j3.setEnabled(false);
+                        j4.setEnabled(false);
+                        j5.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j2.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j3.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j4.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j5.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "battleship" && j11.isEnabled() && j21.isEnabled() && j31.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j1.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j11.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j21.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j31.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+                        battleship_pos[0] = "j1";
+                        battleship_pos[1] = "j11";
+                        battleship_pos[2] = "j21";
+                        battleship_pos[3] = "j31";
+                        j1.setEnabled(false);
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j11.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j21.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+                        
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "battleship" && j2.isEnabled() && j3.isEnabled() && j4.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j1.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j2.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j3.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j4.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+                        battleship_pos[0] = "j1";
+                        battleship_pos[1] = "j2";
+                        battleship_pos[2] = "j3";
+                        battleship_pos[3] = "j4";
+                        j1.setEnabled(false);
+                        j2.setEnabled(false);
+                        j3.setEnabled(false);
+                        j4.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j2.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j3.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j4.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+                        
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "submarine" && j11.isEnabled() && j21.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j1.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j11.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j21.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+                        submarine_pos[0] = "j1";
+                        submarine_pos[1] = "j11";
+                        submarine_pos[2] = "j21";
+                        j1.setEnabled(false);
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j11.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j21.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+                        
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "submarine" && j2.isEnabled() && j3.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j1.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j2.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j3.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+                        submarine_pos[0] = "j1";
+                        submarine_pos[1] = "j2";
+                        submarine_pos[2] = "j3";
+                        j1.setEnabled(false);
+                        j2.setEnabled(false);
+                        j3.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j2.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j3.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+                        
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "cruiser" && j11.isEnabled() && j21.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j1.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j11.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j21.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+                        cruiser_pos[0] = "j1";
+                        cruiser_pos[1] = "j11";
+                        cruiser_pos[2] = "j21";
+                        j1.setEnabled(false);
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j11.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+                        
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "cruiser" && j2.isEnabled() && j3.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j1.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j2.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j3.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+                        cruiser_pos[0] = "j1";
+                        cruiser_pos[1] = "j2";
+                        cruiser_pos[2] = "j3";
+                        j1.setEnabled(false);
+                        j2.setEnabled(false);
+                        j3.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j2.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j3.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+                        
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "destroyer" && j11.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j1.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j11.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        destroyer_pos[0] = "j1";
+                        destroyer_pos[1] = "j11";
+                        j1.setEnabled(false);
+                        j11.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else if (flag == 1 && cur_aircraft == "destroyer" && j2.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j1.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j2.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        destroyer_pos[0] = "j1";
+                        destroyer_pos[1] = "j2";
+                        j1.setEnabled(false);
+                        j2.setEnabled(false);
+                        j1.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j2.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else
+                    {
+                        l.setBounds(200,540,600,50);
+                        l.setForeground(Color.WHITE);
+                        j.add(l);
+                        j.getContentPane().revalidate();
+                        j.getContentPane().repaint();
+                        //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+                    }
+                    System.out.println("Aircraft Carrier : ");
+                    for(int i = 0 ; i < 5 ; i ++)
+                    {
+                        System.out.println(aircraft_pos[i]);
+                    }
+                    System.out.println("Battleship : ");
+                    for(int i = 0 ; i < 4 ; i ++)
+                    {
+                        System.out.println(battleship_pos[i]);
+                    }
+                    System.out.println("Submarine : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(submarine_pos[i]);
+                    }
+                    System.out.println("Cruiser : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(cruiser_pos[i]);
+                    }
+                    System.out.println("Destroyer : ");
+                    for(int i = 0 ; i < 2 ; i ++)
+                    {
+                        System.out.println(destroyer_pos[i]);
+                    }
+                }
+                else if (c == j11 && j11.isEnabled())
+                {
+                    j.remove(l);
+                    j.getContentPane().revalidate();
+                    j.getContentPane().repaint();
+                    if (flag == 0 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+                        aircraft_pos[0] = "j11";
+                        aircraft_pos[1] = "j21";
+                        aircraft_pos[2] = "j31";
+                        aircraft_pos[3] = "j41";
+                        aircraft_pos[4] = "j51";
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j12.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j13.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j14.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j15.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+
+                        aircraft_pos[0] = "j11";
+                        aircraft_pos[1] = "j12";
+                        aircraft_pos[2] = "j13";
+                        aircraft_pos[3] = "j14";
+                        aircraft_pos[4] = "j15";
+                        j11.setEnabled(false);
+                        j12.setEnabled(false);
+                        j13.setEnabled(false);
+                        j14.setEnabled(false);
+                        j15.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j12.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j13.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j14.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j15.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "battleship" && j21.isEnabled() && j31.isEnabled() && j41.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j11.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j21.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j31.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j41.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+                        battleship_pos[0] = "j11";
+                        battleship_pos[1] = "j21";
+                        battleship_pos[2] = "j31";
+                        battleship_pos[3] = "j41";
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j21.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "battleship" && j12.isEnabled() && j13.isEnabled() && j14.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j11.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j12.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j13.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j14.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+                        battleship_pos[0] = "j11";
+                        battleship_pos[1] = "j12";
+                        battleship_pos[2] = "j13";
+                        battleship_pos[3] = "j14";
+                        j11.setEnabled(false);
+                        j12.setEnabled(false);
+                        j13.setEnabled(false);
+                        j14.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j12.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j13.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j14.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "submarine" && j21.isEnabled() && j31.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j11.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j21.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j31.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+                        submarine_pos[0] = "j11";
+                        submarine_pos[1] = "j21";
+                        submarine_pos[2] = "j31";
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j21.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j31.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "submarine" && j12.isEnabled() && j13.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j11.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j12.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j13.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+                        submarine_pos[0] = "j11";
+                        submarine_pos[1] = "j12";
+                        submarine_pos[2] = "j13";
+                        j11.setEnabled(false);
+                        j12.setEnabled(false);
+                        j13.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j12.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j13.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "cruiser" && j21.isEnabled() && j31.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j11.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j21.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j31.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+                        cruiser_pos[0] = "j11";
+                        cruiser_pos[1] = "j21";
+                        cruiser_pos[2] = "j31";
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "cruiser" && j12.isEnabled() && j13.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j11.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j12.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j13.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+                        cruiser_pos[0] = "j11";
+                        cruiser_pos[1] = "j12";
+                        cruiser_pos[2] = "j13";
+                        j11.setEnabled(false);
+                        j12.setEnabled(false);
+                        j13.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j12.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j13.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "destroyer" && j21.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j11.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j21.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        destroyer_pos[0] = "j11";
+                        destroyer_pos[1] = "j21";
+                        j11.setEnabled(false);
+                        j21.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else if (flag == 1 && cur_aircraft == "destroyer" && j12.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j11.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j12.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        destroyer_pos[0] = "j11";
+                        destroyer_pos[1] = "j12";
+                        j11.setEnabled(false);
+                        j12.setEnabled(false);
+                        j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else
+                    {
+                        l.setBounds(200,540,600,50);
+                        l.setForeground(Color.WHITE);
+                        j.add(l);
+                        j.getContentPane().revalidate();
+                        j.getContentPane().repaint();
+                        //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+                    }
+                    System.out.println("Aircraft Carrier : ");
+                    for(int i = 0 ; i < 5 ; i ++)
+                    {
+                        System.out.println(aircraft_pos[i]);
+                    }
+                    System.out.println("Battleship : ");
+                    for(int i = 0 ; i < 4 ; i ++)
+                    {
+                        System.out.println(battleship_pos[i]);
+                    }
+                    System.out.println("Submarine : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(submarine_pos[i]);
+                    }
+                    System.out.println("Cruiser : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(cruiser_pos[i]);
+                    }
+                    System.out.println("Destroyer : ");
+                    for(int i = 0 ; i < 2 ; i ++)
+                    {
+                        System.out.println(destroyer_pos[i]);
+                    }
+                }
+                else if (c == j21 && j21.isEnabled())
+                {
+                    j.remove(l);
+                    j.getContentPane().revalidate();
+                    j.getContentPane().repaint();
+                    if (flag == 0 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+                        aircraft_pos[0] = "j21";
+                        aircraft_pos[1] = "j31";
+                        aircraft_pos[2] = "j41";
+                        aircraft_pos[3] = "j51";
+                        aircraft_pos[4] = "j61";
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j22.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j23.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j24.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j25.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+
+                        aircraft_pos[0] = "j21";
+                        aircraft_pos[1] = "j22";
+                        aircraft_pos[2] = "j23";
+                        aircraft_pos[3] = "j24";
+                        aircraft_pos[4] = "j25";
+                        j21.setEnabled(false);
+                        j22.setEnabled(false);
+                        j23.setEnabled(false);
+                        j24.setEnabled(false);
+                        j25.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j22.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j23.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j24.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j25.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "battleship" && j31.isEnabled() && j41.isEnabled() && j51.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j21.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j31.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j41.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j51.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+                        battleship_pos[0] = "j21";
+                        battleship_pos[1] = "j31";
+                        battleship_pos[2] = "j41";
+                        battleship_pos[3] = "j51";
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "battleship" && j22.isEnabled() && j23.isEnabled() && j24.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j21.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j22.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j23.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j24.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+                        battleship_pos[0] = "j21";
+                        battleship_pos[1] = "j22";
+                        battleship_pos[2] = "j23";
+                        battleship_pos[3] = "j24";
+                        j21.setEnabled(false);
+                        j22.setEnabled(false);
+                        j23.setEnabled(false);
+                        j24.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j22.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j23.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j24.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "submarine" && j31.isEnabled() && j41.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j21.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j31.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j41.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+                        submarine_pos[0] = "j21";
+                        submarine_pos[1] = "j31";
+                        submarine_pos[2] = "j41";
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j31.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j41.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "submarine" && j22.isEnabled() && j23.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j21.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j22.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j23.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+                        submarine_pos[0] = "j21";
+                        submarine_pos[1] = "j22";
+                        submarine_pos[2] = "j23";
+                        j21.setEnabled(false);
+                        j22.setEnabled(false);
+                        j23.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j22.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j23.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "cruiser" && j31.isEnabled() && j41.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j21.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j31.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j41.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+                        cruiser_pos[0] = "j21";
+                        cruiser_pos[1] = "j31";
+                        cruiser_pos[2] = "j41";
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "cruiser" && j22.isEnabled() && j23.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j21.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j22.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j23.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+                        cruiser_pos[0] = "j21";
+                        cruiser_pos[1] = "j22";
+                        cruiser_pos[2] = "j23";
+                        j21.setEnabled(false);
+                        j22.setEnabled(false);
+                        j23.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j22.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j23.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "destroyer" && j31.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j21.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j31.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        destroyer_pos[0] = "j21";
+                        destroyer_pos[1] = "j31";
+                        j21.setEnabled(false);
+                        j31.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else if (flag == 1 && cur_aircraft == "destroyer" && j22.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j21.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j22.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        destroyer_pos[0] = "j21";
+                        destroyer_pos[1] = "j22";
+                        j21.setEnabled(false);
+                        j22.setEnabled(false);
+                        j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else
+                    {
+                        l.setBounds(200,540,600,50);
+                        l.setForeground(Color.WHITE);
+                        j.add(l);
+                        j.getContentPane().revalidate();
+                        j.getContentPane().repaint();
+                        //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+                    }
+                    System.out.println("Aircraft Carrier : ");
+                    for(int i = 0 ; i < 5 ; i ++)
+                    {
+                        System.out.println(aircraft_pos[i]);
+                    }
+                    System.out.println("Battleship : ");
+                    for(int i = 0 ; i < 4 ; i ++)
+                    {
+                        System.out.println(battleship_pos[i]);
+                    }
+                    System.out.println("Submarine : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(submarine_pos[i]);
+                    }
+                    System.out.println("Cruiser : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(cruiser_pos[i]);
+                    }
+                    System.out.println("Destroyer : ");
+                    for(int i = 0 ; i < 2 ; i ++)
+                    {
+                        System.out.println(destroyer_pos[i]);
+                    }
+                }
+                else if (c == j31 && j31.isEnabled())
+                {
+                    j.remove(l);
+                    j.getContentPane().revalidate();
+                    j.getContentPane().repaint();
+                    if (flag == 0 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j71.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+                        aircraft_pos[0] = "j31";
+                        aircraft_pos[1] = "j41";
+                        aircraft_pos[2] = "j51";
+                        aircraft_pos[3] = "j61";
+                        aircraft_pos[4] = "j71";
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j71.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j71.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j32.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j33.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j34.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j35.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+
+                        aircraft_pos[0] = "j31";
+                        aircraft_pos[1] = "j32";
+                        aircraft_pos[2] = "j33";
+                        aircraft_pos[3] = "j34";
+                        aircraft_pos[4] = "j35";
+                        j31.setEnabled(false);
+                        j32.setEnabled(false);
+                        j33.setEnabled(false);
+                        j34.setEnabled(false);
+                        j35.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j32.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j33.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j34.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j35.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "battleship" && j41.isEnabled() && j51.isEnabled() && j61.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j31.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j41.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j51.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j61.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+                        battleship_pos[0] = "j31";
+                        battleship_pos[1] = "j41";
+                        battleship_pos[2] = "j51";
+                        battleship_pos[3] = "j61";
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j61.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "battleship" && j32.isEnabled() && j33.isEnabled() && j34.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j31.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j32.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j33.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j34.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+                        battleship_pos[0] = "j31";
+                        battleship_pos[1] = "j32";
+                        battleship_pos[2] = "j33";
+                        battleship_pos[3] = "j34";
+                        j31.setEnabled(false);
+                        j32.setEnabled(false);
+                        j33.setEnabled(false);
+                        j34.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j32.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j33.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j34.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "submarine" && j41.isEnabled() && j51.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j31.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j41.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j51.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+                        submarine_pos[0] = "j31";
+                        submarine_pos[1] = "j41";
+                        submarine_pos[2] = "j51";
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j41.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j51.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "submarine" && j32.isEnabled() && j33.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j31.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j32.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j33.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+                        submarine_pos[0] = "j31";
+                        submarine_pos[1] = "j32";
+                        submarine_pos[2] = "j33";
+                        j31.setEnabled(false);
+                        j32.setEnabled(false);
+                        j33.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j32.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j33.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "cruiser" && j41.isEnabled() && j51.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j31.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j41.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j51.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+                        cruiser_pos[0] = "j31";
+                        cruiser_pos[1] = "j41";
+                        cruiser_pos[2] = "j51";
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "cruiser" && j32.isEnabled() && j33.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j31.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j32.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j33.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+                        cruiser_pos[0] = "j31";
+                        cruiser_pos[1] = "j32";
+                        cruiser_pos[2] = "j33";
+                        j31.setEnabled(false);
+                        j32.setEnabled(false);
+                        j33.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j32.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j33.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "destroyer" && j41.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j31.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j41.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        destroyer_pos[0] = "j31";
+                        destroyer_pos[1] = "j41";
+                        j31.setEnabled(false);
+                        j41.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j31.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j32.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        destroyer_pos[0] = "j31";
+                        destroyer_pos[1] = "j32";
+                        j31.setEnabled(false);
+                        j32.setEnabled(false);
+                        j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else
+                    {
+                        l.setBounds(200,540,600,50);
+                        l.setForeground(Color.WHITE);
+                        j.add(l);
+                        j.getContentPane().revalidate();
+                        j.getContentPane().repaint();
+                        //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+                    }
+                    System.out.println("Aircraft Carrier : ");
+                    for(int i = 0 ; i < 5 ; i ++)
+                    {
+                        System.out.println(aircraft_pos[i]);
+                    }
+                    System.out.println("Battleship : ");
+                    for(int i = 0 ; i < 4 ; i ++)
+                    {
+                        System.out.println(battleship_pos[i]);
+                    }
+                    System.out.println("Submarine : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(submarine_pos[i]);
+                    }
+                    System.out.println("Cruiser : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(cruiser_pos[i]);
+                    }
+                    System.out.println("Destroyer : ");
+                    for(int i = 0 ; i < 2 ; i ++)
+                    {
+                        System.out.println(destroyer_pos[i]);
+                    }
+                }
+                else if (c == j41 && j41.isEnabled())
+                {
+                    j.remove(l);
+                    j.getContentPane().revalidate();
+                    j.getContentPane().repaint();
+                    if (flag == 0 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j71.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j81.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+                        aircraft_pos[0] = "j41";
+                        aircraft_pos[1] = "j51";
+                        aircraft_pos[2] = "j61";
+                        aircraft_pos[3] = "j71";
+                        aircraft_pos[4] = "j81";
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j71.setEnabled(false);
+                        j81.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j71.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j81.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j42.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j43.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j44.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j45.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+
+                        aircraft_pos[0] = "j41";
+                        aircraft_pos[1] = "j42";
+                        aircraft_pos[2] = "j43";
+                        aircraft_pos[3] = "j44";
+                        aircraft_pos[4] = "j45";
+                        j41.setEnabled(false);
+                        j42.setEnabled(false);
+                        j43.setEnabled(false);
+                        j44.setEnabled(false);
+                        j45.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j42.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j43.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j44.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j45.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "battleship" && j51.isEnabled() && j61.isEnabled() && j71.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j41.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j51.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j61.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j71.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+                        battleship_pos[0] = "j41";
+                        battleship_pos[1] = "j51";
+                        battleship_pos[2] = "j61";
+                        battleship_pos[3] = "j71";
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j71.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j61.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j71.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "battleship" && j42.isEnabled() && j43.isEnabled() && j44.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j41.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j42.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j43.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j44.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+                        battleship_pos[0] = "j41";
+                        battleship_pos[1] = "j42";
+                        battleship_pos[2] = "j43";
+                        battleship_pos[3] = "j44";
+                        j41.setEnabled(false);
+                        j42.setEnabled(false);
+                        j43.setEnabled(false);
+                        j44.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j42.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j43.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j44.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "submarine" && j51.isEnabled() && j61.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j41.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j51.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j61.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+                        submarine_pos[0] = "j41";
+                        submarine_pos[1] = "j51";
+                        submarine_pos[2] = "j61";
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j51.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j61.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "submarine" && j42.isEnabled() && j43.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j41.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j42.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j43.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+                        submarine_pos[0] = "j41";
+                        submarine_pos[1] = "j42";
+                        submarine_pos[2] = "j43";
+                        j41.setEnabled(false);
+                        j42.setEnabled(false);
+                        j43.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j42.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j43.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "cruiser" && j51.isEnabled() && j61.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j41.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j51.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j61.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+                        cruiser_pos[0] = "j41";
+                        cruiser_pos[1] = "j51";
+                        cruiser_pos[2] = "j61";
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j61.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "cruiser" && j42.isEnabled() && j43.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j41.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j42.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j43.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+                        cruiser_pos[0] = "j41";
+                        cruiser_pos[1] = "j42";
+                        cruiser_pos[2] = "j43";
+                        j41.setEnabled(false);
+                        j42.setEnabled(false);
+                        j43.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j42.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j43.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "destroyer" && j51.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j41.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j51.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        destroyer_pos[0] = "j41";
+                        destroyer_pos[1] = "j51";
+                        j41.setEnabled(false);
+                        j51.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else if (flag == 1 && cur_aircraft == "destroyer" && j42.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j41.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j42.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        destroyer_pos[0] = "j41";
+                        destroyer_pos[1] = "j42";
+                        j41.setEnabled(false);
+                        j42.setEnabled(false);
+                        j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else
+                    {
+                        l.setBounds(200,540,600,50);
+                        l.setForeground(Color.WHITE);
+                        j.add(l);
+                        j.getContentPane().revalidate();
+                        j.getContentPane().repaint();
+                        //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+                    }
+                    System.out.println("Aircraft Carrier : ");
+                    for(int i = 0 ; i < 5 ; i ++)
+                    {
+                        System.out.println(aircraft_pos[i]);
+                    }
+                    System.out.println("Battleship : ");
+                    for(int i = 0 ; i < 4 ; i ++)
+                    {
+                        System.out.println(battleship_pos[i]);
+                    }
+                    System.out.println("Submarine : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(submarine_pos[i]);
+                    }
+                    System.out.println("Cruiser : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(cruiser_pos[i]);
+                    }
+                    System.out.println("Destroyer : ");
+                    for(int i = 0 ; i < 2 ; i ++)
+                    {
+                        System.out.println(destroyer_pos[i]);
+                    }
+                }
+                else if (c == j51 && j51.isEnabled())
+                {
+                    j.remove(l);
+                    j.getContentPane().revalidate();
+                    j.getContentPane().repaint();
+                    if (flag == 0 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j71.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j81.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j91.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+                        aircraft_pos[0] = "j51";
+                        aircraft_pos[1] = "j61";
+                        aircraft_pos[2] = "j71";
+                        aircraft_pos[3] = "j81";
+                        aircraft_pos[4] = "j91";
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j71.setEnabled(false);
+                        j81.setEnabled(false);
+                        j91.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
+                        j61.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-2.png"));
+                        j71.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-3.png"));
+                        j81.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-4.png"));
+                        j91.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-5.png"));
+
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+                    {
+                        cur_aircraft = "battleship";
+                        j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j52.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j53.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j54.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j55.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+
+                        aircraft_pos[0] = "j51";
+                        aircraft_pos[1] = "j52";
+                        aircraft_pos[2] = "j53";
+                        aircraft_pos[3] = "j54";
+                        aircraft_pos[4] = "j55";
+                        j51.setEnabled(false);
+                        j52.setEnabled(false);
+                        j53.setEnabled(false);
+                        j54.setEnabled(false);
+                        j55.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
+                        j52.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-2.png"));
+                        j53.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-3.png"));
+                        j54.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-4.png"));
+                        j55.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-5.png"));
+                        path_v = "battleship/battleship-v.png";
+                        path_h = "battleship/battleship-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "battleship" && j61.isEnabled() && j71.isEnabled() && j81.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j51.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j61.setIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j71.setIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j81.setIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+                        battleship_pos[0] = "j51";
+                        battleship_pos[1] = "j61";
+                        battleship_pos[2] = "j71";
+                        battleship_pos[3] = "j81";
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j71.setEnabled(false);
+                        j81.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
+                        j61.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-2.png"));
+                        j71.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-3.png"));
+                        j81.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "battleship" && j52.isEnabled() && j53.isEnabled() && j54.isEnabled())
+                    {
+                        cur_aircraft = "submarine";
+                        j51.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j52.setIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j53.setIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j54.setIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+                        battleship_pos[0] = "j51";
+                        battleship_pos[1] = "j52";
+                        battleship_pos[2] = "j53";
+                        battleship_pos[3] = "j54";
+                        j51.setEnabled(false);
+                        j52.setEnabled(false);
+                        j53.setEnabled(false);
+                        j54.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
+                        j52.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
+                        j53.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
+                        j54.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
+
+                        path_v = "submarine/submarine-v.png";
+                        path_h = "submarine/submarine-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "submarine" && j61.isEnabled() && j71.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j51.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j61.setIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j71.setIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+                        submarine_pos[0] = "j51";
+                        submarine_pos[1] = "j61";
+                        submarine_pos[2] = "j71";
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j71.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
+                        j61.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-2.png"));
+                        j71.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "submarine" && j52.isEnabled() && j53.isEnabled())
+                    {
+                        cur_aircraft = "cruiser";
+                        j51.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j52.setIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j53.setIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+                        submarine_pos[0] = "j51";
+                        submarine_pos[1] = "j52";
+                        submarine_pos[2] = "j53";
+                        j51.setEnabled(false);
+                        j52.setEnabled(false);
+                        j53.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
+                        j52.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
+                        j53.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
+
+                        path_v = "cruiser/cruiser-v.png";
+                        path_h = "cruiser/cruiser-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "cruiser" && j61.isEnabled() && j71.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j51.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j61.setIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j71.setIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+                        cruiser_pos[0] = "j51";
+                        cruiser_pos[1] = "j61";
+                        cruiser_pos[2] = "j71";
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j71.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
+                        j61.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-2.png"));
+                        j71.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_v));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 1 && cur_aircraft == "cruiser" && j52.isEnabled() && j53.isEnabled())
+                    {
+                        cur_aircraft = "destroyer";
+                        j51.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j52.setIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j53.setIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+                        cruiser_pos[0] = "j51";
+                        cruiser_pos[1] = "j52";
+                        cruiser_pos[2] = "j53";
+                        j51.setEnabled(false);
+                        j52.setEnabled(false);
+                        j53.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
+                        j52.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-2.png"));
+                        j53.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-3.png"));
+
+                        path_v = "destroyer/destroyer-v.png";
+                        path_h = "destroyer/destroyer-h.png";
+                        cur.setIcon(new ImageIcon(path_h));
+                        cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                        cur.repaint();
+                    }
+                    else if (flag == 0 && cur_aircraft == "destroyer" && j61.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j51.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j61.setIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        destroyer_pos[0] = "j51";
+                        destroyer_pos[1] = "j61";
+                        j51.setEnabled(false);
+                        j61.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
+                        j61.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else if (flag == 1 && cur_aircraft == "destroyer" && j52.isEnabled())
+                    {
+                        cur_aircraft = "finished";
+                        j51.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j52.setIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        destroyer_pos[0] = "j51";
+                        destroyer_pos[1] = "j52";
+                        j51.setEnabled(false);
+                        j52.setEnabled(false);
+                        j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
+                        j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
+                        p.remove(cur);
+                        p.remove(cur);
+                        ai_place();
+                    }
+                    else
+                    {
+                        l.setBounds(200,540,600,50);
+                        l.setForeground(Color.WHITE);
+                        j.add(l);
+                        j.getContentPane().revalidate();
+                        j.getContentPane().repaint();
+                        //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+                    }
+                    System.out.println("Aircraft Carrier : ");
+                    for(int i = 0 ; i < 5 ; i ++)
+                    {
+                        System.out.println(aircraft_pos[i]);
+                    }
+                    System.out.println("Battleship : ");
+                    for(int i = 0 ; i < 4 ; i ++)
+                    {
+                        System.out.println(battleship_pos[i]);
+                    }
+                    System.out.println("Submarine : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(submarine_pos[i]);
+                    }
+                    System.out.println("Cruiser : ");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        System.out.println(cruiser_pos[i]);
+                    }
+                    System.out.println("Destroyer : ");
+                    for(int i = 0 ; i < 2 ; i ++)
+                    {
+                        System.out.println(destroyer_pos[i]);
+                    }
                 }
             }
 
@@ -8846,9 +7393,11 @@ public class Main extends JFrame implements MouseMotionListener
     }
     public void mouseMoved(MouseEvent e)
     {
-        cur.setBounds(e.getPoint().x, e.getPoint().y, x_or, y_or);
-        p.add(cur);
+        cur.setBounds(e.getPoint().x, e.getPoint().y, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+        //p.add(cur);
         cur.repaint();
+        System.out.println(cur.getPreferredSize().getWidth());
+        System.out.println(cur.getPreferredSize().getHeight());
         xpos = e.getPoint().x;
         ypos = e.getPoint().y;
         System.out.println(xpos);
@@ -8859,8 +7408,10 @@ public class Main extends JFrame implements MouseMotionListener
 
     public void mouseDragged(MouseEvent e)
     {
-        cur.setBounds(e.getPoint().x, e.getPoint().y, x_or, y_or);
-        p.add(cur);
+        cur.setBounds(e.getPoint().x, e.getPoint().y, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+        System.out.println(cur.getPreferredSize().getWidth());
+        System.out.println(cur.getPreferredSize().getHeight());
+        //p.add(cur);
         cur.repaint();
         xpos = e.getPoint().x;
         ypos = e.getPoint().y;
