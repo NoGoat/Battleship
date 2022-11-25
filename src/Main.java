@@ -10866,6 +10866,15 @@ public class Main extends JFrame implements MouseMotionListener
                 {
                     j94Call();
                 }
+                else
+                {
+                    l.setBounds(200,540,600,50);
+                    l.setForeground(Color.WHITE);
+                    j.add(l);
+                    j.getContentPane().revalidate();
+                    j.getContentPane().repaint();
+                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+                }
             }
 
             @Override
