@@ -2639,7 +2639,7 @@ public class Main extends JFrame implements MouseMotionListener
             j82.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j83.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j84.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -2807,7 +2807,7 @@ public class Main extends JFrame implements MouseMotionListener
             j92.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j93.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j94.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -5019,7 +5019,7 @@ public class Main extends JFrame implements MouseMotionListener
             j83.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j84.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j85.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -5187,7 +5187,7 @@ public class Main extends JFrame implements MouseMotionListener
             j93.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j94.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j95.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -7399,7 +7399,7 @@ public class Main extends JFrame implements MouseMotionListener
             j84.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j85.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j86.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -7564,7 +7564,7 @@ public class Main extends JFrame implements MouseMotionListener
             j94.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j95.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j96.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -9776,7 +9776,7 @@ public class Main extends JFrame implements MouseMotionListener
             j85.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j86.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j87.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -9941,7 +9941,7 @@ public class Main extends JFrame implements MouseMotionListener
             j95.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j96.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j97.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            j.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("submarine/submarine-h.png").getImage(), new Point(0, 0), "battleship-v"));
+            
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -10471,7 +10471,7 @@ public class Main extends JFrame implements MouseMotionListener
         j97.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
         j98.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
         j99.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j100.setBorder(BorderFactory.createLineBorder(Color.RED, 3, false));
+        j100.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
         this.j.add(j1);
         this.j.add(j2);
         this.j.add(j3);
@@ -10912,10 +10912,10 @@ public class Main extends JFrame implements MouseMotionListener
     {
         Main m = new Main();
         System.out.println("Huh. You are running this from a console. Be prepared to see all the stuff that I was using to test the game left in here.\n BTW I'm not dumb enough to leave in the Computer's moves in here. So, you can't cheat :)");
-        m.j.setLocation(533,86); //This line is present for a convoluted reason. I use i3-wm and I have modified my config to un-tile and float the application. But, I cannot figure out a way in the config to open it in the middle of the screen. So, I am currently doing it via the code. It will be removed once development is complete.
+        m.j.setLocation(533,66); //This line is present for a convoluted reason. I use i3-wm and I have modified my config to un-tile and float the application. But, I cannot figure out a way in the config to open it in the middle of the screen. So, I am currently doing it via the code. It will be removed once development is complete.
         m.j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         m.j.setLayout(null);
-        m.j.setSize(800,600);
+        m.j.setSize(800,675);
         m.welcome_screen();
         m.j.setVisible(true);
     }
