@@ -12,7 +12,7 @@ public class Main extends JFrame implements MouseMotionListener
     JLabel cur = new JLabel(new ImageIcon("aircraft-carrier/aircraft-v.png"));
     JPanel p = new JPanel();
     int flag = 0;
-    int xpos = 0 , ypos = 0;
+    int xpos = 0 , ypos = 0 , xoffset = 25, yoffset = 10;
     String[] aircraft_pos = new String[5];
     String[] battleship_pos = new String[4];
     String[] submarine_pos = new String[3];
@@ -10372,106 +10372,106 @@ public class Main extends JFrame implements MouseMotionListener
         j98.setBorderPainted(false);
         j99.setBorderPainted(false);
         j100.setBorderPainted(false);
-        j1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j2.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j4.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j5.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j6.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j7.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j8.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j9.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j10.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j11.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j12.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j13.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j14.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j15.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j16.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j17.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j18.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j19.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j20.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j21.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j22.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j23.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j24.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j25.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j26.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j27.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j28.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j29.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j30.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j31.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j32.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j33.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j34.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j35.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j36.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j37.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j38.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j39.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j40.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j41.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j42.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j43.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j44.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j45.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j46.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j47.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j48.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j49.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j50.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j51.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j52.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j53.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j54.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j55.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j56.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j57.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j58.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j59.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j60.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j61.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j62.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j63.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j64.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j65.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j66.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j67.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j68.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j69.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j70.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j71.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j72.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j73.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j74.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j75.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j76.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j77.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j78.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j79.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j80.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j81.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j82.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j83.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j84.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j85.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j86.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j87.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j88.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j89.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j90.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j91.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j92.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j93.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j94.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j95.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j96.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j97.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j98.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j99.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
-        j100.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3, false));
+        j1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j3.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j4.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j5.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j6.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j7.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j8.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j9.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j10.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j11.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j12.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j13.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j14.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j15.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j16.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j17.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j18.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j19.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j20.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j21.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j22.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j23.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j24.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j25.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j26.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j27.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j28.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j29.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j30.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j31.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j32.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j33.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j34.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j35.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j36.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j37.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j38.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j39.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j40.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j41.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j42.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j43.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j44.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j45.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j46.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j47.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j48.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j49.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j50.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j51.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j52.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j53.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j54.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j55.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j56.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j57.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j58.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j59.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j60.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j61.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j62.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j63.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j64.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j65.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j66.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j67.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j68.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j69.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j70.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j71.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j72.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j73.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j74.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j75.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j76.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j77.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j78.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j79.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j80.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j81.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j82.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j83.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j84.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j85.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j86.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j87.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j88.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j89.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j90.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j91.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j92.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j93.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j94.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j95.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j96.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j97.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j98.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j99.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        j100.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
         this.j.add(j1);
         this.j.add(j2);
         this.j.add(j3);
@@ -10591,6 +10591,10 @@ public class Main extends JFrame implements MouseMotionListener
                     System.out.println("Hello again");
                     if (flag == 0)
                     {
+                        xoffset = 10;
+                        yoffset = 25;
+                        System.out.println("X Offset : "+xoffset);
+                        System.out.println("Y Offset : "+yoffset);
                         System.out.println("Hello for the third time");
                         if (cur_aircraft.equals("aircraft-carrier"))
                         {
@@ -10599,7 +10603,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 1;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if (cur_aircraft.equals("battleship"))
@@ -10609,7 +10613,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 1;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if (cur_aircraft.equals("submarine"))
@@ -10619,7 +10623,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 1;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if (cur_aircraft.equals("cruiser"))
@@ -10629,7 +10633,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 1;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if (cur_aircraft.equals("destroyer"))
@@ -10639,19 +10643,23 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 1;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                     }
                     else
                     {
+                        xoffset = 25;
+                        yoffset = 10;
+                        System.out.println("X Offset : "+xoffset);
+                        System.out.println("Y Offset : "+yoffset);
                         if(cur_aircraft.equals("aircraft-carrier"))
                         {
                             cur.setIcon(new ImageIcon("aircraft-carrier/aircraft-v.png"));
                             flag = 0;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if(cur_aircraft.equals("battleship"))
@@ -10660,7 +10668,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 0;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if(cur_aircraft.equals("submarine"))
@@ -10669,7 +10677,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 0;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if(cur_aircraft.equals("cruiser"))
@@ -10678,7 +10686,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 0;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                         else if(cur_aircraft.equals("destroyer"))
@@ -10687,7 +10695,7 @@ public class Main extends JFrame implements MouseMotionListener
                             flag = 0;
                             System.out.println("XPOS : " + xpos);
                             System.out.println("YPOS : " + ypos);
-                            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+                            cur.setBounds(po.x - xoffset, po.y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
                             p.repaint();
                         }
                     }
@@ -10921,13 +10929,13 @@ public class Main extends JFrame implements MouseMotionListener
     }
     public void mouseMoved(MouseEvent e)
     {
-        cur.setBounds(e.getPoint().x, e.getPoint().y, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+        cur.setBounds(e.getPoint().x - xoffset, e.getPoint().y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
         //p.add(cur);
         cur.repaint();
         System.out.println(cur.getPreferredSize().getWidth());
         System.out.println(cur.getPreferredSize().getHeight());
-        xpos = e.getPoint().x;
-        ypos = e.getPoint().y;
+        xpos = e.getPoint().x - xoffset;
+        ypos = e.getPoint().y - yoffset;
         System.out.println(xpos);
         System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j.getContentPane());
@@ -10937,13 +10945,13 @@ public class Main extends JFrame implements MouseMotionListener
 
     public void mouseDragged(MouseEvent e)
     {
-        cur.setBounds(e.getPoint().x, e.getPoint().y, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
+        cur.setBounds(e.getPoint().x - xoffset, e.getPoint().y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
         System.out.println(cur.getPreferredSize().getWidth());
         System.out.println(cur.getPreferredSize().getHeight());
         //p.add(cur);
         cur.repaint();
-        xpos = e.getPoint().x;
-        ypos = e.getPoint().y;
+        xpos = e.getPoint().x - xoffset;
+        ypos = e.getPoint().y - yoffset;
         System.out.println(xpos);
         System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j.getContentPane());
