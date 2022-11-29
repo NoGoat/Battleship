@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.Console;
+import java.io.File;
+import java.io.FileWriter;
 
 public class Main extends JFrame implements MouseMotionListener
 {
@@ -2640,7 +2642,7 @@ public class Main extends JFrame implements MouseMotionListener
             j82.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j83.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j84.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -2808,7 +2810,7 @@ public class Main extends JFrame implements MouseMotionListener
             j92.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j93.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j94.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -5020,7 +5022,7 @@ public class Main extends JFrame implements MouseMotionListener
             j83.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j84.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j85.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -5188,7 +5190,7 @@ public class Main extends JFrame implements MouseMotionListener
             j93.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j94.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j95.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -7400,7 +7402,7 @@ public class Main extends JFrame implements MouseMotionListener
             j84.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j85.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j86.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -7565,7 +7567,7 @@ public class Main extends JFrame implements MouseMotionListener
             j94.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j95.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j96.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -9777,7 +9779,7 @@ public class Main extends JFrame implements MouseMotionListener
             j85.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j86.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j87.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -9942,7 +9944,7 @@ public class Main extends JFrame implements MouseMotionListener
             j95.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-2.png"));
             j96.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-3.png"));
             j97.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-4.png"));
-            
+
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
             cur.setIcon(new ImageIcon(path_h));
@@ -22374,6 +22376,40 @@ public class Main extends JFrame implements MouseMotionListener
     }
     public void ai_place()
     {
+        try
+        {
+            FileWriter fw = new FileWriter("logs/logfile.txt", true);
+            fw.write("Aircraft Carrier : \n");
+            for(int i = 0 ; i < 5 ; i ++)
+            {
+                fw.write(aircraft_pos[i] + "\n");
+            }
+            fw.write("Battleship : \n");
+            for(int i = 0 ; i < 4 ; i ++)
+            {
+                fw.write(battleship_pos[i] + "\n");
+            }
+            fw.write("Submarine : \n");
+            for(int i = 0 ; i < 3 ; i ++)
+            {
+                fw.write(submarine_pos[i] + "\n");
+            }
+            fw.write("Cruiser : \n");
+            for(int i = 0 ; i < 3 ; i ++)
+            {
+                fw.write(cruiser_pos[i] + "\n");
+            }
+            fw.write("Destroyer : \n");
+            for(int i = 0 ; i < 2 ; i ++)
+            {
+                fw.write(destroyer_pos[i] + "\n");
+            }
+            fw.close();
+        }
+        catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(j, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
         j.getContentPane().revalidate();
         j.getContentPane().repaint();
         JOptionPane.showMessageDialog(j, "This is a placeholder. No functionality has been implemented so far", "Information", JOptionPane.INFORMATION_MESSAGE);
@@ -22381,6 +22417,24 @@ public class Main extends JFrame implements MouseMotionListener
     public static void main(String[] args)
     {
         Main m = new Main();
+        try
+        {
+            new File("logs/").mkdirs();
+        }
+        catch (Exception ex)
+        {
+
+        }
+        try
+        {
+            FileWriter f = new FileWriter("logs/logfile.txt");
+            f.write("");
+            f.close();
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
         System.out.println("Huh. You are running this from a console. Be prepared to see all the stuff that I was using to test the game left in here.\n BTW I'm not dumb enough to leave in the Computer's moves in here. So, you can't cheat :)");
         m.j.setLocation(533,66); //This line is present for a convoluted reason. I use i3-wm and I have modified my config to un-tile and float the application. But, I cannot figure out a way in the config to open it in the middle of the screen. So, I am currently doing it via the code. It will be removed once development is complete.
         m.j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
