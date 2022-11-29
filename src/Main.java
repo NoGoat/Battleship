@@ -7,9 +7,12 @@ import java.awt.image.BufferedImage;
 import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Random;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    Random r = new Random();
+    long seed = r.nextInt();
     BufferedImage cursorImg = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
     Cursor blankCursor = Toolkit.getDefaultToolkit().createCustomCursor(cursorImg, new Point(0, 0), "blank cursor");
     Point po;
@@ -19,6 +22,8 @@ public class Main extends JFrame implements MouseMotionListener
     JPanel p = new JPanel();
     int flag = 0;
     int xpos = 0 , ypos = 0 , xoffset = 25, yoffset = 10;
+
+    int[] com_air_grid = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89,90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100};
     int[] com_air_place_h = new int[60];
     int[] com_air_place_v = new int[60];
     int[] com_bat_place_h = new int[70];
@@ -34,6 +39,11 @@ public class Main extends JFrame implements MouseMotionListener
     String[] submarine_pos = new String[3];
     String[] cruiser_pos = new String[3];
     String[] destroyer_pos = new String[2];
+    int[] com_aircraft_pos = new int[5];
+    int[] com_battleship_pos = new int[4];
+    int[] com_submarine_pos = new int[3];
+    int[] com_cruiser_pos = new int[3];
+    int[] com_destroyer_pos = new int[2];
     JLabel l = new JLabel("That is an invalid move - Please try another move");
     String path_h = "aircraft-carrier/aircraft-h.png";
     String path_v = "aircraft-carrier/aircraft-v.png";
@@ -23150,6 +23160,126 @@ public class Main extends JFrame implements MouseMotionListener
         j.getContentPane().revalidate();
         j.getContentPane().repaint();
         com_gen();
+        JOptionPane.showMessageDialog(j,"Seed : "+seed, "Seed", JOptionPane.INFORMATION_MESSAGE);
+        while (true)
+        {
+            r.setSeed(seed);
+            int success = 0;
+            int or = Math.abs(r.nextInt());
+            or = or % 2;
+            if(or == 0)
+            {
+                int temp_flag = 0;
+                int pos = Math.abs(r.nextInt());
+                pos = pos % 60;
+                int pos1 = com_air_place_h[pos];
+                int pos2 = pos1 + 1;
+                int pos3 = pos2 + 1;
+                int pos4 = pos3 + 1;
+                int pos5 = pos4 + 1;
+                com_aircraft_pos[0] = pos1;
+                com_aircraft_pos[1] = pos2;
+                com_aircraft_pos[2] = pos3;
+                com_aircraft_pos[3] = pos4;
+                com_aircraft_pos[4] = pos5;
+                for(int i = 0; i < com_air_grid.length; i++)
+                {
+                    if(com_air_grid[i] == pos1)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos2)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos3)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos4)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos5)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    if(temp_flag == 4)
+                    {
+                        success = 1;
+                        break;
+                    }
+                }
+                if (success == 1)
+                {
+                    break;
+                }
+            }
+            else if (or == 1)
+            {
+                int temp_flag = 0;
+                int pos = Math.abs(r.nextInt());
+                pos = pos % 60;
+                int pos1 = com_air_place_v[pos];
+                int pos2 = pos1 + 10;
+                int pos3 = pos2 + 10;
+                int pos4 = pos3 + 10;
+                int pos5 = pos4 + 10;
+                com_aircraft_pos[0] = pos1;
+                com_aircraft_pos[1] = pos2;
+                com_aircraft_pos[2] = pos3;
+                com_aircraft_pos[3] = pos4;
+                com_aircraft_pos[4] = pos5;
+                for(int i = 0; i < com_air_grid.length; i++)
+                {
+                    if(com_air_grid[i] == pos1)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos2)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos3)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos4)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    else if(com_air_grid[i] == pos5)
+                    {
+                        com_air_grid[i] = 0;
+                        temp_flag++;
+                    }
+                    if(temp_flag == 4)
+                    {
+                        success = 1;
+                        break;
+                    }
+                }
+                if (success == 1)
+                {
+                    break;
+                }
+            }
+        }
+        System.out.println("Computer Positions:\nAircraft Carrier:");
+        System.out.println(com_aircraft_pos[0]);
+        System.out.println(com_aircraft_pos[1]);
+        System.out.println(com_aircraft_pos[2]);
+        System.out.println(com_aircraft_pos[3]);
+        System.out.println(com_aircraft_pos[4]);
     }
     void com_gen()
     {
@@ -23504,6 +23634,7 @@ public class Main extends JFrame implements MouseMotionListener
         System.out.println(cur.getPreferredSize().getHeight());
         xpos = e.getPoint().x - xoffset;
         ypos = e.getPoint().y - yoffset;
+        seed = seed + xpos + ypos;
         System.out.println(xpos);
         System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j.getContentPane());
@@ -23520,6 +23651,7 @@ public class Main extends JFrame implements MouseMotionListener
         cur.repaint();
         xpos = e.getPoint().x - xoffset;
         ypos = e.getPoint().y - yoffset;
+        seed = seed + xpos + ypos;
         System.out.println(xpos);
         System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j.getContentPane());
