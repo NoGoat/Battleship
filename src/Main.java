@@ -3,12 +3,15 @@ import com.sun.javafx.geom.ConcentricShapePair;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    BufferedImage cursorImg = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
+    Cursor blankCursor = Toolkit.getDefaultToolkit().createCustomCursor(cursorImg, new Point(0, 0), "blank cursor");
     Point po;
     Component c;
     JLabel cur = new JLabel(new ImageIcon("aircraft-carrier/aircraft-v.png"));
@@ -16,6 +19,16 @@ public class Main extends JFrame implements MouseMotionListener
     JPanel p = new JPanel();
     int flag = 0;
     int xpos = 0 , ypos = 0 , xoffset = 25, yoffset = 10;
+    int[] com_air_place_h = new int[60];
+    int[] com_air_place_v = new int[60];
+    int[] com_bat_place_h = new int[70];
+    int[] com_bat_place_v = new int[70];
+    int[] com_sub_place_h = new int[80];
+    int[] com_sub_place_v = new int[80];
+    int[] com_cru_place_h = new int[80];
+    int[] com_cru_place_v = new int[80];
+    int[] com_des_place_h = new int[90];
+    int[] com_des_place_v = new int[90];
     String[] aircraft_pos = new String[5];
     String[] battleship_pos = new String[4];
     String[] submarine_pos = new String[3];
@@ -745,8 +758,12 @@ public class Main extends JFrame implements MouseMotionListener
             j11.setEnabled(false);
             j1.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j2.isEnabled())
         {
@@ -759,8 +776,12 @@ public class Main extends JFrame implements MouseMotionListener
             j2.setEnabled(false);
             j1.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j2.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -1013,8 +1034,12 @@ public class Main extends JFrame implements MouseMotionListener
             j21.setEnabled(false);
             j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j12.isEnabled())
         {
@@ -1027,8 +1052,12 @@ public class Main extends JFrame implements MouseMotionListener
             j12.setEnabled(false);
             j11.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -1281,8 +1310,12 @@ public class Main extends JFrame implements MouseMotionListener
             j31.setEnabled(false);
             j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j22.isEnabled())
         {
@@ -1295,8 +1328,12 @@ public class Main extends JFrame implements MouseMotionListener
             j22.setEnabled(false);
             j21.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -1549,8 +1586,12 @@ public class Main extends JFrame implements MouseMotionListener
             j41.setEnabled(false);
             j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
         {
@@ -1563,8 +1604,12 @@ public class Main extends JFrame implements MouseMotionListener
             j32.setEnabled(false);
             j31.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -1817,8 +1862,12 @@ public class Main extends JFrame implements MouseMotionListener
             j51.setEnabled(false);
             j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j42.isEnabled())
         {
@@ -1831,8 +1880,12 @@ public class Main extends JFrame implements MouseMotionListener
             j42.setEnabled(false);
             j41.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -2085,8 +2138,12 @@ public class Main extends JFrame implements MouseMotionListener
             j61.setEnabled(false);
             j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j61.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j52.isEnabled())
         {
@@ -2099,9 +2156,12 @@ public class Main extends JFrame implements MouseMotionListener
             j52.setEnabled(false);
             j51.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -2324,8 +2384,12 @@ public class Main extends JFrame implements MouseMotionListener
             j71.setEnabled(false);
             j61.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j71.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j62.isEnabled())
         {
@@ -2338,8 +2402,12 @@ public class Main extends JFrame implements MouseMotionListener
             j62.setEnabled(false);
             j61.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -2536,8 +2604,12 @@ public class Main extends JFrame implements MouseMotionListener
             j81.setEnabled(false);
             j71.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j81.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j72.isEnabled())
         {
@@ -2550,8 +2622,12 @@ public class Main extends JFrame implements MouseMotionListener
             j72.setEnabled(false);
             j71.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -2704,8 +2780,12 @@ public class Main extends JFrame implements MouseMotionListener
             j91.setEnabled(false);
             j81.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j91.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j82.isEnabled())
         {
@@ -2718,8 +2798,12 @@ public class Main extends JFrame implements MouseMotionListener
             j82.setEnabled(false);
             j81.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -2872,8 +2956,12 @@ public class Main extends JFrame implements MouseMotionListener
             j92.setEnabled(false);
             j91.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j92.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -3126,8 +3214,12 @@ public class Main extends JFrame implements MouseMotionListener
             j12.setEnabled(false);
             j2.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j3.isEnabled())
         {
@@ -3140,8 +3232,12 @@ public class Main extends JFrame implements MouseMotionListener
             j3.setEnabled(false);
             j2.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j3.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -3394,8 +3490,12 @@ public class Main extends JFrame implements MouseMotionListener
             j22.setEnabled(false);
             j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j13.isEnabled())
         {
@@ -3408,8 +3508,12 @@ public class Main extends JFrame implements MouseMotionListener
             j13.setEnabled(false);
             j12.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -3662,8 +3766,12 @@ public class Main extends JFrame implements MouseMotionListener
             j32.setEnabled(false);
             j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j23.isEnabled())
         {
@@ -3676,8 +3784,12 @@ public class Main extends JFrame implements MouseMotionListener
             j23.setEnabled(false);
             j22.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -3930,8 +4042,12 @@ public class Main extends JFrame implements MouseMotionListener
             j42.setEnabled(false);
             j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
         {
@@ -3944,8 +4060,12 @@ public class Main extends JFrame implements MouseMotionListener
             j33.setEnabled(false);
             j32.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -4198,8 +4318,12 @@ public class Main extends JFrame implements MouseMotionListener
             j52.setEnabled(false);
             j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j43.isEnabled())
         {
@@ -4212,8 +4336,12 @@ public class Main extends JFrame implements MouseMotionListener
             j43.setEnabled(false);
             j42.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -4466,8 +4594,12 @@ public class Main extends JFrame implements MouseMotionListener
             j62.setEnabled(false);
             j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j53.isEnabled())
         {
@@ -4480,8 +4612,12 @@ public class Main extends JFrame implements MouseMotionListener
             j53.setEnabled(false);
             j52.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -4704,8 +4840,12 @@ public class Main extends JFrame implements MouseMotionListener
             j72.setEnabled(false);
             j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j63.isEnabled())
         {
@@ -4718,8 +4858,12 @@ public class Main extends JFrame implements MouseMotionListener
             j63.setEnabled(false);
             j62.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -4916,8 +5060,12 @@ public class Main extends JFrame implements MouseMotionListener
             j82.setEnabled(false);
             j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j73.isEnabled())
         {
@@ -4930,8 +5078,12 @@ public class Main extends JFrame implements MouseMotionListener
             j73.setEnabled(false);
             j72.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -5084,8 +5236,12 @@ public class Main extends JFrame implements MouseMotionListener
             j92.setEnabled(false);
             j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j92.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j83.isEnabled())
         {
@@ -5098,8 +5254,12 @@ public class Main extends JFrame implements MouseMotionListener
             j83.setEnabled(false);
             j82.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -5252,8 +5412,12 @@ public class Main extends JFrame implements MouseMotionListener
             j93.setEnabled(false);
             j92.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j93.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -5506,8 +5670,12 @@ public class Main extends JFrame implements MouseMotionListener
             j13.setEnabled(false);
             j3.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j4.isEnabled())
         {
@@ -5520,8 +5688,12 @@ public class Main extends JFrame implements MouseMotionListener
             j4.setEnabled(false);
             j3.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j4.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -5774,8 +5946,12 @@ public class Main extends JFrame implements MouseMotionListener
             j23.setEnabled(false);
             j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j14.isEnabled())
         {
@@ -5788,8 +5964,12 @@ public class Main extends JFrame implements MouseMotionListener
             j14.setEnabled(false);
             j13.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j14.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -6042,8 +6222,12 @@ public class Main extends JFrame implements MouseMotionListener
             j33.setEnabled(false);
             j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j24.isEnabled())
         {
@@ -6056,8 +6240,12 @@ public class Main extends JFrame implements MouseMotionListener
             j24.setEnabled(false);
             j23.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j24.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -6310,8 +6498,12 @@ public class Main extends JFrame implements MouseMotionListener
             j43.setEnabled(false);
             j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j34.isEnabled())
         {
@@ -6324,8 +6516,12 @@ public class Main extends JFrame implements MouseMotionListener
             j34.setEnabled(false);
             j33.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j34.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -6578,8 +6774,12 @@ public class Main extends JFrame implements MouseMotionListener
             j53.setEnabled(false);
             j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j44.isEnabled())
         {
@@ -6592,8 +6792,12 @@ public class Main extends JFrame implements MouseMotionListener
             j44.setEnabled(false);
             j43.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j44.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -6846,8 +7050,12 @@ public class Main extends JFrame implements MouseMotionListener
             j63.setEnabled(false);
             j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j54.isEnabled())
         {
@@ -6860,8 +7068,12 @@ public class Main extends JFrame implements MouseMotionListener
             j54.setEnabled(false);
             j53.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j54.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -7084,8 +7296,12 @@ public class Main extends JFrame implements MouseMotionListener
             j73.setEnabled(false);
             j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j64.isEnabled())
         {
@@ -7098,8 +7314,12 @@ public class Main extends JFrame implements MouseMotionListener
             j64.setEnabled(false);
             j63.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j64.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -7296,8 +7516,12 @@ public class Main extends JFrame implements MouseMotionListener
             j83.setEnabled(false);
             j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j74.isEnabled())
         {
@@ -7310,8 +7534,12 @@ public class Main extends JFrame implements MouseMotionListener
             j74.setEnabled(false);
             j73.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j74.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -7461,8 +7689,12 @@ public class Main extends JFrame implements MouseMotionListener
             j93.setEnabled(false);
             j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j93.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j84.isEnabled())
         {
@@ -7475,8 +7707,12 @@ public class Main extends JFrame implements MouseMotionListener
             j84.setEnabled(false);
             j83.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j84.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -7629,8 +7865,12 @@ public class Main extends JFrame implements MouseMotionListener
             j94.setEnabled(false);
             j93.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j94.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -7883,8 +8123,12 @@ public class Main extends JFrame implements MouseMotionListener
             j14.setEnabled(false);
             j4.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j14.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j5.isEnabled())
         {
@@ -7897,8 +8141,12 @@ public class Main extends JFrame implements MouseMotionListener
             j5.setEnabled(false);
             j4.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j5.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -8151,8 +8399,12 @@ public class Main extends JFrame implements MouseMotionListener
             j24.setEnabled(false);
             j14.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j24.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j15.isEnabled())
         {
@@ -8165,8 +8417,12 @@ public class Main extends JFrame implements MouseMotionListener
             j15.setEnabled(false);
             j14.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j15.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -8419,8 +8675,12 @@ public class Main extends JFrame implements MouseMotionListener
             j34.setEnabled(false);
             j24.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j34.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j25.isEnabled())
         {
@@ -8433,8 +8693,12 @@ public class Main extends JFrame implements MouseMotionListener
             j25.setEnabled(false);
             j24.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j25.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -8687,8 +8951,12 @@ public class Main extends JFrame implements MouseMotionListener
             j44.setEnabled(false);
             j34.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j44.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j35.isEnabled())
         {
@@ -8701,8 +8969,12 @@ public class Main extends JFrame implements MouseMotionListener
             j35.setEnabled(false);
             j34.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j35.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -8955,8 +9227,12 @@ public class Main extends JFrame implements MouseMotionListener
             j54.setEnabled(false);
             j44.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j54.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j45.isEnabled())
         {
@@ -8969,8 +9245,12 @@ public class Main extends JFrame implements MouseMotionListener
             j45.setEnabled(false);
             j44.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j45.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -9223,8 +9503,12 @@ public class Main extends JFrame implements MouseMotionListener
             j64.setEnabled(false);
             j54.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j64.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j55.isEnabled())
         {
@@ -9237,8 +9521,12 @@ public class Main extends JFrame implements MouseMotionListener
             j55.setEnabled(false);
             j54.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j55.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -9461,8 +9749,12 @@ public class Main extends JFrame implements MouseMotionListener
             j74.setEnabled(false);
             j64.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j74.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j65.isEnabled())
         {
@@ -9475,8 +9767,12 @@ public class Main extends JFrame implements MouseMotionListener
             j65.setEnabled(false);
             j64.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j65.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -9673,8 +9969,12 @@ public class Main extends JFrame implements MouseMotionListener
             j84.setEnabled(false);
             j74.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j84.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j75.isEnabled())
         {
@@ -9687,8 +9987,12 @@ public class Main extends JFrame implements MouseMotionListener
             j75.setEnabled(false);
             j74.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j75.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -9838,8 +10142,12 @@ public class Main extends JFrame implements MouseMotionListener
             j94.setEnabled(false);
             j84.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j94.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j85.isEnabled())
         {
@@ -9852,8 +10160,12 @@ public class Main extends JFrame implements MouseMotionListener
             j85.setEnabled(false);
             j84.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j85.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -10006,8 +10318,12 @@ public class Main extends JFrame implements MouseMotionListener
             j95.setEnabled(false);
             j94.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j95.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -10260,8 +10576,12 @@ public class Main extends JFrame implements MouseMotionListener
             j15.setEnabled(false);
             j5.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j15.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j6.isEnabled())
         {
@@ -10274,8 +10594,12 @@ public class Main extends JFrame implements MouseMotionListener
             j6.setEnabled(false);
             j5.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j6.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -10528,8 +10852,12 @@ public class Main extends JFrame implements MouseMotionListener
             j25.setEnabled(false);
             j15.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j25.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j16.isEnabled())
         {
@@ -10542,8 +10870,12 @@ public class Main extends JFrame implements MouseMotionListener
             j16.setEnabled(false);
             j15.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j16.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -10796,8 +11128,12 @@ public class Main extends JFrame implements MouseMotionListener
             j35.setEnabled(false);
             j25.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j35.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j26.isEnabled())
         {
@@ -10810,8 +11146,12 @@ public class Main extends JFrame implements MouseMotionListener
             j26.setEnabled(false);
             j25.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j26.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -11064,8 +11404,12 @@ public class Main extends JFrame implements MouseMotionListener
             j45.setEnabled(false);
             j35.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j45.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j36.isEnabled())
         {
@@ -11078,8 +11422,12 @@ public class Main extends JFrame implements MouseMotionListener
             j36.setEnabled(false);
             j35.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j36.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -11332,8 +11680,12 @@ public class Main extends JFrame implements MouseMotionListener
             j55.setEnabled(false);
             j45.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j55.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j46.isEnabled())
         {
@@ -11346,8 +11698,12 @@ public class Main extends JFrame implements MouseMotionListener
             j46.setEnabled(false);
             j45.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j46.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -11600,8 +11956,12 @@ public class Main extends JFrame implements MouseMotionListener
             j65.setEnabled(false);
             j55.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j65.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j56.isEnabled())
         {
@@ -11614,8 +11974,12 @@ public class Main extends JFrame implements MouseMotionListener
             j56.setEnabled(false);
             j55.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j56.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -11838,8 +12202,12 @@ public class Main extends JFrame implements MouseMotionListener
             j75.setEnabled(false);
             j65.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j75.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j66.isEnabled())
         {
@@ -11852,8 +12220,12 @@ public class Main extends JFrame implements MouseMotionListener
             j66.setEnabled(false);
             j65.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j66.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -12050,8 +12422,12 @@ public class Main extends JFrame implements MouseMotionListener
             j85.setEnabled(false);
             j75.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j85.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j76.isEnabled())
         {
@@ -12064,8 +12440,12 @@ public class Main extends JFrame implements MouseMotionListener
             j76.setEnabled(false);
             j75.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j76.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -12215,8 +12595,12 @@ public class Main extends JFrame implements MouseMotionListener
             j95.setEnabled(false);
             j85.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j95.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j86.isEnabled())
         {
@@ -12229,8 +12613,12 @@ public class Main extends JFrame implements MouseMotionListener
             j86.setEnabled(false);
             j85.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j86.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -12383,8 +12771,12 @@ public class Main extends JFrame implements MouseMotionListener
             j96.setEnabled(false);
             j95.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j96.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -12637,8 +13029,12 @@ public class Main extends JFrame implements MouseMotionListener
             j16.setEnabled(false);
             j6.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j16.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j7.isEnabled())
         {
@@ -12651,8 +13047,12 @@ public class Main extends JFrame implements MouseMotionListener
             j7.setEnabled(false);
             j6.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j7.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -12905,8 +13305,12 @@ public class Main extends JFrame implements MouseMotionListener
             j26.setEnabled(false);
             j16.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j26.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j17.isEnabled())
         {
@@ -12919,8 +13323,12 @@ public class Main extends JFrame implements MouseMotionListener
             j17.setEnabled(false);
             j16.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j17.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -13173,8 +13581,12 @@ public class Main extends JFrame implements MouseMotionListener
             j36.setEnabled(false);
             j26.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j36.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j27.isEnabled())
         {
@@ -13187,8 +13599,12 @@ public class Main extends JFrame implements MouseMotionListener
             j27.setEnabled(false);
             j26.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j27.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -13441,8 +13857,12 @@ public class Main extends JFrame implements MouseMotionListener
             j46.setEnabled(false);
             j36.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j46.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j37.isEnabled())
         {
@@ -13455,8 +13875,12 @@ public class Main extends JFrame implements MouseMotionListener
             j37.setEnabled(false);
             j36.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j37.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -13709,8 +14133,12 @@ public class Main extends JFrame implements MouseMotionListener
             j56.setEnabled(false);
             j46.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j56.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j47.isEnabled())
         {
@@ -13723,8 +14151,12 @@ public class Main extends JFrame implements MouseMotionListener
             j47.setEnabled(false);
             j46.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j47.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -13977,8 +14409,12 @@ public class Main extends JFrame implements MouseMotionListener
             j66.setEnabled(false);
             j56.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j66.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j57.isEnabled())
         {
@@ -13991,8 +14427,12 @@ public class Main extends JFrame implements MouseMotionListener
             j57.setEnabled(false);
             j56.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j57.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -14215,8 +14655,12 @@ public class Main extends JFrame implements MouseMotionListener
             j76.setEnabled(false);
             j66.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j76.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j67.isEnabled())
         {
@@ -14229,8 +14673,12 @@ public class Main extends JFrame implements MouseMotionListener
             j67.setEnabled(false);
             j66.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j67.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -14427,8 +14875,12 @@ public class Main extends JFrame implements MouseMotionListener
             j86.setEnabled(false);
             j76.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j86.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j77.isEnabled())
         {
@@ -14441,8 +14893,12 @@ public class Main extends JFrame implements MouseMotionListener
             j77.setEnabled(false);
             j76.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j77.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -14592,8 +15048,12 @@ public class Main extends JFrame implements MouseMotionListener
             j96.setEnabled(false);
             j86.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j96.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j87.isEnabled())
         {
@@ -14606,8 +15066,12 @@ public class Main extends JFrame implements MouseMotionListener
             j87.setEnabled(false);
             j86.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j87.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -14760,8 +15224,12 @@ public class Main extends JFrame implements MouseMotionListener
             j97.setEnabled(false);
             j96.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j97.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -14984,8 +15452,12 @@ public class Main extends JFrame implements MouseMotionListener
             j17.setEnabled(false);
             j7.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j17.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j8.isEnabled())
         {
@@ -14998,8 +15470,12 @@ public class Main extends JFrame implements MouseMotionListener
             j8.setEnabled(false);
             j7.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j8.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -15222,8 +15698,12 @@ public class Main extends JFrame implements MouseMotionListener
             j27.setEnabled(false);
             j17.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j27.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j18.isEnabled())
         {
@@ -15236,8 +15716,12 @@ public class Main extends JFrame implements MouseMotionListener
             j18.setEnabled(false);
             j17.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j18.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -15460,8 +15944,12 @@ public class Main extends JFrame implements MouseMotionListener
             j37.setEnabled(false);
             j27.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j37.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j28.isEnabled())
         {
@@ -15474,8 +15962,12 @@ public class Main extends JFrame implements MouseMotionListener
             j28.setEnabled(false);
             j27.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j28.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -15698,8 +16190,12 @@ public class Main extends JFrame implements MouseMotionListener
             j47.setEnabled(false);
             j37.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j47.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j38.isEnabled())
         {
@@ -15712,8 +16208,12 @@ public class Main extends JFrame implements MouseMotionListener
             j38.setEnabled(false);
             j37.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j38.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -15936,8 +16436,12 @@ public class Main extends JFrame implements MouseMotionListener
             j57.setEnabled(false);
             j47.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j57.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j48.isEnabled())
         {
@@ -15950,8 +16454,12 @@ public class Main extends JFrame implements MouseMotionListener
             j48.setEnabled(false);
             j47.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j48.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -16174,8 +16682,12 @@ public class Main extends JFrame implements MouseMotionListener
             j67.setEnabled(false);
             j57.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j67.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j58.isEnabled())
         {
@@ -16188,8 +16700,12 @@ public class Main extends JFrame implements MouseMotionListener
             j58.setEnabled(false);
             j57.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j58.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -16382,8 +16898,12 @@ public class Main extends JFrame implements MouseMotionListener
             j77.setEnabled(false);
             j67.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j77.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j68.isEnabled())
         {
@@ -16396,8 +16916,12 @@ public class Main extends JFrame implements MouseMotionListener
             j68.setEnabled(false);
             j67.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j68.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -16564,8 +17088,12 @@ public class Main extends JFrame implements MouseMotionListener
             j87.setEnabled(false);
             j77.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j87.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j78.isEnabled())
         {
@@ -16578,8 +17106,12 @@ public class Main extends JFrame implements MouseMotionListener
             j78.setEnabled(false);
             j77.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j78.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -16699,8 +17231,12 @@ public class Main extends JFrame implements MouseMotionListener
             j97.setEnabled(false);
             j87.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j97.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j88.isEnabled())
         {
@@ -16713,8 +17249,12 @@ public class Main extends JFrame implements MouseMotionListener
             j88.setEnabled(false);
             j87.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j88.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -16837,8 +17377,12 @@ public class Main extends JFrame implements MouseMotionListener
             j98.setEnabled(false);
             j97.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j98.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -17035,8 +17579,12 @@ public class Main extends JFrame implements MouseMotionListener
             j18.setEnabled(false);
             j8.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j18.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j9.isEnabled())
         {
@@ -17049,8 +17597,12 @@ public class Main extends JFrame implements MouseMotionListener
             j9.setEnabled(false);
             j8.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j9.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -17247,8 +17799,12 @@ public class Main extends JFrame implements MouseMotionListener
             j28.setEnabled(false);
             j18.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j28.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j19.isEnabled())
         {
@@ -17261,8 +17817,12 @@ public class Main extends JFrame implements MouseMotionListener
             j19.setEnabled(false);
             j18.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j19.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -17459,8 +18019,12 @@ public class Main extends JFrame implements MouseMotionListener
             j38.setEnabled(false);
             j28.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j38.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j28.isEnabled())
         {
@@ -17473,8 +18037,12 @@ public class Main extends JFrame implements MouseMotionListener
             j29.setEnabled(false);
             j28.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j29.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -17671,8 +18239,12 @@ public class Main extends JFrame implements MouseMotionListener
             j48.setEnabled(false);
             j38.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j48.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j39.isEnabled())
         {
@@ -17685,8 +18257,12 @@ public class Main extends JFrame implements MouseMotionListener
             j39.setEnabled(false);
             j38.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j39.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -17883,8 +18459,12 @@ public class Main extends JFrame implements MouseMotionListener
             j58.setEnabled(false);
             j48.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j58.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j49.isEnabled())
         {
@@ -17897,8 +18477,12 @@ public class Main extends JFrame implements MouseMotionListener
             j49.setEnabled(false);
             j48.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j49.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -18095,8 +18679,12 @@ public class Main extends JFrame implements MouseMotionListener
             j68.setEnabled(false);
             j58.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j68.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j59.isEnabled())
         {
@@ -18109,8 +18697,12 @@ public class Main extends JFrame implements MouseMotionListener
             j59.setEnabled(false);
             j58.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j59.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -18277,8 +18869,12 @@ public class Main extends JFrame implements MouseMotionListener
             j78.setEnabled(false);
             j68.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j78.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j69.isEnabled())
         {
@@ -18291,8 +18887,12 @@ public class Main extends JFrame implements MouseMotionListener
             j69.setEnabled(false);
             j68.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j69.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -18433,8 +19033,12 @@ public class Main extends JFrame implements MouseMotionListener
             j88.setEnabled(false);
             j78.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j88.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j79.isEnabled())
         {
@@ -18447,8 +19051,12 @@ public class Main extends JFrame implements MouseMotionListener
             j79.setEnabled(false);
             j78.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j79.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -18542,8 +19150,12 @@ public class Main extends JFrame implements MouseMotionListener
             j98.setEnabled(false);
             j88.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j98.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j89.isEnabled())
         {
@@ -18556,8 +19168,12 @@ public class Main extends JFrame implements MouseMotionListener
             j89.setEnabled(false);
             j88.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j89.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -18654,8 +19270,12 @@ public class Main extends JFrame implements MouseMotionListener
             j99.setEnabled(false);
             j98.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j99.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -18808,8 +19428,12 @@ public class Main extends JFrame implements MouseMotionListener
             j19.setEnabled(false);
             j9.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j19.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j10.isEnabled())
         {
@@ -18822,8 +19446,12 @@ public class Main extends JFrame implements MouseMotionListener
             j10.setEnabled(false);
             j9.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j10.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -18976,8 +19604,12 @@ public class Main extends JFrame implements MouseMotionListener
             j29.setEnabled(false);
             j19.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j29.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j20.isEnabled())
         {
@@ -18990,8 +19622,12 @@ public class Main extends JFrame implements MouseMotionListener
             j20.setEnabled(false);
             j19.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j20.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -19144,8 +19780,12 @@ public class Main extends JFrame implements MouseMotionListener
             j39.setEnabled(false);
             j29.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j39.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j29.isEnabled())
         {
@@ -19158,8 +19798,12 @@ public class Main extends JFrame implements MouseMotionListener
             j30.setEnabled(false);
             j29.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j30.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -19312,8 +19956,12 @@ public class Main extends JFrame implements MouseMotionListener
             j49.setEnabled(false);
             j39.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j49.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j40.isEnabled())
         {
@@ -19326,8 +19974,12 @@ public class Main extends JFrame implements MouseMotionListener
             j40.setEnabled(false);
             j39.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j40.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -19480,8 +20132,12 @@ public class Main extends JFrame implements MouseMotionListener
             j59.setEnabled(false);
             j49.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j59.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j50.isEnabled())
         {
@@ -19494,8 +20150,12 @@ public class Main extends JFrame implements MouseMotionListener
             j50.setEnabled(false);
             j49.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j50.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -19648,8 +20308,12 @@ public class Main extends JFrame implements MouseMotionListener
             j69.setEnabled(false);
             j59.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j69.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j60.isEnabled())
         {
@@ -19662,8 +20326,12 @@ public class Main extends JFrame implements MouseMotionListener
             j60.setEnabled(false);
             j59.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j60.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -19786,8 +20454,12 @@ public class Main extends JFrame implements MouseMotionListener
             j79.setEnabled(false);
             j69.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j79.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j70.isEnabled())
         {
@@ -19800,8 +20472,12 @@ public class Main extends JFrame implements MouseMotionListener
             j70.setEnabled(false);
             j69.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j70.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -19898,8 +20574,12 @@ public class Main extends JFrame implements MouseMotionListener
             j89.setEnabled(false);
             j79.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j89.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j80.isEnabled())
         {
@@ -19912,8 +20592,12 @@ public class Main extends JFrame implements MouseMotionListener
             j80.setEnabled(false);
             j79.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j80.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -19966,8 +20650,12 @@ public class Main extends JFrame implements MouseMotionListener
             j99.setEnabled(false);
             j89.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j99.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j90.isEnabled())
         {
@@ -19980,8 +20668,12 @@ public class Main extends JFrame implements MouseMotionListener
             j90.setEnabled(false);
             j89.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j90.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -20034,8 +20726,12 @@ public class Main extends JFrame implements MouseMotionListener
             j100.setEnabled(false);
             j99.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
             j100.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -20188,8 +20884,12 @@ public class Main extends JFrame implements MouseMotionListener
             j20.setEnabled(false);
             j10.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j20.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -20342,8 +21042,12 @@ public class Main extends JFrame implements MouseMotionListener
             j30.setEnabled(false);
             j20.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j30.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -20496,8 +21200,12 @@ public class Main extends JFrame implements MouseMotionListener
             j40.setEnabled(false);
             j30.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j40.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -20650,8 +21358,12 @@ public class Main extends JFrame implements MouseMotionListener
             j50.setEnabled(false);
             j40.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j50.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -20804,8 +21516,12 @@ public class Main extends JFrame implements MouseMotionListener
             j60.setEnabled(false);
             j50.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j60.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -20958,8 +21674,12 @@ public class Main extends JFrame implements MouseMotionListener
             j70.setEnabled(false);
             j60.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j70.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -21082,8 +21802,12 @@ public class Main extends JFrame implements MouseMotionListener
             j80.setEnabled(false);
             j70.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j80.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -21180,8 +21904,12 @@ public class Main extends JFrame implements MouseMotionListener
             j90.setEnabled(false);
             j80.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j90.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -21234,8 +21962,12 @@ public class Main extends JFrame implements MouseMotionListener
             j100.setEnabled(false);
             j90.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
             j100.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-2.png"));
-            p.remove(cur);
-            ai_place();
+            cur.setIcon(new ImageIcon("crosshair.png"));
+            cur.setPreferredSize(new Dimension(50, 50));
+            xoffset = 25;
+            yoffset = 25;
+            p.setCursor(blankCursor);
+            com_place();
         }
         else
         {
@@ -22374,7 +23106,7 @@ public class Main extends JFrame implements MouseMotionListener
             }
         });
     }
-    public void ai_place()
+    public void com_place()
     {
         try
         {
@@ -22410,9 +23142,327 @@ public class Main extends JFrame implements MouseMotionListener
         {
             JOptionPane.showMessageDialog(j, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+
         j.getContentPane().revalidate();
         j.getContentPane().repaint();
-        JOptionPane.showMessageDialog(j, "This is a placeholder. No functionality has been implemented so far", "Information", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(j, "This is a placeholder. No functionality has been implemented so far", "Information", JOptionPane.INFORMATION_MESSAGE);
+//        p.setVisible(false);
+        j.getContentPane().revalidate();
+        j.getContentPane().repaint();
+        com_gen();
+    }
+    void com_gen()
+    {
+        for(int i = 0, j = 1 ; i < 60; i++)
+        {
+            com_air_place_h[i] = j;
+            System.out.println(com_air_place_h[i]);
+            if (j == 6)
+            {
+                j = 11;
+            }
+            else if (j == 16)
+            {
+                j = 21;
+            }
+            else if (j == 26)
+            {
+                j = 31;
+            }
+            else if (j == 36)
+            {
+                j = 41;
+            }
+            else if (j == 46)
+            {
+                j = 51;
+            }
+            else if (j == 56)
+            {
+                j = 61;
+            }
+            else if (j == 66)
+            {
+                j = 71;
+            }
+            else if (j == 76)
+            {
+                j = 81;
+            }
+            else if (j == 86)
+            {
+                j = 91;
+            }
+            else if (j == 96)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 60; i++)
+        {
+            com_air_place_v[i] = j;
+            System.out.println(com_air_place_v[i]);
+            if (j == 60)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 70; i++)
+        {
+            com_bat_place_h[i] = j;
+            System.out.println(com_bat_place_h[i]);
+            if (j == 7)
+            {
+                j = 11;
+            }
+            else if (j == 17)
+            {
+                j = 21;
+            }
+            else if (j == 27)
+            {
+                j = 31;
+            }
+            else if (j == 37)
+            {
+                j = 41;
+            }
+            else if (j == 47)
+            {
+                j = 51;
+            }
+            else if (j == 57)
+            {
+                j = 61;
+            }
+            else if (j == 67)
+            {
+                j = 71;
+            }
+            else if (j == 77)
+            {
+                j = 81;
+            }
+            else if (j == 87)
+            {
+                j = 91;
+            }
+            else if (j == 97)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 70; i++)
+        {
+            com_bat_place_v[i] = j;
+            System.out.println(com_bat_place_v[i]);
+            if (j == 70)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 80; i++)
+        {
+            com_sub_place_h[i] = j;
+            System.out.println(com_sub_place_h[i]);
+            if (j == 8)
+            {
+                j = 11;
+            }
+            else if (j == 18)
+            {
+                j = 21;
+            }
+            else if (j == 28)
+            {
+                j = 31;
+            }
+            else if (j == 38)
+            {
+                j = 41;
+            }
+            else if (j == 48)
+            {
+                j = 51;
+            }
+            else if (j == 58)
+            {
+                j = 61;
+            }
+            else if (j == 68)
+            {
+                j = 71;
+            }
+            else if (j == 78)
+            {
+                j = 81;
+            }
+            else if (j == 88)
+            {
+                j = 91;
+            }
+            else if (j == 98)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 80; i++)
+        {
+            com_sub_place_v[i] = j;
+            System.out.println(com_sub_place_v[i]);
+            if (j == 80)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 80; i++)
+        {
+            com_cru_place_h[i] = j;
+            System.out.println(com_cru_place_h[i]);
+            if (j == 8)
+            {
+                j = 11;
+            }
+            else if (j == 18)
+            {
+                j = 21;
+            }
+            else if (j == 28)
+            {
+                j = 31;
+            }
+            else if (j == 38)
+            {
+                j = 41;
+            }
+            else if (j == 48)
+            {
+                j = 51;
+            }
+            else if (j == 58)
+            {
+                j = 61;
+            }
+            else if (j == 68)
+            {
+                j = 71;
+            }
+            else if (j == 78)
+            {
+                j = 81;
+            }
+            else if (j == 88)
+            {
+                j = 91;
+            }
+            else if (j == 98)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 80; i++)
+        {
+            com_cru_place_v[i] = j;
+            System.out.println(com_cru_place_v[i]);
+            if (j == 80)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 90; i++)
+        {
+            com_des_place_h[i] = j;
+            System.out.println(com_des_place_h[i]);
+            if (j == 9)
+            {
+                j = 11;
+            }
+            else if (j == 19)
+            {
+                j = 21;
+            }
+            else if (j == 29)
+            {
+                j = 31;
+            }
+            else if (j == 39)
+            {
+                j = 41;
+            }
+            else if (j == 49)
+            {
+                j = 51;
+            }
+            else if (j == 59)
+            {
+                j = 61;
+            }
+            else if (j == 69)
+            {
+                j = 71;
+            }
+            else if (j == 79)
+            {
+                j = 81;
+            }
+            else if (j == 89)
+            {
+                j = 91;
+            }
+            else if (j == 99)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        for(int i = 0, j = 1 ; i < 90; i++)
+        {
+            com_des_place_v[i] = j;
+            System.out.println(com_des_place_v[i]);
+            if (j == 90)
+            {
+                break;
+            }
+            else
+            {
+                j++;
+            }
+        }
     }
     public static void main(String[] args)
     {
