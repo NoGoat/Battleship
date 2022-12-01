@@ -12,6 +12,442 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    MouseListener ml = new MouseListener()
+    {
+        @Override
+        public void mouseClicked(MouseEvent e)
+        {
+            if(c == j1 && j1.isEnabled())
+            {
+                j1Call();
+            }
+            else if (c == j11 && j11.isEnabled())
+            {
+                j11Call();
+            }
+            else if (c == j21 && j21.isEnabled())
+            {
+                j21Call();
+            }
+            else if (c == j31 && j31.isEnabled())
+            {
+                j31Call();
+            }
+            else if (c == j41 && j41.isEnabled())
+            {
+                j41Call();
+            }
+            else if (c == j51 && j51.isEnabled())
+            {
+                j51Call();
+            }
+            else if (c == j61 && j61.isEnabled())
+            {
+                j61Call();
+            }
+            else if (c == j71 && j71.isEnabled())
+            {
+                j71Call();
+            }
+            else if (c == j81 && j81.isEnabled())
+            {
+                j81Call();
+            }
+            else if (c == j91 && j91.isEnabled())
+            {
+                j91Call();
+            }
+            else if (c == j2 && j2.isEnabled())
+            {
+                j2Call();
+            }
+            else if (c == j12 && j12.isEnabled())
+            {
+                j12Call();
+            }
+            else if (c == j22 && j22.isEnabled())
+            {
+                j22Call();
+            }
+            else if (c == j32 && j32.isEnabled())
+            {
+                j32Call();
+            }
+            else if (c == j42 && j42.isEnabled())
+            {
+                j42Call();
+            }
+            else if (c == j52 && j52.isEnabled())
+            {
+                j52Call();
+            }
+            else if (c == j62 && j62.isEnabled())
+            {
+                j62Call();
+            }
+            else if (c == j72 && j72.isEnabled())
+            {
+                j72Call();
+            }
+            else if (c == j82 && j82.isEnabled())
+            {
+                j82Call();
+            }
+            else if (c == j92 && j92.isEnabled())
+            {
+                j92Call();
+            }
+            else if (c == j3 && j3.isEnabled())
+            {
+                j3Call();
+            }
+            else if (c == j13 && j13.isEnabled())
+            {
+                j13Call();
+            }
+            else if (c == j23 && j23.isEnabled())
+            {
+                j23Call();
+            }
+            else if (c == j33 && j33.isEnabled())
+            {
+                j33Call();
+            }
+            else if (c == j43 && j43.isEnabled())
+            {
+                j43Call();
+            }
+            else if (c == j53 && j53.isEnabled())
+            {
+                j53Call();
+            }
+            else if (c == j63 && j63.isEnabled())
+            {
+                j63Call();
+            }
+            else if (c == j73 && j73.isEnabled())
+            {
+                j73Call();
+            }
+            else if (c == j83 && j83.isEnabled())
+            {
+                j83Call();
+            }
+            else if (c == j93 && j93.isEnabled())
+            {
+                j93Call();
+            }
+            else if (c == j4 && j4.isEnabled())
+            {
+                j4Call();
+            }
+            else if (c == j14 && j14.isEnabled())
+            {
+                j14Call();
+            }
+            else if (c == j24 && j24.isEnabled())
+            {
+                j24Call();
+            }
+            else if (c == j34 && j34.isEnabled())
+            {
+                j34Call();
+            }
+            else if (c == j44 && j44.isEnabled())
+            {
+                j44Call();
+            }
+            else if (c == j54 && j54.isEnabled())
+            {
+                j54Call();
+            }
+            else if (c == j64 && j64.isEnabled())
+            {
+                j64Call();
+            }
+            else if (c == j74 && j74.isEnabled())
+            {
+                j74Call();
+            }
+            else if (c == j84 && j84.isEnabled())
+            {
+                j84Call();
+            }
+            else if (c == j94 && j94.isEnabled())
+            {
+                j94Call();
+            }
+            else if (c == j5 && j5.isEnabled())
+            {
+                j5Call();
+            }
+            else if (c == j15 && j15.isEnabled())
+            {
+                j15Call();
+            }
+            else if (c == j25 && j25.isEnabled())
+            {
+                j25Call();
+            }
+            else if (c == j35 && j35.isEnabled())
+            {
+                j35Call();
+            }
+            else if (c == j45 && j45.isEnabled())
+            {
+                j45Call();
+            }
+            else if (c == j55 && j55.isEnabled())
+            {
+                j55Call();
+            }
+            else if (c == j65 && j65.isEnabled())
+            {
+                j65Call();
+            }
+            else if (c == j75 && j75.isEnabled())
+            {
+                j75Call();
+            }
+            else if (c == j85 && j85.isEnabled())
+            {
+                j85Call();
+            }
+            else if (c == j95 && j95.isEnabled())
+            {
+                j95Call();
+            }
+            else if (c == j6 && j6.isEnabled())
+            {
+                j6Call();
+            }
+            else if (c == j16 && j16.isEnabled())
+            {
+                j16Call();
+            }
+            else if (c == j26 && j26.isEnabled())
+            {
+                j26Call();
+            }
+            else if (c == j36 && j36.isEnabled())
+            {
+                j36Call();
+            }
+            else if (c == j46 && j46.isEnabled())
+            {
+                j46Call();
+            }
+            else if (c == j56 && j56.isEnabled())
+            {
+                j56Call();
+            }
+            else if (c == j66 && j66.isEnabled())
+            {
+                j66Call();
+            }
+            else if (c == j76 && j76.isEnabled())
+            {
+                j76Call();
+            }
+            else if (c == j86 && j86.isEnabled())
+            {
+                j86Call();
+            }
+            else if (c == j96 && j96.isEnabled())
+            {
+                j96Call();
+            }
+            else if (c == j7 && j7.isEnabled())
+            {
+                j7Call();
+            }
+            else if (c == j17 && j17.isEnabled())
+            {
+                j17Call();
+            }
+            else if (c == j27 && j27.isEnabled())
+            {
+                j27Call();
+            }
+            else if (c == j37 && j37.isEnabled())
+            {
+                j37Call();
+            }
+            else if (c == j47 && j47.isEnabled())
+            {
+                j47Call();
+            }
+            else if (c == j57 && j57.isEnabled())
+            {
+                j57Call();
+            }
+            else if (c == j67 && j67.isEnabled())
+            {
+                j67Call();
+            }
+            else if (c == j77 && j77.isEnabled())
+            {
+                j77Call();
+            }
+            else if (c == j87 && j87.isEnabled())
+            {
+                j87Call();
+            }
+            else if (c == j97 && j97.isEnabled())
+            {
+                j97Call();
+            }
+            else if (c == j8 && j8.isEnabled())
+            {
+                j8Call();
+            }
+            else if (c == j18 && j17.isEnabled())
+            {
+                j18Call();
+            }
+            else if (c == j28 && j28.isEnabled())
+            {
+                j28Call();
+            }
+            else if (c == j38 && j38.isEnabled())
+            {
+                j38Call();
+            }
+            else if (c == j48 && j48.isEnabled())
+            {
+                j48Call();
+            }
+            else if (c == j58 && j58.isEnabled())
+            {
+                j58Call();
+            }
+            else if (c == j68 && j68.isEnabled())
+            {
+                j68Call();
+            }
+            else if (c == j78 && j78.isEnabled())
+            {
+                j78Call();
+            }
+            else if (c == j88 && j88.isEnabled())
+            {
+                j88Call();
+            }
+            else if (c == j98 && j98.isEnabled())
+            {
+                j98Call();
+            }
+            else if (c == j9 && j9.isEnabled())
+            {
+                j9Call();
+            }
+            else if (c == j19 && j19.isEnabled())
+            {
+                j19Call();
+            }
+            else if (c == j29 && j29.isEnabled())
+            {
+                j29Call();
+            }
+            else if (c == j39 && j39.isEnabled())
+            {
+                j39Call();
+            }
+            else if (c == j49 && j49.isEnabled())
+            {
+                j49Call();
+            }
+            else if (c == j59 && j59.isEnabled())
+            {
+                j59Call();
+            }
+            else if (c == j69 && j69.isEnabled())
+            {
+                j69Call();
+            }
+            else if (c == j79 && j79.isEnabled())
+            {
+                j79Call();
+            }
+            else if (c == j89 && j89.isEnabled())
+            {
+                j89Call();
+            }
+            else if (c == j99 && j99.isEnabled())
+            {
+                j99Call();
+            }
+            else if (c == j10 && j10.isEnabled())
+            {
+                j10Call();
+            }
+            else if (c == j20 && j20.isEnabled())
+            {
+                j20Call();
+            }
+            else if (c == j30 && j30.isEnabled())
+            {
+                j30Call();
+            }
+            else if (c == j40 && j40.isEnabled())
+            {
+                j40Call();
+            }
+            else if (c == j50 && j50.isEnabled())
+            {
+                j50Call();
+            }
+            else if (c == j60 && j60.isEnabled())
+            {
+                j60Call();
+            }
+            else if (c == j70 && j70.isEnabled())
+            {
+                j70Call();
+            }
+            else if (c == j80 && j80.isEnabled())
+            {
+                j80Call();
+            }
+            else if (c == j90 && j90.isEnabled())
+            {
+                j90Call();
+            }
+            else
+            {
+                l.setBounds(200,540,600,50);
+                l.setForeground(Color.WHITE);
+                j.add(l);
+                j.revalidate();
+                j.repaint();
+                //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+            }
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e)
+        {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e)
+        {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e)
+        {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e)
+        {
+
+        }
+    };
     CardLayout crd = new CardLayout();
     Container co = getContentPane();
     JPanel j = new JPanel();
@@ -12759,9 +13195,10 @@ public class Main extends JFrame implements MouseMotionListener
             j85.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
             j86.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-2.png"));
             j87.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-3.png"));
-
             path_v = "cruiser/cruiser-v.png";
             path_h = "cruiser/cruiser-h.png";
+            cur.setIcon(new ImageIcon(path_h));
+            cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
         }
         else if (flag == 1 && cur_aircraft == "cruiser" && j86.isEnabled() && j87.isEnabled())
         {
@@ -23046,442 +23483,7 @@ public class Main extends JFrame implements MouseMotionListener
 
     public void play_ship_place()
     {
-        p.addMouseListener(new MouseListener()
-        {
-            @Override
-            public void mouseClicked(MouseEvent e)
-            {
-                if(c == j1 && j1.isEnabled())
-                {
-                    j1Call();
-                }
-                else if (c == j11 && j11.isEnabled())
-                {
-                    j11Call();
-                }
-                else if (c == j21 && j21.isEnabled())
-                {
-                    j21Call();
-                }
-                else if (c == j31 && j31.isEnabled())
-                {
-                    j31Call();
-                }
-                else if (c == j41 && j41.isEnabled())
-                {
-                    j41Call();
-                }
-                else if (c == j51 && j51.isEnabled())
-                {
-                    j51Call();
-                }
-                else if (c == j61 && j61.isEnabled())
-                {
-                    j61Call();
-                }
-                else if (c == j71 && j71.isEnabled())
-                {
-                    j71Call();
-                }
-                else if (c == j81 && j81.isEnabled())
-                {
-                    j81Call();
-                }
-                else if (c == j91 && j91.isEnabled())
-                {
-                    j91Call();
-                }
-                else if (c == j2 && j2.isEnabled())
-                {
-                    j2Call();
-                }
-                else if (c == j12 && j12.isEnabled())
-                {
-                    j12Call();
-                }
-                else if (c == j22 && j22.isEnabled())
-                {
-                    j22Call();
-                }
-                else if (c == j32 && j32.isEnabled())
-                {
-                    j32Call();
-                }
-                else if (c == j42 && j42.isEnabled())
-                {
-                    j42Call();
-                }
-                else if (c == j52 && j52.isEnabled())
-                {
-                    j52Call();
-                }
-                else if (c == j62 && j62.isEnabled())
-                {
-                    j62Call();
-                }
-                else if (c == j72 && j72.isEnabled())
-                {
-                    j72Call();
-                }
-                else if (c == j82 && j82.isEnabled())
-                {
-                    j82Call();
-                }
-                else if (c == j92 && j92.isEnabled())
-                {
-                    j92Call();
-                }
-                else if (c == j3 && j3.isEnabled())
-                {
-                    j3Call();
-                }
-                else if (c == j13 && j13.isEnabled())
-                {
-                    j13Call();
-                }
-                else if (c == j23 && j23.isEnabled())
-                {
-                    j23Call();
-                }
-                else if (c == j33 && j33.isEnabled())
-                {
-                    j33Call();
-                }
-                else if (c == j43 && j43.isEnabled())
-                {
-                    j43Call();
-                }
-                else if (c == j53 && j53.isEnabled())
-                {
-                    j53Call();
-                }
-                else if (c == j63 && j63.isEnabled())
-                {
-                    j63Call();
-                }
-                else if (c == j73 && j73.isEnabled())
-                {
-                    j73Call();
-                }
-                else if (c == j83 && j83.isEnabled())
-                {
-                    j83Call();
-                }
-                else if (c == j93 && j93.isEnabled())
-                {
-                    j93Call();
-                }
-                else if (c == j4 && j4.isEnabled())
-                {
-                    j4Call();
-                }
-                else if (c == j14 && j14.isEnabled())
-                {
-                    j14Call();
-                }
-                else if (c == j24 && j24.isEnabled())
-                {
-                    j24Call();
-                }
-                else if (c == j34 && j34.isEnabled())
-                {
-                    j34Call();
-                }
-                else if (c == j44 && j44.isEnabled())
-                {
-                    j44Call();
-                }
-                else if (c == j54 && j54.isEnabled())
-                {
-                    j54Call();
-                }
-                else if (c == j64 && j64.isEnabled())
-                {
-                    j64Call();
-                }
-                else if (c == j74 && j74.isEnabled())
-                {
-                    j74Call();
-                }
-                else if (c == j84 && j84.isEnabled())
-                {
-                    j84Call();
-                }
-                else if (c == j94 && j94.isEnabled())
-                {
-                    j94Call();
-                }
-                else if (c == j5 && j5.isEnabled())
-                {
-                    j5Call();
-                }
-                else if (c == j15 && j15.isEnabled())
-                {
-                    j15Call();
-                }
-                else if (c == j25 && j25.isEnabled())
-                {
-                    j25Call();
-                }
-                else if (c == j35 && j35.isEnabled())
-                {
-                    j35Call();
-                }
-                else if (c == j45 && j45.isEnabled())
-                {
-                    j45Call();
-                }
-                else if (c == j55 && j55.isEnabled())
-                {
-                    j55Call();
-                }
-                else if (c == j65 && j65.isEnabled())
-                {
-                    j65Call();
-                }
-                else if (c == j75 && j75.isEnabled())
-                {
-                    j75Call();
-                }
-                else if (c == j85 && j85.isEnabled())
-                {
-                    j85Call();
-                }
-                else if (c == j95 && j95.isEnabled())
-                {
-                    j95Call();
-                }
-                else if (c == j6 && j6.isEnabled())
-                {
-                    j6Call();
-                }
-                else if (c == j16 && j16.isEnabled())
-                {
-                    j16Call();
-                }
-                else if (c == j26 && j26.isEnabled())
-                {
-                    j26Call();
-                }
-                else if (c == j36 && j36.isEnabled())
-                {
-                    j36Call();
-                }
-                else if (c == j46 && j46.isEnabled())
-                {
-                    j46Call();
-                }
-                else if (c == j56 && j56.isEnabled())
-                {
-                    j56Call();
-                }
-                else if (c == j66 && j66.isEnabled())
-                {
-                    j66Call();
-                }
-                else if (c == j76 && j76.isEnabled())
-                {
-                    j76Call();
-                }
-                else if (c == j86 && j86.isEnabled())
-                {
-                    j86Call();
-                }
-                else if (c == j96 && j96.isEnabled())
-                {
-                    j96Call();
-                }
-                else if (c == j7 && j7.isEnabled())
-                {
-                    j7Call();
-                }
-                else if (c == j17 && j17.isEnabled())
-                {
-                    j17Call();
-                }
-                else if (c == j27 && j27.isEnabled())
-                {
-                    j27Call();
-                }
-                else if (c == j37 && j37.isEnabled())
-                {
-                    j37Call();
-                }
-                else if (c == j47 && j47.isEnabled())
-                {
-                    j47Call();
-                }
-                else if (c == j57 && j57.isEnabled())
-                {
-                    j57Call();
-                }
-                else if (c == j67 && j67.isEnabled())
-                {
-                    j67Call();
-                }
-                else if (c == j77 && j77.isEnabled())
-                {
-                    j77Call();
-                }
-                else if (c == j87 && j87.isEnabled())
-                {
-                    j87Call();
-                }
-                else if (c == j97 && j97.isEnabled())
-                {
-                    j97Call();
-                }
-                else if (c == j8 && j8.isEnabled())
-                {
-                    j8Call();
-                }
-                else if (c == j18 && j17.isEnabled())
-                {
-                    j18Call();
-                }
-                else if (c == j28 && j28.isEnabled())
-                {
-                    j28Call();
-                }
-                else if (c == j38 && j38.isEnabled())
-                {
-                    j38Call();
-                }
-                else if (c == j48 && j48.isEnabled())
-                {
-                    j48Call();
-                }
-                else if (c == j58 && j58.isEnabled())
-                {
-                    j58Call();
-                }
-                else if (c == j68 && j68.isEnabled())
-                {
-                    j68Call();
-                }
-                else if (c == j78 && j78.isEnabled())
-                {
-                    j78Call();
-                }
-                else if (c == j88 && j88.isEnabled())
-                {
-                    j88Call();
-                }
-                else if (c == j98 && j98.isEnabled())
-                {
-                    j98Call();
-                }
-                else if (c == j9 && j9.isEnabled())
-                {
-                    j9Call();
-                }
-                else if (c == j19 && j19.isEnabled())
-                {
-                    j19Call();
-                }
-                else if (c == j29 && j29.isEnabled())
-                {
-                    j29Call();
-                }
-                else if (c == j39 && j39.isEnabled())
-                {
-                    j39Call();
-                }
-                else if (c == j49 && j49.isEnabled())
-                {
-                    j49Call();
-                }
-                else if (c == j59 && j59.isEnabled())
-                {
-                    j59Call();
-                }
-                else if (c == j69 && j69.isEnabled())
-                {
-                    j69Call();
-                }
-                else if (c == j79 && j79.isEnabled())
-                {
-                    j79Call();
-                }
-                else if (c == j89 && j89.isEnabled())
-                {
-                    j89Call();
-                }
-                else if (c == j99 && j99.isEnabled())
-                {
-                    j99Call();
-                }
-                else if (c == j10 && j10.isEnabled())
-                {
-                    j10Call();
-                }
-                else if (c == j20 && j20.isEnabled())
-                {
-                    j20Call();
-                }
-                else if (c == j30 && j30.isEnabled())
-                {
-                    j30Call();
-                }
-                else if (c == j40 && j40.isEnabled())
-                {
-                    j40Call();
-                }
-                else if (c == j50 && j50.isEnabled())
-                {
-                    j50Call();
-                }
-                else if (c == j60 && j60.isEnabled())
-                {
-                    j60Call();
-                }
-                else if (c == j70 && j70.isEnabled())
-                {
-                    j70Call();
-                }
-                else if (c == j80 && j80.isEnabled())
-                {
-                    j80Call();
-                }
-                else if (c == j90 && j90.isEnabled())
-                {
-                    j90Call();
-                }
-                else
-                {
-                    l.setBounds(200,540,600,50);
-                    l.setForeground(Color.WHITE);
-                    j.add(l);
-                    j.revalidate();
-                    j.repaint();
-                    //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
-                }
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e)
-            {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e)
-            {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e)
-            {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e)
-            {
-
-            }
-        });
+        p.addMouseListener(ml);
     }
     public void loadscreen()
     {
@@ -23503,6 +23505,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.repaint();
         loading.revalidate();
         loading.repaint();
+        p.removeMouseListener(ml);
     }
     public void com_place()
     {
@@ -24061,6 +24064,7 @@ public class Main extends JFrame implements MouseMotionListener
                 System.out.println("Destroyer:");
                 System.out.println(com_destroyer_pos[0]);
                 System.out.println(com_destroyer_pos[1]);
+                crd.next(co);
                 return "IT JUST WORKS";
             }
         };
