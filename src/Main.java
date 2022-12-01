@@ -1,4 +1,4 @@
-import com.sun.javafx.geom.ConcentricShapePair;
+//import com.sun.javafx.geom.ConcentricShapePair;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,9 +8,15 @@ import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    CardLayout crd = new CardLayout();
+    Container co = getContentPane();
+    JPanel j = new JPanel();
+    JPanel loading = new JPanel();
+    JProgressBar pb = new JProgressBar();
     Random r = new Random();
     long seed = r.nextInt();
     BufferedImage cursorImg = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
@@ -48,7 +54,7 @@ public class Main extends JFrame implements MouseMotionListener
     String path_h = "aircraft-carrier/aircraft-h.png";
     String path_v = "aircraft-carrier/aircraft-v.png";
     String cur_aircraft = "aircraft-carrier";
-    JFrame j = new JFrame("Battleship");
+    JFrame PlayArea = new JFrame("Battleship");
     JButton j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, j49, j50, j51, j52, j53, j54, j55, j56, j57, j58, j59, j60, j61, j62, j63, j64, j65, j66, j67, j68, j69, j70, j71, j72, j73, j74, j75, j76, j77, j78, j79, j80, j81, j82, j83, j84, j85, j86, j87, j88, j89, j90, j91, j92, j93, j94, j95, j96, j97, j98, j99, j100;
 
     public void button_highlight()
@@ -557,8 +563,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j1Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -773,6 +779,9 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j2.isEnabled())
@@ -791,6 +800,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -798,8 +809,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -831,8 +842,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j11Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -1049,6 +1060,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j12.isEnabled())
@@ -1067,6 +1080,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -1074,8 +1089,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -1107,8 +1122,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j21Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -1325,6 +1340,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j22.isEnabled())
@@ -1343,6 +1360,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -1350,8 +1369,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -1383,8 +1402,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j31Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -1601,6 +1620,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
@@ -1619,6 +1640,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -1626,8 +1649,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -1659,8 +1682,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j41Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -1877,6 +1900,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j42.isEnabled())
@@ -1895,6 +1920,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -1902,8 +1929,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -1935,8 +1962,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j51Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -2153,6 +2180,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j52.isEnabled())
@@ -2171,6 +2200,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -2178,8 +2209,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -2211,8 +2242,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j61Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -2399,6 +2430,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j62.isEnabled())
@@ -2417,6 +2450,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -2424,8 +2459,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -2457,8 +2492,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j71Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -2619,6 +2654,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j72.isEnabled())
@@ -2637,6 +2674,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -2644,8 +2683,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -2677,8 +2716,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j81Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -2795,6 +2834,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j82.isEnabled())
@@ -2813,6 +2854,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -2820,8 +2863,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -2853,8 +2896,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j91Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -2971,6 +3014,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -2978,8 +3023,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -3011,8 +3056,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j2Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -3229,6 +3274,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j3.isEnabled())
@@ -3247,6 +3294,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -3254,8 +3303,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -3287,8 +3336,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j12Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -3505,6 +3554,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j13.isEnabled())
@@ -3523,6 +3574,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -3530,8 +3583,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -3563,8 +3616,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j22Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -3781,6 +3834,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j23.isEnabled())
@@ -3799,6 +3854,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -3806,8 +3863,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -3839,8 +3896,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j32Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -3923,7 +3980,7 @@ public class Main extends JFrame implements MouseMotionListener
 
             path_v = "submarine/submarine-v.png";
             path_h = "submarine/submarine-h.png";
-            cur.setIcon(new ImageIcon(path_h));
+            cur.setIcon(new ImageIcon(path_v));
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
@@ -4057,6 +4114,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
@@ -4075,6 +4134,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -4082,8 +4143,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -4115,8 +4176,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j42Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -4333,6 +4394,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j43.isEnabled())
@@ -4351,6 +4414,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -4358,8 +4423,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -4391,8 +4456,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j52Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -4609,6 +4674,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j53.isEnabled())
@@ -4627,6 +4694,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -4634,8 +4703,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -4667,8 +4736,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j62Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -4855,6 +4924,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j63.isEnabled())
@@ -4873,6 +4944,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -4880,8 +4953,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -4913,8 +4986,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j72Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -5075,6 +5148,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j73.isEnabled())
@@ -5093,6 +5168,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -5100,8 +5177,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -5133,8 +5210,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j82Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -5251,6 +5328,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j83.isEnabled())
@@ -5269,6 +5348,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -5276,8 +5357,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -5309,8 +5390,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j92Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -5427,6 +5508,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -5434,8 +5517,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -5467,8 +5550,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j3Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -5685,6 +5768,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j4.isEnabled())
@@ -5703,6 +5788,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -5710,8 +5797,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -5743,8 +5830,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j13Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -5961,6 +6048,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j14.isEnabled())
@@ -5979,6 +6068,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -5986,8 +6077,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -6019,8 +6110,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j23Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -6237,6 +6328,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j24.isEnabled())
@@ -6255,6 +6348,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -6262,8 +6357,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -6295,8 +6390,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j33Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -6513,6 +6608,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j34.isEnabled())
@@ -6531,6 +6628,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -6538,8 +6637,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -6571,8 +6670,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j43Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -6789,6 +6888,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j44.isEnabled())
@@ -6807,6 +6908,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -6814,8 +6917,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -6847,8 +6950,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j53Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -7065,6 +7168,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j54.isEnabled())
@@ -7083,6 +7188,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -7090,8 +7197,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -7123,8 +7230,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j63Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -7311,6 +7418,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j64.isEnabled())
@@ -7329,6 +7438,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -7336,8 +7447,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -7369,8 +7480,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j73Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -7531,6 +7642,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j74.isEnabled())
@@ -7549,6 +7662,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -7556,8 +7671,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -7589,8 +7704,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j83Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -7704,6 +7819,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j84.isEnabled())
@@ -7722,6 +7839,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -7729,8 +7848,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -7762,8 +7881,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j93Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -7880,6 +7999,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -7887,8 +8008,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -7920,8 +8041,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j4Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -8138,6 +8259,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j5.isEnabled())
@@ -8156,6 +8279,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -8163,8 +8288,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -8196,8 +8321,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j14Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -8414,6 +8539,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j15.isEnabled())
@@ -8432,6 +8559,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -8439,8 +8568,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -8472,8 +8601,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j24Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -8690,6 +8819,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j25.isEnabled())
@@ -8708,6 +8839,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -8715,8 +8848,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -8748,8 +8881,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j34Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -8966,6 +9099,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j35.isEnabled())
@@ -8984,6 +9119,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -8991,8 +9128,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -9024,8 +9161,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j44Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -9242,6 +9379,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j45.isEnabled())
@@ -9260,6 +9399,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -9267,8 +9408,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -9300,8 +9441,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j54Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -9518,6 +9659,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j55.isEnabled())
@@ -9536,6 +9679,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -9543,8 +9688,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -9576,8 +9721,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j64Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -9764,6 +9909,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j65.isEnabled())
@@ -9782,6 +9929,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -9789,8 +9938,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -9822,8 +9971,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j74Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -9984,6 +10133,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j75.isEnabled())
@@ -10002,6 +10153,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -10009,8 +10162,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -10042,8 +10195,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j84Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -10157,6 +10310,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j85.isEnabled())
@@ -10175,6 +10330,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -10182,8 +10339,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -10215,8 +10372,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j94Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -10333,6 +10490,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -10340,8 +10499,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -10373,8 +10532,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j5Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -10591,6 +10750,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j6.isEnabled())
@@ -10609,6 +10770,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -10616,8 +10779,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -10649,8 +10812,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j15Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -10867,6 +11030,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j16.isEnabled())
@@ -10885,6 +11050,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -10892,8 +11059,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -10925,8 +11092,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j25Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -11143,6 +11310,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j26.isEnabled())
@@ -11161,6 +11330,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -11168,8 +11339,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -11201,8 +11372,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j35Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -11419,6 +11590,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j36.isEnabled())
@@ -11437,6 +11610,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -11444,8 +11619,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -11477,8 +11652,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j45Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -11695,6 +11870,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j46.isEnabled())
@@ -11713,6 +11890,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -11720,8 +11899,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -11753,8 +11932,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j55Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -11971,6 +12150,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j56.isEnabled())
@@ -11989,6 +12170,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -11996,8 +12179,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -12029,8 +12212,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j65Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -12217,6 +12400,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j66.isEnabled())
@@ -12235,6 +12420,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -12242,8 +12429,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -12275,8 +12462,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j75Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -12437,6 +12624,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j76.isEnabled())
@@ -12455,6 +12644,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -12462,8 +12653,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -12495,8 +12686,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j85Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -12610,6 +12801,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j86.isEnabled())
@@ -12628,6 +12821,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -12635,8 +12830,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -12668,8 +12863,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j95Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -12786,6 +12981,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -12793,8 +12990,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -12826,8 +13023,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j6Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -13044,6 +13241,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j7.isEnabled())
@@ -13062,6 +13261,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -13069,8 +13270,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -13102,8 +13303,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j16Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -13320,6 +13521,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j17.isEnabled())
@@ -13338,6 +13541,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -13345,8 +13550,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -13378,8 +13583,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j26Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -13596,6 +13801,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j27.isEnabled())
@@ -13614,6 +13821,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -13621,8 +13830,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -13654,8 +13863,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j36Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -13872,6 +14081,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j37.isEnabled())
@@ -13890,6 +14101,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -13897,8 +14110,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -13930,8 +14143,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j46Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -14148,6 +14361,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j47.isEnabled())
@@ -14166,6 +14381,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -14173,8 +14390,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -14206,8 +14423,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j56Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -14424,6 +14641,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j57.isEnabled())
@@ -14442,6 +14661,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -14449,8 +14670,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -14482,8 +14703,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j66Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -14670,6 +14891,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j67.isEnabled())
@@ -14688,6 +14911,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -14695,8 +14920,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -14728,8 +14953,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j76Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -14890,6 +15115,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j77.isEnabled())
@@ -14908,6 +15135,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -14915,8 +15144,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -14948,8 +15177,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j86Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -15063,6 +15292,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j87.isEnabled())
@@ -15081,6 +15312,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -15088,8 +15321,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -15121,8 +15354,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j96Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -15239,6 +15472,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -15246,8 +15481,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -15279,8 +15514,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j7Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -15467,6 +15702,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j8.isEnabled())
@@ -15485,6 +15722,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -15492,8 +15731,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -15525,8 +15764,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j17Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -15713,6 +15952,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j18.isEnabled())
@@ -15731,6 +15972,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -15738,8 +15981,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -15771,8 +16014,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j27Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -15959,6 +16202,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j28.isEnabled())
@@ -15977,6 +16222,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -15984,8 +16231,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -16017,8 +16264,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j37Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -16205,6 +16452,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j38.isEnabled())
@@ -16223,6 +16472,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -16230,8 +16481,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -16263,8 +16514,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j47Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -16451,6 +16702,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j48.isEnabled())
@@ -16469,6 +16722,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -16476,8 +16731,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -16509,8 +16764,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j57Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -16697,6 +16952,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j58.isEnabled())
@@ -16715,6 +16972,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -16722,8 +16981,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -16755,8 +17014,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j67Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "battleship" && j77.isEnabled() && j87.isEnabled() && j97.isEnabled())
         {
             cur_aircraft = "submarine";
@@ -16913,6 +17172,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j68.isEnabled())
@@ -16931,6 +17192,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -16938,8 +17201,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -16971,8 +17234,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j77Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "battleship" && j78.isEnabled() && j79.isEnabled() && j80.isEnabled())
         {
             cur_aircraft = "submarine";
@@ -17103,6 +17366,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j78.isEnabled())
@@ -17121,6 +17386,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -17128,8 +17395,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -17161,8 +17428,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j87Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "battleship" && j87.isEnabled() && j88.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "submarine";
@@ -17246,6 +17513,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j88.isEnabled())
@@ -17264,6 +17533,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -17271,8 +17542,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -17304,8 +17575,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j97Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "battleship" && j98.isEnabled() && j99.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "submarine";
@@ -17392,6 +17663,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -17399,8 +17672,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -17432,8 +17705,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j8Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -17594,6 +17867,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j9.isEnabled())
@@ -17612,6 +17887,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -17619,8 +17896,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -17652,8 +17929,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j18Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -17814,6 +18091,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j19.isEnabled())
@@ -17832,6 +18111,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -17839,8 +18120,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -17872,8 +18153,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j28Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -18034,6 +18315,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j28.isEnabled())
@@ -18052,6 +18335,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -18059,8 +18344,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -18092,8 +18377,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j38Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -18254,6 +18539,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j39.isEnabled())
@@ -18272,6 +18559,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -18279,8 +18568,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -18312,8 +18601,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j48Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -18474,6 +18763,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j49.isEnabled())
@@ -18492,6 +18783,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -18499,8 +18792,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -18532,8 +18825,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j58Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -18694,6 +18987,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j59.isEnabled())
@@ -18712,6 +19007,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -18719,8 +19016,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -18752,8 +19049,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j68Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "battleship" && j78.isEnabled() && j88.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "submarine";
@@ -18884,6 +19181,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j69.isEnabled())
@@ -18902,6 +19201,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -18909,8 +19210,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -18942,8 +19243,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j78Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "submarine" && j88.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "cruiser";
@@ -19048,6 +19349,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j79.isEnabled())
@@ -19066,6 +19369,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -19073,8 +19378,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -19106,8 +19411,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j88Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "submarine" && j89.isEnabled() && j90.isEnabled())
         {
             cur_aircraft = "cruiser";
@@ -19165,6 +19470,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j89.isEnabled())
@@ -19183,6 +19490,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -19190,8 +19499,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -19223,8 +19532,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j98Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "submarine" && j99.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "cruiser";
@@ -19285,6 +19594,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -19292,8 +19603,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -19325,8 +19636,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j9Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -19443,6 +19754,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j10.isEnabled())
@@ -19461,6 +19774,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -19468,8 +19783,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -19501,8 +19816,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j19Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -19619,6 +19934,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j20.isEnabled())
@@ -19637,6 +19954,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -19644,8 +19963,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -19677,8 +19996,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j29Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -19795,6 +20114,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j29.isEnabled())
@@ -19813,6 +20134,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -19820,8 +20143,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -19853,8 +20176,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j39Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -19971,6 +20294,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j40.isEnabled())
@@ -19989,6 +20314,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -19996,8 +20323,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20029,8 +20356,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j49Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -20147,6 +20474,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j50.isEnabled())
@@ -20165,6 +20494,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -20172,8 +20503,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20205,8 +20536,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j59Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -20323,6 +20654,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j60.isEnabled())
@@ -20341,6 +20674,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -20348,8 +20683,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20381,8 +20716,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j69Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "battleship" && j79.isEnabled() && j89.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "submarine";
@@ -20469,6 +20804,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j70.isEnabled())
@@ -20487,6 +20824,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -20494,8 +20833,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20527,8 +20866,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j79Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "submarine" && j89.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "cruiser";
@@ -20589,6 +20928,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j80.isEnabled())
@@ -20607,6 +20948,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -20614,8 +20957,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20647,8 +20990,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j89Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "destroyer" && j99.isEnabled())
         {
             cur_aircraft = "finished";
@@ -20665,6 +21008,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else if (flag == 1 && cur_aircraft == "destroyer" && j90.isEnabled())
@@ -20683,6 +21028,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -20690,8 +21037,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20723,8 +21070,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j99Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 1 && cur_aircraft == "destroyer" && j100.isEnabled())
         {
             cur_aircraft = "finished";
@@ -20741,6 +21088,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -20748,8 +21097,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20781,8 +21130,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j10Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -20899,6 +21248,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -20906,8 +21257,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -20939,8 +21290,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j20Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -21057,6 +21408,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21064,8 +21417,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -21097,8 +21450,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j30Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -21215,6 +21568,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21222,8 +21577,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -21255,8 +21610,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j40Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -21373,6 +21728,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21380,8 +21737,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -21413,8 +21770,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j50Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -21531,6 +21888,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21538,8 +21897,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -21571,8 +21930,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j60Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "aircraft-carrier")
         {
             cur_aircraft = "battleship";
@@ -21689,6 +22048,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21696,8 +22057,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -21729,8 +22090,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j70Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "battleship" && j80.isEnabled() && j90.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "submarine";
@@ -21817,6 +22178,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21824,8 +22187,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -21857,8 +22220,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j80Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "submarine" && j90.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "cruiser";
@@ -21919,6 +22282,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21926,8 +22291,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -21959,8 +22324,8 @@ public class Main extends JFrame implements MouseMotionListener
     public void j90Call()
     {
         j.remove(l);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
+        j.revalidate();
+        j.repaint();
         if (flag == 0 && cur_aircraft == "destroyer" && j100.isEnabled())
         {
             cur_aircraft = "finished";
@@ -21977,6 +22342,8 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
+            crd.next(co);
+            loadscreen();
             com_place();
         }
         else
@@ -21984,8 +22351,8 @@ public class Main extends JFrame implements MouseMotionListener
             l.setBounds(200,540,600,50);
             l.setForeground(Color.WHITE);
             j.add(l);
-            j.getContentPane().revalidate();
-            j.getContentPane().repaint();
+            j.revalidate();
+            j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
         System.out.println("Aircraft Carrier : ");
@@ -22021,7 +22388,7 @@ public class Main extends JFrame implements MouseMotionListener
         l.setBounds(65,100,666,122);
         j.add(l);
         JButton start = new JButton();
-        j.getContentPane().setBackground(Color.BLACK);
+        j.setBackground(Color.BLACK);
         // start.setBackground(Color.LIGHT_GRAY);
         start.setOpaque(true);
         start.setFocusPainted(false);
@@ -22036,8 +22403,8 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 j.remove(start);
                 j.remove(l);
-                j.getContentPane().revalidate();
-                j.getContentPane().repaint();
+                j.revalidate();
+                j.repaint();
                 play_window();
             }
         });
@@ -22546,7 +22913,7 @@ public class Main extends JFrame implements MouseMotionListener
         this.j.add(j98);
         this.j.add(j99);
         this.j.add(j100);
-        this.j.setGlassPane(p);
+        this.PlayArea.setGlassPane(p);
         p.addMouseMotionListener(this);
         p.setLayout(null);
         p.setOpaque(false);
@@ -22672,8 +23039,8 @@ public class Main extends JFrame implements MouseMotionListener
                 }
             }
         });
-        this.j.getContentPane().revalidate();
-        this.j.getContentPane().repaint();
+        this.j.revalidate();
+        this.j.repaint();
         play_ship_place();
     }
 
@@ -23085,8 +23452,8 @@ public class Main extends JFrame implements MouseMotionListener
                     l.setBounds(200,540,600,50);
                     l.setForeground(Color.WHITE);
                     j.add(l);
-                    j.getContentPane().revalidate();
-                    j.getContentPane().repaint();
+                    j.revalidate();
+                    j.repaint();
                     //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
                 }
             }
@@ -23116,170 +23483,588 @@ public class Main extends JFrame implements MouseMotionListener
             }
         });
     }
+    public void loadscreen()
+    {
+        loading.setOpaque(true);
+        loading.setLayout(null);
+        loading.setBounds(0,0,800,800);
+        loading.setBackground(Color.BLACK);
+        loading.setVisible(true);
+        JLabel load = new JLabel("Please wait while the computer places its ships");
+        load.setBounds(225,300,400,50);
+        pb.setBounds(225,350,340,20);
+        load.setForeground(Color.WHITE);
+        loading.add(pb);
+        pb.setVisible(true);
+        loading.add(load);
+        pb.setMinimum(0);
+        pb.setMaximum(100);
+        j.revalidate();
+        j.repaint();
+        loading.revalidate();
+        loading.repaint();
+    }
     public void com_place()
     {
-        try
+        SwingWorker s1 = new SwingWorker()
         {
-            FileWriter fw = new FileWriter("logs/logfile.txt", true);
-            fw.write("Aircraft Carrier : \n");
-            for(int i = 0 ; i < 5 ; i ++)
+            @Override
+            protected String doInBackground() throws Exception
             {
-                fw.write(aircraft_pos[i] + "\n");
-            }
-            fw.write("Battleship : \n");
-            for(int i = 0 ; i < 4 ; i ++)
-            {
-                fw.write(battleship_pos[i] + "\n");
-            }
-            fw.write("Submarine : \n");
-            for(int i = 0 ; i < 3 ; i ++)
-            {
-                fw.write(submarine_pos[i] + "\n");
-            }
-            fw.write("Cruiser : \n");
-            for(int i = 0 ; i < 3 ; i ++)
-            {
-                fw.write(cruiser_pos[i] + "\n");
-            }
-            fw.write("Destroyer : \n");
-            for(int i = 0 ; i < 2 ; i ++)
-            {
-                fw.write(destroyer_pos[i] + "\n");
-            }
-            fw.close();
-        }
-        catch(Exception ex)
-        {
-            JOptionPane.showMessageDialog(j, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
+                try
+                {
+                    FileWriter fw = new FileWriter("logs/logfile.txt", true);
+                    fw.write("Aircraft Carrier : \n");
+                    for(int i = 0 ; i < 5 ; i ++)
+                    {
+                        fw.write(aircraft_pos[i] + "\n");
+                    }
+                    fw.write("Battleship : \n");
+                    for(int i = 0 ; i < 4 ; i ++)
+                    {
+                        fw.write(battleship_pos[i] + "\n");
+                    }
+                    fw.write("Submarine : \n");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        fw.write(submarine_pos[i] + "\n");
+                    }
+                    fw.write("Cruiser : \n");
+                    for(int i = 0 ; i < 3 ; i ++)
+                    {
+                        fw.write(cruiser_pos[i] + "\n");
+                    }
+                    fw.write("Destroyer : \n");
+                    for(int i = 0 ; i < 2 ; i ++)
+                    {
+                        fw.write(destroyer_pos[i] + "\n");
+                    }
+                    fw.close();
+                }
+                catch(Exception ex)
+                {
+                    JOptionPane.showMessageDialog(j, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                com_gen();
+                while (true)
+                {
+                    SwingUtilities.invokeLater(new Runnable(){
+                        public void run()
+                        {
+                            PlayArea.repaint();
+                            j.repaint();
+                            loading.repaint();
+                        }
+                    });
+                    r.setSeed(seed);
+                    int success = 0;
+                    int or = Math.abs(r.nextInt());
+                    or = or % 2;
+                    if(or == 0)
+                    {
+                        int temp_flag = 0;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 60;
+                        int pos1 = com_air_place_h[pos];
+                        int pos2 = pos1 + 1;
+                        int pos3 = pos2 + 1;
+                        int pos4 = pos3 + 1;
+                        int pos5 = pos4 + 1;
+                        com_aircraft_pos[0] = pos1;
+                        com_aircraft_pos[1] = pos2;
+                        com_aircraft_pos[2] = pos3;
+                        com_aircraft_pos[3] = pos4;
+                        com_aircraft_pos[4] = pos5;
+                        success = 1;
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                    else if (or == 1)
+                    {
+                        int temp_flag = 0;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 60;
+                        int pos1 = com_air_place_v[pos];
+                        int pos2 = pos1 + 10;
+                        int pos3 = pos2 + 10;
+                        int pos4 = pos3 + 10;
+                        int pos5 = pos4 + 10;
+                        com_aircraft_pos[0] = pos1;
+                        com_aircraft_pos[1] = pos2;
+                        com_aircraft_pos[2] = pos3;
+                        com_aircraft_pos[3] = pos4;
+                        com_aircraft_pos[4] = pos5;
+                        success = 1;
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+                j.revalidate();
+                j.repaint();
+                int progress = 1;
+                while(progress <= 20)
+                {
+                    try
+                    {
+                        pb.setValue(progress);
+                        j.revalidate();
+                        j.repaint();
+                        Thread.sleep(50);
+                        progress++;
+                    }
+                    catch (Exception ex)
+                    {
 
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
-        //JOptionPane.showMessageDialog(j, "This is a placeholder. No functionality has been implemented so far", "Information", JOptionPane.INFORMATION_MESSAGE);
-//        p.setVisible(false);
-        j.getContentPane().revalidate();
-        j.getContentPane().repaint();
-        com_gen();
-        JOptionPane.showMessageDialog(j,"Seed : "+seed, "Seed", JOptionPane.INFORMATION_MESSAGE);
-        while (true)
-        {
-            r.setSeed(seed);
-            int success = 0;
-            int or = Math.abs(r.nextInt());
-            or = or % 2;
-            if(or == 0)
-            {
-                int temp_flag = 0;
-                int pos = Math.abs(r.nextInt());
-                pos = pos % 60;
-                int pos1 = com_air_place_h[pos];
-                int pos2 = pos1 + 1;
-                int pos3 = pos2 + 1;
-                int pos4 = pos3 + 1;
-                int pos5 = pos4 + 1;
-                com_aircraft_pos[0] = pos1;
-                com_aircraft_pos[1] = pos2;
-                com_aircraft_pos[2] = pos3;
-                com_aircraft_pos[3] = pos4;
-                com_aircraft_pos[4] = pos5;
-                for(int i = 0; i < com_air_grid.length; i++)
-                {
-                    if(com_air_grid[i] == pos1)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos2)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos3)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos4)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos5)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    if(temp_flag == 4)
-                    {
-                        success = 1;
-                        break;
                     }
                 }
-                if (success == 1)
+                while (true)
                 {
-                    break;
+                    int p_flag = 0;
+                    int success = 0;
+                    int or = Math.abs(r.nextInt());
+                    or = or % 2;
+                    if(or == 0)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 70;
+                        int pos1 = com_bat_place_h[pos];
+                        int pos2 = pos1 + 1;
+                        int pos3 = pos2 + 1;
+                        int pos4 = pos3 + 1;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+                            
+                            
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2 && com_aircraft_pos[i] != pos3 && com_aircraft_pos[i] != pos4)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 6)
+                        {
+                            com_battleship_pos[0] = pos1;
+                            com_battleship_pos[1] = pos2;
+                            com_battleship_pos[2] = pos3;
+                            com_battleship_pos[3] = pos4;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                    else if (or == 1)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 70;
+                        int pos1 = com_bat_place_v[pos];
+                        int pos2 = pos1 + 10;
+                        int pos3 = pos2 + 10;
+                        int pos4 = pos3 + 10;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+                            
+                            
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2 && com_aircraft_pos[i] != pos3 && com_aircraft_pos[i] != pos4)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 6)
+                        {
+                            com_battleship_pos[0] = pos1;
+                            com_battleship_pos[1] = pos2;
+                            com_battleship_pos[2] = pos3;
+                            com_battleship_pos[3] = pos4;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
                 }
+                while(progress <= 40)
+                {
+                    try
+                    {
+                        pb.setValue(progress);
+                        j.revalidate();
+                        j.repaint();
+                        Thread.sleep(50);
+                        progress++;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                while (true)
+                {
+                    int p_flag = 0;
+                    int success = 0;
+                    int or = Math.abs(r.nextInt());
+                    or = or % 2;
+                    if(or == 0)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 80;
+                        int pos1 = com_sub_place_h[pos];
+                        int pos2 = pos1 + 1;
+                        int pos3 = pos2 + 1;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+                            
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2 && com_aircraft_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 3; i ++)
+                        {
+                            
+                            if(com_battleship_pos[i] != pos1 && com_battleship_pos[i] != pos2 && com_battleship_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 10)
+                        {
+                            com_submarine_pos[0] = pos1;
+                            com_submarine_pos[1] = pos2;
+                            com_submarine_pos[2] = pos3;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                    else if (or == 1)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 80;
+                        int pos1 = com_sub_place_v[pos];
+                        int pos2 = pos1 + 10;
+                        int pos3 = pos2 + 10;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+                            
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2 && com_aircraft_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 3; i ++)
+                        {
+                            
+                            if(com_battleship_pos[i] != pos1 && com_battleship_pos[i] != pos2 && com_battleship_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 10)
+                        {
+                            com_submarine_pos[0] = pos1;
+                            com_submarine_pos[1] = pos2;
+                            com_submarine_pos[2] = pos3;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+                while(progress <= 60)
+                {
+                    try
+                    {
+                        pb.setValue(progress);
+                        j.revalidate();
+                        j.repaint();
+                        Thread.sleep(50);
+                        progress++;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                while (true)
+                {
+                    int p_flag = 0;
+                    int success = 0;
+                    int or = Math.abs(r.nextInt());
+                    or = or % 2;
+                    if(or == 0)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 80;
+                        int pos1 = com_cru_place_h[pos];
+                        int pos2 = pos1 + 1;
+                        int pos3 = pos2 + 1;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+                            
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2 && com_aircraft_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 3; i ++)
+                        {
+                            
+                            if(com_battleship_pos[i] != pos1 && com_battleship_pos[i] != pos2 && com_battleship_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 2; i ++)
+                        {
+                            
+                            if(com_submarine_pos[i] != pos1 && com_submarine_pos[i] != pos2 && com_submarine_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 13)
+                        {
+                            com_cruiser_pos[0] = pos1;
+                            com_cruiser_pos[1] = pos2;
+                            com_cruiser_pos[2] = pos3;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                    else if (or == 1)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 80;
+                        int pos1 = com_cru_place_v[pos];
+                        int pos2 = pos1 + 10;
+                        int pos3 = pos2 + 10;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+                            
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2 && com_aircraft_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 3; i ++)
+                        {
+                            
+                            if(com_battleship_pos[i] != pos1 && com_battleship_pos[i] != pos2 && com_battleship_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 2; i ++)
+                        {
+                            
+                            if(com_submarine_pos[i] != pos1 && com_submarine_pos[i] != pos2 && com_submarine_pos[i] != pos3)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 13)
+                        {
+                            com_cruiser_pos[0] = pos1;
+                            com_cruiser_pos[1] = pos2;
+                            com_cruiser_pos[2] = pos3;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+                while(progress <= 80)
+                {
+                    try
+                    {
+                        pb.setValue(progress);
+                        j.revalidate();
+                        j.repaint();
+                        Thread.sleep(50);
+                        progress++;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                while (true)
+                {
+                    int p_flag = 0;
+                    int success = 0;
+                    int or = Math.abs(r.nextInt());
+                    or = or % 2;
+                    if(or == 0)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 90;
+                        int pos1 = com_des_place_h[pos];
+                        int pos2 = pos1 + 1;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 3; i ++)
+                        {
+
+                            if(com_battleship_pos[i] != pos1 && com_battleship_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 2; i ++)
+                        {
+
+                            if(com_submarine_pos[i] != pos1 && com_submarine_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 2; i ++)
+                        {
+
+                            if(com_cruiser_pos[i] != pos1 && com_cruiser_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 16)
+                        {
+                            com_destroyer_pos[0] = pos1;
+                            com_destroyer_pos[1] = pos2;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                    else if (or == 1)
+                    {
+                        int temp_flag = 1;
+                        int pos = Math.abs(r.nextInt());
+                        pos = pos % 90;
+                        int pos1 = com_des_place_v[pos];
+                        int pos2 = pos1 + 10;
+                        for(int i = 0; i <= 4; i ++)
+                        {
+
+                            if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 3; i ++)
+                        {
+
+                            if(com_battleship_pos[i] != pos1 && com_battleship_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 2; i ++)
+                        {
+
+                            if(com_submarine_pos[i] != pos1 && com_submarine_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        for(int i = 0; i <= 2; i ++)
+                        {
+
+                            if(com_cruiser_pos[i] != pos1 && com_cruiser_pos[i] != pos2)
+                            {
+                                temp_flag++;
+                            }
+                        }
+                        System.out.println(temp_flag);
+                        if(temp_flag == 16)
+                        {
+                            com_destroyer_pos[0] = pos1;
+                            com_destroyer_pos[1] = pos2;
+                            success = 1;
+                        }
+                        if (success == 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+                while(progress <= 100)
+                {
+                    try
+                    {
+                        pb.setValue(progress);
+                        j.revalidate();
+                        j.repaint();
+                        Thread.sleep(50);
+                        progress++;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                System.out.println("Computer Positions:\nAircraft Carrier:");
+                System.out.println(com_aircraft_pos[0]);
+                System.out.println(com_aircraft_pos[1]);
+                System.out.println(com_aircraft_pos[2]);
+                System.out.println(com_aircraft_pos[3]);
+                System.out.println(com_aircraft_pos[4]);
+                System.out.println("Battleship:");
+                System.out.println(com_battleship_pos[0]);
+                System.out.println(com_battleship_pos[1]);
+                System.out.println(com_battleship_pos[2]);
+                System.out.println(com_battleship_pos[3]);
+                System.out.println("Submarine:");
+                System.out.println(com_submarine_pos[0]);
+                System.out.println(com_submarine_pos[1]);
+                System.out.println(com_submarine_pos[2]);
+                System.out.println("Cruiser:");
+                System.out.println(com_cruiser_pos[0]);
+                System.out.println(com_cruiser_pos[1]);
+                System.out.println(com_cruiser_pos[2]);
+                System.out.println("Destroyer:");
+                System.out.println(com_destroyer_pos[0]);
+                System.out.println(com_destroyer_pos[1]);
+                return "IT JUST WORKS";
             }
-            else if (or == 1)
-            {
-                int temp_flag = 0;
-                int pos = Math.abs(r.nextInt());
-                pos = pos % 60;
-                int pos1 = com_air_place_v[pos];
-                int pos2 = pos1 + 10;
-                int pos3 = pos2 + 10;
-                int pos4 = pos3 + 10;
-                int pos5 = pos4 + 10;
-                com_aircraft_pos[0] = pos1;
-                com_aircraft_pos[1] = pos2;
-                com_aircraft_pos[2] = pos3;
-                com_aircraft_pos[3] = pos4;
-                com_aircraft_pos[4] = pos5;
-                for(int i = 0; i < com_air_grid.length; i++)
-                {
-                    if(com_air_grid[i] == pos1)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos2)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos3)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos4)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    else if(com_air_grid[i] == pos5)
-                    {
-                        com_air_grid[i] = 0;
-                        temp_flag++;
-                    }
-                    if(temp_flag == 4)
-                    {
-                        success = 1;
-                        break;
-                    }
-                }
-                if (success == 1)
-                {
-                    break;
-                }
-            }
-        }
-        System.out.println("Computer Positions:\nAircraft Carrier:");
-        System.out.println(com_aircraft_pos[0]);
-        System.out.println(com_aircraft_pos[1]);
-        System.out.println(com_aircraft_pos[2]);
-        System.out.println(com_aircraft_pos[3]);
-        System.out.println(com_aircraft_pos[4]);
+        };
+        s1.execute();
     }
     void com_gen()
     {
@@ -23616,14 +24401,18 @@ public class Main extends JFrame implements MouseMotionListener
             System.out.println(ex.getMessage());
         }
         System.out.println("Huh. You are running this from a console. Be prepared to see all the stuff that I was using to test the game left in here.\n BTW I'm not dumb enough to leave in the Computer's moves in here. So, you can't cheat :)");
-        m.j.setLocation(533,66); //This line is present for a convoluted reason. I use i3-wm and I have modified my config to un-tile and float the application. But, I cannot figure out a way in the config to open it in the middle of the screen. So, I am currently doing it via the code. It will be removed once development is complete.
-        m.j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        m.co.setLayout(m.crd);
+        m.co.add(m.j);
+        m.co.add(m.loading);
+        m.PlayArea.setLocation(533,66); //This line is present for a convoluted reason. I use i3-wm and I have modified my config to un-tile and float the application. But, I cannot figure out a way in the config to open it in the middle of the screen. So, I am currently doing it via the code. It will be removed once development is complete.
+        m.PlayArea.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         m.tip.setBounds(5,5, 3000, 30);
         m.tip.setForeground(Color.WHITE);
         m.j.setLayout(null);
-        m.j.setSize(800,675);
+        m.PlayArea.add(m.co);
+        m.PlayArea.setSize(800,675);
         m.welcome_screen();
-        m.j.setVisible(true);
+        m.PlayArea.setVisible(true);
     }
     public void mouseMoved(MouseEvent e)
     {
@@ -23637,8 +24426,8 @@ public class Main extends JFrame implements MouseMotionListener
         seed = seed + xpos + ypos;
         System.out.println(xpos);
         System.out.println(ypos);
-        po = SwingUtilities.convertPoint(p, e.getPoint(), j.getContentPane());
-        c = SwingUtilities.getDeepestComponentAt(j.getContentPane(), po.x, po.y);
+        po = SwingUtilities.convertPoint(p, e.getPoint(), j);
+        c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
         button_highlight();
     }
 
@@ -23654,8 +24443,8 @@ public class Main extends JFrame implements MouseMotionListener
         seed = seed + xpos + ypos;
         System.out.println(xpos);
         System.out.println(ypos);
-        po = SwingUtilities.convertPoint(p, e.getPoint(), j.getContentPane());
-        c = SwingUtilities.getDeepestComponentAt(j.getContentPane(), po.x, po.y);
+        po = SwingUtilities.convertPoint(p, e.getPoint(), j);
+        c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
         button_highlight();
     }
 }
