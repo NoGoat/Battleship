@@ -12,6 +12,14 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    String title = "LA";
+    int play_hit_count = 0;
+    int play_ai_count = 0, play_bat_count = 0, play_sub_count = 0, play_cru_count = 0, play_des_count = 0;
+    int turn_flag = 0, refresh_flag = 1;
+    JLabel load = new JLabel("Please wait while the computer places its ships");
+    Component com;
+    JPanel play_hit = new JPanel();
+    JButton l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30, l31, l32, l33, l34, l35, l36, l37, l38, l39, l40, l41, l42, l43, l44, l45, l46, l47, l48, l49, l50, l51, l52, l53, l54, l55, l56, l57, l58, l59, l60, l61, l62, l63, l64, l65, l66, l67, l68, l69, l70, l71, l72, l73, l74, l75, l76, l77, l78, l79, l80, l81, l82, l83, l84, l85, l86, l87, l88, l89, l90, l91, l92, l93, l94, l95, l96, l97, l98, l99, l100;
     MouseListener ml = new MouseListener()
     {
         @Override
@@ -415,12 +423,405 @@ public class Main extends JFrame implements MouseMotionListener
             }
             else
             {
-                l.setBounds(200,540,600,50);
+                l.setBounds(200, 540, 600, 50);
                 l.setForeground(Color.WHITE);
                 j.add(l);
                 j.revalidate();
                 j.repaint();
                 //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
+            }
+            if(turn_flag == 0)
+            {
+                if (com == l1 && l1.isEnabled())
+                {
+                    l1Call();
+                } else if (com == l11 && l11.isEnabled())
+                {
+                    l11Call();
+                }
+                else if (com == l21 && l21.isEnabled())
+                {
+                    l21Call();
+                }
+//                else if (com == l31 && l31.isEnabled())
+//                {
+//                    l31Call();
+//                }
+//                else if (com == l41 && l41.isEnabled())
+//                {
+//                    l41Call();
+//                }
+//                else if (com == l51 && l51.isEnabled())
+//                {
+//                    l51Call();
+//                }
+//                else if (com == l61 && l61.isEnabled())
+//                {
+//                    l61Call();
+//                }
+//                else if (com == l71 && l71.isEnabled())
+//                {
+//                    l71Call();
+//                }
+//                else if (com == l81 && l81.isEnabled())
+//                {
+//                    l81Call();
+//                }
+//                else if (com == l91 && l91.isEnabled())
+//                {
+//                    l91Call();
+//                }
+                else if (com == l2 && l2.isEnabled())
+                {
+                    l2Call();
+                } else if (com == l12 && l12.isEnabled())
+                {
+                    l12Call();
+                }
+                else if (com == l22 && l22.isEnabled())
+                {
+                    l22Call();
+                }
+//                else if (com == l32 && l32.isEnabled())
+//                {
+//                    l32Call();
+//                }
+//                else if (com == l42 && l42.isEnabled())
+//                {
+//                    l42Call();
+//                }
+//                else if (com == l52 && l52.isEnabled())
+//                {
+//                    l52Call();
+//                }
+//                else if (com == l62 && l62.isEnabled())
+//                {
+//                    l62Call();
+//                }
+//                else if (com == l72 && l72.isEnabled())
+//                {
+//                    l72Call();
+//                }
+//                else if (com == l82 && l82.isEnabled())
+//                {
+//                    l82Call();
+//                }
+//                else if (com == l92 && l92.isEnabled())
+//                {
+//                    l92Call();
+//                }
+                else if (com == l3 && l3.isEnabled())
+                {
+                    l3Call();
+                } else if (com == l13 && l13.isEnabled())
+                {
+                    l13Call();
+                }
+                else if (com == l23 && l23.isEnabled())
+                {
+                    l23Call();
+                }
+//                else if (com == l33 && l33.isEnabled())
+//                {
+//                    l33Call();
+//                }
+//                else if (com == l43 && l43.isEnabled())
+//                {
+//                    l43Call();
+//                }
+//                else if (com == l53 && l53.isEnabled())
+//                {
+//                    l53Call();
+//                }
+//                else if (com == l63 && l63.isEnabled())
+//                {
+//                    l63Call();
+//                }
+//                else if (com == l73 && l73.isEnabled())
+//                {
+//                    l73Call();
+//                }
+//                else if (com == l83 && l83.isEnabled())
+//                {
+//                    l83Call();
+//                }
+//                else if (com == l93 && l93.isEnabled())
+//                {
+//                    l93Call();
+//                }
+                else if (com == l4 && l4.isEnabled())
+                {
+                    l4Call();
+                } else if (com == l14 && l14.isEnabled())
+                {
+                    l14Call();
+                }
+                else if (com == l24 && l24.isEnabled())
+                {
+                    l24Call();
+                }
+//                else if (com == l34 && l34.isEnabled())
+//                {
+//                    l34Call();
+//                }
+//                else if (com == l44 && l44.isEnabled())
+//                {
+//                    l44Call();
+//                }
+//                else if (com == l54 && l54.isEnabled())
+//                {
+//                    l54Call();
+//                }
+//                else if (com == l64 && l64.isEnabled())
+//                {
+//                    l64Call();
+//                }
+//                else if (com == l74 && l74.isEnabled())
+//                {
+//                    l74Call();
+//                }
+//                else if (com == l84 && l84.isEnabled())
+//                {
+//                    l84Call();
+//                }
+//                else if (com == l94 && l94.isEnabled())
+//                {
+//                    l94Call();
+//                }
+                else if (com == l5 && l5.isEnabled())
+                {
+                    l5Call();
+                } else if (com == l15 && l15.isEnabled())
+                {
+                    l15Call();
+                }
+                else if (com == l25 && l25.isEnabled())
+                {
+                    l25Call();
+                }
+//                else if (com == l35 && l35.isEnabled())
+//                {
+//                    l35Call();
+//                }
+//                else if (com == l45 && l45.isEnabled())
+//                {
+//                    l45Call();
+//                }
+//                else if (com == l55 && l55.isEnabled())
+//                {
+//                    l55Call();
+//                }
+//                else if (com == l65 && l65.isEnabled())
+//                {
+//                    l65Call();
+//                }
+//                else if (com == l75 && l75.isEnabled())
+//                {
+//                    l75Call();
+//                }
+//                else if (com == l85 && l85.isEnabled())
+//                {
+//                    l85Call();
+//                }
+//                else if (com == l95 && l95.isEnabled())
+//                {
+//                    l95Call();
+//                }
+                else if (com == l6 && l6.isEnabled())
+                {
+                    l6Call();
+                } else if (com == l16 && l16.isEnabled())
+                {
+                    l16Call();
+                }
+                else if (com == l26 && l26.isEnabled())
+                {
+                    l26Call();
+                }
+//                else if (com == l36 && l36.isEnabled())
+//                {
+//                    l36Call();
+//                }
+//                else if (com == l46 && l46.isEnabled())
+//                {
+//                    l46Call();
+//                }
+//                else if (com == l56 && l56.isEnabled())
+//                {
+//                    l56Call();
+//                }
+//                else if (com == l66 && l66.isEnabled())
+//                {
+//                    l66Call();
+//                }
+//                else if (com == l76 && l76.isEnabled())
+//                {
+//                    l76Call();
+//                }
+//                else if (com == l86 && l86.isEnabled())
+//                {
+//                    l86Call();
+//                }
+//                else if (com == l96 && l96.isEnabled())
+//                {
+//                    l96Call();
+//                }
+                else if (com == l7 && l7.isEnabled())
+                {
+                    l7Call();
+                } else if (com == l17 && l17.isEnabled())
+                {
+                    l17Call();
+                }
+                else if (com == l27 && l27.isEnabled())
+                {
+                    l27Call();
+                }
+//                else if (com == l37 && l37.isEnabled())
+//                {
+//                    l37Call();
+//                }
+//                else if (com == l47 && l47.isEnabled())
+//                {
+//                    l47Call();
+//                }
+//                else if (com == l57 && l57.isEnabled())
+//                {
+//                    l57Call();
+//                }
+//                else if (com == l67 && l67.isEnabled())
+//                {
+//                    l67Call();
+//                }
+//                else if (com == l77 && l77.isEnabled())
+//                {
+//                    l77Call();
+//                }
+//                else if (com == l87 && l87.isEnabled())
+//                {
+//                    l87Call();
+//                }
+//                else if (com == l97 && l97.isEnabled())
+//                {
+//                    l97Call();
+//                }
+                else if (com == l8 && l8.isEnabled())
+                {
+                    l8Call();
+                } else if (com == l18 && l18.isEnabled())
+                {
+                    l18Call();
+                }
+                else if (com == l28 && l28.isEnabled())
+                {
+                    l28Call();
+                }
+//                else if (com == l38 && l38.isEnabled())
+//                {
+//                    l38Call();
+//                }
+//                else if (com == l48 && l48.isEnabled())
+//                {
+//                    l48Call();
+//                }
+//                else if (com == l58 && l58.isEnabled())
+//                {
+//                    l58Call();
+//                }
+//                else if (com == l68 && l68.isEnabled())
+//                {
+//                    l68Call();
+//                }
+//                else if (com == l78 && l78.isEnabled())
+//                {
+//                    l78Call();
+//                }
+//                else if (com == l88 && l88.isEnabled())
+//                {
+//                    l88Call();
+//                }
+//                else if (com == l98 && l98.isEnabled())
+//                {
+//                    l98Call();
+//                }
+                else if (com == l9 && l9.isEnabled())
+                {
+                    l9Call();
+                } else if (com == l19 && l19.isEnabled())
+                {
+                    l19Call();
+                }
+                else if (com == l29 && l29.isEnabled())
+                {
+                    l29Call();
+                }
+//                else if (com == l39 && l39.isEnabled())
+//                {
+//                    l39Call();
+//                }
+//                else if (com == l49 && l49.isEnabled())
+//                {
+//                    l49Call();
+//                }
+//                else if (com == l59 && l59.isEnabled())
+//                {
+//                    l59Call();
+//                }
+//                else if (com == l69 && l69.isEnabled())
+//                {
+//                    l69Call();
+//                }
+//                else if (com == l79 && l79.isEnabled())
+//                {
+//                    l79Call();
+//                }
+//                else if (com == l89 && l89.isEnabled())
+//                {
+//                    l89Call();
+//                }
+//                else if (com == l99 && l99.isEnabled())
+//                {
+//                    l99Call();
+//                }
+                else if (com == l10 && l10.isEnabled())
+                {
+                    l10Call();
+                } else if (com == l20 && l20.isEnabled())
+                {
+                    l20Call();
+                }
+                else if (com == l30 && l30.isEnabled())
+                {
+                    l30Call();
+                }
+//                else if (com == l40 && l40.isEnabled())
+//                {
+//                    l40Call();
+//                }
+//                else if (com == l50 && l50.isEnabled())
+//                {
+//                    l50Call();
+//                }
+//                else if (com == l60 && l60.isEnabled())
+//                {
+//                    l60Call();
+//                }
+//                else if (com == l70 && l70.isEnabled())
+//                {
+//                    l70Call();
+//                }
+//                else if (com == l80 && l80.isEnabled())
+//                {
+//                    l80Call();
+//                }
+//                else if (com == l90 && l90.isEnabled())
+//                {
+//                    l90Call();
+//                }
+//                else if (com == l100 && l100.isEnabled())
+//                {
+//                    l100Call();
+//                }
             }
         }
 
@@ -493,6 +894,1839 @@ public class Main extends JFrame implements MouseMotionListener
     JFrame PlayArea = new JFrame("Battleship");
     JButton j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, j49, j50, j51, j52, j53, j54, j55, j56, j57, j58, j59, j60, j61, j62, j63, j64, j65, j66, j67, j68, j69, j70, j71, j72, j73, j74, j75, j76, j77, j78, j79, j80, j81, j82, j83, j84, j85, j86, j87, j88, j89, j90, j91, j92, j93, j94, j95, j96, j97, j98, j99, j100;
 
+    public void l1Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 1)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 1)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 1)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 1)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 1)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l1.setIcon(new ImageIcon("water_ship_hit.png"));
+            l1.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l1.setIcon(new ImageIcon("water_ship_miss.png"));
+            l1.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l1.setEnabled(false);
+        who_is_playing();
+    }
+
+    public void l2Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 2)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 2)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 2)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 2)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 2)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l2.setIcon(new ImageIcon("water_ship_hit.png"));
+            l2.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l2.setIcon(new ImageIcon("water_ship_miss.png"));
+            l2.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l2.setEnabled(false);
+        who_is_playing();
+    }
+    public void l3Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 3)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 3)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 3)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 3)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 3)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l3.setIcon(new ImageIcon("water_ship_hit.png"));
+            l3.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l3.setIcon(new ImageIcon("water_ship_miss.png"));
+            l3.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l3.setEnabled(false);
+        who_is_playing();
+    }
+    public void l4Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 4)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 4)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 4)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 4)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 4)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l4.setIcon(new ImageIcon("water_ship_hit.png"));
+            l4.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l4.setIcon(new ImageIcon("water_ship_miss.png"));
+            l4.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l4.setEnabled(false);
+        who_is_playing();
+    }
+    public void l5Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 5)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 5)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 5)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 5)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 5)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l5.setIcon(new ImageIcon("water_ship_hit.png"));
+            l5.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l5.setIcon(new ImageIcon("water_ship_miss.png"));
+            l5.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l5.setEnabled(false);
+        who_is_playing();
+    }
+    public void l6Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 6)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 6)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 6)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 6)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 6)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l6.setIcon(new ImageIcon("water_ship_hit.png"));
+            l6.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l6.setIcon(new ImageIcon("water_ship_miss.png"));
+            l6.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l6.setEnabled(false);
+        who_is_playing();
+    }
+    public void l7Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 7)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 7)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 7)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 7)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 7)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l7.setIcon(new ImageIcon("water_ship_hit.png"));
+            l7.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l7.setIcon(new ImageIcon("water_ship_miss.png"));
+            l7.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l7.setEnabled(false);
+        who_is_playing();
+    }
+    public void l8Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 8)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 8)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 8)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 8)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 8)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l8.setIcon(new ImageIcon("water_ship_hit.png"));
+            l8.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l8.setIcon(new ImageIcon("water_ship_miss.png"));
+            l8.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l8.setEnabled(false);
+        who_is_playing();
+    }
+    public void l9Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 9)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 9)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 9)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 9)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 9)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l9.setIcon(new ImageIcon("water_ship_hit.png"));
+            l9.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l9.setIcon(new ImageIcon("water_ship_miss.png"));
+            l9.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l9.setEnabled(false);
+        who_is_playing();
+    }
+    public void l10Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 10)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 10)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 10)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 10)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 10)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l10.setIcon(new ImageIcon("water_ship_hit.png"));
+            l10.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l10.setIcon(new ImageIcon("water_ship_miss.png"));
+            l10.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l10.setEnabled(false);
+        who_is_playing();
+    }
+    public void l11Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 11)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 11)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 11)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 11)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 11)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l11.setIcon(new ImageIcon("water_ship_hit.png"));
+            l11.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l11.setIcon(new ImageIcon("water_ship_miss.png"));
+            l11.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l11.setEnabled(false);
+        who_is_playing();
+    }
+
+    public void l12Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 12)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 12)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 12)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 12)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 12)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l12.setIcon(new ImageIcon("water_ship_hit.png"));
+            l12.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l12.setIcon(new ImageIcon("water_ship_miss.png"));
+            l12.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l12.setEnabled(false);
+        who_is_playing();
+    }
+    public void l13Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 13)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 13)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 13)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 13)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 13)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l13.setIcon(new ImageIcon("water_ship_hit.png"));
+            l13.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l13.setIcon(new ImageIcon("water_ship_miss.png"));
+            l13.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l13.setEnabled(false);
+        who_is_playing();
+    }
+    public void l14Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 14)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 14)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 14)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 14)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 14)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l14.setIcon(new ImageIcon("water_ship_hit.png"));
+            l14.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l14.setIcon(new ImageIcon("water_ship_miss.png"));
+            l14.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l14.setEnabled(false);
+        who_is_playing();
+    }
+    public void l15Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 15)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 15)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 15)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 15)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 15)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l15.setIcon(new ImageIcon("water_ship_hit.png"));
+            l15.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l15.setIcon(new ImageIcon("water_ship_miss.png"));
+            l15.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l15.setEnabled(false);
+        who_is_playing();
+    }
+    public void l16Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 16)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 16)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 16)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 16)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 16)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l16.setIcon(new ImageIcon("water_ship_hit.png"));
+            l16.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l16.setIcon(new ImageIcon("water_ship_miss.png"));
+            l16.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l16.setEnabled(false);
+        who_is_playing();
+    }
+    public void l17Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 17)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 17)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 17)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 17)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 17)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l17.setIcon(new ImageIcon("water_ship_hit.png"));
+            l17.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l17.setIcon(new ImageIcon("water_ship_miss.png"));
+            l17.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l17.setEnabled(false);
+        who_is_playing();
+    }
+    public void l18Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 18)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 18)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 18)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 18)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 18)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l18.setIcon(new ImageIcon("water_ship_hit.png"));
+            l18.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l18.setIcon(new ImageIcon("water_ship_miss.png"));
+            l18.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l18.setEnabled(false);
+        who_is_playing();
+    }
+    public void l19Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 19)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 19)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 19)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 19)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 19)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l19.setIcon(new ImageIcon("water_ship_hit.png"));
+            l19.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l19.setIcon(new ImageIcon("water_ship_miss.png"));
+            l19.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l19.setEnabled(false);
+        who_is_playing();
+    }
+    public void l20Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 20)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 20)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 20)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 20)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 20)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l20.setIcon(new ImageIcon("water_ship_hit.png"));
+            l20.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l20.setIcon(new ImageIcon("water_ship_miss.png"));
+            l20.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l20.setEnabled(false);
+        who_is_playing();
+    }
+    public void l21Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 21)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 21)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 21)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 21)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 21)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l21.setIcon(new ImageIcon("water_ship_hit.png"));
+            l21.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l21.setIcon(new ImageIcon("water_ship_miss.png"));
+            l21.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l21.setEnabled(false);
+        who_is_playing();
+    }
+
+    public void l22Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 22)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 22)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 22)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 22)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 22)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l22.setIcon(new ImageIcon("water_ship_hit.png"));
+            l22.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l22.setIcon(new ImageIcon("water_ship_miss.png"));
+            l22.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l22.setEnabled(false);
+        who_is_playing();
+    }
+    public void l23Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 23)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 23)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 23)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 23)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 23)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l23.setIcon(new ImageIcon("water_ship_hit.png"));
+            l23.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l23.setIcon(new ImageIcon("water_ship_miss.png"));
+            l23.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l23.setEnabled(false);
+        who_is_playing();
+    }
+    public void l24Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 24)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 24)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 24)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 24)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 24)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l24.setIcon(new ImageIcon("water_ship_hit.png"));
+            l24.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l24.setIcon(new ImageIcon("water_ship_miss.png"));
+            l24.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l24.setEnabled(false);
+        who_is_playing();
+    }
+    public void l25Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 25)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 25)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 25)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 25)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 25)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l25.setIcon(new ImageIcon("water_ship_hit.png"));
+            l25.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l25.setIcon(new ImageIcon("water_ship_miss.png"));
+            l25.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l25.setEnabled(false);
+        who_is_playing();
+    }
+    public void l26Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 26)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 26)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 26)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 26)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 26)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l26.setIcon(new ImageIcon("water_ship_hit.png"));
+            l26.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l26.setIcon(new ImageIcon("water_ship_miss.png"));
+            l26.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l26.setEnabled(false);
+        who_is_playing();
+    }
+    public void l27Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 27)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 27)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 27)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 27)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 27)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l27.setIcon(new ImageIcon("water_ship_hit.png"));
+            l27.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l27.setIcon(new ImageIcon("water_ship_miss.png"));
+            l27.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l27.setEnabled(false);
+        who_is_playing();
+    }
+    public void l28Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 28)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 28)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 28)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 28)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 28)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l28.setIcon(new ImageIcon("water_ship_hit.png"));
+            l28.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l28.setIcon(new ImageIcon("water_ship_miss.png"));
+            l28.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l28.setEnabled(false);
+        who_is_playing();
+    }
+    public void l29Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 29)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 29)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 29)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 29)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 29)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l29.setIcon(new ImageIcon("water_ship_hit.png"));
+            l29.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l29.setIcon(new ImageIcon("water_ship_miss.png"));
+            l29.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l29.setEnabled(false);
+        who_is_playing();
+    }
+    public void l30Call()
+    {
+        int flag = 0;
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            if(com_aircraft_pos[i] == 30)
+            {
+                play_ai_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            if(com_battleship_pos[i] == 30)
+            {
+                play_bat_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_submarine_pos[i] == 30)
+            {
+                play_sub_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            if(com_cruiser_pos[i] == 30)
+            {
+                play_cru_count++;
+                flag = 1;
+            }
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            if(com_destroyer_pos[i] == 30)
+            {
+                play_des_count++;
+                flag = 1;
+            }
+        }
+        if(flag == 1)
+        {
+            l30.setIcon(new ImageIcon("water_ship_hit.png"));
+            l30.setDisabledIcon(new ImageIcon("water_ship_hit.png"));
+            turn_flag = 0;
+            refresh_flag = 0;
+            play_hit_count++;
+        }
+        else
+        {
+            l30.setIcon(new ImageIcon("water_ship_miss.png"));
+            l30.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
+            turn_flag = 1;
+            refresh_flag = 1;
+        }
+        l30.setEnabled(false);
+        who_is_playing();
+    }
     public void button_highlight()
     {
         j1.setBorderPainted(false);
@@ -995,6 +3229,565 @@ public class Main extends JFrame implements MouseMotionListener
         {
             j100.setBorderPainted(true);
         }
+        l1.setBorderPainted(false);
+        l2.setBorderPainted(false);
+        l3.setBorderPainted(false);
+        l4.setBorderPainted(false);
+        l5.setBorderPainted(false);
+        l6.setBorderPainted(false);
+        l7.setBorderPainted(false);
+        l8.setBorderPainted(false);
+        l9.setBorderPainted(false);
+        l10.setBorderPainted(false);
+        l11.setBorderPainted(false);
+        l12.setBorderPainted(false);
+        l13.setBorderPainted(false);
+        l14.setBorderPainted(false);
+        l15.setBorderPainted(false);
+        l16.setBorderPainted(false);
+        l17.setBorderPainted(false);
+        l18.setBorderPainted(false);
+        l19.setBorderPainted(false);
+        l20.setBorderPainted(false);
+        l21.setBorderPainted(false);
+        l22.setBorderPainted(false);
+        l23.setBorderPainted(false);
+        l24.setBorderPainted(false);
+        l25.setBorderPainted(false);
+        l26.setBorderPainted(false);
+        l27.setBorderPainted(false);
+        l28.setBorderPainted(false);
+        l29.setBorderPainted(false);
+        l30.setBorderPainted(false);
+        l31.setBorderPainted(false);
+        l32.setBorderPainted(false);
+        l33.setBorderPainted(false);
+        l34.setBorderPainted(false);
+        l35.setBorderPainted(false);
+        l36.setBorderPainted(false);
+        l37.setBorderPainted(false);
+        l38.setBorderPainted(false);
+        l39.setBorderPainted(false);
+        l40.setBorderPainted(false);
+        l41.setBorderPainted(false);
+        l42.setBorderPainted(false);
+        l43.setBorderPainted(false);
+        l44.setBorderPainted(false);
+        l45.setBorderPainted(false);
+        l46.setBorderPainted(false);
+        l47.setBorderPainted(false);
+        l48.setBorderPainted(false);
+        l49.setBorderPainted(false);
+        l50.setBorderPainted(false);
+        l51.setBorderPainted(false);
+        l52.setBorderPainted(false);
+        l53.setBorderPainted(false);
+        l54.setBorderPainted(false);
+        l55.setBorderPainted(false);
+        l56.setBorderPainted(false);
+        l57.setBorderPainted(false);
+        l58.setBorderPainted(false);
+        l59.setBorderPainted(false);
+        l60.setBorderPainted(false);
+        l61.setBorderPainted(false);
+        l62.setBorderPainted(false);
+        l63.setBorderPainted(false);
+        l64.setBorderPainted(false);
+        l65.setBorderPainted(false);
+        l66.setBorderPainted(false);
+        l67.setBorderPainted(false);
+        l68.setBorderPainted(false);
+        l69.setBorderPainted(false);
+        l70.setBorderPainted(false);
+        l71.setBorderPainted(false);
+        l72.setBorderPainted(false);
+        l73.setBorderPainted(false);
+        l74.setBorderPainted(false);
+        l75.setBorderPainted(false);
+        l76.setBorderPainted(false);
+        l77.setBorderPainted(false);
+        l78.setBorderPainted(false);
+        l79.setBorderPainted(false);
+        l80.setBorderPainted(false);
+        l81.setBorderPainted(false);
+        l82.setBorderPainted(false);
+        l83.setBorderPainted(false);
+        l84.setBorderPainted(false);
+        l85.setBorderPainted(false);
+        l86.setBorderPainted(false);
+        l87.setBorderPainted(false);
+        l88.setBorderPainted(false);
+        l89.setBorderPainted(false);
+        l90.setBorderPainted(false);
+        l91.setBorderPainted(false);
+        l92.setBorderPainted(false);
+        l93.setBorderPainted(false);
+        l94.setBorderPainted(false);
+        l95.setBorderPainted(false);
+        l96.setBorderPainted(false);
+        l97.setBorderPainted(false);
+        l98.setBorderPainted(false);
+        l99.setBorderPainted(false);
+        l100.setBorderPainted(false);
+        if (com == l1)
+        {
+            l1.setBorderPainted(true);
+        }
+        else if (com == l2)
+        {
+            l2.setBorderPainted(true);
+        }
+        else if (com == l3)
+        {
+            l3.setBorderPainted(true);
+        }
+        else if (com == l4)
+        {
+            l4.setBorderPainted(true);
+        }
+        else if (com == l5)
+        {
+            l5.setBorderPainted(true);
+        }
+        else if (com == l6)
+        {
+            l6.setBorderPainted(true);
+        }
+        else if (com == l7)
+        {
+            l7.setBorderPainted(true);
+        }
+        else if (com == l8)
+        {
+            l8.setBorderPainted(true);
+        }
+        else if (com == l9)
+        {
+            l9.setBorderPainted(true);
+        }
+        else if (com == l10)
+        {
+            l10.setBorderPainted(true);
+        }
+        else if (com == l11)
+        {
+            l11.setBorderPainted(true);
+        }
+        else if (com == l12)
+        {
+            l12.setBorderPainted(true);
+        }
+        else if (com == l13)
+        {
+            l13.setBorderPainted(true);
+        }
+        else if (com == l14)
+        {
+            l14.setBorderPainted(true);
+        }
+        else if (com == l15)
+        {
+            l15.setBorderPainted(true);
+        }
+        else if (com == l16)
+        {
+            l16.setBorderPainted(true);
+        }
+        else if (com == l17)
+        {
+            l17.setBorderPainted(true);
+        }
+        else if (com == l18)
+        {
+            l18.setBorderPainted(true);
+        }
+        else if (com == l19)
+        {
+            l19.setBorderPainted(true);
+        }
+        else if (com == l20)
+        {
+            l20.setBorderPainted(true);
+        }
+        else if (com == l21)
+        {
+            l21.setBorderPainted(true);
+        }
+        else if (com == l22)
+        {
+            l22.setBorderPainted(true);
+        }
+        else if (com == l23)
+        {
+            l23.setBorderPainted(true);
+        }
+        else if (com == l24)
+        {
+            l24.setBorderPainted(true);
+        }
+        else if (com == l25)
+        {
+            l25.setBorderPainted(true);
+        }
+        else if (com == l26)
+        {
+            l26.setBorderPainted(true);
+        }
+        else if (com == l27)
+        {
+            l27.setBorderPainted(true);
+        }
+        else if (com == l28)
+        {
+            l28.setBorderPainted(true);
+        }
+        else if (com == l29)
+        {
+            l29.setBorderPainted(true);
+        }
+        else if (com == l30)
+        {
+            l30.setBorderPainted(true);
+        }
+        else if (com == l31)
+        {
+            l31.setBorderPainted(true);
+        }
+        else if (com == l32)
+        {
+            l32.setBorderPainted(true);
+        }
+        else if (com == l33)
+        {
+            l33.setBorderPainted(true);
+        }
+        else if (com == l34)
+        {
+            l34.setBorderPainted(true);
+        }
+        else if (com == l35)
+        {
+            l35.setBorderPainted(true);
+        }
+        else if (com == l36)
+        {
+            l36.setBorderPainted(true);
+        }
+        else if (com == l37)
+        {
+            l37.setBorderPainted(true);
+        }
+        else if (com == l38)
+        {
+            l38.setBorderPainted(true);
+        }
+        else if (com == l39)
+        {
+            l39.setBorderPainted(true);
+        }
+        else if (com == l40)
+        {
+            l40.setBorderPainted(true);
+        }
+        else if (com == l41)
+        {
+            l41.setBorderPainted(true);
+        }
+        else if (com == l42)
+        {
+            l42.setBorderPainted(true);
+        }
+        else if (com == l43)
+        {
+            l43.setBorderPainted(true);
+        }
+        else if (com == l44)
+        {
+            l44.setBorderPainted(true);
+        }
+        else if (com == l45)
+        {
+            l45.setBorderPainted(true);
+        }
+        else if (com == l46)
+        {
+            l46.setBorderPainted(true);
+        }
+        else if (com == l47)
+        {
+            l47.setBorderPainted(true);
+        }
+        else if (com == l48)
+        {
+            l48.setBorderPainted(true);
+        }
+        else if (com == l49)
+        {
+            l49.setBorderPainted(true);
+        }
+        else if (com == l50)
+        {
+            l50.setBorderPainted(true);
+        }
+        else if (com == l51)
+        {
+            l51.setBorderPainted(true);
+        }
+        else if (com == l52)
+        {
+            l52.setBorderPainted(true);
+        }
+        else if (com == l53)
+        {
+            l53.setBorderPainted(true);
+        }
+        else if (com == l54)
+        {
+            l54.setBorderPainted(true);
+        }
+        else if (com == l55)
+        {
+            l55.setBorderPainted(true);
+        }
+        else if (com == l56)
+        {
+            l56.setBorderPainted(true);
+        }
+        else if (com == l57)
+        {
+            l57.setBorderPainted(true);
+        }
+        else if (com == l58)
+        {
+            l58.setBorderPainted(true);
+        }
+        else if (com == l59)
+        {
+            l59.setBorderPainted(true);
+        }
+        else if (com == l60)
+        {
+            l60.setBorderPainted(true);
+        }
+        else if (com == l61)
+        {
+            l61.setBorderPainted(true);
+        }
+        else if (com == l62)
+        {
+            l62.setBorderPainted(true);
+        }
+        else if (com == l63)
+        {
+            l63.setBorderPainted(true);
+        }
+        else if (com == l64)
+        {
+            l64.setBorderPainted(true);
+        }
+        else if (com == l65)
+        {
+            l65.setBorderPainted(true);
+        }
+        else if (com == l66)
+        {
+            l66.setBorderPainted(true);
+        }
+        else if (com == l67)
+        {
+            l67.setBorderPainted(true);
+        }
+        else if (com == l68)
+        {
+            l68.setBorderPainted(true);
+        }
+        else if (com == l69)
+        {
+            l69.setBorderPainted(true);
+        }
+        else if (com == l70)
+        {
+            l70.setBorderPainted(true);
+        }
+        else if (com == l71)
+        {
+            l71.setBorderPainted(true);
+        }
+        else if (com == l72)
+        {
+            l72.setBorderPainted(true);
+        }
+        else if (com == l73)
+        {
+            l73.setBorderPainted(true);
+        }
+        else if (com == l74)
+        {
+            l74.setBorderPainted(true);
+        }
+        else if (com == l75)
+        {
+            l75.setBorderPainted(true);
+        }
+        else if (com == l76)
+        {
+            l76.setBorderPainted(true);
+        }
+        else if (com == l77)
+        {
+            l77.setBorderPainted(true);
+        }
+        else if (com == l78)
+        {
+            l78.setBorderPainted(true);
+        }
+        else if (com == l79)
+        {
+            l79.setBorderPainted(true);
+        }
+        else if (com == l80)
+        {
+            l80.setBorderPainted(true);
+        }
+        else if (com == l81)
+        {
+            l81.setBorderPainted(true);
+        }
+        else if (com == l82)
+        {
+            l82.setBorderPainted(true);
+        }
+        else if (com == l83)
+        {
+            l83.setBorderPainted(true);
+        }
+        else if (com == l84)
+        {
+            l84.setBorderPainted(true);
+        }
+        else if (com == l85)
+        {
+            l85.setBorderPainted(true);
+        }
+        else if (com == l86)
+        {
+            l86.setBorderPainted(true);
+        }
+        else if (com == l87)
+        {
+            l87.setBorderPainted(true);
+        }
+        else if (com == l88)
+        {
+            l88.setBorderPainted(true);
+        }
+        else if (com == l89)
+        {
+            l89.setBorderPainted(true);
+        }
+        else if (com == l90)
+        {
+            l90.setBorderPainted(true);
+        }
+        else if (com == l91)
+        {
+            l91.setBorderPainted(true);
+        }
+        else if (com == l92)
+        {
+            l92.setBorderPainted(true);
+        }
+        else if (com == l93)
+        {
+            l93.setBorderPainted(true);
+        }
+        else if (com == l94)
+        {
+            l94.setBorderPainted(true);
+        }
+        else if (com == l95)
+        {
+            l95.setBorderPainted(true);
+        }
+        else if (com == l96)
+        {
+            l96.setBorderPainted(true);
+        }
+        else if (com == l97)
+        {
+            l97.setBorderPainted(true);
+        }
+        else if (com == l98)
+        {
+            l98.setBorderPainted(true);
+        }
+        else if (com == l99)
+        {
+            l99.setBorderPainted(true);
+        }
+        else if (com == l100)
+        {
+            l100.setBorderPainted(true);
+        }
+    }
+    public void who_is_playing() 
+    {
+        SwingWorker help = new SwingWorker()
+        {
+            @Override
+            protected String doInBackground() throws Exception
+            {
+                pb.setMaximum(100);
+                pb.setMinimum(0);
+                crd.show(co, "LA");
+                loading.revalidate();
+                loading.repaint();
+                for(int percent = 0 ; percent <= 100 ; percent++)
+                {
+                    pb.setValue(percent);
+                    Thread.sleep(16);
+                }
+                return null;
+            }
+            @Override
+            protected void done()
+            {
+                if(turn_flag == 0)
+                {
+                    crd.show(co, "PHA");
+                }
+                else
+                {
+                    crd.show(co, "CHA");
+                    com_hit();
+                }
+            }
+        };
+        SwingWorker wait = new SwingWorker()
+        {
+            @Override
+            protected Object doInBackground() throws Exception
+            {
+                Thread.sleep(1000);
+                return null;
+            }
+            @Override
+            protected void done()
+            {
+                help.execute();
+            }
+        };
+        if(refresh_flag == 1)
+        {
+            wait.execute();
+        }
+    }
+    public void com_hit()
+    {
+        refresh_flag = 1;
+        turn_flag = 0;
+        //JOptionPane.showMessageDialog(PlayArea, "This is just for testing purposes", "Testing", JOptionPane.INFORMATION_MESSAGE);
+        who_is_playing();
     }
     public void j1Call()
     {
@@ -1215,7 +4008,6 @@ public class Main extends JFrame implements MouseMotionListener
             xoffset = 25;
             yoffset = 25;
             p.setCursor(blankCursor);
-            crd.next(co);
             crd.next(co);
             loadscreen();
             com_place();
@@ -23492,7 +26284,6 @@ public class Main extends JFrame implements MouseMotionListener
         loading.setBounds(0,0,800,800);
         loading.setBackground(Color.BLACK);
         loading.setVisible(true);
-        JLabel load = new JLabel("Please wait while the computer places its ships");
         load.setBounds(225,300,400,50);
         pb.setBounds(225,350,340,20);
         load.setForeground(Color.WHITE);
@@ -23505,10 +26296,510 @@ public class Main extends JFrame implements MouseMotionListener
         j.repaint();
         loading.revalidate();
         loading.repaint();
-        p.removeMouseListener(ml);
     }
     public void com_place()
     {
+        Icon i = new ImageIcon("water.png");
+        l1 = new JButton(i);
+        l2 = new JButton(i);
+        l3 = new JButton(i);
+        l4 = new JButton(i);
+        l5 = new JButton(i);
+        l6 = new JButton(i);
+        l7 = new JButton(i);
+        l8 = new JButton(i);
+        l9 = new JButton(i);
+        l10 = new JButton(i);
+        l11 = new JButton(i);
+        l12 = new JButton(i);
+        l13 = new JButton(i);
+        l14 = new JButton(i);
+        l15 = new JButton(i);
+        l16 = new JButton(i);
+        l17 = new JButton(i);
+        l18 = new JButton(i);
+        l19 = new JButton(i);
+        l20 = new JButton(i);
+        l21 = new JButton(i);
+        l22 = new JButton(i);
+        l23 = new JButton(i);
+        l24 = new JButton(i);
+        l25 = new JButton(i);
+        l26 = new JButton(i);
+        l27 = new JButton(i);
+        l28 = new JButton(i);
+        l29 = new JButton(i);
+        l30 = new JButton(i);
+        l31 = new JButton(i);
+        l32 = new JButton(i);
+        l33 = new JButton(i);
+        l34 = new JButton(i);
+        l35 = new JButton(i);
+        l36 = new JButton(i);
+        l37 = new JButton(i);
+        l38 = new JButton(i);
+        l39 = new JButton(i);
+        l40 = new JButton(i);
+        l41 = new JButton(i);
+        l42 = new JButton(i);
+        l43 = new JButton(i);
+        l44 = new JButton(i);
+        l45 = new JButton(i);
+        l46 = new JButton(i);
+        l47 = new JButton(i);
+        l48 = new JButton(i);
+        l49 = new JButton(i);
+        l50 = new JButton(i);
+        l51 = new JButton(i);
+        l52 = new JButton(i);
+        l53 = new JButton(i);
+        l54 = new JButton(i);
+        l55 = new JButton(i);
+        l56 = new JButton(i);
+        l57 = new JButton(i);
+        l58 = new JButton(i);
+        l59 = new JButton(i);
+        l60 = new JButton(i);
+        l61 = new JButton(i);
+        l62 = new JButton(i);
+        l63 = new JButton(i);
+        l64 = new JButton(i);
+        l65 = new JButton(i);
+        l66 = new JButton(i);
+        l67 = new JButton(i);
+        l68 = new JButton(i);
+        l69 = new JButton(i);
+        l70 = new JButton(i);
+        l71 = new JButton(i);
+        l72 = new JButton(i);
+        l73 = new JButton(i);
+        l74 = new JButton(i);
+        l75 = new JButton(i);
+        l76 = new JButton(i);
+        l77 = new JButton(i);
+        l78 = new JButton(i);
+        l79 = new JButton(i);
+        l80 = new JButton(i);
+        l81 = new JButton(i);
+        l82 = new JButton(i);
+        l83 = new JButton(i);
+        l84 = new JButton(i);
+        l85 = new JButton(i);
+        l86 = new JButton(i);
+        l87 = new JButton(i);
+        l88 = new JButton(i);
+        l89 = new JButton(i);
+        l90 = new JButton(i);
+        l91 = new JButton(i);
+        l92 = new JButton(i);
+        l93 = new JButton(i);
+        l94 = new JButton(i);
+        l95 = new JButton(i);
+        l96 = new JButton(i);
+        l97 = new JButton(i);
+        l98 = new JButton(i);
+        l99 = new JButton(i);
+        l100 = new JButton(i);
+        l1.setBounds(150,40,50,50);
+        l2.setBounds(200,40,50,50);
+        l3.setBounds(250,40,50,50);
+        l4.setBounds(300,40,50,50);
+        l5.setBounds(350,40,50,50);
+        l6.setBounds(400,40,50,50);
+        l7.setBounds(450,40,50,50);
+        l8.setBounds(500,40,50,50);
+        l9.setBounds(550,40,50,50);
+        l10.setBounds(600,40,50,50);
+        l11.setBounds(150,90,50,50);
+        l12.setBounds(200,90,50,50);
+        l13.setBounds(250,90,50,50);
+        l14.setBounds(300,90,50,50);
+        l15.setBounds(350,90,50,50);
+        l16.setBounds(400,90,50,50);
+        l17.setBounds(450,90,50,50);
+        l18.setBounds(500,90,50,50);
+        l19.setBounds(550,90,50,50);
+        l20.setBounds(600,90,50,50);
+        l21.setBounds(150,140,50,50);
+        l22.setBounds(200,140,50,50);
+        l23.setBounds(250,140,50,50);
+        l24.setBounds(300,140,50,50);
+        l25.setBounds(350,140,50,50);
+        l26.setBounds(400,140,50,50);
+        l27.setBounds(450,140,50,50);
+        l28.setBounds(500,140,50,50);
+        l29.setBounds(550,140,50,50);
+        l30.setBounds(600,140,50,50);
+        l31.setBounds(150,190,50,50);
+        l32.setBounds(200,190,50,50);
+        l33.setBounds(250,190,50,50);
+        l34.setBounds(300,190,50,50);
+        l35.setBounds(350,190,50,50);
+        l36.setBounds(400,190,50,50);
+        l37.setBounds(450,190,50,50);
+        l38.setBounds(500,190,50,50);
+        l39.setBounds(550,190,50,50);
+        l40.setBounds(600,190,50,50);
+        l41.setBounds(150,240,50,50);
+        l42.setBounds(200,240,50,50);
+        l43.setBounds(250,240,50,50);
+        l44.setBounds(300,240,50,50);
+        l45.setBounds(350,240,50,50);
+        l46.setBounds(400,240,50,50);
+        l47.setBounds(450,240,50,50);
+        l48.setBounds(500,240,50,50);
+        l49.setBounds(550,240,50,50);
+        l50.setBounds(600,240,50,50);
+        l51.setBounds(150,290,50,50);
+        l52.setBounds(200,290,50,50);
+        l53.setBounds(250,290,50,50);
+        l54.setBounds(300,290,50,50);
+        l55.setBounds(350,290,50,50);
+        l56.setBounds(400,290,50,50);
+        l57.setBounds(450,290,50,50);
+        l58.setBounds(500,290,50,50);
+        l59.setBounds(550,290,50,50);
+        l60.setBounds(600,290,50,50);
+        l61.setBounds(150,340,50,50);
+        l62.setBounds(200,340,50,50);
+        l63.setBounds(250,340,50,50);
+        l64.setBounds(300,340,50,50);
+        l65.setBounds(350,340,50,50);
+        l66.setBounds(400,340,50,50);
+        l67.setBounds(450,340,50,50);
+        l68.setBounds(500,340,50,50);
+        l69.setBounds(550,340,50,50);
+        l70.setBounds(600,340,50,50);
+        l71.setBounds(150,390,50,50);
+        l72.setBounds(200,390,50,50);
+        l73.setBounds(250,390,50,50);
+        l74.setBounds(300,390,50,50);
+        l75.setBounds(350,390,50,50);
+        l76.setBounds(400,390,50,50);
+        l77.setBounds(450,390,50,50);
+        l78.setBounds(500,390,50,50);
+        l79.setBounds(550,390,50,50);
+        l80.setBounds(600,390,50,50);
+        l81.setBounds(150,440,50,50);
+        l82.setBounds(200,440,50,50);
+        l83.setBounds(250,440,50,50);
+        l84.setBounds(300,440,50,50);
+        l85.setBounds(350,440,50,50);
+        l86.setBounds(400,440,50,50);
+        l87.setBounds(450,440,50,50);
+        l88.setBounds(500,440,50,50);
+        l89.setBounds(550,440,50,50);
+        l90.setBounds(600,440,50,50);
+        l91.setBounds(150,490,50,50);
+        l92.setBounds(200,490,50,50);
+        l93.setBounds(250,490,50,50);
+        l94.setBounds(300,490,50,50);
+        l95.setBounds(350,490,50,50);
+        l96.setBounds(400,490,50,50);
+        l97.setBounds(450,490,50,50);
+        l98.setBounds(500,490,50,50);
+        l99.setBounds(550,490,50,50);
+        l100.setBounds(600,490,50,50);
+        l1.setBorderPainted(false);
+        l2.setBorderPainted(false);
+        l3.setBorderPainted(false);
+        l4.setBorderPainted(false);
+        l5.setBorderPainted(false);
+        l6.setBorderPainted(false);
+        l7.setBorderPainted(false);
+        l8.setBorderPainted(false);
+        l9.setBorderPainted(false);
+        l10.setBorderPainted(false);
+        l11.setBorderPainted(false);
+        l12.setBorderPainted(false);
+        l13.setBorderPainted(false);
+        l14.setBorderPainted(false);
+        l15.setBorderPainted(false);
+        l16.setBorderPainted(false);
+        l17.setBorderPainted(false);
+        l18.setBorderPainted(false);
+        l19.setBorderPainted(false);
+        l20.setBorderPainted(false);
+        l21.setBorderPainted(false);
+        l22.setBorderPainted(false);
+        l23.setBorderPainted(false);
+        l24.setBorderPainted(false);
+        l25.setBorderPainted(false);
+        l26.setBorderPainted(false);
+        l27.setBorderPainted(false);
+        l28.setBorderPainted(false);
+        l29.setBorderPainted(false);
+        l30.setBorderPainted(false);
+        l31.setBorderPainted(false);
+        l32.setBorderPainted(false);
+        l33.setBorderPainted(false);
+        l34.setBorderPainted(false);
+        l35.setBorderPainted(false);
+        l36.setBorderPainted(false);
+        l37.setBorderPainted(false);
+        l38.setBorderPainted(false);
+        l39.setBorderPainted(false);
+        l40.setBorderPainted(false);
+        l41.setBorderPainted(false);
+        l42.setBorderPainted(false);
+        l43.setBorderPainted(false);
+        l44.setBorderPainted(false);
+        l45.setBorderPainted(false);
+        l46.setBorderPainted(false);
+        l47.setBorderPainted(false);
+        l48.setBorderPainted(false);
+        l49.setBorderPainted(false);
+        l50.setBorderPainted(false);
+        l51.setBorderPainted(false);
+        l52.setBorderPainted(false);
+        l53.setBorderPainted(false);
+        l54.setBorderPainted(false);
+        l55.setBorderPainted(false);
+        l56.setBorderPainted(false);
+        l57.setBorderPainted(false);
+        l58.setBorderPainted(false);
+        l59.setBorderPainted(false);
+        l60.setBorderPainted(false);
+        l61.setBorderPainted(false);
+        l62.setBorderPainted(false);
+        l63.setBorderPainted(false);
+        l64.setBorderPainted(false);
+        l65.setBorderPainted(false);
+        l66.setBorderPainted(false);
+        l67.setBorderPainted(false);
+        l68.setBorderPainted(false);
+        l69.setBorderPainted(false);
+        l70.setBorderPainted(false);
+        l71.setBorderPainted(false);
+        l72.setBorderPainted(false);
+        l73.setBorderPainted(false);
+        l74.setBorderPainted(false);
+        l75.setBorderPainted(false);
+        l76.setBorderPainted(false);
+        l77.setBorderPainted(false);
+        l78.setBorderPainted(false);
+        l79.setBorderPainted(false);
+        l80.setBorderPainted(false);
+        l81.setBorderPainted(false);
+        l82.setBorderPainted(false);
+        l83.setBorderPainted(false);
+        l84.setBorderPainted(false);
+        l85.setBorderPainted(false);
+        l86.setBorderPainted(false);
+        l87.setBorderPainted(false);
+        l88.setBorderPainted(false);
+        l89.setBorderPainted(false);
+        l90.setBorderPainted(false);
+        l91.setBorderPainted(false);
+        l92.setBorderPainted(false);
+        l93.setBorderPainted(false);
+        l94.setBorderPainted(false);
+        l95.setBorderPainted(false);
+        l96.setBorderPainted(false);
+        l97.setBorderPainted(false);
+        l98.setBorderPainted(false);
+        l99.setBorderPainted(false);
+        l100.setBorderPainted(false);
+        l1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l3.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l4.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l5.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l6.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l7.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l8.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l9.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l10.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l11.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l12.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l13.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l14.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l15.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l16.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l17.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l18.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l19.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l20.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l21.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l22.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l23.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l24.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l25.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l26.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l27.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l28.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l29.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l30.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l31.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l32.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l33.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l34.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l35.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l36.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l37.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l38.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l39.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l40.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l41.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l42.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l43.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l44.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l45.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l46.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l47.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l48.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l49.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l50.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l51.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l52.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l53.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l54.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l55.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l56.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l57.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l58.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l59.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l60.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l61.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l62.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l63.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l64.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l65.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l66.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l67.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l68.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l69.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l70.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l71.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l72.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l73.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l74.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l75.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l76.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l77.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l78.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l79.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l80.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l81.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l82.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l83.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l84.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l85.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l86.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l87.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l88.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l89.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l90.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l91.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l92.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l93.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l94.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l95.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l96.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l97.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l98.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l99.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        l100.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, true));
+        this.play_hit.add(l1);
+        this.play_hit.add(l2);
+        this.play_hit.add(l3);
+        this.play_hit.add(l4);
+        this.play_hit.add(l5);
+        this.play_hit.add(l6);
+        this.play_hit.add(l7);
+        this.play_hit.add(l8);
+        this.play_hit.add(l9);
+        this.play_hit.add(l10);
+        this.play_hit.add(l11);
+        this.play_hit.add(l12);
+        this.play_hit.add(l13);
+        this.play_hit.add(l14);
+        this.play_hit.add(l15);
+        this.play_hit.add(l16);
+        this.play_hit.add(l17);
+        this.play_hit.add(l18);
+        this.play_hit.add(l19);
+        this.play_hit.add(l20);
+        this.play_hit.add(l21);
+        this.play_hit.add(l22);
+        this.play_hit.add(l23);
+        this.play_hit.add(l24);
+        this.play_hit.add(l25);
+        this.play_hit.add(l26);
+        this.play_hit.add(l27);
+        this.play_hit.add(l28);
+        this.play_hit.add(l29);
+        this.play_hit.add(l30);
+        this.play_hit.add(l31);
+        this.play_hit.add(l32);
+        this.play_hit.add(l33);
+        this.play_hit.add(l34);
+        this.play_hit.add(l35);
+        this.play_hit.add(l36);
+        this.play_hit.add(l37);
+        this.play_hit.add(l38);
+        this.play_hit.add(l39);
+        this.play_hit.add(l40);
+        this.play_hit.add(l41);
+        this.play_hit.add(l42);
+        this.play_hit.add(l43);
+        this.play_hit.add(l44);
+        this.play_hit.add(l45);
+        this.play_hit.add(l46);
+        this.play_hit.add(l47);
+        this.play_hit.add(l48);
+        this.play_hit.add(l49);
+        this.play_hit.add(l50);
+        this.play_hit.add(l51);
+        this.play_hit.add(l52);
+        this.play_hit.add(l53);
+        this.play_hit.add(l54);
+        this.play_hit.add(l55);
+        this.play_hit.add(l56);
+        this.play_hit.add(l57);
+        this.play_hit.add(l58);
+        this.play_hit.add(l59);
+        this.play_hit.add(l60);
+        this.play_hit.add(l61);
+        this.play_hit.add(l62);
+        this.play_hit.add(l63);
+        this.play_hit.add(l64);
+        this.play_hit.add(l65);
+        this.play_hit.add(l66);
+        this.play_hit.add(l67);
+        this.play_hit.add(l68);
+        this.play_hit.add(l69);
+        this.play_hit.add(l70);
+        this.play_hit.add(l71);
+        this.play_hit.add(l72);
+        this.play_hit.add(l73);
+        this.play_hit.add(l74);
+        this.play_hit.add(l75);
+        this.play_hit.add(l76);
+        this.play_hit.add(l77);
+        this.play_hit.add(l78);
+        this.play_hit.add(l79);
+        this.play_hit.add(l80);
+        this.play_hit.add(l81);
+        this.play_hit.add(l82);
+        this.play_hit.add(l83);
+        this.play_hit.add(l84);
+        this.play_hit.add(l85);
+        this.play_hit.add(l86);
+        this.play_hit.add(l87);
+        this.play_hit.add(l88);
+        this.play_hit.add(l89);
+        this.play_hit.add(l90);
+        this.play_hit.add(l91);
+        this.play_hit.add(l92);
+        this.play_hit.add(l93);
+        this.play_hit.add(l94);
+        this.play_hit.add(l95);
+        this.play_hit.add(l96);
+        this.play_hit.add(l97);
+        this.play_hit.add(l98);
+        this.play_hit.add(l99);
+        this.play_hit.add(l100);
         SwingWorker s1 = new SwingWorker()
         {
             @Override
@@ -24064,8 +27355,13 @@ public class Main extends JFrame implements MouseMotionListener
                 System.out.println("Destroyer:");
                 System.out.println(com_destroyer_pos[0]);
                 System.out.println(com_destroyer_pos[1]);
-                crd.next(co);
-                return "IT JUST WORKS";
+                load.setText("Switching between bases");
+                return null;
+            }
+            @Override
+            protected void done()
+            {
+                who_is_playing();
             }
         };
         s1.execute();
@@ -24406,8 +27702,11 @@ public class Main extends JFrame implements MouseMotionListener
         }
         System.out.println("Huh. You are running this from a console. Be prepared to see all the stuff that I was using to test the game left in here.\n BTW I'm not dumb enough to leave in the Computer's moves in here. So, you can't cheat :)");
         m.co.setLayout(m.crd);
-        m.co.add(m.j);
-        m.co.add(m.loading);
+        m.co.add(m.j, "CHA");
+        m.co.add(m.loading, "LA");
+        m.co.add(m.play_hit, "PHA");
+        m.play_hit.setLayout(null);
+        m.play_hit.setBackground(Color.BLACK);
         m.PlayArea.setLocation(533,66); //This line is present for a convoluted reason. I use i3-wm and I have modified my config to un-tile and float the application. But, I cannot figure out a way in the config to open it in the middle of the screen. So, I am currently doing it via the code. It will be removed once development is complete.
         m.PlayArea.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         m.tip.setBounds(5,5, 3000, 30);
@@ -24432,7 +27731,9 @@ public class Main extends JFrame implements MouseMotionListener
         System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j);
         c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
+        com = SwingUtilities.getDeepestComponentAt(play_hit, po.x, po.y);
         button_highlight();
+        System.out.println(c);
     }
 
     public void mouseDragged(MouseEvent e)
@@ -24449,6 +27750,7 @@ public class Main extends JFrame implements MouseMotionListener
         System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j);
         c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
+        com = SwingUtilities.getDeepestComponentAt(play_hit, po.x, po.y);
         button_highlight();
     }
 }
