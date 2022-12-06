@@ -12,9 +12,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    int com_is_hit_or_not;
+    int air_or, bat_or, sub_or, cru_or, des_or;
     String title = "LA";
     int play_hit_count = 0;
-
+    int[] com_hit_pos = new int[100];
     int com_hit_count = 0;
     int play_ai_count = 0, play_bat_count = 0, play_sub_count = 0, play_cru_count = 0, play_des_count = 0;
     int turn_flag = 0, refresh_flag = 1;
@@ -878,7 +880,7 @@ public class Main extends JFrame implements MouseMotionListener
     int flag = 0;
     int xpos = 0 , ypos = 0 , xoffset = 25, yoffset = 10;
 
-    int[] com_air_grid = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89,90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100};
+    int[] com_hit_grid = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89,90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100};
     int[] com_air_place_h = new int[60];
     int[] com_air_place_v = new int[60];
     int[] com_bat_place_h = new int[70];
@@ -899,6 +901,11 @@ public class Main extends JFrame implements MouseMotionListener
     int[] com_submarine_pos = new int[3];
     int[] com_cruiser_pos = new int[3];
     int[] com_destroyer_pos = new int[2];
+    int[] play_aircraft_pos = new int[5];
+    int[] play_battleship_pos = new int[4];
+    int[] play_submarine_pos = new int[3];
+    int[] play_cruiser_pos = new int[3];
+    int[] play_destroyer_pos = new int[2];
     JLabel l = new JLabel("That is an invalid move - Please try another move");
     String path_h = "aircraft-carrier/aircraft-h.png";
     String path_v = "aircraft-carrier/aircraft-v.png";
@@ -8111,12 +8118,760 @@ public class Main extends JFrame implements MouseMotionListener
             com_hit();
         }
     }
+    void convert_player()
+    {
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            play_aircraft_pos[i] = Integer.parseInt(aircraft_pos[i].substring(1));
+        }
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            play_battleship_pos[i] = Integer.parseInt(battleship_pos[i].substring(1));
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            play_submarine_pos[i] = Integer.parseInt(submarine_pos[i].substring(1));
+        }
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            play_cruiser_pos[i] = Integer.parseInt(cruiser_pos[i].substring(1));
+        }
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            play_destroyer_pos[i] = Integer.parseInt(destroyer_pos[i].substring(1));
+        }
+        if((play_aircraft_pos[1] - play_aircraft_pos[0]) == 1)
+        {
+            air_or = 0;
+        }
+        else
+        {
+            air_or = 1;
+        }
+        if((play_battleship_pos[1] - play_battleship_pos[0]) == 1)
+        {
+            bat_or = 0;
+        }
+        else
+        {
+            bat_or = 1;
+        }
+        if((play_submarine_pos[1] - play_submarine_pos[0]) == 1)
+        {
+            sub_or = 0;
+        }
+        else
+        {
+            sub_or = 1;
+        }
+        if((play_cruiser_pos[1] - play_cruiser_pos[0]) == 1)
+        {
+            cru_or = 0;
+        }
+        else
+        {
+            cru_or = 1;
+        }
+        if((play_destroyer_pos[1] - play_destroyer_pos[0]) == 1)
+        {
+            des_or = 0;
+        }
+        else
+        {
+            des_or = 1;
+        }
+        System.out.println("Aircraft Carrier Orientation : "+air_or);
+        for(int i = 0 ; i < 5 ; i ++)
+        {
+            System.out.println(play_aircraft_pos[i]);
+        }
+        System.out.println("Battleship Orientation : "+bat_or);
+        for(int i = 0 ; i < 4 ; i ++)
+        {
+            System.out.println(play_battleship_pos[i]);
+        }
+        System.out.println("Submarine Orientation : "+sub_or);
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            System.out.println(play_submarine_pos[i]);
+        }
+        System.out.println("Cruiser Orientation : "+cru_or);
+        for(int i = 0 ; i < 3 ; i ++)
+        {
+            System.out.println(play_cruiser_pos[i]);
+        }
+        System.out.println("Destroyer Orientation : "+des_or);
+        for(int i = 0 ; i < 2 ; i ++)
+        {
+            System.out.println(play_destroyer_pos[i]);
+        }
+    }
+    public JButton com_render(JButton b, int pos)
+    {
+        int no_hits = 0;
+        if(air_or == 0)
+        {
+            System.out.println("In Aircraft 0");
+            for(int i = 0 ; i < 5 ; i ++)
+            {
+                if(play_aircraft_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-"+iconpos+".png"));
+                    com_hit_count++;
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(air_or == 1)
+        {
+            System.out.println("In Aircraft 1");
+            for(int i = 0 ; i < 5 ; i ++)
+            {
+                if(play_aircraft_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(bat_or == 0)
+        {
+            System.out.println("In Battleship 0");
+            for(int i = 0 ; i < 4 ; i ++)
+            {
+                if(play_battleship_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(bat_or == 1)
+        {
+            System.out.println("In Battleship 1");
+            for(int i = 0 ; i < 4 ; i ++)
+            {
+                if(play_battleship_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        else if(sub_or == 0)
+        {
+            System.out.println("In Submarine 0");
+            for(int i = 0 ; i < 3 ; i ++)
+            {
+                if(play_submarine_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(sub_or == 1)
+        {
+            System.out.println("In Submarine 1");
+            for(int i = 0 ; i < 3 ; i ++)
+            {
+                if(play_submarine_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(cru_or == 0)
+        {
+            System.out.println("In Cruiser 0");
+            for(int i = 0 ; i < 3 ; i ++)
+            {
+                if(play_cruiser_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(cru_or == 1)
+        {
+            System.out.println("In Cruiser 1");
+            for(int i = 0 ; i < 3 ; i ++)
+            {
+                if(play_cruiser_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(des_or == 0)
+        {
+            System.out.println("In Destroyer 0");
+            for(int i = 0 ; i < 2 ; i ++)
+            {
+                if(play_destroyer_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(des_or == 1)
+        {
+            System.out.println("In Destroyer 1");
+            for(int i = 0 ; i < 2 ; i ++)
+            {
+                if(play_destroyer_pos[i] == pos)
+                {
+                    int iconpos = i + 1;
+                    com_is_hit_or_not = 1;
+                    b.setIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-"+iconpos+".png"));
+                    b.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-"+iconpos+".png"));
+                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    no_hits = 1;
+                    com_hit_count++;
+                    j.revalidate();
+                    j.repaint();
+                    return b;
+                }
+            }
+        }
+        if(no_hits == 0)
+        {
+            com_is_hit_or_not = 0;
+            b.setIcon(new ImageIcon("water_ship_miss.png"));
+            j.revalidate();
+            j.repaint();
+            return b;
+        }
+        return b;
+    }
     public void com_hit()
     {
-        refresh_flag = 1;
-        turn_flag = 0;
-        //JOptionPane.showMessageDialog(PlayArea, "This is just for testing purposes", "Testing", JOptionPane.INFORMATION_MESSAGE);
-        who_is_playing();
+        SwingWorker com_hitter = new SwingWorker()
+        {
+            @Override
+            protected Object doInBackground() throws Exception
+            {
+                while(true)
+                {
+                    int hit_pos_index = Math.abs(r.nextInt());
+                    hit_pos_index = hit_pos_index % 100;
+                    System.out.println(hit_pos_index);
+                    if(com_hit_grid[hit_pos_index] != 6000)
+                    {
+                        com_hit_grid[hit_pos_index] = 6000;
+                        if(hit_pos_index == 0)
+                        {
+                            j1 = com_render(j1, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 1)
+                        {
+                            j2 = com_render(j2, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 2)
+                        {
+                            j3 = com_render(j3, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 3)
+                        {
+                            j4 = com_render(j4, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 4)
+                        {
+                            j5 = com_render(j5, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 5)
+                        {
+                            j6 = com_render(j6, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 6)
+                        {
+                            j7 = com_render(j7, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 7)
+                        {
+                            j8 = com_render(j8, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 8)
+                        {
+                            j9 = com_render(j9, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 9)
+                        {
+                            j10 = com_render(j10, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 10)
+                        {
+                            j11 = com_render(j11, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 11)
+                        {
+                            j12 = com_render(j12, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 12)
+                        {
+                            j13 = com_render(j13, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 13)
+                        {
+                            j14 = com_render(j14, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 14)
+                        {
+                            j15 = com_render(j15, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 15)
+                        {
+                            j16 = com_render(j16, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 16)
+                        {
+                            j17 = com_render(j17, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 17)
+                        {
+                            j18 = com_render(j18, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 18)
+                        {
+                            j19 = com_render(j19, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 19)
+                        {
+                            j20 = com_render(j20, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 20)
+                        {
+                            j21 = com_render(j21, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 21)
+                        {
+                            j22 = com_render(j22, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 22)
+                        {
+                            j23 = com_render(j23, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 23)
+                        {
+                            j24 = com_render(j24, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 24)
+                        {
+                            j25 = com_render(j25, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 25)
+                        {
+                            j26 = com_render(j26, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 26)
+                        {
+                            j27 = com_render(j27, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 27)
+                        {
+                            j28 = com_render(j28, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 28)
+                        {
+                            j29 = com_render(j29, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 29)
+                        {
+                            j30 = com_render(j30, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 30)
+                        {
+                            j31 = com_render(j31, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 31)
+                        {
+                            j32 = com_render(j32, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 32)
+                        {
+                            j33 = com_render(j33, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 33)
+                        {
+                            j34 = com_render(j34, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 34)
+                        {
+                            j35 = com_render(j35, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 35)
+                        {
+                            j36 = com_render(j36, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 36)
+                        {
+                            j37 = com_render(j37, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 37)
+                        {
+                            j38 = com_render(j38, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 38)
+                        {
+                            j39 = com_render(j39, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 39)
+                        {
+                            j40 = com_render(j40, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 40)
+                        {
+                            j41 = com_render(j41, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 41)
+                        {
+                            j42 = com_render(j42, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 42)
+                        {
+                            j43 = com_render(j43, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 43)
+                        {
+                            j44 = com_render(j44, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 44)
+                        {
+                            j45 = com_render(j45, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 45)
+                        {
+                            j46 = com_render(j46, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 46)
+                        {
+                            j47 = com_render(j47, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 47)
+                        {
+                            j48 = com_render(j48, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 48)
+                        {
+                            j49 = com_render(j49, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 49)
+                        {
+                            j50 = com_render(j50, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 50)
+                        {
+                            j51 = com_render(j51, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 51)
+                        {
+                            j52 = com_render(j52, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 52)
+                        {
+                            j53 = com_render(j53, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 53)
+                        {
+                            j54 = com_render(j54, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 54)
+                        {
+                            j55 = com_render(j55, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 55)
+                        {
+                            j56 = com_render(j56, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 56)
+                        {
+                            j57 = com_render(j57, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 57)
+                        {
+                            j58 = com_render(j58, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 58)
+                        {
+                            j59 = com_render(j59, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 59)
+                        {
+                            j60 = com_render(j60, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 60)
+                        {
+                            j61 = com_render(j61, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 61)
+                        {
+                            j62 = com_render(j62, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 62)
+                        {
+                            j63 = com_render(j63, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 63)
+                        {
+                            j64 = com_render(j64, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 64)
+                        {
+                            j65 = com_render(j65, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 65)
+                        {
+                            j66 = com_render(j66, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 66)
+                        {
+                            j67 = com_render(j67, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 67)
+                        {
+                            j68 = com_render(j68, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 68)
+                        {
+                            j69 = com_render(j69, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 69)
+                        {
+                            j70 = com_render(j70, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 70)
+                        {
+                            j71 = com_render(j71, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 71)
+                        {
+                            j72 = com_render(j72, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 72)
+                        {
+                            j73 = com_render(j73, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 73)
+                        {
+                            j74 = com_render(j74, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 74)
+                        {
+                            j75 = com_render(j75, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 75)
+                        {
+                            j76 = com_render(j76, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 76)
+                        {
+                            j77 = com_render(j77, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 77)
+                        {
+                            j78 = com_render(j78, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 78)
+                        {
+                            j79 = com_render(j79, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 79)
+                        {
+                            j80 = com_render(j80, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 80)
+                        {
+                            j81 = com_render(j81, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 81)
+                        {
+                            j82 = com_render(j82, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 82)
+                        {
+                            j83 = com_render(j83, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 83)
+                        {
+                            j84 = com_render(j84, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 84)
+                        {
+                            j85 = com_render(j85, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 85)
+                        {
+                            j86 = com_render(j86, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 86)
+                        {
+                            j87 = com_render(j87, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 87)
+                        {
+                            j88 = com_render(j88, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 88)
+                        {
+                            j89 = com_render(j89, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 89)
+                        {
+                            j90 = com_render(j90, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 90)
+                        {
+                            j91 = com_render(j91, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 91)
+                        {
+                            j92 = com_render(j92, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 92)
+                        {
+                            j93 = com_render(j93, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 93)
+                        {
+                            j94 = com_render(j94, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 94)
+                        {
+                            j95 = com_render(j95, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 95)
+                        {
+                            j96 = com_render(j96, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 96)
+                        {
+                            j97 = com_render(j97, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 97)
+                        {
+                            j98 = com_render(j98, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 98)
+                        {
+                            j99 = com_render(j99, hit_pos_index+1);
+                        }
+                        else if(hit_pos_index == 99)
+                        {
+                            j100 = com_render(j100, hit_pos_index+1);
+                        }
+                        j.revalidate();
+                        j.repaint();
+                        if(com_is_hit_or_not == 0)
+                        {
+                            refresh_flag = 1;
+                            turn_flag = 0;
+                        }
+                        else
+                        {
+                            refresh_flag = 0;
+                            turn_flag = 1;
+                        }
+                        break;
+                    }
+                }
+                return null;
+            }
+            @Override
+            protected void done()
+            {
+                who_is_playing();
+            }
+        };
+        SwingWorker com_delay = new SwingWorker()
+        {
+            @Override
+            protected Object doInBackground() throws Exception
+            {
+                Thread.sleep(1000);
+                return null;
+            }
+            @Override
+            protected void done()
+            {
+                com_hitter.execute();
+            }
+        };
+        com_delay.execute();
     }
     public void j1Call()
     {
@@ -30628,6 +31383,7 @@ public class Main extends JFrame implements MouseMotionListener
     }
     public void com_place()
     {
+        convert_player();
         Icon i = new ImageIcon("water.png");
         l1 = new JButton(i);
         l2 = new JButton(i);
@@ -31662,28 +32418,28 @@ public class Main extends JFrame implements MouseMotionListener
 
                     }
                 }
-                System.out.println("Computer Positions:\nAircraft Carrier:");
-                System.out.println(com_aircraft_pos[0]);
-                System.out.println(com_aircraft_pos[1]);
-                System.out.println(com_aircraft_pos[2]);
-                System.out.println(com_aircraft_pos[3]);
-                System.out.println(com_aircraft_pos[4]);
-                System.out.println("Battleship:");
-                System.out.println(com_battleship_pos[0]);
-                System.out.println(com_battleship_pos[1]);
-                System.out.println(com_battleship_pos[2]);
-                System.out.println(com_battleship_pos[3]);
-                System.out.println("Submarine:");
-                System.out.println(com_submarine_pos[0]);
-                System.out.println(com_submarine_pos[1]);
-                System.out.println(com_submarine_pos[2]);
-                System.out.println("Cruiser:");
-                System.out.println(com_cruiser_pos[0]);
-                System.out.println(com_cruiser_pos[1]);
-                System.out.println(com_cruiser_pos[2]);
-                System.out.println("Destroyer:");
-                System.out.println(com_destroyer_pos[0]);
-                System.out.println(com_destroyer_pos[1]);
+//                System.out.println("Computer Positions:\nAircraft Carrier:");
+//                System.out.println(com_aircraft_pos[0]);
+//                System.out.println(com_aircraft_pos[1]);
+//                System.out.println(com_aircraft_pos[2]);
+//                System.out.println(com_aircraft_pos[3]);
+//                System.out.println(com_aircraft_pos[4]);
+//                System.out.println("Battleship:");
+//                System.out.println(com_battleship_pos[0]);
+//                System.out.println(com_battleship_pos[1]);
+//                System.out.println(com_battleship_pos[2]);
+//                System.out.println(com_battleship_pos[3]);
+//                System.out.println("Submarine:");
+//                System.out.println(com_submarine_pos[0]);
+//                System.out.println(com_submarine_pos[1]);
+//                System.out.println(com_submarine_pos[2]);
+//                System.out.println("Cruiser:");
+//                System.out.println(com_cruiser_pos[0]);
+//                System.out.println(com_cruiser_pos[1]);
+//                System.out.println(com_cruiser_pos[2]);
+//                System.out.println("Destroyer:");
+//                System.out.println(com_destroyer_pos[0]);
+//                System.out.println(com_destroyer_pos[1]);
                 load.setText("Switching between bases");
                 return null;
             }
