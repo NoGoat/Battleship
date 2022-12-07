@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    Icon safe, found, hit;
     int com_is_hit_or_not;
     int air_or, bat_or, sub_or, cru_or, des_or;
     String title = "LA";
@@ -19,8 +20,11 @@ public class Main extends JFrame implements MouseMotionListener
     int[] com_hit_pos = new int[100];
     int com_hit_count = 0;
     int play_ai_count = 0, play_bat_count = 0, play_sub_count = 0, play_cru_count = 0, play_des_count = 0;
+    int com_ai_count = 0, com_bat_count = 0, com_sub_count = 0, com_cru_count = 0, com_des_count = 0;
     int turn_flag = 0, refresh_flag = 1;
     JLabel load = new JLabel("Please wait while the computer places its ships");
+    JLabel p_air, p_bat, p_sub, p_cru, p_des, tp_air, tp_bat, tp_sub, tp_cru, tp_des;
+    JLabel c_air, c_bat, c_sub, c_cru, c_des, tc_air, tc_bat, tc_sub, tc_cru, tc_des;
     Component com;
     JPanel play_hit = new JPanel();
     JButton l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30, l31, l32, l33, l34, l35, l36, l37, l38, l39, l40, l41, l42, l43, l44, l45, l46, l47, l48, l49, l50, l51, l52, l53, l54, l55, l56, l57, l58, l59, l60, l61, l62, l63, l64, l65, l66, l67, l68, l69, l70, l71, l72, l73, l74, l75, l76, l77, l78, l79, l80, l81, l82, l83, l84, l85, l86, l87, l88, l89, l90, l91, l92, l93, l94, l95, l96, l97, l98, l99, l100;
@@ -29,405 +33,306 @@ public class Main extends JFrame implements MouseMotionListener
         @Override
         public void mouseClicked(MouseEvent e)
         {
-            if(turn_flag == 0)
+            if(cur_aircraft != "finished")
             {
-                if(c == j1 && j1.isEnabled())
+                if (c == j1 && j1.isEnabled())
                 {
                     j1Call();
-                }
-                else if (c == j11 && j11.isEnabled())
+                } else if (c == j11 && j11.isEnabled())
                 {
                     j11Call();
-                }
-                else if (c == j21 && j21.isEnabled())
+                } else if (c == j21 && j21.isEnabled())
                 {
                     j21Call();
-                }
-                else if (c == j31 && j31.isEnabled())
+                } else if (c == j31 && j31.isEnabled())
                 {
                     j31Call();
-                }
-                else if (c == j41 && j41.isEnabled())
+                } else if (c == j41 && j41.isEnabled())
                 {
                     j41Call();
-                }
-                else if (c == j51 && j51.isEnabled())
+                } else if (c == j51 && j51.isEnabled())
                 {
                     j51Call();
-                }
-                else if (c == j61 && j61.isEnabled())
+                } else if (c == j61 && j61.isEnabled())
                 {
                     j61Call();
-                }
-                else if (c == j71 && j71.isEnabled())
+                } else if (c == j71 && j71.isEnabled())
                 {
                     j71Call();
-                }
-                else if (c == j81 && j81.isEnabled())
+                } else if (c == j81 && j81.isEnabled())
                 {
                     j81Call();
-                }
-                else if (c == j91 && j91.isEnabled())
+                } else if (c == j91 && j91.isEnabled())
                 {
                     j91Call();
-                }
-                else if (c == j2 && j2.isEnabled())
+                } else if (c == j2 && j2.isEnabled())
                 {
                     j2Call();
-                }
-                else if (c == j12 && j12.isEnabled())
+                } else if (c == j12 && j12.isEnabled())
                 {
                     j12Call();
-                }
-                else if (c == j22 && j22.isEnabled())
+                } else if (c == j22 && j22.isEnabled())
                 {
                     j22Call();
-                }
-                else if (c == j32 && j32.isEnabled())
+                } else if (c == j32 && j32.isEnabled())
                 {
                     j32Call();
-                }
-                else if (c == j42 && j42.isEnabled())
+                } else if (c == j42 && j42.isEnabled())
                 {
                     j42Call();
-                }
-                else if (c == j52 && j52.isEnabled())
+                } else if (c == j52 && j52.isEnabled())
                 {
                     j52Call();
-                }
-                else if (c == j62 && j62.isEnabled())
+                } else if (c == j62 && j62.isEnabled())
                 {
                     j62Call();
-                }
-                else if (c == j72 && j72.isEnabled())
+                } else if (c == j72 && j72.isEnabled())
                 {
                     j72Call();
-                }
-                else if (c == j82 && j82.isEnabled())
+                } else if (c == j82 && j82.isEnabled())
                 {
                     j82Call();
-                }
-                else if (c == j92 && j92.isEnabled())
+                } else if (c == j92 && j92.isEnabled())
                 {
                     j92Call();
-                }
-                else if (c == j3 && j3.isEnabled())
+                } else if (c == j3 && j3.isEnabled())
                 {
                     j3Call();
-                }
-                else if (c == j13 && j13.isEnabled())
+                } else if (c == j13 && j13.isEnabled())
                 {
                     j13Call();
-                }
-                else if (c == j23 && j23.isEnabled())
+                } else if (c == j23 && j23.isEnabled())
                 {
                     j23Call();
-                }
-                else if (c == j33 && j33.isEnabled())
+                } else if (c == j33 && j33.isEnabled())
                 {
                     j33Call();
-                }
-                else if (c == j43 && j43.isEnabled())
+                } else if (c == j43 && j43.isEnabled())
                 {
                     j43Call();
-                }
-                else if (c == j53 && j53.isEnabled())
+                } else if (c == j53 && j53.isEnabled())
                 {
                     j53Call();
-                }
-                else if (c == j63 && j63.isEnabled())
+                } else if (c == j63 && j63.isEnabled())
                 {
                     j63Call();
-                }
-                else if (c == j73 && j73.isEnabled())
+                } else if (c == j73 && j73.isEnabled())
                 {
                     j73Call();
-                }
-                else if (c == j83 && j83.isEnabled())
+                } else if (c == j83 && j83.isEnabled())
                 {
                     j83Call();
-                }
-                else if (c == j93 && j93.isEnabled())
+                } else if (c == j93 && j93.isEnabled())
                 {
                     j93Call();
-                }
-                else if (c == j4 && j4.isEnabled())
+                } else if (c == j4 && j4.isEnabled())
                 {
                     j4Call();
-                }
-                else if (c == j14 && j14.isEnabled())
+                } else if (c == j14 && j14.isEnabled())
                 {
                     j14Call();
-                }
-                else if (c == j24 && j24.isEnabled())
+                } else if (c == j24 && j24.isEnabled())
                 {
                     j24Call();
-                }
-                else if (c == j34 && j34.isEnabled())
+                } else if (c == j34 && j34.isEnabled())
                 {
                     j34Call();
-                }
-                else if (c == j44 && j44.isEnabled())
+                } else if (c == j44 && j44.isEnabled())
                 {
                     j44Call();
-                }
-                else if (c == j54 && j54.isEnabled())
+                } else if (c == j54 && j54.isEnabled())
                 {
                     j54Call();
-                }
-                else if (c == j64 && j64.isEnabled())
+                } else if (c == j64 && j64.isEnabled())
                 {
                     j64Call();
-                }
-                else if (c == j74 && j74.isEnabled())
+                } else if (c == j74 && j74.isEnabled())
                 {
                     j74Call();
-                }
-                else if (c == j84 && j84.isEnabled())
+                } else if (c == j84 && j84.isEnabled())
                 {
                     j84Call();
-                }
-                else if (c == j94 && j94.isEnabled())
+                } else if (c == j94 && j94.isEnabled())
                 {
                     j94Call();
-                }
-                else if (c == j5 && j5.isEnabled())
+                } else if (c == j5 && j5.isEnabled())
                 {
                     j5Call();
-                }
-                else if (c == j15 && j15.isEnabled())
+                } else if (c == j15 && j15.isEnabled())
                 {
                     j15Call();
-                }
-                else if (c == j25 && j25.isEnabled())
+                } else if (c == j25 && j25.isEnabled())
                 {
                     j25Call();
-                }
-                else if (c == j35 && j35.isEnabled())
+                } else if (c == j35 && j35.isEnabled())
                 {
                     j35Call();
-                }
-                else if (c == j45 && j45.isEnabled())
+                } else if (c == j45 && j45.isEnabled())
                 {
                     j45Call();
-                }
-                else if (c == j55 && j55.isEnabled())
+                } else if (c == j55 && j55.isEnabled())
                 {
                     j55Call();
-                }
-                else if (c == j65 && j65.isEnabled())
+                } else if (c == j65 && j65.isEnabled())
                 {
                     j65Call();
-                }
-                else if (c == j75 && j75.isEnabled())
+                } else if (c == j75 && j75.isEnabled())
                 {
                     j75Call();
-                }
-                else if (c == j85 && j85.isEnabled())
+                } else if (c == j85 && j85.isEnabled())
                 {
                     j85Call();
-                }
-                else if (c == j95 && j95.isEnabled())
+                } else if (c == j95 && j95.isEnabled())
                 {
                     j95Call();
-                }
-                else if (c == j6 && j6.isEnabled())
+                } else if (c == j6 && j6.isEnabled())
                 {
                     j6Call();
-                }
-                else if (c == j16 && j16.isEnabled())
+                } else if (c == j16 && j16.isEnabled())
                 {
                     j16Call();
-                }
-                else if (c == j26 && j26.isEnabled())
+                } else if (c == j26 && j26.isEnabled())
                 {
                     j26Call();
-                }
-                else if (c == j36 && j36.isEnabled())
+                } else if (c == j36 && j36.isEnabled())
                 {
                     j36Call();
-                }
-                else if (c == j46 && j46.isEnabled())
+                } else if (c == j46 && j46.isEnabled())
                 {
                     j46Call();
-                }
-                else if (c == j56 && j56.isEnabled())
+                } else if (c == j56 && j56.isEnabled())
                 {
                     j56Call();
-                }
-                else if (c == j66 && j66.isEnabled())
+                } else if (c == j66 && j66.isEnabled())
                 {
                     j66Call();
-                }
-                else if (c == j76 && j76.isEnabled())
+                } else if (c == j76 && j76.isEnabled())
                 {
                     j76Call();
-                }
-                else if (c == j86 && j86.isEnabled())
+                } else if (c == j86 && j86.isEnabled())
                 {
                     j86Call();
-                }
-                else if (c == j96 && j96.isEnabled())
+                } else if (c == j96 && j96.isEnabled())
                 {
                     j96Call();
-                }
-                else if (c == j7 && j7.isEnabled())
+                } else if (c == j7 && j7.isEnabled())
                 {
                     j7Call();
-                }
-                else if (c == j17 && j17.isEnabled())
+                } else if (c == j17 && j17.isEnabled())
                 {
                     j17Call();
-                }
-                else if (c == j27 && j27.isEnabled())
+                } else if (c == j27 && j27.isEnabled())
                 {
                     j27Call();
-                }
-                else if (c == j37 && j37.isEnabled())
+                } else if (c == j37 && j37.isEnabled())
                 {
                     j37Call();
-                }
-                else if (c == j47 && j47.isEnabled())
+                } else if (c == j47 && j47.isEnabled())
                 {
                     j47Call();
-                }
-                else if (c == j57 && j57.isEnabled())
+                } else if (c == j57 && j57.isEnabled())
                 {
                     j57Call();
-                }
-                else if (c == j67 && j67.isEnabled())
+                } else if (c == j67 && j67.isEnabled())
                 {
                     j67Call();
-                }
-                else if (c == j77 && j77.isEnabled())
+                } else if (c == j77 && j77.isEnabled())
                 {
                     j77Call();
-                }
-                else if (c == j87 && j87.isEnabled())
+                } else if (c == j87 && j87.isEnabled())
                 {
                     j87Call();
-                }
-                else if (c == j97 && j97.isEnabled())
+                } else if (c == j97 && j97.isEnabled())
                 {
                     j97Call();
-                }
-                else if (c == j8 && j8.isEnabled())
+                } else if (c == j8 && j8.isEnabled())
                 {
                     j8Call();
-                }
-                else if (c == j18 && j17.isEnabled())
+                } else if (c == j18 && j17.isEnabled())
                 {
                     j18Call();
-                }
-                else if (c == j28 && j28.isEnabled())
+                } else if (c == j28 && j28.isEnabled())
                 {
                     j28Call();
-                }
-                else if (c == j38 && j38.isEnabled())
+                } else if (c == j38 && j38.isEnabled())
                 {
                     j38Call();
-                }
-                else if (c == j48 && j48.isEnabled())
+                } else if (c == j48 && j48.isEnabled())
                 {
                     j48Call();
-                }
-                else if (c == j58 && j58.isEnabled())
+                } else if (c == j58 && j58.isEnabled())
                 {
                     j58Call();
-                }
-                else if (c == j68 && j68.isEnabled())
+                } else if (c == j68 && j68.isEnabled())
                 {
                     j68Call();
-                }
-                else if (c == j78 && j78.isEnabled())
+                } else if (c == j78 && j78.isEnabled())
                 {
                     j78Call();
-                }
-                else if (c == j88 && j88.isEnabled())
+                } else if (c == j88 && j88.isEnabled())
                 {
                     j88Call();
-                }
-                else if (c == j98 && j98.isEnabled())
+                } else if (c == j98 && j98.isEnabled())
                 {
                     j98Call();
-                }
-                else if (c == j9 && j9.isEnabled())
+                } else if (c == j9 && j9.isEnabled())
                 {
                     j9Call();
-                }
-                else if (c == j19 && j19.isEnabled())
+                } else if (c == j19 && j19.isEnabled())
                 {
                     j19Call();
-                }
-                else if (c == j29 && j29.isEnabled())
+                } else if (c == j29 && j29.isEnabled())
                 {
                     j29Call();
-                }
-                else if (c == j39 && j39.isEnabled())
+                } else if (c == j39 && j39.isEnabled())
                 {
                     j39Call();
-                }
-                else if (c == j49 && j49.isEnabled())
+                } else if (c == j49 && j49.isEnabled())
                 {
                     j49Call();
-                }
-                else if (c == j59 && j59.isEnabled())
+                } else if (c == j59 && j59.isEnabled())
                 {
                     j59Call();
-                }
-                else if (c == j69 && j69.isEnabled())
+                } else if (c == j69 && j69.isEnabled())
                 {
                     j69Call();
-                }
-                else if (c == j79 && j79.isEnabled())
+                } else if (c == j79 && j79.isEnabled())
                 {
                     j79Call();
-                }
-                else if (c == j89 && j89.isEnabled())
+                } else if (c == j89 && j89.isEnabled())
                 {
                     j89Call();
-                }
-                else if (c == j99 && j99.isEnabled())
+                } else if (c == j99 && j99.isEnabled())
                 {
                     j99Call();
-                }
-                else if (c == j10 && j10.isEnabled())
+                } else if (c == j10 && j10.isEnabled())
                 {
                     j10Call();
-                }
-                else if (c == j20 && j20.isEnabled())
+                } else if (c == j20 && j20.isEnabled())
                 {
                     j20Call();
-                }
-                else if (c == j30 && j30.isEnabled())
+                } else if (c == j30 && j30.isEnabled())
                 {
                     j30Call();
-                }
-                else if (c == j40 && j40.isEnabled())
+                } else if (c == j40 && j40.isEnabled())
                 {
                     j40Call();
-                }
-                else if (c == j50 && j50.isEnabled())
+                } else if (c == j50 && j50.isEnabled())
                 {
                     j50Call();
-                }
-                else if (c == j60 && j60.isEnabled())
+                } else if (c == j60 && j60.isEnabled())
                 {
                     j60Call();
-                }
-                else if (c == j70 && j70.isEnabled())
+                } else if (c == j70 && j70.isEnabled())
                 {
                     j70Call();
-                }
-                else if (c == j80 && j80.isEnabled())
+                } else if (c == j80 && j80.isEnabled())
                 {
                     j80Call();
-                }
-                else if (c == j90 && j90.isEnabled())
+                } else if (c == j90 && j90.isEnabled())
                 {
                     j90Call();
-                }
-                else
+                } else
                 {
                     l.setBounds(200, 540, 600, 50);
                     l.setForeground(Color.WHITE);
@@ -436,6 +341,9 @@ public class Main extends JFrame implements MouseMotionListener
                     j.repaint();
                     //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
                 }
+            }
+            if(turn_flag == 0)
+            {
                 if (com == l1 && l1.isEnabled())
                 {
                     l1Call();
@@ -913,6 +821,89 @@ public class Main extends JFrame implements MouseMotionListener
     JFrame PlayArea = new JFrame("Battleship");
     JButton j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, j49, j50, j51, j52, j53, j54, j55, j56, j57, j58, j59, j60, j61, j62, j63, j64, j65, j66, j67, j68, j69, j70, j71, j72, j73, j74, j75, j76, j77, j78, j79, j80, j81, j82, j83, j84, j85, j86, j87, j88, j89, j90, j91, j92, j93, j94, j95, j96, j97, j98, j99, j100;
 
+    public void hud_change()
+    {
+        if(play_ai_count > 0 && play_ai_count < 5)
+        {
+            p_air.setIcon(found);
+        }
+        if(play_ai_count == 5)
+        {
+            p_air.setIcon(hit);
+        }
+        if(play_bat_count > 0 && play_bat_count < 4)
+        {
+            p_bat.setIcon(found);
+        }
+        if(play_bat_count == 4)
+        {
+            p_bat.setIcon(hit);
+        }
+        if(play_sub_count > 0 && play_sub_count < 3)
+        {
+            p_sub.setIcon(found);
+        }
+        if(play_sub_count == 3)
+        {
+            p_sub.setIcon(hit);
+        }
+        if(play_cru_count > 0 && play_cru_count < 3)
+        {
+            p_cru.setIcon(found);
+        }
+        if(play_cru_count == 3)
+        {
+            p_cru.setIcon(hit);
+        }
+        if(play_des_count > 0 && play_des_count < 2)
+        {
+            p_des.setIcon(found);
+        }
+        if(play_des_count == 2)
+        {
+            p_des.setIcon(hit);
+        }
+        if(com_ai_count > 0 && com_ai_count < 5)
+        {
+            c_air.setIcon(found);
+        }
+        if(com_ai_count == 5)
+        {
+            c_air.setIcon(safe);
+        }
+        if(com_bat_count > 0 && com_bat_count < 4)
+        {
+            c_bat.setIcon(found);
+        }
+        if(com_bat_count == 4)
+        {
+            c_bat.setIcon(safe);
+        }
+        if(com_sub_count > 0 && com_sub_count < 3)
+        {
+            c_sub.setIcon(found);
+        }
+        if(com_sub_count == 3)
+        {
+            c_sub.setIcon(safe);
+        }
+        if(com_cru_count > 0 && com_cru_count < 3)
+        {
+            c_cru.setIcon(found);
+        }
+        if(com_cru_count == 3)
+        {
+            c_cru.setIcon(safe);
+        }
+        if(com_des_count > 0 && com_des_count < 2)
+        {
+            c_des.setIcon(found);
+        }
+        if(com_des_count == 2)
+        {
+            c_des.setIcon(safe);
+        }
+    }
     public void l1Call()
     {
         int flag = 0;
@@ -8109,6 +8100,7 @@ public class Main extends JFrame implements MouseMotionListener
                 help.execute();
             }
         };
+        hud_change();
         if(refresh_flag == 1)
         {
             wait.execute();
@@ -8222,6 +8214,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-"+iconpos+".png"));
                     com_hit_count++;
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_ai_count++;
                     no_hits = 1;
                     j.revalidate();
                     j.repaint();
@@ -8241,6 +8234,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_ai_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8261,6 +8255,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_bat_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8281,6 +8276,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_bat_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8301,6 +8297,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_sub_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8321,6 +8318,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_sub_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8341,6 +8339,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_cru_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8361,6 +8360,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_cru_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8381,6 +8381,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_des_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -8401,6 +8402,7 @@ public class Main extends JFrame implements MouseMotionListener
                     b.setIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-"+iconpos+".png"));
                     System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    com_des_count++;
                     no_hits = 1;
                     com_hit_count++;
                     j.revalidate();
@@ -31383,6 +31385,7 @@ public class Main extends JFrame implements MouseMotionListener
     }
     public void com_place()
     {
+        j.remove(tip);
         convert_player();
         Icon i = new ImageIcon("water.png");
         l1 = new JButton(i);
@@ -31485,6 +31488,36 @@ public class Main extends JFrame implements MouseMotionListener
         l98 = new JButton(i);
         l99 = new JButton(i);
         l100 = new JButton(i);
+        tp_air = new JLabel("Aircraft Carrier");
+        tp_bat = new JLabel("Battleship");
+        tp_sub = new JLabel("Submarine");
+        tp_cru = new JLabel("Cruiser");
+        tp_des = new JLabel("Destroyer");
+        tp_air.setForeground(Color.WHITE);
+        tp_bat.setForeground(Color.WHITE);
+        tp_sub.setForeground(Color.WHITE);
+        tp_cru.setForeground(Color.WHITE);
+        tp_des.setForeground(Color.WHITE);
+        p_air = new JLabel(safe);
+        p_bat = new JLabel(safe);
+        p_sub = new JLabel(safe);
+        p_cru = new JLabel(safe);
+        p_des = new JLabel(safe);
+        tc_air = new JLabel("Aircraft Carrier");
+        tc_bat = new JLabel("Battleship");
+        tc_sub = new JLabel("Submarine");
+        tc_cru = new JLabel("Cruiser");
+        tc_des = new JLabel("Destroyer");
+        tc_air.setForeground(Color.WHITE);
+        tc_bat.setForeground(Color.WHITE);
+        tc_sub.setForeground(Color.WHITE);
+        tc_cru.setForeground(Color.WHITE);
+        tc_des.setForeground(Color.WHITE);
+        c_air = new JLabel(hit);
+        c_bat = new JLabel(hit);
+        c_sub = new JLabel(hit);
+        c_cru = new JLabel(hit);
+        c_des = new JLabel(hit);
         l1.setBounds(150,40,50,50);
         l2.setBounds(200,40,50,50);
         l3.setBounds(250,40,50,50);
@@ -31585,6 +31618,26 @@ public class Main extends JFrame implements MouseMotionListener
         l98.setBounds(500,490,50,50);
         l99.setBounds(550,490,50,50);
         l100.setBounds(600,490,50,50);
+        tp_air.setBounds(45, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        p_air.setBounds(45, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tp_bat.setBounds(185, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        p_bat.setBounds(185, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tp_sub.setBounds(325, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        p_sub.setBounds(325, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tp_cru.setBounds(465, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        p_cru.setBounds(465, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tp_des.setBounds(605, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        p_des.setBounds(605, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tc_air.setBounds(45, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        c_air.setBounds(45, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tc_bat.setBounds(185, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        c_bat.setBounds(185, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tc_sub.setBounds(325, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        c_sub.setBounds(325, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tc_cru.setBounds(465, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        c_cru.setBounds(465, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
+        tc_des.setBounds(605, 571, tp_air.getPreferredSize().width, tp_air.getPreferredSize().height);
+        c_des.setBounds(605, 591, p_air.getPreferredSize().width, p_air.getPreferredSize().height);
         l1.setBorderPainted(false);
         l2.setBorderPainted(false);
         l3.setBorderPainted(false);
@@ -31885,6 +31938,26 @@ public class Main extends JFrame implements MouseMotionListener
         this.play_hit.add(l98);
         this.play_hit.add(l99);
         this.play_hit.add(l100);
+        this.play_hit.add(tp_air);
+        this.play_hit.add(p_air);
+        this.play_hit.add(tp_bat);
+        this.play_hit.add(p_bat);
+        this.play_hit.add(tp_sub);
+        this.play_hit.add(p_sub);
+        this.play_hit.add(tp_cru);
+        this.play_hit.add(p_cru);
+        this.play_hit.add(tp_des);
+        this.play_hit.add(p_des);
+        this.j.add(tc_air);
+        this.j.add(c_air);
+        this.j.add(tc_bat);
+        this.j.add(c_bat);
+        this.j.add(tc_sub);
+        this.j.add(c_sub);
+        this.j.add(tc_cru);
+        this.j.add(c_cru);
+        this.j.add(tc_des);
+        this.j.add(c_des);
         SwingWorker s1 = new SwingWorker()
         {
             @Override
@@ -32785,6 +32858,9 @@ public class Main extends JFrame implements MouseMotionListener
         {
             System.out.println(ex.getMessage());
         }
+        m.safe = new ImageIcon("hud/ship-sunk.png");
+        m.found = new ImageIcon("hud/ship-found.png");
+        m.hit = new ImageIcon("hud/ship-not-found.png");
         System.out.println("Huh. You are running this from a console. Be prepared to see all the stuff that I was using to test the game left in here.\n BTW I'm not dumb enough to leave in the Computer's moves in here. So, you can't cheat :)");
         m.co.setLayout(m.crd);
         m.co.add(m.j, "CHA");
