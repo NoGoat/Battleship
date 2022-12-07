@@ -12,6 +12,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    String next_move_flag = "none";
+    int des_already_assigned = 0;
+    int next_move = -1;
+    int up_move = -1;
+    int down_move = -1;
+    int left_move = -1;
+    int right_move = -1;
     Icon safe, found, hit;
     int com_is_hit_or_not;
     int air_or, bat_or, sub_or, cru_or, des_or;
@@ -8376,6 +8383,7 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 if(play_destroyer_pos[i] == pos)
                 {
+                    next_move_flag = "destroyer";
                     int iconpos = i + 1;
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile"+iconpos+".png"));
@@ -8397,6 +8405,7 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 if(play_destroyer_pos[i] == pos)
                 {
+                    next_move_flag = "destroyer";
                     int iconpos = i + 1;
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-"+iconpos+".png"));
@@ -8430,8 +8439,16 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 while(true)
                 {
-                    int hit_pos_index = Math.abs(r.nextInt());
-                    hit_pos_index = hit_pos_index % 100;
+                    int hit_pos_index;
+                    if(next_move == -1)
+                    {
+                        hit_pos_index = Math.abs(r.nextInt());
+                        hit_pos_index = hit_pos_index % 100;
+                    }
+                    else
+                    {
+                        hit_pos_index = next_move;
+                    }
                     System.out.println(hit_pos_index);
                     if(com_hit_grid[hit_pos_index] != 6000)
                     {
@@ -8847,6 +8864,57 @@ public class Main extends JFrame implements MouseMotionListener
                         {
                             refresh_flag = 0;
                             turn_flag = 1;
+                        }
+                        if(next_move_flag == "destroyer")
+                        {
+                            if(des_already_assigned == 0)
+                            {
+                                des_already_assigned = 1;
+                                up_move = hit_pos_index - 10;
+                                down_move = hit_pos_index + 10;
+                                left_move = hit_pos_index - 1;
+                                right_move = hit_pos_index + 1;
+                                if (up_move < 0 || com_hit_grid[up_move] == 6000)
+                                {
+                                    up_move = -1;
+                                }
+                                if (down_move >= 100 || com_hit_grid[down_move] == 6000)
+                                {
+                                    down_move = -1;
+                                }
+                                if ((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000)
+                                {
+                                    left_move = -1;
+                                }
+                                if (right_move % 10 == 0 || com_hit_grid[right_move] == 6000)
+                                {
+                                    right_move = -1;
+                                }
+                            }
+                            if(up_move != -1)
+                            {
+                                next_move = up_move;
+                                up_move = -1;
+                            }
+                            else if(down_move != -1)
+                            {
+                                next_move = down_move;
+                                down_move = -1;
+                            }
+                            else if(left_move != -1)
+                            {
+                                next_move = left_move;
+                                left_move = -1;
+                            }
+                            else if(right_move != -1)
+                            {
+                                next_move = right_move;
+                                right_move = -1;
+                            }
+                        }
+                        if(com_des_count == 2)
+                        {
+                            next_move = -1;
                         }
                         break;
                     }
@@ -32883,32 +32951,23 @@ public class Main extends JFrame implements MouseMotionListener
         cur.setBounds(e.getPoint().x - xoffset, e.getPoint().y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
         //p.add(cur);
         cur.repaint();
-        System.out.println(cur.getPreferredSize().getWidth());
-        System.out.println(cur.getPreferredSize().getHeight());
         xpos = e.getPoint().x - xoffset;
         ypos = e.getPoint().y - yoffset;
         seed = seed + xpos + ypos;
-        System.out.println(xpos);
-        System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j);
         c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
         com = SwingUtilities.getDeepestComponentAt(play_hit, po.x, po.y);
         button_highlight();
-        System.out.println(c);
     }
 
     public void mouseDragged(MouseEvent e)
     {
         cur.setBounds(e.getPoint().x - xoffset, e.getPoint().y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
-        System.out.println(cur.getPreferredSize().getWidth());
-        System.out.println(cur.getPreferredSize().getHeight());
         //p.add(cur);
         cur.repaint();
         xpos = e.getPoint().x - xoffset;
         ypos = e.getPoint().y - yoffset;
         seed = seed + xpos + ypos;
-        System.out.println(xpos);
-        System.out.println(ypos);
         po = SwingUtilities.convertPoint(p, e.getPoint(), j);
         c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
         com = SwingUtilities.getDeepestComponentAt(play_hit, po.x, po.y);
