@@ -12,13 +12,45 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    int air_up_assigned_1 = 0;
+    int air_down_assigned_1 = 0;
+    int air_left_assigned_1 = 0;
+    int air_right_assigned_1 = 0;
+    int air_up_assigned_2 = 0;
+    int air_down_assigned_2 = 0;
+    int air_left_assigned_2 = 0;
+    int air_right_assigned_2 = 0;
+    int air_up_assigned_3 = 0;
+    int air_down_assigned_3 = 0;
+    int air_left_assigned_3 = 0;
+    int air_right_assigned_3 = 0;
+    int bat_up_assigned_1 = 0;
+    int bat_down_assigned_1 = 0;
+    int bat_left_assigned_1 = 0;
+    int bat_right_assigned_1 = 0;
+    int bat_up_assigned_2 = 0;
+    int bat_down_assigned_2 = 0;
+    int bat_left_assigned_2 = 0;
+    int bat_right_assigned_2 = 0;
+    int sub_up_assigned_1 = 0;
+    int sub_down_assigned_1 = 0;
+    int sub_left_assigned_1 = 0;
+    int sub_right_assigned_1 = 0;
+    int cru_up_assigned_1 = 0;
+    int cru_down_assigned_1 = 0;
+    int cru_left_assigned_1 = 0;
+    int cru_right_assigned_1 = 0;
     String next_move_flag = "none";
+    int air_already_assigned = 0;
+    int bat_already_assigned = 0;
     int sub_already_assigned = 0;
     int cru_already_assigned = 0;
     int des_already_assigned = 0;
+    String air_calculated_orientation;
+    String bat_calculated_orientation;
     String sub_calculated_orientation;
     String cru_calculated_orientation;
-    int next_move = 0;
+    int next_move = -1;
     int up_move = -1;
     int down_move = -1;
     int left_move = -1;
@@ -8220,6 +8252,7 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 if(play_aircraft_pos[i] == pos)
                 {
+                    next_move_flag = "aircraft-carrier";
                     int iconpos = i + 1;
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-"+iconpos+".png"));
@@ -8241,6 +8274,7 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 if(play_aircraft_pos[i] == pos)
                 {
+                    next_move_flag = "aircraft-carrier";
                     int iconpos = i + 1;
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png"));
@@ -8262,6 +8296,7 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 if(play_battleship_pos[i] == pos)
                 {
+                    next_move_flag = "battleship";
                     int iconpos = i + 1;
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-"+iconpos+".png"));
@@ -8283,6 +8318,7 @@ public class Main extends JFrame implements MouseMotionListener
             {
                 if(play_battleship_pos[i] == pos)
                 {
+                    next_move_flag = "battleship";
                     int iconpos = i + 1;
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-"+iconpos+".png"));
@@ -8875,7 +8911,536 @@ public class Main extends JFrame implements MouseMotionListener
                             refresh_flag = 0;
                             turn_flag = 1;
                         }
-                        if(next_move_flag == "submarine")
+                        if(next_move_flag == "aircraft-carrier")
+                        {
+                            if(com_ai_count == 1)
+                            {
+                                if (air_already_assigned == 0)
+                                {
+                                    System.out.println("hit_pos_index = " + hit_pos_index);
+                                    air_already_assigned = 1;
+                                    up_move = hit_pos_index - 10;
+                                    down_move = hit_pos_index + 10;
+                                    left_move = hit_pos_index - 1;
+                                    right_move = hit_pos_index + 1;
+                                    if (up_move < 0 || com_hit_grid[up_move] == 6000)
+                                    {
+                                        up_move = -1;
+                                    }
+                                    if (down_move >= 100 || com_hit_grid[down_move] == 6000)
+                                    {
+                                        down_move = -1;
+                                    }
+                                    if ((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000)
+                                    {
+                                        left_move = -1;
+                                    }
+                                    if (right_move % 10 == 0 || com_hit_grid[right_move] == 6000)
+                                    {
+                                        right_move = -1;
+                                    }
+                                }
+                                if(up_move != -1)
+                                {
+                                    next_move = up_move;
+                                    air_calculated_orientation = "up";
+                                    up_move = -1;
+                                }
+                                else if(down_move != -1)
+                                {
+                                    next_move = down_move;
+                                    air_calculated_orientation = "down";
+                                    down_move = -1;
+                                }
+                                else if(left_move != -1)
+                                {
+                                    next_move = left_move;
+                                    air_calculated_orientation = "left";
+                                    left_move = -1;
+                                }
+                                else if(right_move != -1)
+                                {
+                                    next_move = right_move;
+                                    air_calculated_orientation = "right";
+                                    right_move = -1;
+                                }
+                            }
+                            if(com_ai_count == 2)
+                            {
+                                if(air_calculated_orientation == "up")
+                                {
+                                    if(air_up_assigned_1 == 0)
+                                    {
+                                        air_up_assigned_1 = 1;
+                                        up_move = next_move - 10;
+                                        other_move = down_move;
+                                    }
+                                    if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
+                                    {
+                                        up_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        air_calculated_orientation = "down";
+                                    }
+                                    else
+                                    {
+                                        next_move = up_move;
+                                        up_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "down")
+                                {
+                                    if(air_down_assigned_1 == 0)
+                                    {
+                                        air_down_assigned_1 = 1;
+                                        down_move = next_move + 10;
+                                    }
+                                    if(down_move >= 100 || com_hit_grid[down_move] == 6000 || down_move == -1)
+                                    {
+                                        down_move = -1;
+                                        next_move = down_move;
+                                        air_calculated_orientation = "up";
+                                    }
+                                    else
+                                    {
+                                        next_move = down_move;
+                                        down_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "left")
+                                {
+                                    if(air_left_assigned_1 == 0)
+                                    {
+                                        air_left_assigned_1 = 1;
+                                        left_move = next_move - 1;
+                                        other_move = right_move;
+                                    }
+                                    if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
+                                    {
+                                        left_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        air_calculated_orientation = "right";
+                                    }
+                                    else
+                                    {
+                                        next_move = left_move;
+                                        left_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "right")
+                                {
+                                    if(air_right_assigned_1 == 0)
+                                    {
+                                        air_right_assigned_1 = 1;
+                                        right_move = next_move + 1;
+                                    }
+                                    if(right_move % 10 == 0 || com_hit_grid[right_move] == 6000 || right_move == -1)
+                                    {
+                                        right_move = -1;
+                                        next_move = right_move;
+                                        air_calculated_orientation = "left";
+                                    }
+                                    else
+                                    {
+                                        next_move = right_move;
+                                        right_move = -1;
+                                    }
+                                }
+                            }
+                            if(com_ai_count == 3)
+                            {
+                                if(air_calculated_orientation == "up")
+                                {
+                                    if(air_up_assigned_2 == 0)
+                                    {
+                                        air_up_assigned_2 = 1;
+                                        up_move = next_move - 10;
+                                    }
+                                    if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
+                                    {
+                                        up_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        air_calculated_orientation = "down";
+                                    }
+                                    else
+                                    {
+                                        next_move = up_move;
+                                        up_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "down")
+                                {
+                                    if(air_down_assigned_2 == 0)
+                                    {
+                                        air_down_assigned_2 = 1;
+                                        down_move = next_move + 10;
+                                    }
+                                    if(down_move >= 100 || com_hit_grid[down_move] == 6000 || down_move == -1)
+                                    {
+                                        down_move = -1;
+                                        next_move = down_move;
+                                        air_calculated_orientation = "up";
+                                    }
+                                    else
+                                    {
+                                        next_move = down_move;
+                                        down_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "left")
+                                {
+                                    if(air_left_assigned_2 == 0)
+                                    {
+                                        air_left_assigned_2 = 1;
+                                        left_move = next_move - 1;
+                                    }
+                                    if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
+                                    {
+                                        left_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        air_calculated_orientation = "right";
+                                    }
+                                    else
+                                    {
+                                        next_move = left_move;
+                                        left_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "right")
+                                {
+                                    if(air_right_assigned_2 == 0)
+                                    {
+                                        air_right_assigned_2 = 1;
+                                        right_move = next_move + 1;
+                                    }
+                                    if(right_move % 10 == 0 || com_hit_grid[right_move] == 6000 || right_move == -1)
+                                    {
+                                        right_move = -1;
+                                        next_move = right_move;
+                                        air_calculated_orientation = "left";
+                                    }
+                                    else
+                                    {
+                                        next_move = right_move;
+                                        right_move = -1;
+                                    }
+                                }
+                            }
+                            if(com_ai_count == 4)
+                            {
+                                if(air_calculated_orientation == "up")
+                                {
+                                    if(air_up_assigned_3 == 0)
+                                    {
+                                        air_up_assigned_3 = 1;
+                                        up_move = next_move - 10;
+                                    }
+                                    if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
+                                    {
+                                        up_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        air_calculated_orientation = "down";
+                                    }
+                                    else
+                                    {
+                                        next_move = up_move;
+                                        up_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "down")
+                                {
+                                    if(air_down_assigned_3 == 0)
+                                    {
+                                        air_down_assigned_3 = 1;
+                                        down_move = next_move + 10;
+                                    }
+                                    if(down_move >= 100 || com_hit_grid[down_move] == 6000 || down_move == -1)
+                                    {
+                                        down_move = -1;
+                                        next_move = down_move;
+                                        air_calculated_orientation = "up";
+                                    }
+                                    else
+                                    {
+                                        next_move = down_move;
+                                        down_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "left")
+                                {
+                                    if(air_left_assigned_3 == 0)
+                                    {
+                                        air_left_assigned_3 = 1;
+                                        left_move = next_move - 1;
+                                    }
+                                    if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
+                                    {
+                                        left_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        air_calculated_orientation = "right";
+                                    }
+                                    else
+                                    {
+                                        next_move = left_move;
+                                        left_move = -1;
+                                    }
+                                }
+                                else if(air_calculated_orientation == "right")
+                                {
+                                    if(air_right_assigned_3 == 0)
+                                    {
+                                        air_right_assigned_3 = 1;
+                                        right_move = next_move + 1;
+                                    }
+                                    if(right_move % 10 == 0 || com_hit_grid[right_move] == 6000 || right_move == -1)
+                                    {
+                                        right_move = -1;
+                                        next_move = right_move;
+                                        air_calculated_orientation = "left";
+                                    }
+                                    else
+                                    {
+                                        next_move = right_move;
+                                        right_move = -1;
+                                    }
+                                }
+                            }
+                            if(com_ai_count == 5)
+                            {
+                                next_move_flag = "none";
+                                next_move = -1;
+                            }
+                        }
+                        else if(next_move_flag == "battleship")
+                        {
+                            if(com_bat_count == 1)
+                            {
+                                if (bat_already_assigned == 0)
+                                {
+                                    System.out.println("hit_pos_index = " + hit_pos_index);
+                                    bat_already_assigned = 1;
+                                    up_move = hit_pos_index - 10;
+                                    down_move = hit_pos_index + 10;
+                                    left_move = hit_pos_index - 1;
+                                    right_move = hit_pos_index + 1;
+                                    if (up_move < 0 || com_hit_grid[up_move] == 6000)
+                                    {
+                                        up_move = -1;
+                                    }
+                                    if (down_move >= 100 || com_hit_grid[down_move] == 6000)
+                                    {
+                                        down_move = -1;
+                                    }
+                                    if ((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000)
+                                    {
+                                        left_move = -1;
+                                    }
+                                    if (right_move % 10 == 0 || com_hit_grid[right_move] == 6000)
+                                    {
+                                        right_move = -1;
+                                    }
+                                }
+                                if(up_move != -1)
+                                {
+                                    next_move = up_move;
+                                    bat_calculated_orientation = "up";
+                                    up_move = -1;
+                                }
+                                else if(down_move != -1)
+                                {
+                                    next_move = down_move;
+                                    bat_calculated_orientation = "down";
+                                    down_move = -1;
+                                }
+                                else if(left_move != -1)
+                                {
+                                    next_move = left_move;
+                                    bat_calculated_orientation = "left";
+                                    left_move = -1;
+                                }
+                                else if(right_move != -1)
+                                {
+                                    next_move = right_move;
+                                    bat_calculated_orientation = "right";
+                                    right_move = -1;
+                                }
+                            }
+                            if(com_bat_count == 2)
+                            {
+                                if(bat_calculated_orientation == "up")
+                                {
+                                    if(bat_up_assigned_1 == 0)
+                                    {
+                                        bat_up_assigned_1 = 1;
+                                        up_move = next_move - 10;
+                                        other_move = down_move;
+                                    }
+                                    if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
+                                    {
+                                        up_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        bat_calculated_orientation = "down";
+                                    }
+                                    else
+                                    {
+                                        next_move = up_move;
+                                        up_move = -1;
+                                    }
+                                }
+                                else if(bat_calculated_orientation == "down")
+                                {
+                                    if(bat_down_assigned_1 == 0)
+                                    {
+                                        bat_down_assigned_1 = 1;
+                                        down_move = next_move + 10;
+                                    }
+                                    if(down_move >= 100 || com_hit_grid[down_move] == 6000 || down_move == -1)
+                                    {
+                                        down_move = -1;
+                                        next_move = down_move;
+                                        bat_calculated_orientation = "up";
+                                    }
+                                    else
+                                    {
+                                        next_move = down_move;
+                                        down_move = -1;
+                                    }
+                                }
+                                else if(bat_calculated_orientation == "left")
+                                {
+                                    if(bat_left_assigned_1 == 0)
+                                    {
+                                        bat_left_assigned_1 = 1;
+                                        left_move = next_move - 1;
+                                        other_move = right_move;
+                                    }
+                                    if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
+                                    {
+                                        left_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        bat_calculated_orientation = "right";
+                                    }
+                                    else
+                                    {
+                                        next_move = left_move;
+                                        left_move = -1;
+                                    }
+                                }
+                                else if(bat_calculated_orientation == "right")
+                                {
+                                    if(bat_right_assigned_1 == 0)
+                                    {
+                                        bat_right_assigned_1 = 1;
+                                        right_move = next_move + 1;
+                                    }
+                                    if(right_move % 10 == 0 || com_hit_grid[right_move] == 6000 || right_move == -1)
+                                    {
+                                        right_move = -1;
+                                        next_move = right_move;
+                                        bat_calculated_orientation = "left";
+                                    }
+                                    else
+                                    {
+                                        next_move = right_move;
+                                        right_move = -1;
+                                    }
+                                }
+                            }
+                            if(com_bat_count == 3)
+                            {
+                                if(bat_calculated_orientation == "up")
+                                {
+                                    if(bat_up_assigned_2 == 0)
+                                    {
+                                        bat_up_assigned_2 = 1;
+                                        up_move = next_move - 10;
+                                    }
+                                    if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
+                                    {
+                                        up_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        bat_calculated_orientation = "down";
+                                    }
+                                    else
+                                    {
+                                        next_move = up_move;
+                                        up_move = -1;
+                                    }
+                                }
+                                else if(bat_calculated_orientation == "down")
+                                {
+                                    if(bat_down_assigned_2 == 0)
+                                    {
+                                        bat_down_assigned_2 = 1;
+                                        down_move = next_move + 10;
+                                    }
+                                    if(down_move >= 100 || com_hit_grid[down_move] == 6000 || down_move == -1)
+                                    {
+                                        down_move = -1;
+                                        next_move = down_move;
+                                        bat_calculated_orientation = "up";
+                                    }
+                                    else
+                                    {
+                                        next_move = down_move;
+                                        down_move = -1;
+                                    }
+                                }
+                                else if(bat_calculated_orientation == "left")
+                                {
+                                    if(bat_left_assigned_2 == 0)
+                                    {
+                                        bat_left_assigned_2 = 1;
+                                        left_move = next_move - 1;
+                                    }
+                                    if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
+                                    {
+                                        left_move = -1;
+                                        next_move = other_move;
+                                        other_move = -1;
+                                        bat_calculated_orientation = "right";
+                                    }
+                                    else
+                                    {
+                                        next_move = left_move;
+                                        left_move = -1;
+                                    }
+                                }
+                                else if(bat_calculated_orientation == "right")
+                                {
+                                    if(bat_right_assigned_2 == 0)
+                                    {
+                                        bat_right_assigned_2 = 1;
+                                        right_move = next_move + 1;
+                                    }
+                                    if(right_move % 10 == 0 || com_hit_grid[right_move] == 6000 || right_move == -1)
+                                    {
+                                        right_move = -1;
+                                        next_move = right_move;
+                                        bat_calculated_orientation = "left";
+                                    }
+                                    else
+                                    {
+                                        next_move = right_move;
+                                        right_move = -1;
+                                    }
+                                }
+                            }
+                            if(com_bat_count == 4)
+                            {
+                                next_move_flag = "none";
+                                next_move = -1;
+                            }
+                        }
+                        else if(next_move_flag == "submarine")
                         {
                             if(com_sub_count == 1)
                             {
@@ -8932,8 +9497,13 @@ public class Main extends JFrame implements MouseMotionListener
                             {
                                 if(sub_calculated_orientation == "up")
                                 {
-                                    up_move = next_move - 10;
-                                    other_move = down_move;
+                                    if(sub_up_assigned_1 == 0)
+                                    {
+                                        sub_up_assigned_1 = 1;
+                                        up_move = next_move - 10;
+                                        other_move = down_move;
+                                        System.out.println("Other Move = " + other_move);
+                                    }
                                     if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
                                     {
                                         up_move = -1;
@@ -8949,7 +9519,11 @@ public class Main extends JFrame implements MouseMotionListener
                                 }
                                 else if(sub_calculated_orientation == "down")
                                 {
-                                    down_move = next_move + 10;
+                                    if(sub_down_assigned_1 == 0)
+                                    {
+                                        sub_down_assigned_1 = 1;
+                                        down_move = next_move + 10;
+                                    }
                                     if(down_move >= 100 || com_hit_grid[down_move] == 6000 || down_move == -1)
                                     {
                                         down_move = -1;
@@ -8964,8 +9538,13 @@ public class Main extends JFrame implements MouseMotionListener
                                 }
                                 else if(sub_calculated_orientation == "left")
                                 {
-                                    left_move = next_move - 1;
-                                    other_move = right_move;
+                                    if(sub_left_assigned_1 == 0)
+                                    {
+                                        sub_left_assigned_1 = 1;
+                                        left_move = next_move - 1;
+                                        other_move = right_move;
+                                        System.out.println("Other Move = " + other_move);
+                                    }
                                     if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
                                     {
                                         left_move = -1;
@@ -8981,7 +9560,11 @@ public class Main extends JFrame implements MouseMotionListener
                                 }
                                 else if(sub_calculated_orientation == "right")
                                 {
-                                    right_move = next_move + 1;
+                                    if(sub_right_assigned_1 == 0)
+                                    {
+                                        sub_right_assigned_1 = 1;
+                                        right_move = next_move + 1;
+                                    }
                                     if(right_move % 10 == 0 || com_hit_grid[right_move] == 6000 || right_move == -1)
                                     {
                                         right_move = -1;
@@ -9058,8 +9641,12 @@ public class Main extends JFrame implements MouseMotionListener
                             {
                                 if(cru_calculated_orientation == "up")
                                 {
-                                    up_move = next_move - 10;
-                                    other_move = down_move;
+                                    if(cru_up_assigned_1 == 0)
+                                    {
+                                        cru_up_assigned_1 = 1;
+                                        up_move = next_move - 10;
+                                        other_move = down_move;
+                                    }
                                     if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
                                     {
                                         up_move = -1;
@@ -9075,7 +9662,11 @@ public class Main extends JFrame implements MouseMotionListener
                                 }
                                 else if(cru_calculated_orientation == "down")
                                 {
-                                    down_move = next_move + 10;
+                                    if(cru_down_assigned_1 == 0)
+                                    {
+                                        cru_down_assigned_1 = 1;
+                                        down_move = next_move + 10;
+                                    }
                                     if(down_move >= 100 || com_hit_grid[down_move] == 6000 || down_move == -1)
                                     {
                                         down_move = -1;
@@ -9090,8 +9681,12 @@ public class Main extends JFrame implements MouseMotionListener
                                 }
                                 else if(cru_calculated_orientation == "left")
                                 {
-                                    left_move = next_move - 1;
-                                    other_move = right_move;
+                                    if(cru_left_assigned_1 == 0)
+                                    {
+                                        cru_left_assigned_1 = 1;
+                                        left_move = next_move - 1;
+                                        other_move = right_move;
+                                    }
                                     if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
                                     {
                                         left_move = -1;
@@ -9107,7 +9702,11 @@ public class Main extends JFrame implements MouseMotionListener
                                 }
                                 else if(cru_calculated_orientation == "right")
                                 {
-                                    right_move = next_move + 1;
+                                    if(cru_right_assigned_1 == 0)
+                                    {
+                                        cru_right_assigned_1 = 1;
+                                        right_move = next_move + 1;
+                                    }
                                     if(right_move % 10 == 0 || com_hit_grid[right_move] == 6000 || right_move == -1)
                                     {
                                         right_move = -1;
