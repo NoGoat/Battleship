@@ -1,5 +1,6 @@
 //import com.sun.javafx.geom.ConcentricShapePair;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,6 +13,27 @@ import java.util.concurrent.TimeUnit;
 
 public class Main extends JFrame implements MouseMotionListener
 {
+    File audiofile;
+    AudioInputStream as;
+    AudioFormat f;
+    DataLine.Info in;
+    Clip ac;
+    File audiofilem;
+    AudioInputStream asm;
+    AudioFormat fm;
+    DataLine.Info inm;
+    Clip acm;
+    int air_temp_c = 0;
+    int bat_temp_c = 0;
+    int sub_temp_c = 0;
+    int cru_temp_c = 0;
+    int des_temp_c = 0;
+    int air_temp_p = 0;
+    int bat_temp_p = 0;
+    int sub_temp_p = 0;
+    int cru_temp_p = 0;
+    int des_temp_p = 0;
+
     int air_up_assigned_1 = 0;
     int air_down_assigned_1 = 0;
     int air_left_assigned_1 = 0;
@@ -870,82 +892,208 @@ public class Main extends JFrame implements MouseMotionListener
         if(play_ai_count > 0 && play_ai_count < 5)
         {
             p_air.setIcon(found);
+            if(play_ai_count != air_temp_c)
+            {
+                air_temp_c = play_ai_count;
+                explosion();
+            }
         }
         if(play_ai_count == 5)
         {
             p_air.setIcon(hit);
+            if(play_ai_count != air_temp_c)
+            {
+                air_temp_c = play_ai_count;
+                explosion();
+            }
         }
         if(play_bat_count > 0 && play_bat_count < 4)
         {
             p_bat.setIcon(found);
+            if(play_bat_count != bat_temp_c)
+            {
+                bat_temp_c = play_bat_count;
+                explosion();
+            }
         }
         if(play_bat_count == 4)
         {
             p_bat.setIcon(hit);
+            if(play_bat_count != bat_temp_c)
+            {
+                bat_temp_c = play_bat_count;
+                explosion();
+            }
         }
         if(play_sub_count > 0 && play_sub_count < 3)
         {
             p_sub.setIcon(found);
+            if(play_sub_count != sub_temp_c)
+            {
+                sub_temp_c = play_sub_count;
+                explosion();
+            }
         }
         if(play_sub_count == 3)
         {
             p_sub.setIcon(hit);
+            if(play_sub_count != sub_temp_c)
+            {
+                sub_temp_c = play_sub_count;
+                explosion();
+            }
         }
         if(play_cru_count > 0 && play_cru_count < 3)
         {
             p_cru.setIcon(found);
+            if(play_cru_count != cru_temp_c)
+            {
+                cru_temp_c = play_cru_count;
+                explosion();
+            }
         }
         if(play_cru_count == 3)
         {
             p_cru.setIcon(hit);
+            if(play_cru_count != cru_temp_c)
+            {
+                cru_temp_c = play_cru_count;
+                explosion();
+            }
         }
         if(play_des_count > 0 && play_des_count < 2)
         {
             p_des.setIcon(found);
+            if(play_des_count != des_temp_c)
+            {
+                des_temp_c = play_des_count;
+                explosion();
+            }
         }
         if(play_des_count == 2)
         {
             p_des.setIcon(hit);
+            if(play_des_count != des_temp_c)
+            {
+                des_temp_c = play_des_count;
+                explosion();
+            }
         }
         if(com_ai_count > 0 && com_ai_count < 5)
         {
             c_air.setIcon(found);
+            if(com_ai_count != air_temp_p)
+            {
+                air_temp_p = com_ai_count;
+                explosion();
+            }
         }
         if(com_ai_count == 5)
         {
             c_air.setIcon(safe);
+            if(com_ai_count != air_temp_p)
+            {
+                air_temp_p = com_ai_count;
+                explosion();
+            }
         }
         if(com_bat_count > 0 && com_bat_count < 4)
         {
             c_bat.setIcon(found);
+            if(com_bat_count != bat_temp_p)
+            {
+                bat_temp_p = com_bat_count;
+                explosion();
+            }
         }
         if(com_bat_count == 4)
         {
             c_bat.setIcon(safe);
+            if(com_bat_count != bat_temp_p)
+            {
+                bat_temp_p = com_bat_count;
+                explosion();
+            }
         }
         if(com_sub_count > 0 && com_sub_count < 3)
         {
             c_sub.setIcon(found);
+            if(com_sub_count != sub_temp_p)
+            {
+                sub_temp_p = com_sub_count;
+                explosion();
+            }
         }
         if(com_sub_count == 3)
         {
             c_sub.setIcon(safe);
+            if(com_sub_count != sub_temp_p)
+            {
+                sub_temp_p = com_sub_count;
+                explosion();
+            }
         }
         if(com_cru_count > 0 && com_cru_count < 3)
         {
             c_cru.setIcon(found);
+            if(com_cru_count != cru_temp_p)
+            {
+                cru_temp_p = com_cru_count;
+                explosion();
+            }
         }
         if(com_cru_count == 3)
         {
             c_cru.setIcon(safe);
+            if(com_cru_count != cru_temp_p)
+            {
+                cru_temp_p = com_cru_count;
+                explosion();
+            }
         }
         if(com_des_count > 0 && com_des_count < 2)
         {
             c_des.setIcon(found);
+            if(com_des_count != des_temp_p)
+            {
+                des_temp_p = com_des_count;
+                explosion();
+            }
         }
         if(com_des_count == 2)
         {
             c_des.setIcon(safe);
+            if(com_des_count != des_temp_p)
+            {
+                des_temp_p = com_des_count;
+                explosion();
+            }
+        }
+    }
+    public void explosion()
+    {
+        try
+        {
+            ac.setFramePosition(0);
+            ac.start();
+        }
+        catch (Exception ex)
+        {
+            ac.setFramePosition(0);
+            ac.start();
+        }
+    }
+    public void miss()
+    {
+        try
+        {
+            acm.setFramePosition(0);
+            acm.start();
+        }
+        catch (Exception ex)
+        {
+            acm.setFramePosition(0);
+            acm.start();
         }
     }
     public void l1Call()
@@ -1005,6 +1153,7 @@ public class Main extends JFrame implements MouseMotionListener
             l1.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l1.setEnabled(false);
         who_is_playing();
@@ -1067,6 +1216,7 @@ public class Main extends JFrame implements MouseMotionListener
             l2.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l2.setEnabled(false);
         who_is_playing();
@@ -1128,6 +1278,7 @@ public class Main extends JFrame implements MouseMotionListener
             l3.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l3.setEnabled(false);
         who_is_playing();
@@ -1189,6 +1340,7 @@ public class Main extends JFrame implements MouseMotionListener
             l4.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l4.setEnabled(false);
         who_is_playing();
@@ -1250,6 +1402,7 @@ public class Main extends JFrame implements MouseMotionListener
             l5.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l5.setEnabled(false);
         who_is_playing();
@@ -1311,6 +1464,7 @@ public class Main extends JFrame implements MouseMotionListener
             l6.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l6.setEnabled(false);
         who_is_playing();
@@ -1372,6 +1526,7 @@ public class Main extends JFrame implements MouseMotionListener
             l7.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l7.setEnabled(false);
         who_is_playing();
@@ -1433,6 +1588,7 @@ public class Main extends JFrame implements MouseMotionListener
             l8.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l8.setEnabled(false);
         who_is_playing();
@@ -1494,6 +1650,7 @@ public class Main extends JFrame implements MouseMotionListener
             l9.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l9.setEnabled(false);
         who_is_playing();
@@ -1555,6 +1712,7 @@ public class Main extends JFrame implements MouseMotionListener
             l10.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l10.setEnabled(false);
         who_is_playing();
@@ -1616,6 +1774,7 @@ public class Main extends JFrame implements MouseMotionListener
             l11.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l11.setEnabled(false);
         who_is_playing();
@@ -1678,6 +1837,7 @@ public class Main extends JFrame implements MouseMotionListener
             l12.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l12.setEnabled(false);
         who_is_playing();
@@ -1739,6 +1899,7 @@ public class Main extends JFrame implements MouseMotionListener
             l13.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l13.setEnabled(false);
         who_is_playing();
@@ -1800,6 +1961,7 @@ public class Main extends JFrame implements MouseMotionListener
             l14.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l14.setEnabled(false);
         who_is_playing();
@@ -1861,6 +2023,7 @@ public class Main extends JFrame implements MouseMotionListener
             l15.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l15.setEnabled(false);
         who_is_playing();
@@ -1922,6 +2085,7 @@ public class Main extends JFrame implements MouseMotionListener
             l16.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l16.setEnabled(false);
         who_is_playing();
@@ -1983,6 +2147,7 @@ public class Main extends JFrame implements MouseMotionListener
             l17.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l17.setEnabled(false);
         who_is_playing();
@@ -2044,6 +2209,7 @@ public class Main extends JFrame implements MouseMotionListener
             l18.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l18.setEnabled(false);
         who_is_playing();
@@ -2105,6 +2271,7 @@ public class Main extends JFrame implements MouseMotionListener
             l19.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l19.setEnabled(false);
         who_is_playing();
@@ -2166,6 +2333,7 @@ public class Main extends JFrame implements MouseMotionListener
             l20.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l20.setEnabled(false);
         who_is_playing();
@@ -2227,6 +2395,7 @@ public class Main extends JFrame implements MouseMotionListener
             l21.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l21.setEnabled(false);
         who_is_playing();
@@ -2289,6 +2458,7 @@ public class Main extends JFrame implements MouseMotionListener
             l22.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l22.setEnabled(false);
         who_is_playing();
@@ -2350,6 +2520,7 @@ public class Main extends JFrame implements MouseMotionListener
             l23.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l23.setEnabled(false);
         who_is_playing();
@@ -2411,6 +2582,7 @@ public class Main extends JFrame implements MouseMotionListener
             l24.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l24.setEnabled(false);
         who_is_playing();
@@ -2472,6 +2644,7 @@ public class Main extends JFrame implements MouseMotionListener
             l25.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l25.setEnabled(false);
         who_is_playing();
@@ -2533,6 +2706,7 @@ public class Main extends JFrame implements MouseMotionListener
             l26.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l26.setEnabled(false);
         who_is_playing();
@@ -2594,6 +2768,7 @@ public class Main extends JFrame implements MouseMotionListener
             l27.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l27.setEnabled(false);
         who_is_playing();
@@ -2655,6 +2830,7 @@ public class Main extends JFrame implements MouseMotionListener
             l28.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l28.setEnabled(false);
         who_is_playing();
@@ -2716,6 +2892,7 @@ public class Main extends JFrame implements MouseMotionListener
             l29.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l29.setEnabled(false);
         who_is_playing();
@@ -2777,6 +2954,7 @@ public class Main extends JFrame implements MouseMotionListener
             l30.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l30.setEnabled(false);
         who_is_playing();
@@ -2838,6 +3016,7 @@ public class Main extends JFrame implements MouseMotionListener
             l31.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l31.setEnabled(false);
         who_is_playing();
@@ -2900,6 +3079,7 @@ public class Main extends JFrame implements MouseMotionListener
             l32.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l32.setEnabled(false);
         who_is_playing();
@@ -2961,6 +3141,7 @@ public class Main extends JFrame implements MouseMotionListener
             l33.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l33.setEnabled(false);
         who_is_playing();
@@ -3022,6 +3203,7 @@ public class Main extends JFrame implements MouseMotionListener
             l34.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l34.setEnabled(false);
         who_is_playing();
@@ -3083,6 +3265,7 @@ public class Main extends JFrame implements MouseMotionListener
             l35.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l35.setEnabled(false);
         who_is_playing();
@@ -3144,6 +3327,7 @@ public class Main extends JFrame implements MouseMotionListener
             l36.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l36.setEnabled(false);
         who_is_playing();
@@ -3205,6 +3389,7 @@ public class Main extends JFrame implements MouseMotionListener
             l37.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l37.setEnabled(false);
         who_is_playing();
@@ -3266,6 +3451,7 @@ public class Main extends JFrame implements MouseMotionListener
             l38.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l38.setEnabled(false);
         who_is_playing();
@@ -3327,6 +3513,7 @@ public class Main extends JFrame implements MouseMotionListener
             l39.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l39.setEnabled(false);
         who_is_playing();
@@ -3388,6 +3575,7 @@ public class Main extends JFrame implements MouseMotionListener
             l40.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l40.setEnabled(false);
         who_is_playing();
@@ -3449,6 +3637,7 @@ public class Main extends JFrame implements MouseMotionListener
             l41.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l41.setEnabled(false);
         who_is_playing();
@@ -3511,6 +3700,7 @@ public class Main extends JFrame implements MouseMotionListener
             l42.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l42.setEnabled(false);
         who_is_playing();
@@ -3572,6 +3762,7 @@ public class Main extends JFrame implements MouseMotionListener
             l43.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l43.setEnabled(false);
         who_is_playing();
@@ -3633,6 +3824,7 @@ public class Main extends JFrame implements MouseMotionListener
             l44.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l44.setEnabled(false);
         who_is_playing();
@@ -3694,6 +3886,7 @@ public class Main extends JFrame implements MouseMotionListener
             l45.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l45.setEnabled(false);
         who_is_playing();
@@ -3755,6 +3948,7 @@ public class Main extends JFrame implements MouseMotionListener
             l46.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l46.setEnabled(false);
         who_is_playing();
@@ -3816,6 +4010,7 @@ public class Main extends JFrame implements MouseMotionListener
             l47.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l47.setEnabled(false);
         who_is_playing();
@@ -3877,6 +4072,7 @@ public class Main extends JFrame implements MouseMotionListener
             l48.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l48.setEnabled(false);
         who_is_playing();
@@ -3938,6 +4134,7 @@ public class Main extends JFrame implements MouseMotionListener
             l49.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l49.setEnabled(false);
         who_is_playing();
@@ -3999,6 +4196,7 @@ public class Main extends JFrame implements MouseMotionListener
             l50.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l50.setEnabled(false);
         who_is_playing();
@@ -4060,6 +4258,7 @@ public class Main extends JFrame implements MouseMotionListener
             l51.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l51.setEnabled(false);
         who_is_playing();
@@ -4122,6 +4321,7 @@ public class Main extends JFrame implements MouseMotionListener
             l52.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l52.setEnabled(false);
         who_is_playing();
@@ -4183,6 +4383,7 @@ public class Main extends JFrame implements MouseMotionListener
             l53.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l53.setEnabled(false);
         who_is_playing();
@@ -4244,6 +4445,7 @@ public class Main extends JFrame implements MouseMotionListener
             l54.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l54.setEnabled(false);
         who_is_playing();
@@ -4305,6 +4507,7 @@ public class Main extends JFrame implements MouseMotionListener
             l55.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l55.setEnabled(false);
         who_is_playing();
@@ -4366,6 +4569,7 @@ public class Main extends JFrame implements MouseMotionListener
             l56.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l56.setEnabled(false);
         who_is_playing();
@@ -4427,6 +4631,7 @@ public class Main extends JFrame implements MouseMotionListener
             l57.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l57.setEnabled(false);
         who_is_playing();
@@ -4488,6 +4693,7 @@ public class Main extends JFrame implements MouseMotionListener
             l58.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l58.setEnabled(false);
         who_is_playing();
@@ -4549,6 +4755,7 @@ public class Main extends JFrame implements MouseMotionListener
             l59.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l59.setEnabled(false);
         who_is_playing();
@@ -4610,6 +4817,7 @@ public class Main extends JFrame implements MouseMotionListener
             l60.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l60.setEnabled(false);
         who_is_playing();
@@ -4671,6 +4879,7 @@ public class Main extends JFrame implements MouseMotionListener
             l61.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l61.setEnabled(false);
         who_is_playing();
@@ -4733,6 +4942,7 @@ public class Main extends JFrame implements MouseMotionListener
             l62.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l62.setEnabled(false);
         who_is_playing();
@@ -4794,6 +5004,7 @@ public class Main extends JFrame implements MouseMotionListener
             l63.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l63.setEnabled(false);
         who_is_playing();
@@ -4855,6 +5066,7 @@ public class Main extends JFrame implements MouseMotionListener
             l64.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l64.setEnabled(false);
         who_is_playing();
@@ -4916,6 +5128,7 @@ public class Main extends JFrame implements MouseMotionListener
             l65.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l65.setEnabled(false);
         who_is_playing();
@@ -4977,6 +5190,7 @@ public class Main extends JFrame implements MouseMotionListener
             l66.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l66.setEnabled(false);
         who_is_playing();
@@ -5038,6 +5252,7 @@ public class Main extends JFrame implements MouseMotionListener
             l67.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l67.setEnabled(false);
         who_is_playing();
@@ -5099,6 +5314,7 @@ public class Main extends JFrame implements MouseMotionListener
             l68.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l68.setEnabled(false);
         who_is_playing();
@@ -5160,6 +5376,7 @@ public class Main extends JFrame implements MouseMotionListener
             l69.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l69.setEnabled(false);
         who_is_playing();
@@ -5221,6 +5438,7 @@ public class Main extends JFrame implements MouseMotionListener
             l70.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l70.setEnabled(false);
         who_is_playing();
@@ -5282,6 +5500,7 @@ public class Main extends JFrame implements MouseMotionListener
             l71.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l71.setEnabled(false);
         who_is_playing();
@@ -5344,6 +5563,7 @@ public class Main extends JFrame implements MouseMotionListener
             l72.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l72.setEnabled(false);
         who_is_playing();
@@ -5405,6 +5625,7 @@ public class Main extends JFrame implements MouseMotionListener
             l73.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l73.setEnabled(false);
         who_is_playing();
@@ -5466,6 +5687,7 @@ public class Main extends JFrame implements MouseMotionListener
             l74.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l74.setEnabled(false);
         who_is_playing();
@@ -5527,6 +5749,7 @@ public class Main extends JFrame implements MouseMotionListener
             l75.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l75.setEnabled(false);
         who_is_playing();
@@ -5588,6 +5811,7 @@ public class Main extends JFrame implements MouseMotionListener
             l76.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l76.setEnabled(false);
         who_is_playing();
@@ -5649,6 +5873,7 @@ public class Main extends JFrame implements MouseMotionListener
             l77.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l77.setEnabled(false);
         who_is_playing();
@@ -5710,6 +5935,7 @@ public class Main extends JFrame implements MouseMotionListener
             l78.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l78.setEnabled(false);
         who_is_playing();
@@ -5771,6 +5997,7 @@ public class Main extends JFrame implements MouseMotionListener
             l79.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l79.setEnabled(false);
         who_is_playing();
@@ -5832,6 +6059,7 @@ public class Main extends JFrame implements MouseMotionListener
             l80.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l80.setEnabled(false);
         who_is_playing();
@@ -5893,6 +6121,7 @@ public class Main extends JFrame implements MouseMotionListener
             l81.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l81.setEnabled(false);
         who_is_playing();
@@ -5955,6 +6184,7 @@ public class Main extends JFrame implements MouseMotionListener
             l82.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l82.setEnabled(false);
         who_is_playing();
@@ -6016,6 +6246,7 @@ public class Main extends JFrame implements MouseMotionListener
             l83.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l83.setEnabled(false);
         who_is_playing();
@@ -6077,6 +6308,7 @@ public class Main extends JFrame implements MouseMotionListener
             l84.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l84.setEnabled(false);
         who_is_playing();
@@ -6138,6 +6370,7 @@ public class Main extends JFrame implements MouseMotionListener
             l85.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l85.setEnabled(false);
         who_is_playing();
@@ -6199,6 +6432,7 @@ public class Main extends JFrame implements MouseMotionListener
             l86.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l86.setEnabled(false);
         who_is_playing();
@@ -6260,6 +6494,7 @@ public class Main extends JFrame implements MouseMotionListener
             l87.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l87.setEnabled(false);
         who_is_playing();
@@ -6321,6 +6556,7 @@ public class Main extends JFrame implements MouseMotionListener
             l88.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l88.setEnabled(false);
         who_is_playing();
@@ -6382,6 +6618,7 @@ public class Main extends JFrame implements MouseMotionListener
             l89.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l89.setEnabled(false);
         who_is_playing();
@@ -6443,6 +6680,7 @@ public class Main extends JFrame implements MouseMotionListener
             l90.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l90.setEnabled(false);
         who_is_playing();
@@ -6504,6 +6742,7 @@ public class Main extends JFrame implements MouseMotionListener
             l91.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l91.setEnabled(false);
         who_is_playing();
@@ -6566,6 +6805,7 @@ public class Main extends JFrame implements MouseMotionListener
             l92.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l92.setEnabled(false);
         who_is_playing();
@@ -6627,6 +6867,7 @@ public class Main extends JFrame implements MouseMotionListener
             l93.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l93.setEnabled(false);
         who_is_playing();
@@ -6688,6 +6929,7 @@ public class Main extends JFrame implements MouseMotionListener
             l94.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l94.setEnabled(false);
         who_is_playing();
@@ -6749,6 +6991,7 @@ public class Main extends JFrame implements MouseMotionListener
             l95.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l95.setEnabled(false);
         who_is_playing();
@@ -6810,6 +7053,7 @@ public class Main extends JFrame implements MouseMotionListener
             l96.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l96.setEnabled(false);
         who_is_playing();
@@ -6871,6 +7115,7 @@ public class Main extends JFrame implements MouseMotionListener
             l97.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l97.setEnabled(false);
         who_is_playing();
@@ -6932,6 +7177,7 @@ public class Main extends JFrame implements MouseMotionListener
             l98.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l98.setEnabled(false);
         who_is_playing();
@@ -6993,6 +7239,7 @@ public class Main extends JFrame implements MouseMotionListener
             l99.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l99.setEnabled(false);
         who_is_playing();
@@ -7054,6 +7301,7 @@ public class Main extends JFrame implements MouseMotionListener
             l100.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
+            miss();
         }
         l100.setEnabled(false);
         who_is_playing();
@@ -8135,7 +8383,7 @@ public class Main extends JFrame implements MouseMotionListener
             @Override
             protected Object doInBackground() throws Exception
             {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 return null;
             }
             @Override
@@ -8469,6 +8717,7 @@ public class Main extends JFrame implements MouseMotionListener
         {
             com_is_hit_or_not = 0;
             b.setIcon(new ImageIcon("water_ship_miss.png"));
+            miss();
             j.revalidate();
             j.repaint();
             return b;
@@ -33789,6 +34038,18 @@ public class Main extends JFrame implements MouseMotionListener
             FileWriter f = new FileWriter("logs/logfile.txt");
             f.write("");
             f.close();
+            m.audiofile = new File("audio/ship_explosion.wav");
+            m.as = AudioSystem.getAudioInputStream(m.audiofile);
+            m.f = m.as.getFormat();
+            m.in = new DataLine.Info(Clip.class, m.f);
+            m.ac = (Clip) AudioSystem.getLine(m.in);
+            m.ac.open(m.as);
+            m.audiofilem = new File("audio/ship_miss.wav");
+            m.asm = AudioSystem.getAudioInputStream(m.audiofilem);
+            m.fm = m.asm.getFormat();
+            m.inm = new DataLine.Info(Clip.class, m.fm);
+            m.acm = (Clip) AudioSystem.getLine(m.inm);
+            m.acm.open(m.asm);
         }
         catch (Exception ex)
         {
