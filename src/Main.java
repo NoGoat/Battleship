@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -99,7 +100,7 @@ public class Main extends JFrame implements MouseMotionListener
         @Override
         public void mouseClicked(MouseEvent e)
         {
-            if(cur_aircraft != "finished")
+            if(!Objects.equals(cur_aircraft, "finished"))
             {
                 if (c == j1 && j1.isEnabled())
                 {
@@ -1079,8 +1080,7 @@ public class Main extends JFrame implements MouseMotionListener
         }
         catch (Exception ex)
         {
-            ac.setFramePosition(0);
-            ac.start();
+            ex.printStackTrace();
         }
     }
     public void miss()
@@ -1092,8 +1092,7 @@ public class Main extends JFrame implements MouseMotionListener
         }
         catch (Exception ex)
         {
-            acm.setFramePosition(0);
-            acm.start();
+            ex.printStackTrace();
         }
     }
     public void l1Call()
@@ -9160,7 +9159,7 @@ public class Main extends JFrame implements MouseMotionListener
                             refresh_flag = 0;
                             turn_flag = 1;
                         }
-                        if(next_move_flag == "aircraft-carrier")
+                        if(Objects.equals(next_move_flag, "aircraft-carrier"))
                         {
                             if(com_ai_count == 1)
                             {
@@ -9216,7 +9215,7 @@ public class Main extends JFrame implements MouseMotionListener
                             }
                             if(com_ai_count == 2)
                             {
-                                if(air_calculated_orientation == "up")
+                                if(Objects.equals(air_calculated_orientation, "up"))
                                 {
                                     if(air_up_assigned_1 == 0)
                                     {
@@ -9237,7 +9236,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         up_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "down")
+                                else if(Objects.equals(air_calculated_orientation, "down"))
                                 {
                                     if(air_down_assigned_1 == 0)
                                     {
@@ -9256,7 +9255,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         down_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "left")
+                                else if(Objects.equals(air_calculated_orientation, "left"))
                                 {
                                     if(air_left_assigned_1 == 0)
                                     {
@@ -9277,7 +9276,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         left_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "right")
+                                else if(Objects.equals(air_calculated_orientation, "right"))
                                 {
                                     if(air_right_assigned_1 == 0)
                                     {
@@ -9299,7 +9298,7 @@ public class Main extends JFrame implements MouseMotionListener
                             }
                             if(com_ai_count == 3)
                             {
-                                if(air_calculated_orientation == "up")
+                                if(Objects.equals(air_calculated_orientation, "up"))
                                 {
                                     if(air_up_assigned_2 == 0)
                                     {
@@ -9319,7 +9318,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         up_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "down")
+                                else if(Objects.equals(air_calculated_orientation, "down"))
                                 {
                                     if(air_down_assigned_2 == 0)
                                     {
@@ -9338,7 +9337,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         down_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "left")
+                                else if(Objects.equals(air_calculated_orientation, "left"))
                                 {
                                     if(air_left_assigned_2 == 0)
                                     {
@@ -9358,7 +9357,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         left_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "right")
+                                else if(Objects.equals(air_calculated_orientation, "right"))
                                 {
                                     if(air_right_assigned_2 == 0)
                                     {
@@ -9380,7 +9379,7 @@ public class Main extends JFrame implements MouseMotionListener
                             }
                             if(com_ai_count == 4)
                             {
-                                if(air_calculated_orientation == "up")
+                                if(Objects.equals(air_calculated_orientation, "up"))
                                 {
                                     if(air_up_assigned_3 == 0)
                                     {
@@ -9400,7 +9399,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         up_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "down")
+                                else if(Objects.equals(air_calculated_orientation, "down"))
                                 {
                                     if(air_down_assigned_3 == 0)
                                     {
@@ -9419,7 +9418,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         down_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "left")
+                                else if(Objects.equals(air_calculated_orientation, "left"))
                                 {
                                     if(air_left_assigned_3 == 0)
                                     {
@@ -9439,7 +9438,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         left_move = -1;
                                     }
                                 }
-                                else if(air_calculated_orientation == "right")
+                                else if(Objects.equals(air_calculated_orientation, "right"))
                                 {
                                     if(air_right_assigned_3 == 0)
                                     {
@@ -9465,7 +9464,7 @@ public class Main extends JFrame implements MouseMotionListener
                                 next_move = -1;
                             }
                         }
-                        else if(next_move_flag == "battleship")
+                        else if(Objects.equals(next_move_flag, "battleship"))
                         {
                             if(com_bat_count == 1)
                             {
@@ -9521,7 +9520,7 @@ public class Main extends JFrame implements MouseMotionListener
                             }
                             if(com_bat_count == 2)
                             {
-                                if(bat_calculated_orientation == "up")
+                                if(Objects.equals(bat_calculated_orientation, "up"))
                                 {
                                     if(bat_up_assigned_1 == 0)
                                     {
@@ -9542,7 +9541,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         up_move = -1;
                                     }
                                 }
-                                else if(bat_calculated_orientation == "down")
+                                else if(Objects.equals(bat_calculated_orientation, "down"))
                                 {
                                     if(bat_down_assigned_1 == 0)
                                     {
@@ -9561,7 +9560,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         down_move = -1;
                                     }
                                 }
-                                else if(bat_calculated_orientation == "left")
+                                else if(Objects.equals(bat_calculated_orientation, "left"))
                                 {
                                     if(bat_left_assigned_1 == 0)
                                     {
@@ -9582,7 +9581,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         left_move = -1;
                                     }
                                 }
-                                else if(bat_calculated_orientation == "right")
+                                else if(Objects.equals(bat_calculated_orientation, "right"))
                                 {
                                     if(bat_right_assigned_1 == 0)
                                     {
@@ -9604,7 +9603,7 @@ public class Main extends JFrame implements MouseMotionListener
                             }
                             if(com_bat_count == 3)
                             {
-                                if(bat_calculated_orientation == "up")
+                                if(Objects.equals(bat_calculated_orientation, "up"))
                                 {
                                     if(bat_up_assigned_2 == 0)
                                     {
@@ -9624,7 +9623,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         up_move = -1;
                                     }
                                 }
-                                else if(bat_calculated_orientation == "down")
+                                else if(Objects.equals(bat_calculated_orientation, "down"))
                                 {
                                     if(bat_down_assigned_2 == 0)
                                     {
@@ -9643,7 +9642,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         down_move = -1;
                                     }
                                 }
-                                else if(bat_calculated_orientation == "left")
+                                else if(Objects.equals(bat_calculated_orientation, "left"))
                                 {
                                     if(bat_left_assigned_2 == 0)
                                     {
@@ -9663,7 +9662,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         left_move = -1;
                                     }
                                 }
-                                else if(bat_calculated_orientation == "right")
+                                else if(Objects.equals(bat_calculated_orientation, "right"))
                                 {
                                     if(bat_right_assigned_2 == 0)
                                     {
@@ -9689,7 +9688,7 @@ public class Main extends JFrame implements MouseMotionListener
                                 next_move = -1;
                             }
                         }
-                        else if(next_move_flag == "submarine")
+                        else if(Objects.equals(next_move_flag, "submarine"))
                         {
                             if(com_sub_count == 1)
                             {
@@ -9744,7 +9743,7 @@ public class Main extends JFrame implements MouseMotionListener
                             }
                             if(com_sub_count == 2)
                             {
-                                if(sub_calculated_orientation == "up")
+                                if(Objects.equals(sub_calculated_orientation, "up"))
                                 {
                                     if(sub_up_assigned_1 == 0)
                                     {
@@ -9766,7 +9765,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         up_move = -1;
                                     }
                                 }
-                                else if(sub_calculated_orientation == "down")
+                                else if(Objects.equals(sub_calculated_orientation, "down"))
                                 {
                                     if(sub_down_assigned_1 == 0)
                                     {
@@ -9785,7 +9784,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         down_move = -1;
                                     }
                                 }
-                                else if(sub_calculated_orientation == "left")
+                                else if(Objects.equals(sub_calculated_orientation, "left"))
                                 {
                                     if(sub_left_assigned_1 == 0)
                                     {
@@ -9807,7 +9806,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         left_move = -1;
                                     }
                                 }
-                                else if(sub_calculated_orientation == "right")
+                                else if(Objects.equals(sub_calculated_orientation, "right"))
                                 {
                                     if(sub_right_assigned_1 == 0)
                                     {
@@ -9833,7 +9832,7 @@ public class Main extends JFrame implements MouseMotionListener
                                 next_move = -1;
                             }
                         }
-                        else if(next_move_flag == "cruiser")
+                        else if(Objects.equals(next_move_flag, "cruiser"))
                         {
                             if(com_cru_count == 1)
                             {
@@ -9888,7 +9887,7 @@ public class Main extends JFrame implements MouseMotionListener
                             }
                             if(com_cru_count == 2)
                             {
-                                if(cru_calculated_orientation == "up")
+                                if(Objects.equals(cru_calculated_orientation, "up"))
                                 {
                                     if(cru_up_assigned_1 == 0)
                                     {
@@ -9909,7 +9908,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         up_move = -1;
                                     }
                                 }
-                                else if(cru_calculated_orientation == "down")
+                                else if(Objects.equals(cru_calculated_orientation, "down"))
                                 {
                                     if(cru_down_assigned_1 == 0)
                                     {
@@ -9928,7 +9927,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         down_move = -1;
                                     }
                                 }
-                                else if(cru_calculated_orientation == "left")
+                                else if(Objects.equals(cru_calculated_orientation, "left"))
                                 {
                                     if(cru_left_assigned_1 == 0)
                                     {
@@ -9949,7 +9948,7 @@ public class Main extends JFrame implements MouseMotionListener
                                         left_move = -1;
                                     }
                                 }
-                                else if(cru_calculated_orientation == "right")
+                                else if(Objects.equals(cru_calculated_orientation, "right"))
                                 {
                                     if(cru_right_assigned_1 == 0)
                                     {
@@ -9975,7 +9974,7 @@ public class Main extends JFrame implements MouseMotionListener
                                 next_move = -1;
                             }
                         }
-                        else if(next_move_flag == "destroyer")
+                        else if(Objects.equals(next_move_flag, "destroyer"))
                         {
                             if(des_already_assigned == 0)
                             {
@@ -10065,7 +10064,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j1.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -10094,7 +10093,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j1.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -10123,7 +10122,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j11.isEnabled() && j21.isEnabled() && j31.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j11.isEnabled() && j21.isEnabled() && j31.isEnabled())
         {
             cur_aircraft = "submarine";
             j1.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -10149,7 +10148,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j2.isEnabled() && j3.isEnabled() && j4.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j2.isEnabled() && j3.isEnabled() && j4.isEnabled())
         {
             cur_aircraft = "submarine";
             j1.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -10175,7 +10174,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j11.isEnabled() && j21.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j11.isEnabled() && j21.isEnabled())
         {
             cur_aircraft = "cruiser";
             j1.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -10197,7 +10196,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j2.isEnabled() && j3.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j2.isEnabled() && j3.isEnabled())
         {
             cur_aircraft = "cruiser";
             j1.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -10219,7 +10218,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j11.isEnabled() && j21.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j11.isEnabled() && j21.isEnabled())
         {
             cur_aircraft = "destroyer";
             j1.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -10241,7 +10240,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j2.isEnabled() && j3.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j2.isEnabled() && j3.isEnabled())
         {
             cur_aircraft = "destroyer";
             j1.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -10263,7 +10262,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j11.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j11.isEnabled())
         {
             cur_aircraft = "finished";
             j1.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -10283,7 +10282,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j2.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j2.isEnabled())
         {
             cur_aircraft = "finished";
             j1.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -10343,7 +10342,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -10373,7 +10372,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j11.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -10403,7 +10402,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j21.isEnabled() && j31.isEnabled() && j41.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j21.isEnabled() && j31.isEnabled() && j41.isEnabled())
         {
             cur_aircraft = "submarine";
             j11.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -10429,7 +10428,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j12.isEnabled() && j13.isEnabled() && j14.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j12.isEnabled() && j13.isEnabled() && j14.isEnabled())
         {
             cur_aircraft = "submarine";
             j11.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -10455,7 +10454,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j21.isEnabled() && j31.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j21.isEnabled() && j31.isEnabled())
         {
             cur_aircraft = "cruiser";
             j11.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -10477,7 +10476,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j12.isEnabled() && j13.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j12.isEnabled() && j13.isEnabled())
         {
             cur_aircraft = "cruiser";
             j11.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -10499,7 +10498,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j21.isEnabled() && j31.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j21.isEnabled() && j31.isEnabled())
         {
             cur_aircraft = "destroyer";
             j11.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -10521,7 +10520,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j12.isEnabled() && j13.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j12.isEnabled() && j13.isEnabled())
         {
             cur_aircraft = "destroyer";
             j11.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -10543,7 +10542,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j21.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j21.isEnabled())
         {
             cur_aircraft = "finished";
             j11.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -10563,7 +10562,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j12.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j12.isEnabled())
         {
             cur_aircraft = "finished";
             j11.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -10623,7 +10622,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -10653,7 +10652,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j21.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -10683,7 +10682,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j31.isEnabled() && j41.isEnabled() && j51.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j31.isEnabled() && j41.isEnabled() && j51.isEnabled())
         {
             cur_aircraft = "submarine";
             j21.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -10709,7 +10708,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j22.isEnabled() && j23.isEnabled() && j24.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j22.isEnabled() && j23.isEnabled() && j24.isEnabled())
         {
             cur_aircraft = "submarine";
             j21.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -10735,7 +10734,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j31.isEnabled() && j41.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j31.isEnabled() && j41.isEnabled())
         {
             cur_aircraft = "cruiser";
             j21.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -10757,7 +10756,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j22.isEnabled() && j23.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j22.isEnabled() && j23.isEnabled())
         {
             cur_aircraft = "cruiser";
             j21.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -10779,7 +10778,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j31.isEnabled() && j41.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j31.isEnabled() && j41.isEnabled())
         {
             cur_aircraft = "destroyer";
             j21.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -10801,7 +10800,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j22.isEnabled() && j23.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j22.isEnabled() && j23.isEnabled())
         {
             cur_aircraft = "destroyer";
             j21.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -10823,7 +10822,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j31.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j31.isEnabled())
         {
             cur_aircraft = "finished";
             j21.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -10843,7 +10842,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j22.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j22.isEnabled())
         {
             cur_aircraft = "finished";
             j21.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -10903,7 +10902,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -10933,7 +10932,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j31.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -10963,7 +10962,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j41.isEnabled() && j51.isEnabled() && j61.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j41.isEnabled() && j51.isEnabled() && j61.isEnabled())
         {
             cur_aircraft = "submarine";
             j31.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -10989,7 +10988,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j32.isEnabled() && j33.isEnabled() && j34.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j32.isEnabled() && j33.isEnabled() && j34.isEnabled())
         {
             cur_aircraft = "submarine";
             j31.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -11015,7 +11014,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j41.isEnabled() && j51.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j41.isEnabled() && j51.isEnabled())
         {
             cur_aircraft = "cruiser";
             j31.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -11037,7 +11036,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j32.isEnabled() && j33.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j32.isEnabled() && j33.isEnabled())
         {
             cur_aircraft = "cruiser";
             j31.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -11059,7 +11058,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j41.isEnabled() && j51.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j41.isEnabled() && j51.isEnabled())
         {
             cur_aircraft = "destroyer";
             j31.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -11081,7 +11080,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j32.isEnabled() && j33.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j32.isEnabled() && j33.isEnabled())
         {
             cur_aircraft = "destroyer";
             j31.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -11103,7 +11102,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j41.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j41.isEnabled())
         {
             cur_aircraft = "finished";
             j31.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -11123,7 +11122,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j32.isEnabled())
         {
             cur_aircraft = "finished";
             j31.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -11183,7 +11182,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -11213,7 +11212,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j41.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -11243,7 +11242,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j51.isEnabled() && j61.isEnabled() && j71.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j51.isEnabled() && j61.isEnabled() && j71.isEnabled())
         {
             cur_aircraft = "submarine";
             j41.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -11269,7 +11268,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j42.isEnabled() && j43.isEnabled() && j44.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j42.isEnabled() && j43.isEnabled() && j44.isEnabled())
         {
             cur_aircraft = "submarine";
             j41.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -11295,7 +11294,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j51.isEnabled() && j61.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j51.isEnabled() && j61.isEnabled())
         {
             cur_aircraft = "cruiser";
             j41.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -11317,7 +11316,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j42.isEnabled() && j43.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j42.isEnabled() && j43.isEnabled())
         {
             cur_aircraft = "cruiser";
             j41.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -11339,7 +11338,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j51.isEnabled() && j61.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j51.isEnabled() && j61.isEnabled())
         {
             cur_aircraft = "destroyer";
             j41.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -11361,7 +11360,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j42.isEnabled() && j43.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j42.isEnabled() && j43.isEnabled())
         {
             cur_aircraft = "destroyer";
             j41.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -11383,7 +11382,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j51.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j51.isEnabled())
         {
             cur_aircraft = "finished";
             j41.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -11403,7 +11402,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j42.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j42.isEnabled())
         {
             cur_aircraft = "finished";
             j41.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -11463,7 +11462,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -11493,7 +11492,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j51.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -11523,7 +11522,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j61.isEnabled() && j71.isEnabled() && j81.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j61.isEnabled() && j71.isEnabled() && j81.isEnabled())
         {
             cur_aircraft = "submarine";
             j51.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -11549,7 +11548,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j52.isEnabled() && j53.isEnabled() && j54.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j52.isEnabled() && j53.isEnabled() && j54.isEnabled())
         {
             cur_aircraft = "submarine";
             j51.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -11575,7 +11574,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j61.isEnabled() && j71.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j61.isEnabled() && j71.isEnabled())
         {
             cur_aircraft = "cruiser";
             j51.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -11597,7 +11596,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j52.isEnabled() && j53.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j52.isEnabled() && j53.isEnabled())
         {
             cur_aircraft = "cruiser";
             j51.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -11619,7 +11618,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j61.isEnabled() && j71.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j61.isEnabled() && j71.isEnabled())
         {
             cur_aircraft = "destroyer";
             j51.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -11641,7 +11640,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j52.isEnabled() && j53.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j52.isEnabled() && j53.isEnabled())
         {
             cur_aircraft = "destroyer";
             j51.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -11663,7 +11662,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j61.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j61.isEnabled())
         {
             cur_aircraft = "finished";
             j51.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -11683,7 +11682,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j52.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j52.isEnabled())
         {
             cur_aircraft = "finished";
             j51.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -11743,7 +11742,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j61.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -11773,7 +11772,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j71.isEnabled() && j81.isEnabled() && j91.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j71.isEnabled() && j81.isEnabled() && j91.isEnabled())
         {
             cur_aircraft = "submarine";
             j61.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -11799,7 +11798,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j62.isEnabled() && j63.isEnabled() && j64.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j62.isEnabled() && j63.isEnabled() && j64.isEnabled())
         {
             cur_aircraft = "submarine";
             j61.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -11825,7 +11824,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j71.isEnabled() && j81.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j71.isEnabled() && j81.isEnabled())
         {
             cur_aircraft = "cruiser";
             j61.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -11847,7 +11846,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j62.isEnabled() && j63.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j62.isEnabled() && j63.isEnabled())
         {
             cur_aircraft = "cruiser";
             j61.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -11869,7 +11868,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j71.isEnabled() && j81.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j71.isEnabled() && j81.isEnabled())
         {
             cur_aircraft = "destroyer";
             j61.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -11891,7 +11890,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j62.isEnabled() && j63.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j62.isEnabled() && j63.isEnabled())
         {
             cur_aircraft = "destroyer";
             j61.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -11913,7 +11912,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j71.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j71.isEnabled())
         {
             cur_aircraft = "finished";
             j61.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -11933,7 +11932,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j62.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j62.isEnabled())
         {
             cur_aircraft = "finished";
             j61.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -11993,7 +11992,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j71.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -12023,7 +12022,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j72.isEnabled() && j73.isEnabled() && j74.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j72.isEnabled() && j73.isEnabled() && j74.isEnabled())
         {
             cur_aircraft = "submarine";
             j71.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -12049,7 +12048,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j81.isEnabled() && j91.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j81.isEnabled() && j91.isEnabled())
         {
             cur_aircraft = "cruiser";
             j71.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -12071,7 +12070,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j72.isEnabled() && j73.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j72.isEnabled() && j73.isEnabled())
         {
             cur_aircraft = "cruiser";
             j71.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -12093,7 +12092,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j81.isEnabled() && j91.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j81.isEnabled() && j91.isEnabled())
         {
             cur_aircraft = "destroyer";
             j71.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -12115,7 +12114,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j72.isEnabled() && j73.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j72.isEnabled() && j73.isEnabled())
         {
             cur_aircraft = "destroyer";
             j71.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -12137,7 +12136,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j81.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j81.isEnabled())
         {
             cur_aircraft = "finished";
             j71.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -12157,7 +12156,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j72.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j72.isEnabled())
         {
             cur_aircraft = "finished";
             j71.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -12217,7 +12216,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j81.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -12247,7 +12246,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j82.isEnabled() && j83.isEnabled() && j84.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j82.isEnabled() && j83.isEnabled() && j84.isEnabled())
         {
             cur_aircraft = "submarine";
             j81.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -12273,7 +12272,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j82.isEnabled() && j83.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j82.isEnabled() && j83.isEnabled())
         {
             cur_aircraft = "cruiser";
             j81.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -12295,7 +12294,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j82.isEnabled() && j83.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j82.isEnabled() && j83.isEnabled())
         {
             cur_aircraft = "destroyer";
             j81.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -12317,7 +12316,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j91.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j91.isEnabled())
         {
             cur_aircraft = "finished";
             j81.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -12337,7 +12336,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j82.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j82.isEnabled())
         {
             cur_aircraft = "finished";
             j81.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -12397,7 +12396,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j91.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -12427,7 +12426,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j92.isEnabled() && j93.isEnabled() && j94.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j92.isEnabled() && j93.isEnabled() && j94.isEnabled())
         {
             cur_aircraft = "submarine";
             j91.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -12453,7 +12452,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j92.isEnabled() && j93.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j92.isEnabled() && j93.isEnabled())
         {
             cur_aircraft = "cruiser";
             j91.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -12475,7 +12474,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j92.isEnabled() && j93.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j92.isEnabled() && j93.isEnabled())
         {
             cur_aircraft = "destroyer";
             j91.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -12497,7 +12496,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j92.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j92.isEnabled())
         {
             cur_aircraft = "finished";
             j91.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -12557,7 +12556,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j2.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -12587,7 +12586,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j2.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -12617,7 +12616,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j12.isEnabled() && j22.isEnabled() && j32.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j12.isEnabled() && j22.isEnabled() && j32.isEnabled())
         {
             cur_aircraft = "submarine";
             j2.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -12643,7 +12642,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j3.isEnabled() && j4.isEnabled() && j5.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j3.isEnabled() && j4.isEnabled() && j5.isEnabled())
         {
             cur_aircraft = "submarine";
             j2.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -12669,7 +12668,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j12.isEnabled() && j22.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j12.isEnabled() && j22.isEnabled())
         {
             cur_aircraft = "cruiser";
             j2.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -12691,7 +12690,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j3.isEnabled() && j4.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j3.isEnabled() && j4.isEnabled())
         {
             cur_aircraft = "cruiser";
             j2.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -12713,7 +12712,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j12.isEnabled() && j22.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j12.isEnabled() && j22.isEnabled())
         {
             cur_aircraft = "destroyer";
             j2.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -12735,7 +12734,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j3.isEnabled() && j4.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j3.isEnabled() && j4.isEnabled())
         {
             cur_aircraft = "destroyer";
             j2.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -12757,7 +12756,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j12.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j12.isEnabled())
         {
             cur_aircraft = "finished";
             j2.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -12777,7 +12776,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j3.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j3.isEnabled())
         {
             cur_aircraft = "finished";
             j2.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -12837,7 +12836,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j12.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -12867,7 +12866,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j12.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -12897,7 +12896,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j22.isEnabled() && j32.isEnabled() && j42.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j22.isEnabled() && j32.isEnabled() && j42.isEnabled())
         {
             cur_aircraft = "submarine";
             j12.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -12923,7 +12922,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j13.isEnabled() && j14.isEnabled() && j15.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j13.isEnabled() && j14.isEnabled() && j15.isEnabled())
         {
             cur_aircraft = "submarine";
             j12.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -12949,7 +12948,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j22.isEnabled() && j32.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j22.isEnabled() && j32.isEnabled())
         {
             cur_aircraft = "cruiser";
             j12.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -12971,7 +12970,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j13.isEnabled() && j14.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j13.isEnabled() && j14.isEnabled())
         {
             cur_aircraft = "cruiser";
             j12.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -12993,7 +12992,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j22.isEnabled() && j32.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j22.isEnabled() && j32.isEnabled())
         {
             cur_aircraft = "destroyer";
             j12.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -13015,7 +13014,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j13.isEnabled() && j14.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j13.isEnabled() && j14.isEnabled())
         {
             cur_aircraft = "destroyer";
             j12.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -13037,7 +13036,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j22.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j22.isEnabled())
         {
             cur_aircraft = "finished";
             j12.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -13057,7 +13056,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j13.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j13.isEnabled())
         {
             cur_aircraft = "finished";
             j12.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -13117,7 +13116,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j22.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -13147,7 +13146,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j22.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -13177,7 +13176,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j32.isEnabled() && j42.isEnabled() && j52.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j32.isEnabled() && j42.isEnabled() && j52.isEnabled())
         {
             cur_aircraft = "submarine";
             j22.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -13203,7 +13202,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j23.isEnabled() && j24.isEnabled() && j25.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j23.isEnabled() && j24.isEnabled() && j25.isEnabled())
         {
             cur_aircraft = "submarine";
             j22.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -13229,7 +13228,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j32.isEnabled() && j42.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j32.isEnabled() && j42.isEnabled())
         {
             cur_aircraft = "cruiser";
             j22.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -13251,7 +13250,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j23.isEnabled() && j24.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j23.isEnabled() && j24.isEnabled())
         {
             cur_aircraft = "cruiser";
             j22.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -13273,7 +13272,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j32.isEnabled() && j42.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j32.isEnabled() && j42.isEnabled())
         {
             cur_aircraft = "destroyer";
             j22.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -13295,7 +13294,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j23.isEnabled() && j24.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j23.isEnabled() && j24.isEnabled())
         {
             cur_aircraft = "destroyer";
             j22.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -13317,7 +13316,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j32.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j32.isEnabled())
         {
             cur_aircraft = "finished";
             j22.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -13337,7 +13336,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j23.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j23.isEnabled())
         {
             cur_aircraft = "finished";
             j22.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -13397,7 +13396,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j32.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -13427,7 +13426,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j32.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -13457,7 +13456,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j42.isEnabled() && j52.isEnabled() && j62.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j42.isEnabled() && j52.isEnabled() && j62.isEnabled())
         {
             cur_aircraft = "submarine";
             j32.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -13483,7 +13482,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j33.isEnabled() && j34.isEnabled() && j35.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j33.isEnabled() && j34.isEnabled() && j35.isEnabled())
         {
             cur_aircraft = "submarine";
             j32.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -13509,7 +13508,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j42.isEnabled() && j52.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j42.isEnabled() && j52.isEnabled())
         {
             cur_aircraft = "cruiser";
             j32.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -13531,7 +13530,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j33.isEnabled() && j34.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j33.isEnabled() && j34.isEnabled())
         {
             cur_aircraft = "cruiser";
             j32.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -13553,7 +13552,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j42.isEnabled() && j52.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j42.isEnabled() && j52.isEnabled())
         {
             cur_aircraft = "destroyer";
             j32.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -13575,7 +13574,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j33.isEnabled() && j34.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j33.isEnabled() && j34.isEnabled())
         {
             cur_aircraft = "destroyer";
             j32.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -13597,7 +13596,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j42.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j42.isEnabled())
         {
             cur_aircraft = "finished";
             j32.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -13617,7 +13616,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j32.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j32.isEnabled())
         {
             cur_aircraft = "finished";
             j32.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -13677,7 +13676,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j42.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -13707,7 +13706,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j42.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -13737,7 +13736,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j52.isEnabled() && j62.isEnabled() && j72.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j52.isEnabled() && j62.isEnabled() && j72.isEnabled())
         {
             cur_aircraft = "submarine";
             j42.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -13763,7 +13762,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j43.isEnabled() && j44.isEnabled() && j45.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j43.isEnabled() && j44.isEnabled() && j45.isEnabled())
         {
             cur_aircraft = "submarine";
             j42.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -13789,7 +13788,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j52.isEnabled() && j62.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j52.isEnabled() && j62.isEnabled())
         {
             cur_aircraft = "cruiser";
             j42.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -13811,7 +13810,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j43.isEnabled() && j44.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j43.isEnabled() && j44.isEnabled())
         {
             cur_aircraft = "cruiser";
             j42.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -13833,7 +13832,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j52.isEnabled() && j62.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j52.isEnabled() && j62.isEnabled())
         {
             cur_aircraft = "destroyer";
             j42.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -13855,7 +13854,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j43.isEnabled() && j44.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j43.isEnabled() && j44.isEnabled())
         {
             cur_aircraft = "destroyer";
             j42.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -13877,7 +13876,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j52.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j52.isEnabled())
         {
             cur_aircraft = "finished";
             j42.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -13897,7 +13896,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j43.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j43.isEnabled())
         {
             cur_aircraft = "finished";
             j42.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -13957,7 +13956,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j52.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -13987,7 +13986,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j52.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -14017,7 +14016,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j62.isEnabled() && j72.isEnabled() && j82.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j62.isEnabled() && j72.isEnabled() && j82.isEnabled())
         {
             cur_aircraft = "submarine";
             j52.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -14043,7 +14042,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j53.isEnabled() && j54.isEnabled() && j55.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j53.isEnabled() && j54.isEnabled() && j55.isEnabled())
         {
             cur_aircraft = "submarine";
             j52.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -14069,7 +14068,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j62.isEnabled() && j72.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j62.isEnabled() && j72.isEnabled())
         {
             cur_aircraft = "cruiser";
             j52.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -14091,7 +14090,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j53.isEnabled() && j54.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j53.isEnabled() && j54.isEnabled())
         {
             cur_aircraft = "cruiser";
             j52.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -14113,7 +14112,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j62.isEnabled() && j72.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j62.isEnabled() && j72.isEnabled())
         {
             cur_aircraft = "destroyer";
             j52.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -14135,7 +14134,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j53.isEnabled() && j54.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j53.isEnabled() && j54.isEnabled())
         {
             cur_aircraft = "destroyer";
             j52.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -14157,7 +14156,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j62.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j62.isEnabled())
         {
             cur_aircraft = "finished";
             j52.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -14177,7 +14176,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j53.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j53.isEnabled())
         {
             cur_aircraft = "finished";
             j52.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -14237,7 +14236,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j62.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -14267,7 +14266,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j72.isEnabled() && j82.isEnabled() && j92.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j72.isEnabled() && j82.isEnabled() && j92.isEnabled())
         {
             cur_aircraft = "submarine";
             j62.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -14293,7 +14292,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j63.isEnabled() && j64.isEnabled() && j65.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j63.isEnabled() && j64.isEnabled() && j65.isEnabled())
         {
             cur_aircraft = "submarine";
             j62.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -14319,7 +14318,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j72.isEnabled() && j82.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j72.isEnabled() && j82.isEnabled())
         {
             cur_aircraft = "cruiser";
             j62.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -14341,7 +14340,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j63.isEnabled() && j64.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j63.isEnabled() && j64.isEnabled())
         {
             cur_aircraft = "cruiser";
             j62.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -14363,7 +14362,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j72.isEnabled() && j82.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j72.isEnabled() && j82.isEnabled())
         {
             cur_aircraft = "destroyer";
             j62.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -14385,7 +14384,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j63.isEnabled() && j64.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j63.isEnabled() && j64.isEnabled())
         {
             cur_aircraft = "destroyer";
             j62.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -14407,7 +14406,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j72.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j72.isEnabled())
         {
             cur_aircraft = "finished";
             j62.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -14427,7 +14426,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j63.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j63.isEnabled())
         {
             cur_aircraft = "finished";
             j62.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -14487,7 +14486,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j72.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -14517,7 +14516,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j73.isEnabled() && j74.isEnabled() && j75.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j73.isEnabled() && j74.isEnabled() && j75.isEnabled())
         {
             cur_aircraft = "submarine";
             j72.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -14543,7 +14542,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j82.isEnabled() && j92.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j82.isEnabled() && j92.isEnabled())
         {
             cur_aircraft = "cruiser";
             j72.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -14565,7 +14564,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j74.isEnabled() && j74.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j74.isEnabled() && j74.isEnabled())
         {
             cur_aircraft = "cruiser";
             j72.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -14587,7 +14586,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j82.isEnabled() && j92.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j82.isEnabled() && j92.isEnabled())
         {
             cur_aircraft = "destroyer";
             j72.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -14609,7 +14608,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j73.isEnabled() && j74.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j73.isEnabled() && j74.isEnabled())
         {
             cur_aircraft = "destroyer";
             j72.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -14631,7 +14630,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j82.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j82.isEnabled())
         {
             cur_aircraft = "finished";
             j72.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -14651,7 +14650,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j73.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j73.isEnabled())
         {
             cur_aircraft = "finished";
             j72.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -14711,7 +14710,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j82.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -14741,7 +14740,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j83.isEnabled() && j84.isEnabled() && j85.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j83.isEnabled() && j84.isEnabled() && j85.isEnabled())
         {
             cur_aircraft = "submarine";
             j82.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -14767,7 +14766,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j83.isEnabled() && j84.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j83.isEnabled() && j84.isEnabled())
         {
             cur_aircraft = "cruiser";
             j82.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -14789,7 +14788,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j83.isEnabled() && j84.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j83.isEnabled() && j84.isEnabled())
         {
             cur_aircraft = "destroyer";
             j82.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -14811,7 +14810,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j92.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j92.isEnabled())
         {
             cur_aircraft = "finished";
             j82.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -14831,7 +14830,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j83.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j83.isEnabled())
         {
             cur_aircraft = "finished";
             j82.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -14891,7 +14890,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j92.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -14921,7 +14920,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j93.isEnabled() && j94.isEnabled() && j95.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j93.isEnabled() && j94.isEnabled() && j95.isEnabled())
         {
             cur_aircraft = "submarine";
             j92.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -14947,7 +14946,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j93.isEnabled() && j94.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j93.isEnabled() && j94.isEnabled())
         {
             cur_aircraft = "cruiser";
             j92.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -14969,7 +14968,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j93.isEnabled() && j94.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j93.isEnabled() && j94.isEnabled())
         {
             cur_aircraft = "destroyer";
             j92.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -14991,7 +14990,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j94.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j94.isEnabled())
         {
             cur_aircraft = "finished";
             j92.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -15051,7 +15050,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j3.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -15081,7 +15080,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j3.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -15111,7 +15110,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j13.isEnabled() && j23.isEnabled() && j33.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j13.isEnabled() && j23.isEnabled() && j33.isEnabled())
         {
             cur_aircraft = "submarine";
             j3.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -15137,7 +15136,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j4.isEnabled() && j5.isEnabled() && j6.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j4.isEnabled() && j5.isEnabled() && j6.isEnabled())
         {
             cur_aircraft = "submarine";
             j3.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -15163,7 +15162,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j13.isEnabled() && j23.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j13.isEnabled() && j23.isEnabled())
         {
             cur_aircraft = "cruiser";
             j3.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -15185,7 +15184,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j4.isEnabled() && j5.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j4.isEnabled() && j5.isEnabled())
         {
             cur_aircraft = "cruiser";
             j3.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -15207,7 +15206,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j13.isEnabled() && j23.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j13.isEnabled() && j23.isEnabled())
         {
             cur_aircraft = "destroyer";
             j3.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -15229,7 +15228,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j4.isEnabled() && j5.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j4.isEnabled() && j5.isEnabled())
         {
             cur_aircraft = "destroyer";
             j3.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -15251,7 +15250,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j13.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j13.isEnabled())
         {
             cur_aircraft = "finished";
             j3.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -15271,7 +15270,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j4.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j4.isEnabled())
         {
             cur_aircraft = "finished";
             j3.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -15331,7 +15330,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j13.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -15361,7 +15360,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j13.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -15391,7 +15390,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j23.isEnabled() && j33.isEnabled() && j43.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j23.isEnabled() && j33.isEnabled() && j43.isEnabled())
         {
             cur_aircraft = "submarine";
             j13.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -15417,7 +15416,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j14.isEnabled() && j15.isEnabled() && j16.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j14.isEnabled() && j15.isEnabled() && j16.isEnabled())
         {
             cur_aircraft = "submarine";
             j13.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -15443,7 +15442,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j23.isEnabled() && j33.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j23.isEnabled() && j33.isEnabled())
         {
             cur_aircraft = "cruiser";
             j13.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -15465,7 +15464,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j14.isEnabled() && j15.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j14.isEnabled() && j15.isEnabled())
         {
             cur_aircraft = "cruiser";
             j13.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -15487,7 +15486,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j23.isEnabled() && j33.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j23.isEnabled() && j33.isEnabled())
         {
             cur_aircraft = "destroyer";
             j13.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -15509,7 +15508,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j14.isEnabled() && j15.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j14.isEnabled() && j15.isEnabled())
         {
             cur_aircraft = "destroyer";
             j13.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -15531,7 +15530,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j23.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j23.isEnabled())
         {
             cur_aircraft = "finished";
             j13.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -15551,7 +15550,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j14.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j14.isEnabled())
         {
             cur_aircraft = "finished";
             j13.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -15611,7 +15610,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j23.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -15641,7 +15640,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j23.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -15671,7 +15670,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j33.isEnabled() && j43.isEnabled() && j53.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j33.isEnabled() && j43.isEnabled() && j53.isEnabled())
         {
             cur_aircraft = "submarine";
             j23.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -15697,7 +15696,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j24.isEnabled() && j25.isEnabled() && j26.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j24.isEnabled() && j25.isEnabled() && j26.isEnabled())
         {
             cur_aircraft = "submarine";
             j23.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -15723,7 +15722,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j33.isEnabled() && j43.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j33.isEnabled() && j43.isEnabled())
         {
             cur_aircraft = "cruiser";
             j23.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -15745,7 +15744,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j24.isEnabled() && j25.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j24.isEnabled() && j25.isEnabled())
         {
             cur_aircraft = "cruiser";
             j23.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -15767,7 +15766,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j33.isEnabled() && j43.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j33.isEnabled() && j43.isEnabled())
         {
             cur_aircraft = "destroyer";
             j23.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -15789,7 +15788,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j24.isEnabled() && j25.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j24.isEnabled() && j25.isEnabled())
         {
             cur_aircraft = "destroyer";
             j23.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -15811,7 +15810,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j33.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j33.isEnabled())
         {
             cur_aircraft = "finished";
             j23.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -15831,7 +15830,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j24.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j24.isEnabled())
         {
             cur_aircraft = "finished";
             j23.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -15891,7 +15890,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j33.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -15921,7 +15920,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j33.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -15951,7 +15950,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j43.isEnabled() && j53.isEnabled() && j63.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j43.isEnabled() && j53.isEnabled() && j63.isEnabled())
         {
             cur_aircraft = "submarine";
             j33.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -15977,7 +15976,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j34.isEnabled() && j35.isEnabled() && j36.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j34.isEnabled() && j35.isEnabled() && j36.isEnabled())
         {
             cur_aircraft = "submarine";
             j33.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -16003,7 +16002,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j43.isEnabled() && j53.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j43.isEnabled() && j53.isEnabled())
         {
             cur_aircraft = "cruiser";
             j33.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -16025,7 +16024,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j34.isEnabled() && j35.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j34.isEnabled() && j35.isEnabled())
         {
             cur_aircraft = "cruiser";
             j33.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -16047,7 +16046,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j43.isEnabled() && j53.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j43.isEnabled() && j53.isEnabled())
         {
             cur_aircraft = "destroyer";
             j33.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -16069,7 +16068,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j35.isEnabled() && j36.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j35.isEnabled() && j36.isEnabled())
         {
             cur_aircraft = "destroyer";
             j33.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -16091,7 +16090,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j43.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j43.isEnabled())
         {
             cur_aircraft = "finished";
             j33.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -16111,7 +16110,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j34.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j34.isEnabled())
         {
             cur_aircraft = "finished";
             j33.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -16171,7 +16170,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j43.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -16201,7 +16200,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j43.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -16231,7 +16230,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j53.isEnabled() && j63.isEnabled() && j73.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j53.isEnabled() && j63.isEnabled() && j73.isEnabled())
         {
             cur_aircraft = "submarine";
             j43.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -16257,7 +16256,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j44.isEnabled() && j45.isEnabled() && j46.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j44.isEnabled() && j45.isEnabled() && j46.isEnabled())
         {
             cur_aircraft = "submarine";
             j43.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -16283,7 +16282,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j53.isEnabled() && j63.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j53.isEnabled() && j63.isEnabled())
         {
             cur_aircraft = "cruiser";
             j43.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -16305,7 +16304,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j44.isEnabled() && j45.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j44.isEnabled() && j45.isEnabled())
         {
             cur_aircraft = "cruiser";
             j43.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -16327,7 +16326,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j53.isEnabled() && j63.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j53.isEnabled() && j63.isEnabled())
         {
             cur_aircraft = "destroyer";
             j43.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -16349,7 +16348,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j44.isEnabled() && j45.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j44.isEnabled() && j45.isEnabled())
         {
             cur_aircraft = "destroyer";
             j43.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -16371,7 +16370,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j53.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j53.isEnabled())
         {
             cur_aircraft = "finished";
             j43.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -16391,7 +16390,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j44.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j44.isEnabled())
         {
             cur_aircraft = "finished";
             j43.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -16451,7 +16450,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j53.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -16481,7 +16480,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j53.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -16511,7 +16510,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j63.isEnabled() && j73.isEnabled() && j83.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j63.isEnabled() && j73.isEnabled() && j83.isEnabled())
         {
             cur_aircraft = "submarine";
             j53.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -16537,7 +16536,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j54.isEnabled() && j55.isEnabled() && j56.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j54.isEnabled() && j55.isEnabled() && j56.isEnabled())
         {
             cur_aircraft = "submarine";
             j53.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -16563,7 +16562,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j63.isEnabled() && j73.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j63.isEnabled() && j73.isEnabled())
         {
             cur_aircraft = "cruiser";
             j53.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -16585,7 +16584,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j54.isEnabled() && j55.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j54.isEnabled() && j55.isEnabled())
         {
             cur_aircraft = "cruiser";
             j53.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -16607,7 +16606,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j63.isEnabled() && j73.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j63.isEnabled() && j73.isEnabled())
         {
             cur_aircraft = "destroyer";
             j53.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -16629,7 +16628,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j54.isEnabled() && j55.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j54.isEnabled() && j55.isEnabled())
         {
             cur_aircraft = "destroyer";
             j53.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -16651,7 +16650,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j63.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j63.isEnabled())
         {
             cur_aircraft = "finished";
             j53.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -16671,7 +16670,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j54.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j54.isEnabled())
         {
             cur_aircraft = "finished";
             j53.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -16731,7 +16730,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j63.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -16761,7 +16760,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j73.isEnabled() && j83.isEnabled() && j93.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j73.isEnabled() && j83.isEnabled() && j93.isEnabled())
         {
             cur_aircraft = "submarine";
             j63.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -16787,7 +16786,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j64.isEnabled() && j65.isEnabled() && j66.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j64.isEnabled() && j65.isEnabled() && j66.isEnabled())
         {
             cur_aircraft = "submarine";
             j63.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -16813,7 +16812,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j73.isEnabled() && j83.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j73.isEnabled() && j83.isEnabled())
         {
             cur_aircraft = "cruiser";
             j63.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -16835,7 +16834,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j64.isEnabled() && j65.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j64.isEnabled() && j65.isEnabled())
         {
             cur_aircraft = "cruiser";
             j63.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -16857,7 +16856,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j73.isEnabled() && j83.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j73.isEnabled() && j83.isEnabled())
         {
             cur_aircraft = "destroyer";
             j63.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -16879,7 +16878,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j63.isEnabled() && j64.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j63.isEnabled() && j64.isEnabled())
         {
             cur_aircraft = "destroyer";
             j63.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -16901,7 +16900,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j73.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j73.isEnabled())
         {
             cur_aircraft = "finished";
             j63.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -16921,7 +16920,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j64.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j64.isEnabled())
         {
             cur_aircraft = "finished";
             j63.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -16981,7 +16980,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j73.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -17011,7 +17010,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j74.isEnabled() && j75.isEnabled() && j76.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j74.isEnabled() && j75.isEnabled() && j76.isEnabled())
         {
             cur_aircraft = "submarine";
             j73.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -17037,7 +17036,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j83.isEnabled() && j93.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j83.isEnabled() && j93.isEnabled())
         {
             cur_aircraft = "cruiser";
             j73.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -17059,7 +17058,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j74.isEnabled() && j75.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j74.isEnabled() && j75.isEnabled())
         {
             cur_aircraft = "cruiser";
             j73.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -17081,7 +17080,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j83.isEnabled() && j93.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j83.isEnabled() && j93.isEnabled())
         {
             cur_aircraft = "destroyer";
             j73.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -17103,7 +17102,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j74.isEnabled() && j75.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j74.isEnabled() && j75.isEnabled())
         {
             cur_aircraft = "destroyer";
             j73.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -17125,7 +17124,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j83.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j83.isEnabled())
         {
             cur_aircraft = "finished";
             j73.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -17145,7 +17144,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j74.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j74.isEnabled())
         {
             cur_aircraft = "finished";
             j73.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -17205,7 +17204,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j83.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -17235,7 +17234,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j84.isEnabled() && j85.isEnabled() && j86.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j84.isEnabled() && j85.isEnabled() && j86.isEnabled())
         {
             cur_aircraft = "submarine";
             j83.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -17261,7 +17260,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j84.isEnabled() && j85.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j84.isEnabled() && j85.isEnabled())
         {
             cur_aircraft = "cruiser";
             j83.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -17280,7 +17279,7 @@ public class Main extends JFrame implements MouseMotionListener
             path_v = "cruiser/cruiser-v.png";
             path_h = "cruiser/cruiser-h.png";
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j84.isEnabled() && j85.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j84.isEnabled() && j85.isEnabled())
         {
             cur_aircraft = "destroyer";
             j83.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -17302,7 +17301,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j93.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j93.isEnabled())
         {
             cur_aircraft = "finished";
             j83.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -17322,7 +17321,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j84.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j84.isEnabled())
         {
             cur_aircraft = "finished";
             j83.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -17382,7 +17381,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j93.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -17412,7 +17411,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j94.isEnabled() && j95.isEnabled() && j96.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j94.isEnabled() && j95.isEnabled() && j96.isEnabled())
         {
             cur_aircraft = "submarine";
             j93.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -17438,7 +17437,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j94.isEnabled() && j95.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j94.isEnabled() && j95.isEnabled())
         {
             cur_aircraft = "cruiser";
             j93.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -17460,7 +17459,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j94.isEnabled() && j95.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j94.isEnabled() && j95.isEnabled())
         {
             cur_aircraft = "destroyer";
             j93.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -17482,7 +17481,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j93.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j93.isEnabled())
         {
             cur_aircraft = "finished";
             j93.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -17542,7 +17541,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j4.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -17572,7 +17571,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j4.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -17602,7 +17601,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j14.isEnabled() && j24.isEnabled() && j34.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j14.isEnabled() && j24.isEnabled() && j34.isEnabled())
         {
             cur_aircraft = "submarine";
             j4.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -17628,7 +17627,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j5.isEnabled() && j6.isEnabled() && j7.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j5.isEnabled() && j6.isEnabled() && j7.isEnabled())
         {
             cur_aircraft = "submarine";
             j4.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -17654,7 +17653,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j14.isEnabled() && j24.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j14.isEnabled() && j24.isEnabled())
         {
             cur_aircraft = "cruiser";
             j4.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -17676,7 +17675,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j5.isEnabled() && j6.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j5.isEnabled() && j6.isEnabled())
         {
             cur_aircraft = "cruiser";
             j4.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -17698,7 +17697,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j14.isEnabled() && j24.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j14.isEnabled() && j24.isEnabled())
         {
             cur_aircraft = "destroyer";
             j4.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -17720,7 +17719,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j5.isEnabled() && j6.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j5.isEnabled() && j6.isEnabled())
         {
             cur_aircraft = "destroyer";
             j4.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -17742,7 +17741,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j14.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j14.isEnabled())
         {
             cur_aircraft = "finished";
             j4.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -17762,7 +17761,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j5.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j5.isEnabled())
         {
             cur_aircraft = "finished";
             j4.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -17822,7 +17821,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j14.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -17852,7 +17851,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j14.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -17882,7 +17881,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j24.isEnabled() && j34.isEnabled() && j44.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j24.isEnabled() && j34.isEnabled() && j44.isEnabled())
         {
             cur_aircraft = "submarine";
             j14.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -17908,7 +17907,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j15.isEnabled() && j16.isEnabled() && j17.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j15.isEnabled() && j16.isEnabled() && j17.isEnabled())
         {
             cur_aircraft = "submarine";
             j14.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -17934,7 +17933,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j24.isEnabled() && j34.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j24.isEnabled() && j34.isEnabled())
         {
             cur_aircraft = "cruiser";
             j14.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -17956,7 +17955,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j15.isEnabled() && j16.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j15.isEnabled() && j16.isEnabled())
         {
             cur_aircraft = "cruiser";
             j14.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -17978,7 +17977,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j24.isEnabled() && j34.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j24.isEnabled() && j34.isEnabled())
         {
             cur_aircraft = "destroyer";
             j14.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -18000,7 +17999,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j15.isEnabled() && j16.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j15.isEnabled() && j16.isEnabled())
         {
             cur_aircraft = "destroyer";
             j14.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -18022,7 +18021,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j24.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j24.isEnabled())
         {
             cur_aircraft = "finished";
             j14.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -18042,7 +18041,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j15.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j15.isEnabled())
         {
             cur_aircraft = "finished";
             j14.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -18102,7 +18101,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j24.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -18132,7 +18131,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j24.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -18162,7 +18161,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j34.isEnabled() && j44.isEnabled() && j54.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j34.isEnabled() && j44.isEnabled() && j54.isEnabled())
         {
             cur_aircraft = "submarine";
             j24.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -18188,7 +18187,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j25.isEnabled() && j26.isEnabled() && j27.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j25.isEnabled() && j26.isEnabled() && j27.isEnabled())
         {
             cur_aircraft = "submarine";
             j24.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -18214,7 +18213,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j34.isEnabled() && j44.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j34.isEnabled() && j44.isEnabled())
         {
             cur_aircraft = "cruiser";
             j24.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -18236,7 +18235,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j25.isEnabled() && j26.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j25.isEnabled() && j26.isEnabled())
         {
             cur_aircraft = "cruiser";
             j24.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -18258,7 +18257,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j34.isEnabled() && j44.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j34.isEnabled() && j44.isEnabled())
         {
             cur_aircraft = "destroyer";
             j24.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -18280,7 +18279,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j25.isEnabled() && j26.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j25.isEnabled() && j26.isEnabled())
         {
             cur_aircraft = "destroyer";
             j24.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -18302,7 +18301,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j34.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j34.isEnabled())
         {
             cur_aircraft = "finished";
             j24.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -18322,7 +18321,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j25.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j25.isEnabled())
         {
             cur_aircraft = "finished";
             j24.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -18382,7 +18381,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j34.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -18412,7 +18411,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j34.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -18442,7 +18441,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j44.isEnabled() && j54.isEnabled() && j64.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j44.isEnabled() && j54.isEnabled() && j64.isEnabled())
         {
             cur_aircraft = "submarine";
             j34.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -18468,7 +18467,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j35.isEnabled() && j36.isEnabled() && j37.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j35.isEnabled() && j36.isEnabled() && j37.isEnabled())
         {
             cur_aircraft = "submarine";
             j34.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -18494,7 +18493,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j44.isEnabled() && j54.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j44.isEnabled() && j54.isEnabled())
         {
             cur_aircraft = "cruiser";
             j34.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -18516,7 +18515,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j35.isEnabled() && j36.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j35.isEnabled() && j36.isEnabled())
         {
             cur_aircraft = "cruiser";
             j34.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -18538,7 +18537,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j44.isEnabled() && j54.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j44.isEnabled() && j54.isEnabled())
         {
             cur_aircraft = "destroyer";
             j34.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -18560,7 +18559,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j34.isEnabled() && j35.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j34.isEnabled() && j35.isEnabled())
         {
             cur_aircraft = "destroyer";
             j34.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -18582,7 +18581,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j44.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j44.isEnabled())
         {
             cur_aircraft = "finished";
             j34.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -18602,7 +18601,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j35.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j35.isEnabled())
         {
             cur_aircraft = "finished";
             j34.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -18662,7 +18661,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j44.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -18692,7 +18691,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j44.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -18722,7 +18721,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j54.isEnabled() && j64.isEnabled() && j74.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j54.isEnabled() && j64.isEnabled() && j74.isEnabled())
         {
             cur_aircraft = "submarine";
             j44.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -18748,7 +18747,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j45.isEnabled() && j46.isEnabled() && j47.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j45.isEnabled() && j46.isEnabled() && j47.isEnabled())
         {
             cur_aircraft = "submarine";
             j44.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -18774,7 +18773,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j54.isEnabled() && j64.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j54.isEnabled() && j64.isEnabled())
         {
             cur_aircraft = "cruiser";
             j44.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -18796,7 +18795,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j45.isEnabled() && j46.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j45.isEnabled() && j46.isEnabled())
         {
             cur_aircraft = "cruiser";
             j44.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -18818,7 +18817,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j54.isEnabled() && j64.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j54.isEnabled() && j64.isEnabled())
         {
             cur_aircraft = "destroyer";
             j44.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -18840,7 +18839,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j45.isEnabled() && j46.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j45.isEnabled() && j46.isEnabled())
         {
             cur_aircraft = "destroyer";
             j44.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -18862,7 +18861,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j54.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j54.isEnabled())
         {
             cur_aircraft = "finished";
             j44.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -18882,7 +18881,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j45.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j45.isEnabled())
         {
             cur_aircraft = "finished";
             j44.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -18942,7 +18941,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j54.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -18972,7 +18971,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j54.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -19002,7 +19001,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j64.isEnabled() && j74.isEnabled() && j84.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j64.isEnabled() && j74.isEnabled() && j84.isEnabled())
         {
             cur_aircraft = "submarine";
             j54.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -19028,7 +19027,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j55.isEnabled() && j56.isEnabled() && j57.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j55.isEnabled() && j56.isEnabled() && j57.isEnabled())
         {
             cur_aircraft = "submarine";
             j54.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -19054,7 +19053,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j64.isEnabled() && j74.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j64.isEnabled() && j74.isEnabled())
         {
             cur_aircraft = "cruiser";
             j54.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -19076,7 +19075,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j55.isEnabled() && j56.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j55.isEnabled() && j56.isEnabled())
         {
             cur_aircraft = "cruiser";
             j54.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -19098,7 +19097,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j64.isEnabled() && j74.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j64.isEnabled() && j74.isEnabled())
         {
             cur_aircraft = "destroyer";
             j54.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -19120,7 +19119,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j55.isEnabled() && j56.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j55.isEnabled() && j56.isEnabled())
         {
             cur_aircraft = "destroyer";
             j54.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -19142,7 +19141,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j64.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j64.isEnabled())
         {
             cur_aircraft = "finished";
             j54.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -19162,7 +19161,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j55.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j55.isEnabled())
         {
             cur_aircraft = "finished";
             j54.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -19222,7 +19221,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j64.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -19252,7 +19251,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j74.isEnabled() && j84.isEnabled() && j94.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j74.isEnabled() && j84.isEnabled() && j94.isEnabled())
         {
             cur_aircraft = "submarine";
             j64.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -19278,7 +19277,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j65.isEnabled() && j66.isEnabled() && j67.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j65.isEnabled() && j66.isEnabled() && j67.isEnabled())
         {
             cur_aircraft = "submarine";
             j64.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -19304,7 +19303,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j74.isEnabled() && j84.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j74.isEnabled() && j84.isEnabled())
         {
             cur_aircraft = "cruiser";
             j64.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -19326,7 +19325,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j65.isEnabled() && j66.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j65.isEnabled() && j66.isEnabled())
         {
             cur_aircraft = "cruiser";
             j64.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -19348,7 +19347,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j74.isEnabled() && j84.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j74.isEnabled() && j84.isEnabled())
         {
             cur_aircraft = "destroyer";
             j64.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -19370,7 +19369,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j64.isEnabled() && j65.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j64.isEnabled() && j65.isEnabled())
         {
             cur_aircraft = "destroyer";
             j64.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -19392,7 +19391,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j74.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j74.isEnabled())
         {
             cur_aircraft = "finished";
             j64.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -19412,7 +19411,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j65.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j65.isEnabled())
         {
             cur_aircraft = "finished";
             j64.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -19472,7 +19471,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j74.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -19502,7 +19501,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j75.isEnabled() && j76.isEnabled() && j77.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j75.isEnabled() && j76.isEnabled() && j77.isEnabled())
         {
             cur_aircraft = "submarine";
             j74.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -19528,7 +19527,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j84.isEnabled() && j94.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j84.isEnabled() && j94.isEnabled())
         {
             cur_aircraft = "cruiser";
             j74.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -19550,7 +19549,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j75.isEnabled() && j76.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j75.isEnabled() && j76.isEnabled())
         {
             cur_aircraft = "cruiser";
             j74.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -19572,7 +19571,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j84.isEnabled() && j94.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j84.isEnabled() && j94.isEnabled())
         {
             cur_aircraft = "destroyer";
             j74.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -19594,7 +19593,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j75.isEnabled() && j76.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j75.isEnabled() && j76.isEnabled())
         {
             cur_aircraft = "destroyer";
             j74.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -19616,7 +19615,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j84.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j84.isEnabled())
         {
             cur_aircraft = "finished";
             j74.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -19636,7 +19635,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j75.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j75.isEnabled())
         {
             cur_aircraft = "finished";
             j74.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -19696,7 +19695,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j84.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -19726,7 +19725,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j85.isEnabled() && j86.isEnabled() && j87.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j85.isEnabled() && j86.isEnabled() && j87.isEnabled())
         {
             cur_aircraft = "submarine";
             j84.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -19752,7 +19751,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j85.isEnabled() && j86.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j85.isEnabled() && j86.isEnabled())
         {
             cur_aircraft = "cruiser";
             j84.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -19771,7 +19770,7 @@ public class Main extends JFrame implements MouseMotionListener
             path_v = "cruiser/cruiser-v.png";
             path_h = "cruiser/cruiser-h.png";
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j85.isEnabled() && j86.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j85.isEnabled() && j86.isEnabled())
         {
             cur_aircraft = "destroyer";
             j84.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -19793,7 +19792,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j94.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j94.isEnabled())
         {
             cur_aircraft = "finished";
             j84.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -19813,7 +19812,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j85.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j85.isEnabled())
         {
             cur_aircraft = "finished";
             j84.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -19873,7 +19872,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j94.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -19903,7 +19902,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j95.isEnabled() && j96.isEnabled() && j97.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j95.isEnabled() && j96.isEnabled() && j97.isEnabled())
         {
             cur_aircraft = "submarine";
             j94.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -19929,7 +19928,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j95.isEnabled() && j96.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j95.isEnabled() && j96.isEnabled())
         {
             cur_aircraft = "cruiser";
             j94.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -19951,7 +19950,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j95.isEnabled() && j96.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j95.isEnabled() && j96.isEnabled())
         {
             cur_aircraft = "destroyer";
             j94.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -19973,7 +19972,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j95.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j95.isEnabled())
         {
             cur_aircraft = "finished";
             j94.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -20033,7 +20032,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j5.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -20063,7 +20062,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j5.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -20093,7 +20092,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j15.isEnabled() && j25.isEnabled() && j35.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j15.isEnabled() && j25.isEnabled() && j35.isEnabled())
         {
             cur_aircraft = "submarine";
             j5.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -20119,7 +20118,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j6.isEnabled() && j7.isEnabled() && j8.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j6.isEnabled() && j7.isEnabled() && j8.isEnabled())
         {
             cur_aircraft = "submarine";
             j5.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -20145,7 +20144,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j15.isEnabled() && j25.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j15.isEnabled() && j25.isEnabled())
         {
             cur_aircraft = "cruiser";
             j5.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -20167,7 +20166,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j6.isEnabled() && j7.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j6.isEnabled() && j7.isEnabled())
         {
             cur_aircraft = "cruiser";
             j5.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -20189,7 +20188,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j15.isEnabled() && j25.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j15.isEnabled() && j25.isEnabled())
         {
             cur_aircraft = "destroyer";
             j5.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -20211,7 +20210,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j6.isEnabled() && j7.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j6.isEnabled() && j7.isEnabled())
         {
             cur_aircraft = "destroyer";
             j5.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -20233,7 +20232,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j15.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j15.isEnabled())
         {
             cur_aircraft = "finished";
             j5.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -20253,7 +20252,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j6.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j6.isEnabled())
         {
             cur_aircraft = "finished";
             j5.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -20313,7 +20312,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j15.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -20343,7 +20342,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j15.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -20373,7 +20372,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j25.isEnabled() && j35.isEnabled() && j45.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j25.isEnabled() && j35.isEnabled() && j45.isEnabled())
         {
             cur_aircraft = "submarine";
             j15.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -20399,7 +20398,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j16.isEnabled() && j17.isEnabled() && j18.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j16.isEnabled() && j17.isEnabled() && j18.isEnabled())
         {
             cur_aircraft = "submarine";
             j15.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -20425,7 +20424,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j25.isEnabled() && j35.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j25.isEnabled() && j35.isEnabled())
         {
             cur_aircraft = "cruiser";
             j15.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -20447,7 +20446,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j16.isEnabled() && j17.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j16.isEnabled() && j17.isEnabled())
         {
             cur_aircraft = "cruiser";
             j15.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -20469,7 +20468,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j25.isEnabled() && j35.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j25.isEnabled() && j35.isEnabled())
         {
             cur_aircraft = "destroyer";
             j15.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -20491,7 +20490,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j16.isEnabled() && j17.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j16.isEnabled() && j17.isEnabled())
         {
             cur_aircraft = "destroyer";
             j15.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -20513,7 +20512,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j25.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j25.isEnabled())
         {
             cur_aircraft = "finished";
             j15.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -20533,7 +20532,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j16.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j16.isEnabled())
         {
             cur_aircraft = "finished";
             j15.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -20593,7 +20592,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j25.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -20623,7 +20622,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j25.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -20653,7 +20652,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j35.isEnabled() && j45.isEnabled() && j55.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j35.isEnabled() && j45.isEnabled() && j55.isEnabled())
         {
             cur_aircraft = "submarine";
             j25.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -20679,7 +20678,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j26.isEnabled() && j27.isEnabled() && j28.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j26.isEnabled() && j27.isEnabled() && j28.isEnabled())
         {
             cur_aircraft = "submarine";
             j25.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -20705,7 +20704,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j35.isEnabled() && j45.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j35.isEnabled() && j45.isEnabled())
         {
             cur_aircraft = "cruiser";
             j25.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -20727,7 +20726,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j26.isEnabled() && j27.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j26.isEnabled() && j27.isEnabled())
         {
             cur_aircraft = "cruiser";
             j25.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -20749,7 +20748,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j35.isEnabled() && j45.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j35.isEnabled() && j45.isEnabled())
         {
             cur_aircraft = "destroyer";
             j25.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -20771,7 +20770,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j26.isEnabled() && j27.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j26.isEnabled() && j27.isEnabled())
         {
             cur_aircraft = "destroyer";
             j25.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -20793,7 +20792,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j35.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j35.isEnabled())
         {
             cur_aircraft = "finished";
             j25.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -20813,7 +20812,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j26.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j26.isEnabled())
         {
             cur_aircraft = "finished";
             j25.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -20873,7 +20872,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j35.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -20903,7 +20902,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j35.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -20933,7 +20932,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j45.isEnabled() && j55.isEnabled() && j65.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j45.isEnabled() && j55.isEnabled() && j65.isEnabled())
         {
             cur_aircraft = "submarine";
             j35.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -20959,7 +20958,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j36.isEnabled() && j37.isEnabled() && j38.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j36.isEnabled() && j37.isEnabled() && j38.isEnabled())
         {
             cur_aircraft = "submarine";
             j35.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -20985,7 +20984,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j45.isEnabled() && j55.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j45.isEnabled() && j55.isEnabled())
         {
             cur_aircraft = "cruiser";
             j35.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -21007,7 +21006,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j36.isEnabled() && j37.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j36.isEnabled() && j37.isEnabled())
         {
             cur_aircraft = "cruiser";
             j35.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -21029,7 +21028,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j45.isEnabled() && j55.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j45.isEnabled() && j55.isEnabled())
         {
             cur_aircraft = "destroyer";
             j35.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -21051,7 +21050,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j36.isEnabled() && j37.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j36.isEnabled() && j37.isEnabled())
         {
             cur_aircraft = "destroyer";
             j35.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -21073,7 +21072,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j45.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j45.isEnabled())
         {
             cur_aircraft = "finished";
             j35.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -21093,7 +21092,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j36.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j36.isEnabled())
         {
             cur_aircraft = "finished";
             j35.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -21153,7 +21152,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j45.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -21183,7 +21182,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j45.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -21213,7 +21212,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j55.isEnabled() && j65.isEnabled() && j75.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j55.isEnabled() && j65.isEnabled() && j75.isEnabled())
         {
             cur_aircraft = "submarine";
             j45.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -21239,7 +21238,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j46.isEnabled() && j47.isEnabled() && j48.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j46.isEnabled() && j47.isEnabled() && j48.isEnabled())
         {
             cur_aircraft = "submarine";
             j45.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -21265,7 +21264,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j55.isEnabled() && j65.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j55.isEnabled() && j65.isEnabled())
         {
             cur_aircraft = "cruiser";
             j45.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -21287,7 +21286,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j46.isEnabled() && j47.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j46.isEnabled() && j47.isEnabled())
         {
             cur_aircraft = "cruiser";
             j45.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -21309,7 +21308,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j55.isEnabled() && j65.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j55.isEnabled() && j65.isEnabled())
         {
             cur_aircraft = "destroyer";
             j45.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -21331,7 +21330,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j46.isEnabled() && j47.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j46.isEnabled() && j47.isEnabled())
         {
             cur_aircraft = "destroyer";
             j45.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -21353,7 +21352,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j55.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j55.isEnabled())
         {
             cur_aircraft = "finished";
             j45.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -21373,7 +21372,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j46.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j46.isEnabled())
         {
             cur_aircraft = "finished";
             j45.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -21433,7 +21432,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j55.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -21463,7 +21462,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j55.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -21493,7 +21492,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j65.isEnabled() && j75.isEnabled() && j85.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j65.isEnabled() && j75.isEnabled() && j85.isEnabled())
         {
             cur_aircraft = "submarine";
             j55.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -21519,7 +21518,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j56.isEnabled() && j57.isEnabled() && j58.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j56.isEnabled() && j57.isEnabled() && j58.isEnabled())
         {
             cur_aircraft = "submarine";
             j55.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -21545,7 +21544,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j65.isEnabled() && j75.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j65.isEnabled() && j75.isEnabled())
         {
             cur_aircraft = "cruiser";
             j55.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -21567,7 +21566,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j56.isEnabled() && j57.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j56.isEnabled() && j57.isEnabled())
         {
             cur_aircraft = "cruiser";
             j55.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -21589,7 +21588,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j65.isEnabled() && j75.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j65.isEnabled() && j75.isEnabled())
         {
             cur_aircraft = "destroyer";
             j55.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -21611,7 +21610,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j56.isEnabled() && j57.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j56.isEnabled() && j57.isEnabled())
         {
             cur_aircraft = "destroyer";
             j55.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -21633,7 +21632,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j65.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j65.isEnabled())
         {
             cur_aircraft = "finished";
             j55.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -21653,7 +21652,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j56.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j56.isEnabled())
         {
             cur_aircraft = "finished";
             j55.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -21713,7 +21712,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j65.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -21743,7 +21742,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j75.isEnabled() && j85.isEnabled() && j95.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j75.isEnabled() && j85.isEnabled() && j95.isEnabled())
         {
             cur_aircraft = "submarine";
             j65.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -21769,7 +21768,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j66.isEnabled() && j67.isEnabled() && j68.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j66.isEnabled() && j67.isEnabled() && j68.isEnabled())
         {
             cur_aircraft = "submarine";
             j65.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -21795,7 +21794,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j75.isEnabled() && j85.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j75.isEnabled() && j85.isEnabled())
         {
             cur_aircraft = "cruiser";
             j65.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -21817,7 +21816,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j66.isEnabled() && j67.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j66.isEnabled() && j67.isEnabled())
         {
             cur_aircraft = "cruiser";
             j65.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -21839,7 +21838,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j75.isEnabled() && j85.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j75.isEnabled() && j85.isEnabled())
         {
             cur_aircraft = "destroyer";
             j65.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -21861,7 +21860,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j65.isEnabled() && j66.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j65.isEnabled() && j66.isEnabled())
         {
             cur_aircraft = "destroyer";
             j65.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -21883,7 +21882,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j75.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j75.isEnabled())
         {
             cur_aircraft = "finished";
             j65.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -21903,7 +21902,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j66.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j66.isEnabled())
         {
             cur_aircraft = "finished";
             j65.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -21963,7 +21962,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j75.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -21993,7 +21992,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j76.isEnabled() && j77.isEnabled() && j78.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j76.isEnabled() && j77.isEnabled() && j78.isEnabled())
         {
             cur_aircraft = "submarine";
             j75.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -22019,7 +22018,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j85.isEnabled() && j95.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j85.isEnabled() && j95.isEnabled())
         {
             cur_aircraft = "cruiser";
             j75.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -22041,7 +22040,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j76.isEnabled() && j77.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j76.isEnabled() && j77.isEnabled())
         {
             cur_aircraft = "cruiser";
             j75.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -22063,7 +22062,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j85.isEnabled() && j95.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j85.isEnabled() && j95.isEnabled())
         {
             cur_aircraft = "destroyer";
             j75.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -22085,7 +22084,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j76.isEnabled() && j77.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j76.isEnabled() && j77.isEnabled())
         {
             cur_aircraft = "destroyer";
             j75.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -22107,7 +22106,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j85.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j85.isEnabled())
         {
             cur_aircraft = "finished";
             j75.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -22127,7 +22126,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j76.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j76.isEnabled())
         {
             cur_aircraft = "finished";
             j75.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -22187,7 +22186,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j85.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -22217,7 +22216,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j86.isEnabled() && j87.isEnabled() && j88.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j86.isEnabled() && j87.isEnabled() && j88.isEnabled())
         {
             cur_aircraft = "submarine";
             j85.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -22243,7 +22242,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j86.isEnabled() && j87.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j86.isEnabled() && j87.isEnabled())
         {
             cur_aircraft = "cruiser";
             j85.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -22263,7 +22262,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setIcon(new ImageIcon(path_h));
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j86.isEnabled() && j87.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j86.isEnabled() && j87.isEnabled())
         {
             cur_aircraft = "destroyer";
             j85.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -22285,7 +22284,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j95.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j95.isEnabled())
         {
             cur_aircraft = "finished";
             j85.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -22305,7 +22304,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j86.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j86.isEnabled())
         {
             cur_aircraft = "finished";
             j85.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -22365,7 +22364,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j95.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -22395,7 +22394,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j96.isEnabled() && j97.isEnabled() && j98.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j96.isEnabled() && j97.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "submarine";
             j95.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -22421,7 +22420,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j96.isEnabled() && j97.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j96.isEnabled() && j97.isEnabled())
         {
             cur_aircraft = "cruiser";
             j95.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -22443,7 +22442,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j96.isEnabled() && j97.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j96.isEnabled() && j97.isEnabled())
         {
             cur_aircraft = "destroyer";
             j95.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -22465,7 +22464,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j96.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j96.isEnabled())
         {
             cur_aircraft = "finished";
             j95.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -22525,7 +22524,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j6.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -22555,7 +22554,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j6.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -22585,7 +22584,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j16.isEnabled() && j26.isEnabled() && j36.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j16.isEnabled() && j26.isEnabled() && j36.isEnabled())
         {
             cur_aircraft = "submarine";
             j6.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -22611,7 +22610,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j7.isEnabled() && j8.isEnabled() && j9.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j7.isEnabled() && j8.isEnabled() && j9.isEnabled())
         {
             cur_aircraft = "submarine";
             j6.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -22637,7 +22636,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j16.isEnabled() && j26.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j16.isEnabled() && j26.isEnabled())
         {
             cur_aircraft = "cruiser";
             j6.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -22659,7 +22658,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j7.isEnabled() && j8.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j7.isEnabled() && j8.isEnabled())
         {
             cur_aircraft = "cruiser";
             j6.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -22681,7 +22680,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j16.isEnabled() && j26.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j16.isEnabled() && j26.isEnabled())
         {
             cur_aircraft = "destroyer";
             j6.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -22703,7 +22702,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j7.isEnabled() && j8.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j7.isEnabled() && j8.isEnabled())
         {
             cur_aircraft = "destroyer";
             j6.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -22725,7 +22724,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j16.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j16.isEnabled())
         {
             cur_aircraft = "finished";
             j6.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -22745,7 +22744,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j7.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j7.isEnabled())
         {
             cur_aircraft = "finished";
             j6.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -22805,7 +22804,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j16.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -22835,7 +22834,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j16.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -22865,7 +22864,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j26.isEnabled() && j36.isEnabled() && j46.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j26.isEnabled() && j36.isEnabled() && j46.isEnabled())
         {
             cur_aircraft = "submarine";
             j16.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -22891,7 +22890,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j17.isEnabled() && j18.isEnabled() && j19.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j17.isEnabled() && j18.isEnabled() && j19.isEnabled())
         {
             cur_aircraft = "submarine";
             j16.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -22917,7 +22916,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j26.isEnabled() && j36.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j26.isEnabled() && j36.isEnabled())
         {
             cur_aircraft = "cruiser";
             j16.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -22939,7 +22938,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j17.isEnabled() && j18.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j17.isEnabled() && j18.isEnabled())
         {
             cur_aircraft = "cruiser";
             j16.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -22961,7 +22960,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j26.isEnabled() && j36.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j26.isEnabled() && j36.isEnabled())
         {
             cur_aircraft = "destroyer";
             j16.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -22983,7 +22982,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j17.isEnabled() && j18.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j17.isEnabled() && j18.isEnabled())
         {
             cur_aircraft = "destroyer";
             j16.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -23005,7 +23004,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j26.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j26.isEnabled())
         {
             cur_aircraft = "finished";
             j16.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -23025,7 +23024,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j17.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j17.isEnabled())
         {
             cur_aircraft = "finished";
             j16.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -23085,7 +23084,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j26.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -23115,7 +23114,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j26.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -23145,7 +23144,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j36.isEnabled() && j46.isEnabled() && j56.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j36.isEnabled() && j46.isEnabled() && j56.isEnabled())
         {
             cur_aircraft = "submarine";
             j26.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -23171,7 +23170,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j27.isEnabled() && j28.isEnabled() && j29.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j27.isEnabled() && j28.isEnabled() && j29.isEnabled())
         {
             cur_aircraft = "submarine";
             j26.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -23197,7 +23196,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j36.isEnabled() && j46.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j36.isEnabled() && j46.isEnabled())
         {
             cur_aircraft = "cruiser";
             j26.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -23219,7 +23218,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j27.isEnabled() && j28.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j27.isEnabled() && j28.isEnabled())
         {
             cur_aircraft = "cruiser";
             j26.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -23241,7 +23240,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j36.isEnabled() && j46.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j36.isEnabled() && j46.isEnabled())
         {
             cur_aircraft = "destroyer";
             j26.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -23263,7 +23262,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j27.isEnabled() && j28.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j27.isEnabled() && j28.isEnabled())
         {
             cur_aircraft = "destroyer";
             j26.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -23285,7 +23284,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j36.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j36.isEnabled())
         {
             cur_aircraft = "finished";
             j26.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -23305,7 +23304,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j27.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j27.isEnabled())
         {
             cur_aircraft = "finished";
             j26.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -23365,7 +23364,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j36.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -23395,7 +23394,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j36.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -23425,7 +23424,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j46.isEnabled() && j56.isEnabled() && j66.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j46.isEnabled() && j56.isEnabled() && j66.isEnabled())
         {
             cur_aircraft = "submarine";
             j36.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -23451,7 +23450,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j37.isEnabled() && j38.isEnabled() && j39.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j37.isEnabled() && j38.isEnabled() && j39.isEnabled())
         {
             cur_aircraft = "submarine";
             j36.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -23477,7 +23476,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j46.isEnabled() && j56.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j46.isEnabled() && j56.isEnabled())
         {
             cur_aircraft = "cruiser";
             j36.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -23499,7 +23498,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j37.isEnabled() && j38.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j37.isEnabled() && j38.isEnabled())
         {
             cur_aircraft = "cruiser";
             j36.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -23521,7 +23520,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j46.isEnabled() && j56.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j46.isEnabled() && j56.isEnabled())
         {
             cur_aircraft = "destroyer";
             j36.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -23543,7 +23542,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j37.isEnabled() && j38.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j37.isEnabled() && j38.isEnabled())
         {
             cur_aircraft = "destroyer";
             j36.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -23565,7 +23564,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j46.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j46.isEnabled())
         {
             cur_aircraft = "finished";
             j36.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -23585,7 +23584,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j37.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j37.isEnabled())
         {
             cur_aircraft = "finished";
             j36.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -23645,7 +23644,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j46.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -23675,7 +23674,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j46.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -23705,7 +23704,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j56.isEnabled() && j66.isEnabled() && j76.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j56.isEnabled() && j66.isEnabled() && j76.isEnabled())
         {
             cur_aircraft = "submarine";
             j46.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -23731,7 +23730,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j47.isEnabled() && j48.isEnabled() && j49.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j47.isEnabled() && j48.isEnabled() && j49.isEnabled())
         {
             cur_aircraft = "submarine";
             j46.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -23757,7 +23756,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j56.isEnabled() && j66.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j56.isEnabled() && j66.isEnabled())
         {
             cur_aircraft = "cruiser";
             j46.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -23779,7 +23778,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j47.isEnabled() && j48.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j47.isEnabled() && j48.isEnabled())
         {
             cur_aircraft = "cruiser";
             j46.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -23801,7 +23800,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j56.isEnabled() && j66.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j56.isEnabled() && j66.isEnabled())
         {
             cur_aircraft = "destroyer";
             j46.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -23823,7 +23822,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j47.isEnabled() && j48.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j47.isEnabled() && j48.isEnabled())
         {
             cur_aircraft = "destroyer";
             j46.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -23845,7 +23844,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j56.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j56.isEnabled())
         {
             cur_aircraft = "finished";
             j46.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -23865,7 +23864,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j47.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j47.isEnabled())
         {
             cur_aircraft = "finished";
             j46.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -23925,7 +23924,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j56.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -23955,7 +23954,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        else if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j56.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -23985,7 +23984,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j66.isEnabled() && j76.isEnabled() && j86.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j66.isEnabled() && j76.isEnabled() && j86.isEnabled())
         {
             cur_aircraft = "submarine";
             j56.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -24011,7 +24010,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j57.isEnabled() && j58.isEnabled() && j59.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j57.isEnabled() && j58.isEnabled() && j59.isEnabled())
         {
             cur_aircraft = "submarine";
             j56.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -24037,7 +24036,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j66.isEnabled() && j76.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j66.isEnabled() && j76.isEnabled())
         {
             cur_aircraft = "cruiser";
             j56.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -24059,7 +24058,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j57.isEnabled() && j58.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j57.isEnabled() && j58.isEnabled())
         {
             cur_aircraft = "cruiser";
             j56.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -24081,7 +24080,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j66.isEnabled() && j76.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j66.isEnabled() && j76.isEnabled())
         {
             cur_aircraft = "destroyer";
             j56.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -24103,7 +24102,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j57.isEnabled() && j58.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j57.isEnabled() && j58.isEnabled())
         {
             cur_aircraft = "destroyer";
             j56.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -24125,7 +24124,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j66.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j66.isEnabled())
         {
             cur_aircraft = "finished";
             j56.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -24145,7 +24144,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j57.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j57.isEnabled())
         {
             cur_aircraft = "finished";
             j56.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -24205,7 +24204,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j66.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -24235,7 +24234,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j76.isEnabled() && j86.isEnabled() && j96.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j76.isEnabled() && j86.isEnabled() && j96.isEnabled())
         {
             cur_aircraft = "submarine";
             j66.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -24261,7 +24260,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j67.isEnabled() && j68.isEnabled() && j69.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j67.isEnabled() && j68.isEnabled() && j69.isEnabled())
         {
             cur_aircraft = "submarine";
             j66.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -24287,7 +24286,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j76.isEnabled() && j86.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j76.isEnabled() && j86.isEnabled())
         {
             cur_aircraft = "cruiser";
             j66.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -24309,7 +24308,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j67.isEnabled() && j68.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j67.isEnabled() && j68.isEnabled())
         {
             cur_aircraft = "cruiser";
             j66.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -24331,7 +24330,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j76.isEnabled() && j86.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j76.isEnabled() && j86.isEnabled())
         {
             cur_aircraft = "destroyer";
             j66.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -24353,7 +24352,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j67.isEnabled() && j68.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j67.isEnabled() && j68.isEnabled())
         {
             cur_aircraft = "destroyer";
             j66.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -24375,7 +24374,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j76.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j76.isEnabled())
         {
             cur_aircraft = "finished";
             j66.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -24395,7 +24394,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j67.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j67.isEnabled())
         {
             cur_aircraft = "finished";
             j66.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -24455,7 +24454,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j76.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -24485,7 +24484,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j77.isEnabled() && j78.isEnabled() && j79.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j77.isEnabled() && j78.isEnabled() && j79.isEnabled())
         {
             cur_aircraft = "submarine";
             j76.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -24511,7 +24510,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j86.isEnabled() && j96.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j86.isEnabled() && j96.isEnabled())
         {
             cur_aircraft = "cruiser";
             j76.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -24533,7 +24532,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j77.isEnabled() && j78.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j77.isEnabled() && j78.isEnabled())
         {
             cur_aircraft = "cruiser";
             j76.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -24555,7 +24554,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j86.isEnabled() && j96.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j86.isEnabled() && j96.isEnabled())
         {
             cur_aircraft = "destroyer";
             j76.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -24577,7 +24576,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j77.isEnabled() && j78.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j77.isEnabled() && j78.isEnabled())
         {
             cur_aircraft = "destroyer";
             j76.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -24599,7 +24598,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j86.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j86.isEnabled())
         {
             cur_aircraft = "finished";
             j76.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -24619,7 +24618,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j77.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j77.isEnabled())
         {
             cur_aircraft = "finished";
             j76.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -24679,7 +24678,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j86.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -24709,7 +24708,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j87.isEnabled() && j88.isEnabled() && j89.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j87.isEnabled() && j88.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "submarine";
             j86.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -24735,7 +24734,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j87.isEnabled() && j88.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j87.isEnabled() && j88.isEnabled())
         {
             cur_aircraft = "cruiser";
             j86.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -24754,7 +24753,7 @@ public class Main extends JFrame implements MouseMotionListener
             path_v = "cruiser/cruiser-v.png";
             path_h = "cruiser/cruiser-h.png";
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j87.isEnabled() && j88.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j87.isEnabled() && j88.isEnabled())
         {
             cur_aircraft = "destroyer";
             j86.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -24776,7 +24775,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j96.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j96.isEnabled())
         {
             cur_aircraft = "finished";
             j86.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -24796,7 +24795,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j87.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j87.isEnabled())
         {
             cur_aircraft = "finished";
             j86.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -24856,7 +24855,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "aircraft-carrier")
+        if (flag == 1 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j96.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-1.png"));
@@ -24886,7 +24885,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j97.isEnabled() && j98.isEnabled() && j99.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j97.isEnabled() && j98.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "submarine";
             j96.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -24912,7 +24911,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j97.isEnabled() && j98.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j97.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "cruiser";
             j96.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -24934,7 +24933,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j97.isEnabled() && j98.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j97.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "destroyer";
             j96.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -24956,7 +24955,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j97.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j97.isEnabled())
         {
             cur_aircraft = "finished";
             j96.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -25016,7 +25015,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j7.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -25046,7 +25045,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j17.isEnabled() && j27.isEnabled() && j37.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j17.isEnabled() && j27.isEnabled() && j37.isEnabled())
         {
             cur_aircraft = "submarine";
             j7.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -25072,7 +25071,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j8.isEnabled() && j9.isEnabled() && j10.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j8.isEnabled() && j9.isEnabled() && j10.isEnabled())
         {
             cur_aircraft = "submarine";
             j7.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -25098,7 +25097,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j17.isEnabled() && j27.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j17.isEnabled() && j27.isEnabled())
         {
             cur_aircraft = "cruiser";
             j7.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -25120,7 +25119,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j8.isEnabled() && j9.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j8.isEnabled() && j9.isEnabled())
         {
             cur_aircraft = "cruiser";
             j7.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -25142,7 +25141,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j17.isEnabled() && j27.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j17.isEnabled() && j27.isEnabled())
         {
             cur_aircraft = "destroyer";
             j7.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -25164,7 +25163,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j8.isEnabled() && j9.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j8.isEnabled() && j9.isEnabled())
         {
             cur_aircraft = "destroyer";
             j7.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -25186,7 +25185,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j17.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j17.isEnabled())
         {
             cur_aircraft = "finished";
             j7.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -25206,7 +25205,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j8.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j8.isEnabled())
         {
             cur_aircraft = "finished";
             j7.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -25266,7 +25265,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j17.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -25296,7 +25295,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j27.isEnabled() && j37.isEnabled() && j47.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j27.isEnabled() && j37.isEnabled() && j47.isEnabled())
         {
             cur_aircraft = "submarine";
             j17.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -25322,7 +25321,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j18.isEnabled() && j19.isEnabled() && j20.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j18.isEnabled() && j19.isEnabled() && j20.isEnabled())
         {
             cur_aircraft = "submarine";
             j17.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -25348,7 +25347,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j27.isEnabled() && j37.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j27.isEnabled() && j37.isEnabled())
         {
             cur_aircraft = "cruiser";
             j17.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -25370,7 +25369,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j18.isEnabled() && j19.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j18.isEnabled() && j19.isEnabled())
         {
             cur_aircraft = "cruiser";
             j17.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -25392,7 +25391,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j27.isEnabled() && j37.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j27.isEnabled() && j37.isEnabled())
         {
             cur_aircraft = "destroyer";
             j17.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -25414,7 +25413,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j18.isEnabled() && j19.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j18.isEnabled() && j19.isEnabled())
         {
             cur_aircraft = "destroyer";
             j17.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -25436,7 +25435,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j27.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j27.isEnabled())
         {
             cur_aircraft = "finished";
             j17.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -25456,7 +25455,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j18.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j18.isEnabled())
         {
             cur_aircraft = "finished";
             j17.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -25516,7 +25515,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j27.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -25546,7 +25545,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j37.isEnabled() && j47.isEnabled() && j57.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j37.isEnabled() && j47.isEnabled() && j57.isEnabled())
         {
             cur_aircraft = "submarine";
             j27.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -25572,7 +25571,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j28.isEnabled() && j29.isEnabled() && j30.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j28.isEnabled() && j29.isEnabled() && j30.isEnabled())
         {
             cur_aircraft = "submarine";
             j27.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -25598,7 +25597,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j37.isEnabled() && j47.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j37.isEnabled() && j47.isEnabled())
         {
             cur_aircraft = "cruiser";
             j27.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -25620,7 +25619,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j28.isEnabled() && j29.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j28.isEnabled() && j29.isEnabled())
         {
             cur_aircraft = "cruiser";
             j27.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -25642,7 +25641,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j37.isEnabled() && j47.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j37.isEnabled() && j47.isEnabled())
         {
             cur_aircraft = "destroyer";
             j27.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -25664,7 +25663,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j28.isEnabled() && j29.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j28.isEnabled() && j29.isEnabled())
         {
             cur_aircraft = "destroyer";
             j27.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -25686,7 +25685,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j37.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j37.isEnabled())
         {
             cur_aircraft = "finished";
             j27.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -25706,7 +25705,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j28.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j28.isEnabled())
         {
             cur_aircraft = "finished";
             j27.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -25766,7 +25765,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j37.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -25796,7 +25795,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j47.isEnabled() && j57.isEnabled() && j67.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j47.isEnabled() && j57.isEnabled() && j67.isEnabled())
         {
             cur_aircraft = "submarine";
             j37.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -25822,7 +25821,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j38.isEnabled() && j39.isEnabled() && j40.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j38.isEnabled() && j39.isEnabled() && j40.isEnabled())
         {
             cur_aircraft = "submarine";
             j37.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -25848,7 +25847,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j47.isEnabled() && j57.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j47.isEnabled() && j57.isEnabled())
         {
             cur_aircraft = "cruiser";
             j37.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -25870,7 +25869,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j38.isEnabled() && j39.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j38.isEnabled() && j39.isEnabled())
         {
             cur_aircraft = "cruiser";
             j37.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -25892,7 +25891,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j47.isEnabled() && j57.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j47.isEnabled() && j57.isEnabled())
         {
             cur_aircraft = "destroyer";
             j37.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -25914,7 +25913,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j38.isEnabled() && j39.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j38.isEnabled() && j39.isEnabled())
         {
             cur_aircraft = "destroyer";
             j37.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -25936,7 +25935,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j47.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j47.isEnabled())
         {
             cur_aircraft = "finished";
             j37.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -25956,7 +25955,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j38.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j38.isEnabled())
         {
             cur_aircraft = "finished";
             j37.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -26016,7 +26015,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j47.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -26046,7 +26045,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j57.isEnabled() && j67.isEnabled() && j77.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j57.isEnabled() && j67.isEnabled() && j77.isEnabled())
         {
             cur_aircraft = "submarine";
             j47.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -26072,7 +26071,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j48.isEnabled() && j49.isEnabled() && j50.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j48.isEnabled() && j49.isEnabled() && j50.isEnabled())
         {
             cur_aircraft = "submarine";
             j47.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -26098,7 +26097,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j57.isEnabled() && j67.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j57.isEnabled() && j67.isEnabled())
         {
             cur_aircraft = "cruiser";
             j47.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -26120,7 +26119,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j48.isEnabled() && j49.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j48.isEnabled() && j49.isEnabled())
         {
             cur_aircraft = "cruiser";
             j47.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -26142,7 +26141,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j57.isEnabled() && j67.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j57.isEnabled() && j67.isEnabled())
         {
             cur_aircraft = "destroyer";
             j47.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -26164,7 +26163,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j48.isEnabled() && j49.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j48.isEnabled() && j49.isEnabled())
         {
             cur_aircraft = "destroyer";
             j47.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -26186,7 +26185,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j57.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j57.isEnabled())
         {
             cur_aircraft = "finished";
             j47.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -26206,7 +26205,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j48.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j48.isEnabled())
         {
             cur_aircraft = "finished";
             j47.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -26266,7 +26265,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j57.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -26296,7 +26295,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j67.isEnabled() && j77.isEnabled() && j87.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j67.isEnabled() && j77.isEnabled() && j87.isEnabled())
         {
             cur_aircraft = "submarine";
             j57.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -26322,7 +26321,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j58.isEnabled() && j59.isEnabled() && j60.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j58.isEnabled() && j59.isEnabled() && j60.isEnabled())
         {
             cur_aircraft = "submarine";
             j57.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -26348,7 +26347,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j67.isEnabled() && j77.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j67.isEnabled() && j77.isEnabled())
         {
             cur_aircraft = "cruiser";
             j57.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -26370,7 +26369,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j58.isEnabled() && j59.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j58.isEnabled() && j59.isEnabled())
         {
             cur_aircraft = "cruiser";
             j57.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -26392,7 +26391,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j67.isEnabled() && j77.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j67.isEnabled() && j77.isEnabled())
         {
             cur_aircraft = "destroyer";
             j57.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -26414,7 +26413,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j58.isEnabled() && j59.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j58.isEnabled() && j59.isEnabled())
         {
             cur_aircraft = "destroyer";
             j57.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -26436,7 +26435,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j67.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j67.isEnabled())
         {
             cur_aircraft = "finished";
             j57.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -26456,7 +26455,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j58.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j58.isEnabled())
         {
             cur_aircraft = "finished";
             j57.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -26516,7 +26515,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "battleship" && j77.isEnabled() && j87.isEnabled() && j97.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j77.isEnabled() && j87.isEnabled() && j97.isEnabled())
         {
             cur_aircraft = "submarine";
             j67.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -26542,7 +26541,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "battleship" && j68.isEnabled() && j69.isEnabled() && j70.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j68.isEnabled() && j69.isEnabled() && j70.isEnabled())
         {
             cur_aircraft = "submarine";
             j67.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -26568,7 +26567,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j77.isEnabled() && j87.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j77.isEnabled() && j87.isEnabled())
         {
             cur_aircraft = "cruiser";
             j67.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -26590,7 +26589,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j68.isEnabled() && j69.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j68.isEnabled() && j69.isEnabled())
         {
             cur_aircraft = "cruiser";
             j67.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -26612,7 +26611,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j77.isEnabled() && j87.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j77.isEnabled() && j87.isEnabled())
         {
             cur_aircraft = "destroyer";
             j67.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -26634,7 +26633,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j68.isEnabled() && j69.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j68.isEnabled() && j69.isEnabled())
         {
             cur_aircraft = "destroyer";
             j67.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -26656,7 +26655,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j77.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j77.isEnabled())
         {
             cur_aircraft = "finished";
             j67.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -26676,7 +26675,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j68.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j68.isEnabled())
         {
             cur_aircraft = "finished";
             j67.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -26736,7 +26735,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "battleship" && j78.isEnabled() && j79.isEnabled() && j80.isEnabled())
+        if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j78.isEnabled() && j79.isEnabled() && j80.isEnabled())
         {
             cur_aircraft = "submarine";
             j77.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -26762,7 +26761,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j87.isEnabled() && j97.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j87.isEnabled() && j97.isEnabled())
         {
             cur_aircraft = "cruiser";
             j77.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -26784,7 +26783,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j78.isEnabled() && j79.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j78.isEnabled() && j79.isEnabled())
         {
             cur_aircraft = "cruiser";
             j77.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -26806,7 +26805,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j87.isEnabled() && j97.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j87.isEnabled() && j97.isEnabled())
         {
             cur_aircraft = "destroyer";
             j77.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -26828,7 +26827,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j78.isEnabled() && j79.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j78.isEnabled() && j79.isEnabled())
         {
             cur_aircraft = "destroyer";
             j77.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -26850,7 +26849,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j87.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j87.isEnabled())
         {
             cur_aircraft = "finished";
             j77.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -26870,7 +26869,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j78.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j78.isEnabled())
         {
             cur_aircraft = "finished";
             j77.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -26930,7 +26929,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "battleship" && j87.isEnabled() && j88.isEnabled() && j89.isEnabled())
+        if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j87.isEnabled() && j88.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "submarine";
             j87.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -26956,7 +26955,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j88.isEnabled() && j89.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j88.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "cruiser";
             j87.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -26975,7 +26974,7 @@ public class Main extends JFrame implements MouseMotionListener
             path_v = "cruiser/cruiser-v.png";
             path_h = "cruiser/cruiser-h.png";
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j88.isEnabled() && j89.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j88.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "destroyer";
             j87.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -26997,7 +26996,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j97.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j97.isEnabled())
         {
             cur_aircraft = "finished";
             j87.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -27017,7 +27016,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j88.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j88.isEnabled())
         {
             cur_aircraft = "finished";
             j87.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -27077,7 +27076,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "battleship" && j98.isEnabled() && j99.isEnabled() && j100.isEnabled())
+        if (flag == 1 && Objects.equals(cur_aircraft, "battleship") && j98.isEnabled() && j99.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "submarine";
             j97.setIcon(new ImageIcon("battleship/battleship-h-tile-1.png"));
@@ -27103,7 +27102,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j98.isEnabled() && j99.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j98.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "cruiser";
             j97.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -27125,7 +27124,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j98.isEnabled() && j99.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j98.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "destroyer";
             j97.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -27147,7 +27146,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j98.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j98.isEnabled())
         {
             cur_aircraft = "finished";
             j97.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -27207,7 +27206,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j8.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -27237,7 +27236,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j18.isEnabled() && j28.isEnabled() && j38.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j18.isEnabled() && j28.isEnabled() && j38.isEnabled())
         {
             cur_aircraft = "submarine";
             j8.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -27263,7 +27262,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j18.isEnabled() && j28.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j18.isEnabled() && j28.isEnabled())
         {
             cur_aircraft = "cruiser";
             j8.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -27285,7 +27284,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j9.isEnabled() && j10.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j9.isEnabled() && j10.isEnabled())
         {
             cur_aircraft = "cruiser";
             j8.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -27307,7 +27306,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j18.isEnabled() && j28.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j18.isEnabled() && j28.isEnabled())
         {
             cur_aircraft = "destroyer";
             j8.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -27329,7 +27328,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j9.isEnabled() && j10.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j9.isEnabled() && j10.isEnabled())
         {
             cur_aircraft = "destroyer";
             j8.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -27351,7 +27350,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j18.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j18.isEnabled())
         {
             cur_aircraft = "finished";
             j8.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -27371,7 +27370,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j9.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j9.isEnabled())
         {
             cur_aircraft = "finished";
             j8.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -27431,7 +27430,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j18.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -27461,7 +27460,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j28.isEnabled() && j38.isEnabled() && j48.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j28.isEnabled() && j38.isEnabled() && j48.isEnabled())
         {
             cur_aircraft = "submarine";
             j18.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -27487,7 +27486,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j28.isEnabled() && j38.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j28.isEnabled() && j38.isEnabled())
         {
             cur_aircraft = "cruiser";
             j18.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -27509,7 +27508,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j19.isEnabled() && j20.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j19.isEnabled() && j20.isEnabled())
         {
             cur_aircraft = "cruiser";
             j18.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -27531,7 +27530,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j28.isEnabled() && j38.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j28.isEnabled() && j38.isEnabled())
         {
             cur_aircraft = "destroyer";
             j18.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -27553,7 +27552,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j19.isEnabled() && j20.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j19.isEnabled() && j20.isEnabled())
         {
             cur_aircraft = "destroyer";
             j18.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -27575,7 +27574,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j28.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j28.isEnabled())
         {
             cur_aircraft = "finished";
             j18.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -27595,7 +27594,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j19.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j19.isEnabled())
         {
             cur_aircraft = "finished";
             j18.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -27655,7 +27654,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j28.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -27685,7 +27684,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j38.isEnabled() && j48.isEnabled() && j58.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j38.isEnabled() && j48.isEnabled() && j58.isEnabled())
         {
             cur_aircraft = "submarine";
             j28.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -27711,7 +27710,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j38.isEnabled() && j48.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j38.isEnabled() && j48.isEnabled())
         {
             cur_aircraft = "cruiser";
             j28.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -27733,7 +27732,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j30.isEnabled() && j30.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j30.isEnabled() && j30.isEnabled())
         {
             cur_aircraft = "cruiser";
             j28.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -27755,7 +27754,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j38.isEnabled() && j48.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j38.isEnabled() && j48.isEnabled())
         {
             cur_aircraft = "destroyer";
             j28.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -27777,7 +27776,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j29.isEnabled() && j30.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j29.isEnabled() && j30.isEnabled())
         {
             cur_aircraft = "destroyer";
             j28.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -27799,7 +27798,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j38.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j38.isEnabled())
         {
             cur_aircraft = "finished";
             j28.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -27819,7 +27818,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j28.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j28.isEnabled())
         {
             cur_aircraft = "finished";
             j28.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -27879,7 +27878,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j38.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -27909,7 +27908,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j48.isEnabled() && j58.isEnabled() && j68.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j48.isEnabled() && j58.isEnabled() && j68.isEnabled())
         {
             cur_aircraft = "submarine";
             j38.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -27935,7 +27934,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j48.isEnabled() && j58.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j48.isEnabled() && j58.isEnabled())
         {
             cur_aircraft = "cruiser";
             j38.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -27957,7 +27956,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j39.isEnabled() && j40.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j39.isEnabled() && j40.isEnabled())
         {
             cur_aircraft = "cruiser";
             j38.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -27979,7 +27978,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j48.isEnabled() && j58.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j48.isEnabled() && j58.isEnabled())
         {
             cur_aircraft = "destroyer";
             j38.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -28001,7 +28000,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j39.isEnabled() && j40.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j39.isEnabled() && j40.isEnabled())
         {
             cur_aircraft = "destroyer";
             j38.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -28023,7 +28022,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j48.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j48.isEnabled())
         {
             cur_aircraft = "finished";
             j38.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -28043,7 +28042,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j39.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j39.isEnabled())
         {
             cur_aircraft = "finished";
             j38.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -28103,7 +28102,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j48.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -28133,7 +28132,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j58.isEnabled() && j68.isEnabled() && j78.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j58.isEnabled() && j68.isEnabled() && j78.isEnabled())
         {
             cur_aircraft = "submarine";
             j48.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -28159,7 +28158,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j58.isEnabled() && j68.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j58.isEnabled() && j68.isEnabled())
         {
             cur_aircraft = "cruiser";
             j48.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -28181,7 +28180,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j49.isEnabled() && j50.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j49.isEnabled() && j50.isEnabled())
         {
             cur_aircraft = "cruiser";
             j48.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -28203,7 +28202,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j58.isEnabled() && j68.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j58.isEnabled() && j68.isEnabled())
         {
             cur_aircraft = "destroyer";
             j48.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -28225,7 +28224,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j49.isEnabled() && j50.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j49.isEnabled() && j50.isEnabled())
         {
             cur_aircraft = "destroyer";
             j48.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -28247,7 +28246,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j58.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j58.isEnabled())
         {
             cur_aircraft = "finished";
             j48.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -28267,7 +28266,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j49.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j49.isEnabled())
         {
             cur_aircraft = "finished";
             j48.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -28327,7 +28326,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j58.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -28357,7 +28356,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j68.isEnabled() && j78.isEnabled() && j88.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j68.isEnabled() && j78.isEnabled() && j88.isEnabled())
         {
             cur_aircraft = "submarine";
             j58.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -28383,7 +28382,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j68.isEnabled() && j78.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j68.isEnabled() && j78.isEnabled())
         {
             cur_aircraft = "cruiser";
             j58.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -28405,7 +28404,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j59.isEnabled() && j60.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j59.isEnabled() && j60.isEnabled())
         {
             cur_aircraft = "cruiser";
             j58.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -28427,7 +28426,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j68.isEnabled() && j78.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j68.isEnabled() && j78.isEnabled())
         {
             cur_aircraft = "destroyer";
             j58.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -28449,7 +28448,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j59.isEnabled() && j60.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j59.isEnabled() && j60.isEnabled())
         {
             cur_aircraft = "destroyer";
             j58.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -28471,7 +28470,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j68.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j68.isEnabled())
         {
             cur_aircraft = "finished";
             j58.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -28491,7 +28490,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j59.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j59.isEnabled())
         {
             cur_aircraft = "finished";
             j58.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -28551,7 +28550,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "battleship" && j78.isEnabled() && j88.isEnabled() && j98.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j78.isEnabled() && j88.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "submarine";
             j68.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -28577,7 +28576,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j78.isEnabled() && j88.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j78.isEnabled() && j88.isEnabled())
         {
             cur_aircraft = "cruiser";
             j68.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -28599,7 +28598,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j67.isEnabled() && j70.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j67.isEnabled() && j70.isEnabled())
         {
             cur_aircraft = "cruiser";
             j68.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -28621,7 +28620,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j78.isEnabled() && j88.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j78.isEnabled() && j88.isEnabled())
         {
             cur_aircraft = "destroyer";
             j68.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -28643,7 +28642,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j69.isEnabled() && j70.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j69.isEnabled() && j70.isEnabled())
         {
             cur_aircraft = "destroyer";
             j68.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -28665,7 +28664,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j78.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j78.isEnabled())
         {
             cur_aircraft = "finished";
             j68.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -28685,7 +28684,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j69.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j69.isEnabled())
         {
             cur_aircraft = "finished";
             j68.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -28745,7 +28744,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "submarine" && j88.isEnabled() && j98.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j88.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "cruiser";
             j78.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -28767,7 +28766,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "submarine" && j79.isEnabled() && j80.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j79.isEnabled() && j80.isEnabled())
         {
             cur_aircraft = "cruiser";
             j78.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -28789,7 +28788,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j88.isEnabled() && j98.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j88.isEnabled() && j98.isEnabled())
         {
             cur_aircraft = "destroyer";
             j78.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -28811,7 +28810,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j79.isEnabled() && j80.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j79.isEnabled() && j80.isEnabled())
         {
             cur_aircraft = "destroyer";
             j78.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -28833,7 +28832,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j88.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j88.isEnabled())
         {
             cur_aircraft = "finished";
             j78.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -28853,7 +28852,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j79.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j79.isEnabled())
         {
             cur_aircraft = "finished";
             j78.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -28913,7 +28912,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "submarine" && j89.isEnabled() && j90.isEnabled())
+        if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j89.isEnabled() && j90.isEnabled())
         {
             cur_aircraft = "cruiser";
             j88.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -28932,7 +28931,7 @@ public class Main extends JFrame implements MouseMotionListener
             path_v = "cruiser/cruiser-v.png";
             path_h = "cruiser/cruiser-h.png";
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j89.isEnabled() && j90.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j89.isEnabled() && j90.isEnabled())
         {
             cur_aircraft = "destroyer";
             j88.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -28954,7 +28953,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j98.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j98.isEnabled())
         {
             cur_aircraft = "finished";
             j88.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -28974,7 +28973,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j89.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j89.isEnabled())
         {
             cur_aircraft = "finished";
             j88.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -29034,7 +29033,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "submarine" && j99.isEnabled() && j100.isEnabled())
+        if (flag == 1 && Objects.equals(cur_aircraft, "submarine") && j99.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "cruiser";
             j98.setIcon(new ImageIcon("submarine/submarine-h-tile-1.png"));
@@ -29056,7 +29055,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "cruiser" && j99.isEnabled() && j100.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "cruiser") && j99.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "destroyer";
             j98.setIcon(new ImageIcon("cruiser/cruiser-h-tile-1.png"));
@@ -29078,7 +29077,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j99.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j99.isEnabled())
         {
             cur_aircraft = "finished";
             j98.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -29138,7 +29137,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j9.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -29168,7 +29167,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j19.isEnabled() && j29.isEnabled() && j39.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j19.isEnabled() && j29.isEnabled() && j39.isEnabled())
         {
             cur_aircraft = "submarine";
             j9.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -29194,7 +29193,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j19.isEnabled() && j29.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j19.isEnabled() && j29.isEnabled())
         {
             cur_aircraft = "cruiser";
             j9.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -29216,7 +29215,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j19.isEnabled() && j29.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j19.isEnabled() && j29.isEnabled())
         {
             cur_aircraft = "destroyer";
             j9.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -29238,7 +29237,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j19.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j19.isEnabled())
         {
             cur_aircraft = "finished";
             j9.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -29258,7 +29257,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j10.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j10.isEnabled())
         {
             cur_aircraft = "finished";
             j9.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -29318,7 +29317,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j19.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -29348,7 +29347,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j29.isEnabled() && j39.isEnabled() && j49.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j29.isEnabled() && j39.isEnabled() && j49.isEnabled())
         {
             cur_aircraft = "submarine";
             j19.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -29374,7 +29373,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j29.isEnabled() && j39.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j29.isEnabled() && j39.isEnabled())
         {
             cur_aircraft = "cruiser";
             j19.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -29396,7 +29395,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j29.isEnabled() && j39.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j29.isEnabled() && j39.isEnabled())
         {
             cur_aircraft = "destroyer";
             j19.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -29418,7 +29417,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j29.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j29.isEnabled())
         {
             cur_aircraft = "finished";
             j19.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -29438,7 +29437,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j20.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j20.isEnabled())
         {
             cur_aircraft = "finished";
             j19.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -29498,7 +29497,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j29.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -29528,7 +29527,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j39.isEnabled() && j49.isEnabled() && j59.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j39.isEnabled() && j49.isEnabled() && j59.isEnabled())
         {
             cur_aircraft = "submarine";
             j29.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -29554,7 +29553,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j39.isEnabled() && j49.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j39.isEnabled() && j49.isEnabled())
         {
             cur_aircraft = "cruiser";
             j29.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -29576,7 +29575,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j39.isEnabled() && j49.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j39.isEnabled() && j49.isEnabled())
         {
             cur_aircraft = "destroyer";
             j29.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -29598,7 +29597,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j39.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j39.isEnabled())
         {
             cur_aircraft = "finished";
             j29.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -29618,7 +29617,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j29.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j29.isEnabled())
         {
             cur_aircraft = "finished";
             j29.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -29678,7 +29677,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j39.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -29708,7 +29707,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j49.isEnabled() && j59.isEnabled() && j69.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j49.isEnabled() && j59.isEnabled() && j69.isEnabled())
         {
             cur_aircraft = "submarine";
             j39.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -29734,7 +29733,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j49.isEnabled() && j59.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j49.isEnabled() && j59.isEnabled())
         {
             cur_aircraft = "cruiser";
             j39.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -29756,7 +29755,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j49.isEnabled() && j59.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j49.isEnabled() && j59.isEnabled())
         {
             cur_aircraft = "destroyer";
             j39.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -29778,7 +29777,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j49.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j49.isEnabled())
         {
             cur_aircraft = "finished";
             j39.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -29798,7 +29797,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j40.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j40.isEnabled())
         {
             cur_aircraft = "finished";
             j39.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -29858,7 +29857,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j49.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -29888,7 +29887,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j59.isEnabled() && j69.isEnabled() && j79.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j59.isEnabled() && j69.isEnabled() && j79.isEnabled())
         {
             cur_aircraft = "submarine";
             j49.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -29914,7 +29913,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j59.isEnabled() && j69.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j59.isEnabled() && j69.isEnabled())
         {
             cur_aircraft = "cruiser";
             j49.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -29936,7 +29935,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j59.isEnabled() && j69.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j59.isEnabled() && j69.isEnabled())
         {
             cur_aircraft = "destroyer";
             j49.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -29958,7 +29957,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j59.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j59.isEnabled())
         {
             cur_aircraft = "finished";
             j49.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -29978,7 +29977,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j50.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j50.isEnabled())
         {
             cur_aircraft = "finished";
             j49.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -30038,7 +30037,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j59.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -30068,7 +30067,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j69.isEnabled() && j79.isEnabled() && j89.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j69.isEnabled() && j79.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "submarine";
             j59.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -30094,7 +30093,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j69.isEnabled() && j79.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j69.isEnabled() && j79.isEnabled())
         {
             cur_aircraft = "cruiser";
             j59.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -30116,7 +30115,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j69.isEnabled() && j79.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j69.isEnabled() && j79.isEnabled())
         {
             cur_aircraft = "destroyer";
             j59.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -30138,7 +30137,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j69.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j69.isEnabled())
         {
             cur_aircraft = "finished";
             j59.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -30158,7 +30157,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j60.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j60.isEnabled())
         {
             cur_aircraft = "finished";
             j59.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -30218,7 +30217,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "battleship" && j79.isEnabled() && j89.isEnabled() && j99.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j79.isEnabled() && j89.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "submarine";
             j69.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -30244,7 +30243,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j79.isEnabled() && j89.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j79.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "cruiser";
             j69.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -30266,7 +30265,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j79.isEnabled() && j89.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j79.isEnabled() && j89.isEnabled())
         {
             cur_aircraft = "destroyer";
             j69.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -30288,7 +30287,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j79.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j79.isEnabled())
         {
             cur_aircraft = "finished";
             j69.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -30308,7 +30307,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j70.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j70.isEnabled())
         {
             cur_aircraft = "finished";
             j69.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -30368,7 +30367,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "submarine" && j89.isEnabled() && j99.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j89.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "cruiser";
             j79.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -30390,7 +30389,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j89.isEnabled() && j99.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j89.isEnabled() && j99.isEnabled())
         {
             cur_aircraft = "destroyer";
             j79.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -30412,7 +30411,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j89.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j89.isEnabled())
         {
             cur_aircraft = "finished";
             j79.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -30432,7 +30431,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j80.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j80.isEnabled())
         {
             cur_aircraft = "finished";
             j79.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -30492,7 +30491,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "destroyer" && j99.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j99.isEnabled())
         {
             cur_aircraft = "finished";
             j89.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -30512,7 +30511,7 @@ public class Main extends JFrame implements MouseMotionListener
             loadscreen();
             com_place();
         }
-        else if (flag == 1 && cur_aircraft == "destroyer" && j90.isEnabled())
+        else if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j90.isEnabled())
         {
             cur_aircraft = "finished";
             j89.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -30572,7 +30571,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 1 && cur_aircraft == "destroyer" && j100.isEnabled())
+        if (flag == 1 && Objects.equals(cur_aircraft, "destroyer") && j100.isEnabled())
         {
             cur_aircraft = "finished";
             j99.setIcon(new ImageIcon("destroyer/destroyer-h-tile-1.png"));
@@ -30632,7 +30631,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j10.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -30662,7 +30661,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j20.isEnabled() && j30.isEnabled() && j40.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j20.isEnabled() && j30.isEnabled() && j40.isEnabled())
         {
             cur_aircraft = "submarine";
             j10.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -30688,7 +30687,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j20.isEnabled() && j30.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j20.isEnabled() && j30.isEnabled())
         {
             cur_aircraft = "cruiser";
             j10.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -30710,7 +30709,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j20.isEnabled() && j30.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j20.isEnabled() && j30.isEnabled())
         {
             cur_aircraft = "destroyer";
             j10.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -30732,7 +30731,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j20.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j20.isEnabled())
         {
             cur_aircraft = "finished";
             j10.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -30792,7 +30791,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j20.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -30822,7 +30821,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j30.isEnabled() && j40.isEnabled() && j50.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j30.isEnabled() && j40.isEnabled() && j50.isEnabled())
         {
             cur_aircraft = "submarine";
             j20.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -30848,7 +30847,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j30.isEnabled() && j40.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j30.isEnabled() && j40.isEnabled())
         {
             cur_aircraft = "cruiser";
             j20.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -30870,7 +30869,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j30.isEnabled() && j40.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j30.isEnabled() && j40.isEnabled())
         {
             cur_aircraft = "destroyer";
             j20.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -30892,7 +30891,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j30.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j30.isEnabled())
         {
             cur_aircraft = "finished";
             j20.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -30952,7 +30951,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j30.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -30982,7 +30981,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j40.isEnabled() && j50.isEnabled() && j60.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j40.isEnabled() && j50.isEnabled() && j60.isEnabled())
         {
             cur_aircraft = "submarine";
             j30.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -31008,7 +31007,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j60.isEnabled() && j50.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j60.isEnabled() && j50.isEnabled())
         {
             cur_aircraft = "cruiser";
             j30.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -31030,7 +31029,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j40.isEnabled() && j50.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j40.isEnabled() && j50.isEnabled())
         {
             cur_aircraft = "destroyer";
             j30.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -31052,7 +31051,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j40.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j40.isEnabled())
         {
             cur_aircraft = "finished";
             j30.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -31112,7 +31111,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j40.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -31142,7 +31141,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j50.isEnabled() && j60.isEnabled() && j70.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j50.isEnabled() && j60.isEnabled() && j70.isEnabled())
         {
             cur_aircraft = "submarine";
             j40.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -31168,7 +31167,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j50.isEnabled() && j60.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j50.isEnabled() && j60.isEnabled())
         {
             cur_aircraft = "cruiser";
             j40.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -31190,7 +31189,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j50.isEnabled() && j60.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j50.isEnabled() && j60.isEnabled())
         {
             cur_aircraft = "destroyer";
             j40.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -31212,7 +31211,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j50.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j50.isEnabled())
         {
             cur_aircraft = "finished";
             j40.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -31272,7 +31271,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j50.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -31302,7 +31301,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j60.isEnabled() && j70.isEnabled() && j80.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j60.isEnabled() && j70.isEnabled() && j80.isEnabled())
         {
             cur_aircraft = "submarine";
             j50.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -31328,7 +31327,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j60.isEnabled() && j70.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j60.isEnabled() && j70.isEnabled())
         {
             cur_aircraft = "cruiser";
             j50.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -31350,7 +31349,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j59.isEnabled() && j69.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j59.isEnabled() && j69.isEnabled())
         {
             cur_aircraft = "destroyer";
             j50.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -31372,7 +31371,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j60.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j60.isEnabled())
         {
             cur_aircraft = "finished";
             j50.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -31432,7 +31431,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "aircraft-carrier")
+        if (flag == 0 && Objects.equals(cur_aircraft, "aircraft-carrier"))
         {
             cur_aircraft = "battleship";
             j60.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-1.png"));
@@ -31462,7 +31461,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "battleship" && j70.isEnabled() && j80.isEnabled() && j90.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j70.isEnabled() && j80.isEnabled() && j90.isEnabled())
         {
             cur_aircraft = "submarine";
             j60.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -31488,7 +31487,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j70.isEnabled() && j80.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j70.isEnabled() && j80.isEnabled())
         {
             cur_aircraft = "cruiser";
             j60.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -31510,7 +31509,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j70.isEnabled() && j80.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j70.isEnabled() && j80.isEnabled())
         {
             cur_aircraft = "destroyer";
             j60.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -31532,7 +31531,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j70.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j70.isEnabled())
         {
             cur_aircraft = "finished";
             j60.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -31592,7 +31591,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "battleship" && j80.isEnabled() && j90.isEnabled() && j100.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "battleship") && j80.isEnabled() && j90.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "submarine";
             j70.setIcon(new ImageIcon("battleship/battleship-v-tile-1.png"));
@@ -31618,7 +31617,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "submarine" && j80.isEnabled() && j90.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j80.isEnabled() && j90.isEnabled())
         {
             cur_aircraft = "cruiser";
             j70.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -31640,7 +31639,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j80.isEnabled() && j90.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j80.isEnabled() && j90.isEnabled())
         {
             cur_aircraft = "destroyer";
             j70.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -31662,7 +31661,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j80.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j80.isEnabled())
         {
             cur_aircraft = "finished";
             j70.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -31722,7 +31721,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "submarine" && j90.isEnabled() && j100.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "submarine") && j90.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "cruiser";
             j80.setIcon(new ImageIcon("submarine/submarine-v-tile-1.png"));
@@ -31744,7 +31743,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "cruiser" && j90.isEnabled() && j100.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "cruiser") && j90.isEnabled() && j100.isEnabled())
         {
             cur_aircraft = "destroyer";
             j80.setIcon(new ImageIcon("cruiser/cruiser-v-tile-1.png"));
@@ -31766,7 +31765,7 @@ public class Main extends JFrame implements MouseMotionListener
             cur.setBounds(xpos, ypos, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
             cur.repaint();
         }
-        else if (flag == 0 && cur_aircraft == "destroyer" && j90.isEnabled())
+        else if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j90.isEnabled())
         {
             cur_aircraft = "finished";
             j80.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -31826,7 +31825,7 @@ public class Main extends JFrame implements MouseMotionListener
         j.remove(l);
         j.revalidate();
         j.repaint();
-        if (flag == 0 && cur_aircraft == "destroyer" && j100.isEnabled())
+        if (flag == 0 && Objects.equals(cur_aircraft, "destroyer") && j100.isEnabled())
         {
             cur_aircraft = "finished";
             j90.setIcon(new ImageIcon("destroyer/destroyer-v-tile-1.png"));
@@ -34053,7 +34052,7 @@ public class Main extends JFrame implements MouseMotionListener
         }
         catch (Exception ex)
         {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
         m.safe = new ImageIcon("hud/ship-sunk.png");
         m.found = new ImageIcon("hud/ship-found.png");
