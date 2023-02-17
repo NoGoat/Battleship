@@ -667,4 +667,24 @@ public class generation extends data
             System.out.println(play_destroyer_pos[i]);
         }
     }
+    public void loadscreen()
+    {
+        loading.setOpaque(true);
+        loading.setLayout(null);
+        loading.setBounds(0,0,800,800);
+        loading.setBackground(Color.BLACK);
+        loading.setVisible(true);
+        load.setBounds(225,300,400,50);
+        pb.setBounds(225,350,340,20);
+        load.setForeground(Color.WHITE);
+        loading.add(pb);
+        pb.setVisible(true);
+        loading.add(load);
+        pb.setMinimum(0);
+        pb.setMaximum(100);
+        j.revalidate();
+        j.repaint();
+        loading.revalidate();
+        loading.repaint();
+    }
 }
