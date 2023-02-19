@@ -59,7 +59,7 @@ public class play_part_1 extends com_moves
             l1.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l1.setEnabled(false);
         who_is_playing();
@@ -122,7 +122,7 @@ public class play_part_1 extends com_moves
             l2.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l2.setEnabled(false);
         who_is_playing();
@@ -184,7 +184,7 @@ public class play_part_1 extends com_moves
             l3.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l3.setEnabled(false);
         who_is_playing();
@@ -246,7 +246,7 @@ public class play_part_1 extends com_moves
             l4.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l4.setEnabled(false);
         who_is_playing();
@@ -308,7 +308,7 @@ public class play_part_1 extends com_moves
             l5.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l5.setEnabled(false);
         who_is_playing();
@@ -370,7 +370,7 @@ public class play_part_1 extends com_moves
             l6.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l6.setEnabled(false);
         who_is_playing();
@@ -432,7 +432,7 @@ public class play_part_1 extends com_moves
             l7.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l7.setEnabled(false);
         who_is_playing();
@@ -494,7 +494,7 @@ public class play_part_1 extends com_moves
             l8.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l8.setEnabled(false);
         who_is_playing();
@@ -556,7 +556,7 @@ public class play_part_1 extends com_moves
             l9.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l9.setEnabled(false);
         who_is_playing();
@@ -618,7 +618,7 @@ public class play_part_1 extends com_moves
             l10.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l10.setEnabled(false);
         who_is_playing();
@@ -680,7 +680,7 @@ public class play_part_1 extends com_moves
             l11.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l11.setEnabled(false);
         who_is_playing();
@@ -743,7 +743,7 @@ public class play_part_1 extends com_moves
             l12.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l12.setEnabled(false);
         who_is_playing();
@@ -805,7 +805,7 @@ public class play_part_1 extends com_moves
             l13.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l13.setEnabled(false);
         who_is_playing();
@@ -867,7 +867,7 @@ public class play_part_1 extends com_moves
             l14.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l14.setEnabled(false);
         who_is_playing();
@@ -929,7 +929,7 @@ public class play_part_1 extends com_moves
             l15.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l15.setEnabled(false);
         who_is_playing();
@@ -991,7 +991,7 @@ public class play_part_1 extends com_moves
             l16.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l16.setEnabled(false);
         who_is_playing();
@@ -1053,7 +1053,7 @@ public class play_part_1 extends com_moves
             l17.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l17.setEnabled(false);
         who_is_playing();
@@ -1115,7 +1115,7 @@ public class play_part_1 extends com_moves
             l18.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l18.setEnabled(false);
         who_is_playing();
@@ -1177,7 +1177,7 @@ public class play_part_1 extends com_moves
             l19.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l19.setEnabled(false);
         who_is_playing();
@@ -1239,7 +1239,7 @@ public class play_part_1 extends com_moves
             l20.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l20.setEnabled(false);
         who_is_playing();
@@ -1301,7 +1301,7 @@ public class play_part_1 extends com_moves
             l21.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l21.setEnabled(false);
         who_is_playing();
@@ -1364,7 +1364,7 @@ public class play_part_1 extends com_moves
             l22.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l22.setEnabled(false);
         who_is_playing();
@@ -1426,7 +1426,7 @@ public class play_part_1 extends com_moves
             l23.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l23.setEnabled(false);
         who_is_playing();
@@ -1489,7 +1489,7 @@ public class play_part_1 extends com_moves
             l24.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l24.setEnabled(false);
         who_is_playing();
@@ -1551,7 +1551,7 @@ public class play_part_1 extends com_moves
             l25.setDisabledIcon(new ImageIcon("water_ship_miss.png"));
             turn_flag = 1;
             refresh_flag = 1;
-            miss();
+            miss_p();
         }
         l25.setEnabled(false);
         who_is_playing();

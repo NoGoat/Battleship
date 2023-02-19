@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.io.FileWriter;
 import java.util.Objects;
 
@@ -104,7 +103,7 @@ public class com_moves extends generation
         SwingWorker s1 = new SwingWorker()
         {
             @Override
-            protected String doInBackground() throws Exception
+            protected String doInBackground()
             {
                 try
                 {
@@ -988,7 +987,7 @@ public class com_moves extends generation
             if(play_ai_count != air_temp_c)
             {
                 air_temp_c = play_ai_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_ai_count == 5)
@@ -997,7 +996,7 @@ public class com_moves extends generation
             if(play_ai_count != air_temp_c)
             {
                 air_temp_c = play_ai_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_bat_count > 0 && play_bat_count < 4)
@@ -1006,7 +1005,7 @@ public class com_moves extends generation
             if(play_bat_count != bat_temp_c)
             {
                 bat_temp_c = play_bat_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_bat_count == 4)
@@ -1015,7 +1014,7 @@ public class com_moves extends generation
             if(play_bat_count != bat_temp_c)
             {
                 bat_temp_c = play_bat_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_sub_count > 0 && play_sub_count < 3)
@@ -1024,7 +1023,7 @@ public class com_moves extends generation
             if(play_sub_count != sub_temp_c)
             {
                 sub_temp_c = play_sub_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_sub_count == 3)
@@ -1033,7 +1032,7 @@ public class com_moves extends generation
             if(play_sub_count != sub_temp_c)
             {
                 sub_temp_c = play_sub_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_cru_count > 0 && play_cru_count < 3)
@@ -1042,7 +1041,7 @@ public class com_moves extends generation
             if(play_cru_count != cru_temp_c)
             {
                 cru_temp_c = play_cru_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_cru_count == 3)
@@ -1051,7 +1050,7 @@ public class com_moves extends generation
             if(play_cru_count != cru_temp_c)
             {
                 cru_temp_c = play_cru_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_des_count > 0 && play_des_count < 2)
@@ -1060,7 +1059,7 @@ public class com_moves extends generation
             if(play_des_count != des_temp_c)
             {
                 des_temp_c = play_des_count;
-                explosion();
+                explosion_p();
             }
         }
         if(play_des_count == 2)
@@ -1069,7 +1068,7 @@ public class com_moves extends generation
             if(play_des_count != des_temp_c)
             {
                 des_temp_c = play_des_count;
-                explosion();
+                explosion_p();
             }
         }
         if(com_ai_count > 0 && com_ai_count < 5)
@@ -1163,30 +1162,7 @@ public class com_moves extends generation
             }
         }
     }
-    public void explosion()
-    {
-        try
-        {
-            ac.setFramePosition(0);
-            ac.start();
-        }
-        catch (Exception ex)
-        {
-            ex.printStackTrace();
-        }
-    }
-    public void miss()
-    {
-        try
-        {
-            acm.setFramePosition(0);
-            acm.start();
-        }
-        catch (Exception ex)
-        {
-            ex.printStackTrace();
-        }
-    }
+
     public void com_hit()
     {
         SwingWorker com_hitter = new SwingWorker()

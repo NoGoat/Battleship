@@ -1,16 +1,14 @@
 //import com.sun.javafx.geom.ConcentricShapePair;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
-import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Objects;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class Main extends play_place_10
 {
@@ -1357,6 +1355,18 @@ public class Main extends play_place_10
             m.inm = new DataLine.Info(Clip.class, m.fm);
             m.acm = (Clip) AudioSystem.getLine(m.inm);
             m.acm.open(m.asm);
+            m.audiofile_p = new File("audio/ship_explosion.wav");
+            m.as_p = AudioSystem.getAudioInputStream(m.audiofile_p);
+            m.f_p = m.as_p.getFormat();
+            m.in_p = new DataLine.Info(Clip.class, m.f_p);
+            m.ac_p = (Clip) AudioSystem.getLine(m.in);
+            m.ac_p.open(m.as_p);
+            m.audiofilem_p = new File("audio/ship_miss.wav");
+            m.asm_p = AudioSystem.getAudioInputStream(m.audiofilem_p);
+            m.fm_p = m.asm_p.getFormat();
+            m.inm_p = new DataLine.Info(Clip.class, m.fm_p);
+            m.acm_p = (Clip) AudioSystem.getLine(m.inm_p);
+            m.acm_p.open(m.asm_p);
         }
         catch (Exception ex)
         {
@@ -1365,7 +1375,7 @@ public class Main extends play_place_10
         m.safe = new ImageIcon("hud/ship-sunk.png");
         m.found = new ImageIcon("hud/ship-found.png");
         m.hit = new ImageIcon("hud/ship-not-found.png");
-        System.out.println("Huh. You are running this from a console. Be prepared to see all the stuff that I was using to test the game left in here.\n BTW I'm not dumb enough to leave in the Computer's moves in here. So, you can't cheat :)");
+        System.out.println("Huh. You are running this from a console. Be prepared to see all the stuff that I was using to test the game left in here.\n BTW I'm not dumb enough to leave in the Computer's moves in here. So, you can't cheat :).\n P.S. There is a way to enable it, but you will need to look at the Source Code to figure it out");
         m.co.setLayout(m.crd);
         m.co.add(m.j, "CHA");
         m.co.add(m.loading, "LA");

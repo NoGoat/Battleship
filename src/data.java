@@ -22,6 +22,16 @@ public class data extends JFrame implements MouseMotionListener
     AudioFormat fm;
     DataLine.Info inm;
     Clip acm;
+    File audiofile_p;
+    AudioInputStream as_p;
+    AudioFormat f_p;
+    DataLine.Info in_p;
+    Clip ac_p;
+    File audiofilem_p;
+    AudioInputStream asm_p;
+    AudioFormat fm_p;
+    DataLine.Info inm_p;
+    Clip acm_p;
     int air_temp_c = 0;
     int bat_temp_c = 0;
     int sub_temp_c = 0;
@@ -80,9 +90,7 @@ public class data extends JFrame implements MouseMotionListener
     Icon safe, found, hit;
     int com_is_hit_or_not;
     int air_or, bat_or, sub_or, cru_or, des_or;
-    String title = "LA";
     int play_hit_count = 0;
-    int[] com_hit_pos = new int[100];
     int com_hit_count = 0;
     int play_ai_count = 0, play_bat_count = 0, play_sub_count = 0, play_cru_count = 0, play_des_count = 0;
     int com_ai_count = 0, com_bat_count = 0, com_sub_count = 0, com_cru_count = 0, com_des_count = 0;
@@ -1142,6 +1150,70 @@ public class data extends JFrame implements MouseMotionListener
         else if (com == l100)
         {
             l100.setBorderPainted(true);
+        }
+    }
+    public void explosion()
+    {
+        try
+        {
+            ac.setFramePosition(0);
+            ac.start();
+            System.out.println("In Explosion try");
+        }
+        catch (Exception ex)
+        {
+            ac.setFramePosition(0);
+            ac.start();
+            System.out.println("In Explosion catch");
+            ex.printStackTrace();
+        }
+    }
+    public void miss()
+    {
+        try
+        {
+            acm.setFramePosition(0);
+            acm.start();
+            System.out.println("In Miss try");
+        }
+        catch (Exception ex)
+        {
+            acm.setFramePosition(0);
+            acm.start();
+            System.out.println("In Miss catch");
+            ex.printStackTrace();
+        }
+    }
+    public void explosion_p()
+    {
+        try
+        {
+            ac_p.setFramePosition(0);
+            ac_p.start();
+            System.out.println("In Explosion try Player");
+        }
+        catch (Exception ex)
+        {
+            ac_p.setFramePosition(0);
+            ac_p.start();
+            System.out.println("In Explosion catch Player");
+            ex.printStackTrace();
+        }
+    }
+    public void miss_p()
+    {
+        try
+        {
+            acm_p.setFramePosition(0);
+            acm_p.start();
+            System.out.println("In Miss try Player");
+        }
+        catch (Exception ex)
+        {
+            acm_p.setFramePosition(0);
+            acm_p.start();
+            System.out.println("In Miss catch Player");
+            ex.printStackTrace();
         }
     }
     public void mouseMoved(MouseEvent e)
