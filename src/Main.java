@@ -631,6 +631,25 @@ public class Main extends play_place_10
                     l100Call();
                 }
             }
+            if (turn_flag == 2)
+            {
+                if(load_screen == play_hits)
+                {
+                    crd.show(co, "CHA");
+                }
+                else if(load_screen == com_hits)
+                {
+                    crd.show(co, "PHA");
+                }
+                else if(c == back_c)
+                {
+                    crd.show(co, "LA");
+                }
+                else if(com == back_p)
+                {
+                    crd.show(co, "LA");
+                }
+            }
         }
 
         @Override

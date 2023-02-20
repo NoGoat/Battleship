@@ -90,6 +90,7 @@ public class data extends JFrame implements MouseMotionListener
     Icon safe, found, hit;
     int com_is_hit_or_not;
     int air_or, bat_or, sub_or, cru_or, des_or;
+    int air_or_c, bat_or_c, sub_or_c, cru_or_c, des_or_c;
     int play_hit_count = 0;
     int com_hit_count = 0;
     int play_ai_count = 0, play_bat_count = 0, play_sub_count = 0, play_cru_count = 0, play_des_count = 0;
@@ -112,6 +113,7 @@ public class data extends JFrame implements MouseMotionListener
     Cursor blankCursor = Toolkit.getDefaultToolkit().createCustomCursor(cursorImg, new Point(0, 0), "blank cursor");
     Point po;
     Component c;
+    Component load_screen;
     JLabel cur = new JLabel(new ImageIcon("aircraft-carrier/aircraft-v.png"));
     JLabel tip = new JLabel("Press r to rotate the ship and place the ships by clicking at the desired location");
     JPanel p = new JPanel();
@@ -149,6 +151,7 @@ public class data extends JFrame implements MouseMotionListener
     String cur_aircraft = "aircraft-carrier";
     JFrame PlayArea = new JFrame("Battleship");
     JButton j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j31, j32, j33, j34, j35, j36, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, j49, j50, j51, j52, j53, j54, j55, j56, j57, j58, j59, j60, j61, j62, j63, j64, j65, j66, j67, j68, j69, j70, j71, j72, j73, j74, j75, j76, j77, j78, j79, j80, j81, j82, j83, j84, j85, j86, j87, j88, j89, j90, j91, j92, j93, j94, j95, j96, j97, j98, j99, j100;
+    JButton play_hits, com_hits, back_p, back_c;
     public void button_highlight()
     {
         j1.setBorderPainted(false);
@@ -751,6 +754,10 @@ public class data extends JFrame implements MouseMotionListener
         l98.setBorderPainted(false);
         l99.setBorderPainted(false);
         l100.setBorderPainted(false);
+        back_p.setBorderPainted(false);
+        back_c.setBorderPainted(false);
+        com_hits.setBorderPainted(false);
+        play_hits.setBorderPainted(false);
         if (com == l1)
         {
             l1.setBorderPainted(true);
@@ -1151,6 +1158,26 @@ public class data extends JFrame implements MouseMotionListener
         {
             l100.setBorderPainted(true);
         }
+        if (load_screen == play_hits && turn_flag == 2)
+        {
+            play_hits.setBorderPainted(true);
+            System.out.println("In Play Hits");
+        }
+        if (load_screen == com_hits && turn_flag == 2)
+        {
+            com_hits.setBorderPainted(true);
+            System.out.println("In Com Hits");
+        }
+        else if (c == back_c && turn_flag == 2)
+        {
+            back_c.setBorderPainted(true);
+            System.out.println("In back_c");
+        }
+        if (com == back_p && turn_flag == 2)
+        {
+            back_p.setBorderPainted(true);
+            System.out.println("In back_p");
+        }
     }
     public void explosion()
     {
@@ -1216,6 +1243,561 @@ public class data extends JFrame implements MouseMotionListener
             ex.printStackTrace();
         }
     }
+    public JButton play_render(JButton b, int pos)
+    {
+        if(!b.isEnabled())
+        {
+            int no_hits = 0;
+            if (air_or_c == 0)
+            {
+                System.out.println("In Aircraft 0");
+                for (int i = 0; i < 5; i++)
+                {
+                    if (com_aircraft_pos[i] == pos)
+                    {
+                        next_move_flag = "aircraft-carrier";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-" + iconpos + ".png"));
+                        com_hit_count++;
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_ai_count++;
+                        no_hits = 1;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (air_or_c == 1)
+            {
+                System.out.println("In Aircraft 1");
+                for (int i = 0; i < 5; i++)
+                {
+                    if (com_aircraft_pos[i] == pos)
+                    {
+                        next_move_flag = "aircraft-carrier";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_ai_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (bat_or_c == 0)
+            {
+                System.out.println("In Battleship 0");
+                for (int i = 0; i < 4; i++)
+                {
+                    if (com_battleship_pos[i] == pos)
+                    {
+                        next_move_flag = "battleship";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_bat_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (bat_or_c == 1)
+            {
+                System.out.println("In Battleship 1");
+                for (int i = 0; i < 4; i++)
+                {
+                    if (com_battleship_pos[i] == pos)
+                    {
+                        next_move_flag = "battleship";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_bat_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (sub_or_c == 0)
+            {
+                System.out.println("In Submarine 0");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_submarine_pos[i] == pos)
+                    {
+                        next_move_flag = "submarine";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_sub_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (sub_or_c == 1)
+            {
+                System.out.println("In Submarine 1");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_submarine_pos[i] == pos)
+                    {
+                        next_move_flag = "submarine";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_sub_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (cru_or_c == 0)
+            {
+                System.out.println("In Cruiser 0");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_cruiser_pos[i] == pos)
+                    {
+                        next_move_flag = "cruiser";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_cru_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (cru_or_c == 1)
+            {
+                System.out.println("In Cruiser 1");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_cruiser_pos[i] == pos)
+                    {
+                        next_move_flag = "cruiser";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_cru_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (des_or_c == 0)
+            {
+                System.out.println("In Destroyer 0");
+                for (int i = 0; i < 2; i++)
+                {
+                    if (com_destroyer_pos[i] == pos)
+                    {
+                        next_move_flag = "destroyer";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_des_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (des_or_c == 1)
+            {
+                System.out.println("In Destroyer 1");
+                for (int i = 0; i < 2; i++)
+                {
+                    if (com_destroyer_pos[i] == pos)
+                    {
+                        next_move_flag = "destroyer";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        com_des_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+        }
+        else
+        {
+            int no_hits = 0;
+            if (air_or_c == 0)
+            {
+                System.out.println("In Aircraft 0");
+                for (int i = 0; i < 5; i++)
+                {
+                    if (com_aircraft_pos[i] == pos)
+                    {
+                        next_move_flag = "aircraft-carrier";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-" + iconpos + ".png"));
+                        com_hit_count++;
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_ai_count++;
+                        no_hits = 1;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (air_or_c == 1)
+            {
+                System.out.println("In Aircraft 1");
+                for (int i = 0; i < 5; i++)
+                {
+                    if (com_aircraft_pos[i] == pos)
+                    {
+                        next_move_flag = "aircraft-carrier";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_ai_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (bat_or_c == 0)
+            {
+                System.out.println("In Battleship 0");
+                for (int i = 0; i < 4; i++)
+                {
+                    if (com_battleship_pos[i] == pos)
+                    {
+                        next_move_flag = "battleship";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("battleship/battleship-h-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_bat_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (bat_or_c == 1)
+            {
+                System.out.println("In Battleship 1");
+                for (int i = 0; i < 4; i++)
+                {
+                    if (com_battleship_pos[i] == pos)
+                    {
+                        next_move_flag = "battleship";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("battleship/battleship-v-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_bat_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (sub_or_c == 0)
+            {
+                System.out.println("In Submarine 0");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_submarine_pos[i] == pos)
+                    {
+                        next_move_flag = "submarine";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("submarine/submarine-h-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_sub_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (sub_or_c == 1)
+            {
+                System.out.println("In Submarine 1");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_submarine_pos[i] == pos)
+                    {
+                        next_move_flag = "submarine";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("submarine/submarine-v-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_sub_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (cru_or_c == 0)
+            {
+                System.out.println("In Cruiser 0");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_cruiser_pos[i] == pos)
+                    {
+                        next_move_flag = "cruiser";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("cruiser/cruiser-h-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_cru_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (cru_or_c == 1)
+            {
+                System.out.println("In Cruiser 1");
+                for (int i = 0; i < 3; i++)
+                {
+                    if (com_cruiser_pos[i] == pos)
+                    {
+                        next_move_flag = "cruiser";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("cruiser/cruiser-v-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_cru_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (des_or_c == 0)
+            {
+                System.out.println("In Destroyer 0");
+                for (int i = 0; i < 2; i++)
+                {
+                    if (com_destroyer_pos[i] == pos)
+                    {
+                        next_move_flag = "destroyer";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("destroyer/destroyer-h-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_des_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+            if (des_or_c == 1)
+            {
+                System.out.println("In Destroyer 1");
+                for (int i = 0; i < 2; i++)
+                {
+                    if (com_destroyer_pos[i] == pos)
+                    {
+                        next_move_flag = "destroyer";
+                        int iconpos = i + 1;
+                        com_is_hit_or_not = 1;
+                        b.setIcon(new ImageIcon("destroyer/destroyer-v-tile-" + iconpos + ".png"));
+                        b.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-" + iconpos + ".png"));
+                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        com_des_count++;
+                        no_hits = 1;
+                        com_hit_count++;
+                        j.revalidate();
+                        j.repaint();
+                        return b;
+                    }
+                }
+            }
+        }
+        return b;
+    }
+    public void play_render_call()
+    {
+        l1 = play_render(l1, 1);
+        l2 = play_render(l2, 2);
+        l3 = play_render(l3, 3);
+        l4 = play_render(l4, 4);
+        l5 = play_render(l5, 5);
+        l6 = play_render(l6, 6);
+        l7 = play_render(l7, 7);
+        l8 = play_render(l8, 8);
+        l9 = play_render(l9, 9);
+        l10 = play_render(l10, 10);
+        l11 = play_render(l11, 11);
+        l12 = play_render(l12, 12);
+        l13 = play_render(l13, 13);
+        l14 = play_render(l14, 14);
+        l15 = play_render(l15, 15);
+        l16 = play_render(l16, 16);
+        l17 = play_render(l17, 17);
+        l18 = play_render(l18, 18);
+        l19 = play_render(l19, 19);
+        l20 = play_render(l20, 20);
+        l21 = play_render(l21, 21);
+        l22 = play_render(l22, 22);
+        l23 = play_render(l23, 23);
+        l24 = play_render(l24, 24);
+        l25 = play_render(l25, 25);
+        l26 = play_render(l26, 26);
+        l27 = play_render(l27, 27);
+        l28 = play_render(l28, 28);
+        l29 = play_render(l29, 29);
+        l30 = play_render(l30, 30);
+        l31 = play_render(l31, 31);
+        l32 = play_render(l32, 32);
+        l33 = play_render(l33, 33);
+        l34 = play_render(l34, 34);
+        l35 = play_render(l35, 35);
+        l36 = play_render(l36, 36);
+        l37 = play_render(l37, 37);
+        l38 = play_render(l38, 38);
+        l39 = play_render(l39, 39);
+        l40 = play_render(l40, 40);
+        l41 = play_render(l41, 41);
+        l42 = play_render(l42, 42);
+        l43 = play_render(l43, 43);
+        l44 = play_render(l44, 44);
+        l45 = play_render(l45, 45);
+        l46 = play_render(l46, 46);
+        l47 = play_render(l47, 47);
+        l48 = play_render(l48, 48);
+        l49 = play_render(l49, 49);
+        l50 = play_render(l50, 50);
+        l51 = play_render(l51, 51);
+        l52 = play_render(l52, 52);
+        l53 = play_render(l53, 53);
+        l54 = play_render(l54, 54);
+        l55 = play_render(l55, 55);
+        l56 = play_render(l56, 56);
+        l57 = play_render(l57, 57);
+        l58 = play_render(l58, 58);
+        l59 = play_render(l59, 59);
+        l60 = play_render(l60, 60);
+        l61 = play_render(l61, 61);
+        l62 = play_render(l62, 62);
+        l63 = play_render(l63, 63);
+        l64 = play_render(l64, 64);
+        l65 = play_render(l65, 65);
+        l66 = play_render(l66, 66);
+        l67 = play_render(l67, 67);
+        l68 = play_render(l68, 68);
+        l69 = play_render(l69, 69);
+        l70 = play_render(l70, 70);
+        l71 = play_render(l71, 71);
+        l72 = play_render(l72, 72);
+        l73 = play_render(l73, 73);
+        l74 = play_render(l74, 74);
+        l75 = play_render(l75, 75);
+        l76 = play_render(l76, 76);
+        l77 = play_render(l77, 77);
+        l78 = play_render(l78, 78);
+        l79 = play_render(l79, 79);
+        l80 = play_render(l80, 80);
+        l81 = play_render(l81, 81);
+        l82 = play_render(l82, 82);
+        l83 = play_render(l83, 83);
+        l84 = play_render(l84, 84);
+        l85 = play_render(l85, 85);
+        l86 = play_render(l86, 86);
+        l87 = play_render(l87, 87);
+        l88 = play_render(l88, 88);
+        l89 = play_render(l89, 89);
+        l90 = play_render(l90, 90);
+        l91 = play_render(l91, 91);
+        l92 = play_render(l92, 92);
+        l93 = play_render(l93, 93);
+        l94 = play_render(l94, 94);
+        l95 = play_render(l95, 95);
+        l96 = play_render(l96, 96);
+        l97 = play_render(l97, 97);
+        l98 = play_render(l98, 98);
+        l99 = play_render(l99, 99);
+        l100 = play_render(l100, 100);
+    }
     public void mouseMoved(MouseEvent e)
     {
         cur.setBounds(e.getPoint().x - xoffset, e.getPoint().y - yoffset, (int)cur.getPreferredSize().getWidth(), (int)cur.getPreferredSize().getHeight());
@@ -1227,6 +1809,7 @@ public class data extends JFrame implements MouseMotionListener
         po = SwingUtilities.convertPoint(p, e.getPoint(), j);
         c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
         com = SwingUtilities.getDeepestComponentAt(play_hit, po.x, po.y);
+        load_screen = SwingUtilities.getDeepestComponentAt(loading, po.x, po.y);
         button_highlight();
     }
 
@@ -1241,6 +1824,7 @@ public class data extends JFrame implements MouseMotionListener
         po = SwingUtilities.convertPoint(p, e.getPoint(), j);
         c = SwingUtilities.getDeepestComponentAt(j, po.x, po.y);
         com = SwingUtilities.getDeepestComponentAt(play_hit, po.x, po.y);
+        load_screen = SwingUtilities.getDeepestComponentAt(loading, po.x, po.y);
         button_highlight();
     }
 }

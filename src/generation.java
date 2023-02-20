@@ -108,6 +108,10 @@ public class generation extends data
         l98 = new JButton(i);
         l99 = new JButton(i);
         l100 = new JButton(i);
+        back_p = new JButton();
+        back_c = new JButton();
+        com_hits = new JButton();
+        play_hits = new JButton();
         tp_air = new JLabel("Aircraft Carrier");
         tp_bat = new JLabel("Battleship");
         tp_sub = new JLabel("Submarine");

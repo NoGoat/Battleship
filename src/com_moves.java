@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.io.FileWriter;
 import java.util.Objects;
 
@@ -14,6 +15,31 @@ public class com_moves extends generation
                 Thread.sleep(1000);
                 load.setText("YOU WIN");
                 loading.remove(pb);
+                play_hits.setOpaque(true);
+                play_hits.setFocusPainted(false);
+                loading.add(play_hits);
+                play_hits.setBounds(250, 400, 150, 50);
+                play_hits.setText("Player's Board");
+                com_hits.setOpaque(true);
+                com_hits.setFocusPainted(false);
+                loading.add(com_hits);
+                com_hits.setBounds(410, 400, 150, 50);
+                com_hits.setText("Computer's Board");
+                back_p.setBorderPainted(false);
+                back_c.setBorderPainted(false);
+                play_hits.setBorderPainted(false);
+                com_hits.setBorderPainted(false);
+                back_p.setText("Back");
+                back_c.setText("Back");
+                back_p.setBounds(0, 0, 50, 50);
+                back_c.setBounds(0, 0, 50, 50);
+                play_hits.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                com_hits.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                back_p.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                back_c.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                play_hit.add(back_p);
+                j.add(back_c);
+                play_render_call();
                 crd.show(co, "LA");
                 return null;
             }
@@ -26,6 +52,31 @@ public class com_moves extends generation
                 Thread.sleep(1000);
                 load.setText("YOU LOSE");
                 loading.remove(pb);
+                play_hits.setOpaque(true);
+                play_hits.setFocusPainted(false);
+                loading.add(play_hits);
+                play_hits.setBounds(250, 400, 150, 50);
+                play_hits.setText("Player's Board");
+                com_hits.setOpaque(true);
+                com_hits.setFocusPainted(false);
+                loading.add(com_hits);
+                com_hits.setBounds(410, 400, 150, 50);
+                com_hits.setText("Computer's Board");
+                back_p.setBorderPainted(false);
+                back_c.setBorderPainted(false);
+                play_hits.setBorderPainted(false);
+                com_hits.setBorderPainted(false);
+                back_p.setText("Back");
+                back_c.setText("Back");
+                back_p.setBounds(0, 0, 50, 50);
+                back_c.setBounds(0, 0, 50, 50);
+                play_hits.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                com_hits.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                back_p.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                back_c.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1, false));
+                play_hit.add(back_p);
+                j.add(back_c);
+                play_render_call();
                 crd.show(co, "LA");
                 return null;
             }
@@ -169,6 +220,7 @@ public class com_moves extends generation
                         com_aircraft_pos[2] = pos3;
                         com_aircraft_pos[3] = pos4;
                         com_aircraft_pos[4] = pos5;
+                        air_or_c = 0;
                         success = 1;
                         if (success == 1)
                         {
@@ -190,6 +242,7 @@ public class com_moves extends generation
                         com_aircraft_pos[2] = pos3;
                         com_aircraft_pos[3] = pos4;
                         com_aircraft_pos[4] = pos5;
+                        air_or_c = 1;
                         success = 1;
                         if (success == 1)
                         {
@@ -232,8 +285,6 @@ public class com_moves extends generation
                         int pos4 = pos3 + 1;
                         for(int i = 0; i <= 4; i ++)
                         {
-
-
                             if(com_aircraft_pos[i] != pos1 && com_aircraft_pos[i] != pos2 && com_aircraft_pos[i] != pos3 && com_aircraft_pos[i] != pos4)
                             {
                                 temp_flag++;
@@ -246,6 +297,7 @@ public class com_moves extends generation
                             com_battleship_pos[1] = pos2;
                             com_battleship_pos[2] = pos3;
                             com_battleship_pos[3] = pos4;
+                            bat_or_c = 0;
                             success = 1;
                         }
                         if (success == 1)
@@ -278,6 +330,7 @@ public class com_moves extends generation
                             com_battleship_pos[1] = pos2;
                             com_battleship_pos[2] = pos3;
                             com_battleship_pos[3] = pos4;
+                            bat_or_c = 1;
                             success = 1;
                         }
                         if (success == 1)
@@ -337,6 +390,7 @@ public class com_moves extends generation
                             com_submarine_pos[0] = pos1;
                             com_submarine_pos[1] = pos2;
                             com_submarine_pos[2] = pos3;
+                            sub_or_c = 0;
                             success = 1;
                         }
                         if (success == 1)
@@ -374,6 +428,7 @@ public class com_moves extends generation
                             com_submarine_pos[0] = pos1;
                             com_submarine_pos[1] = pos2;
                             com_submarine_pos[2] = pos3;
+                            sub_or_c = 1;
                             success = 1;
                         }
                         if (success == 1)
@@ -441,6 +496,7 @@ public class com_moves extends generation
                             com_cruiser_pos[0] = pos1;
                             com_cruiser_pos[1] = pos2;
                             com_cruiser_pos[2] = pos3;
+                            cru_or_c = 0;
                             success = 1;
                         }
                         if (success == 1)
@@ -486,6 +542,7 @@ public class com_moves extends generation
                             com_cruiser_pos[0] = pos1;
                             com_cruiser_pos[1] = pos2;
                             com_cruiser_pos[2] = pos3;
+                            cru_or_c = 1;
                             success = 1;
                         }
                         if (success == 1)
@@ -559,6 +616,7 @@ public class com_moves extends generation
                         {
                             com_destroyer_pos[0] = pos1;
                             com_destroyer_pos[1] = pos2;
+                            des_or_c = 0;
                             success = 1;
                         }
                         if (success == 1)
@@ -610,6 +668,7 @@ public class com_moves extends generation
                         {
                             com_destroyer_pos[0] = pos1;
                             com_destroyer_pos[1] = pos2;
+                            des_or_c = 1;
                             success = 1;
                         }
                         if (success == 1)
@@ -633,28 +692,28 @@ public class com_moves extends generation
 
                     }
                 }
-//                System.out.println("Computer Positions:\nAircraft Carrier:");
-//                System.out.println(com_aircraft_pos[0]);
-//                System.out.println(com_aircraft_pos[1]);
-//                System.out.println(com_aircraft_pos[2]);
-//                System.out.println(com_aircraft_pos[3]);
-//                System.out.println(com_aircraft_pos[4]);
-//                System.out.println("Battleship:");
-//                System.out.println(com_battleship_pos[0]);
-//                System.out.println(com_battleship_pos[1]);
-//                System.out.println(com_battleship_pos[2]);
-//                System.out.println(com_battleship_pos[3]);
-//                System.out.println("Submarine:");
-//                System.out.println(com_submarine_pos[0]);
-//                System.out.println(com_submarine_pos[1]);
-//                System.out.println(com_submarine_pos[2]);
-//                System.out.println("Cruiser:");
-//                System.out.println(com_cruiser_pos[0]);
-//                System.out.println(com_cruiser_pos[1]);
-//                System.out.println(com_cruiser_pos[2]);
-//                System.out.println("Destroyer:");
-//                System.out.println(com_destroyer_pos[0]);
-//                System.out.println(com_destroyer_pos[1]);
+                System.out.println("Computer Positions:\nAircraft Carrier: " + air_or_c);
+                System.out.println(com_aircraft_pos[0]);
+                System.out.println(com_aircraft_pos[1]);
+                System.out.println(com_aircraft_pos[2]);
+                System.out.println(com_aircraft_pos[3]);
+                System.out.println(com_aircraft_pos[4]);
+                System.out.println("Battleship: " + bat_or_c);
+                System.out.println(com_battleship_pos[0]);
+                System.out.println(com_battleship_pos[1]);
+                System.out.println(com_battleship_pos[2]);
+                System.out.println(com_battleship_pos[3]);
+                System.out.println("Submarine: " + sub_or_c);
+                System.out.println(com_submarine_pos[0]);
+                System.out.println(com_submarine_pos[1]);
+                System.out.println(com_submarine_pos[2]);
+                System.out.println("Cruiser: " + cru_or_c);
+                System.out.println(com_cruiser_pos[0]);
+                System.out.println(com_cruiser_pos[1]);
+                System.out.println(com_cruiser_pos[2]);
+                System.out.println("Destroyer: " + des_or_c);
+                System.out.println(com_destroyer_pos[0]);
+                System.out.println(com_destroyer_pos[1]);
                 load.setText("Switching between bases");
                 return null;
             }
