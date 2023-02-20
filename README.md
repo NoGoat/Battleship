@@ -23,6 +23,6 @@ IntelliJ IDEA
 # Remaining work
 - [x] An alarm style indicator that lets you know which ship is currently being attacked
 - [ ] Adding models for ships
-- [ ] Modifying so that the computer actually attacks instead of just hitting random spots
+- [x] Modifying so that the computer actually attacks instead of just hitting random spots
 - [ ] Minor visual bugfixes
-- [ ] Sound effects
+- [x] Sound effects
