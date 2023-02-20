@@ -692,28 +692,28 @@ public class com_moves extends generation
 
                     }
                 }
-                System.out.println("Computer Positions:\nAircraft Carrier: " + air_or_c);
-                System.out.println(com_aircraft_pos[0]);
-                System.out.println(com_aircraft_pos[1]);
-                System.out.println(com_aircraft_pos[2]);
-                System.out.println(com_aircraft_pos[3]);
-                System.out.println(com_aircraft_pos[4]);
-                System.out.println("Battleship: " + bat_or_c);
-                System.out.println(com_battleship_pos[0]);
-                System.out.println(com_battleship_pos[1]);
-                System.out.println(com_battleship_pos[2]);
-                System.out.println(com_battleship_pos[3]);
-                System.out.println("Submarine: " + sub_or_c);
-                System.out.println(com_submarine_pos[0]);
-                System.out.println(com_submarine_pos[1]);
-                System.out.println(com_submarine_pos[2]);
-                System.out.println("Cruiser: " + cru_or_c);
-                System.out.println(com_cruiser_pos[0]);
-                System.out.println(com_cruiser_pos[1]);
-                System.out.println(com_cruiser_pos[2]);
-                System.out.println("Destroyer: " + des_or_c);
-                System.out.println(com_destroyer_pos[0]);
-                System.out.println(com_destroyer_pos[1]);
+//                System.out.println("Computer Positions:\nAircraft Carrier: " + air_or_c);
+//                System.out.println(com_aircraft_pos[0]);
+//                System.out.println(com_aircraft_pos[1]);
+//                System.out.println(com_aircraft_pos[2]);
+//                System.out.println(com_aircraft_pos[3]);
+//                System.out.println(com_aircraft_pos[4]);
+//                System.out.println("Battleship: " + bat_or_c);
+//                System.out.println(com_battleship_pos[0]);
+//                System.out.println(com_battleship_pos[1]);
+//                System.out.println(com_battleship_pos[2]);
+//                System.out.println(com_battleship_pos[3]);
+//                System.out.println("Submarine: " + sub_or_c);
+//                System.out.println(com_submarine_pos[0]);
+//                System.out.println(com_submarine_pos[1]);
+//                System.out.println(com_submarine_pos[2]);
+//                System.out.println("Cruiser: " + cru_or_c);
+//                System.out.println(com_cruiser_pos[0]);
+//                System.out.println(com_cruiser_pos[1]);
+//                System.out.println(com_cruiser_pos[2]);
+//                System.out.println("Destroyer: " + des_or_c);
+//                System.out.println(com_destroyer_pos[0]);
+//                System.out.println(com_destroyer_pos[1]);
                 load.setText("Switching between bases");
                 return null;
             }
