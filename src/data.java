@@ -42,7 +42,6 @@ public class data extends JFrame implements MouseMotionListener
     int sub_temp_p = 0;
     int cru_temp_p = 0;
     int des_temp_p = 0;
-
     int air_up_assigned_1 = 0;
     int air_down_assigned_1 = 0;
     int air_left_assigned_1 = 0;
@@ -146,6 +145,8 @@ public class data extends JFrame implements MouseMotionListener
     int[] play_cruiser_pos = new int[3];
     int[] play_destroyer_pos = new int[2];
     JLabel l = new JLabel("That is an invalid move - Please try another move");
+    int who_has_control = 0;
+    int screen_check = 0;
     String path_h = "aircraft-carrier/aircraft-h.png";
     String path_v = "aircraft-carrier/aircraft-v.png";
     String cur_aircraft = "aircraft-carrier";

@@ -327,7 +327,7 @@ public class Main extends play_place_10
                     //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
                 }
             }
-            if (turn_flag == 0)
+            if (turn_flag == 0 && who_has_control == 0)
             {
                 if (com == l1 && l1.isEnabled())
                 {
@@ -633,21 +633,29 @@ public class Main extends play_place_10
             }
             if (turn_flag == 2)
             {
-                if(load_screen == play_hits)
+                if(load_screen == play_hits && screen_check == 0)
                 {
                     crd.show(co, "CHA");
+                    who_has_control = 1;
+                    screen_check = 1;
                 }
-                else if(load_screen == com_hits)
+                else if(load_screen == com_hits && screen_check == 0)
                 {
                     crd.show(co, "PHA");
+                    who_has_control = 0;
+                    screen_check = 1;
                 }
-                else if(c == back_c)
+                else if(c == back_c && screen_check == 1)
                 {
                     crd.show(co, "LA");
+                    who_has_control = 1;
+                    screen_check = 0;
                 }
-                else if(com == back_p)
+                else if(com == back_p && screen_check == 1)
                 {
                     crd.show(co, "LA");
+                    who_has_control = 1;
+                    screen_check = 0;
                 }
             }
         }
