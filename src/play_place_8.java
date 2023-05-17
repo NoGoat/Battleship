@@ -202,30 +202,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j18Call()
@@ -426,30 +426,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j28Call()
@@ -650,30 +650,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j38Call()
@@ -874,30 +874,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j48Call()
@@ -1098,30 +1098,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j58Call()
@@ -1322,30 +1322,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j68Call()
@@ -1516,30 +1516,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j78Call()
@@ -1684,30 +1684,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j88Call()
@@ -1805,30 +1805,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
     public void j98Call()
@@ -1909,30 +1909,30 @@ public class play_place_8 extends play_place_7
             j.repaint();
             //JOptionPane.showMessageDialog(j, "That is an invalid move - Please try another move");
         }
-        System.out.println("Aircraft Carrier : ");
+        //System.out.println("Aircraft Carrier : ");
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(aircraft_pos[i]);
+            //System.out.println(aircraft_pos[i]);
         }
-        System.out.println("Battleship : ");
+        //System.out.println("Battleship : ");
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(battleship_pos[i]);
+            //System.out.println(battleship_pos[i]);
         }
-        System.out.println("Submarine : ");
+        //System.out.println("Submarine : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(submarine_pos[i]);
+            //System.out.println(submarine_pos[i]);
         }
-        System.out.println("Cruiser : ");
+        //System.out.println("Cruiser : ");
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(cruiser_pos[i]);
+            //System.out.println(cruiser_pos[i]);
         }
-        System.out.println("Destroyer : ");
+        //System.out.println("Destroyer : ");
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(destroyer_pos[i]);
+            //System.out.println(destroyer_pos[i]);
         }
     }
 }

@@ -645,30 +645,30 @@ public class generation extends data
         {
             des_or = 1;
         }
-        System.out.println("Aircraft Carrier Orientation : "+air_or);
+        //System.out.println("Aircraft Carrier Orientation : "+air_or);
         for(int i = 0 ; i < 5 ; i ++)
         {
-            System.out.println(play_aircraft_pos[i]);
+            //System.out.println(play_aircraft_pos[i]);
         }
-        System.out.println("Battleship Orientation : "+bat_or);
+        //System.out.println("Battleship Orientation : "+bat_or);
         for(int i = 0 ; i < 4 ; i ++)
         {
-            System.out.println(play_battleship_pos[i]);
+            //System.out.println(play_battleship_pos[i]);
         }
-        System.out.println("Submarine Orientation : "+sub_or);
+        //System.out.println("Submarine Orientation : "+sub_or);
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(play_submarine_pos[i]);
+            //System.out.println(play_submarine_pos[i]);
         }
-        System.out.println("Cruiser Orientation : "+cru_or);
+        //System.out.println("Cruiser Orientation : "+cru_or);
         for(int i = 0 ; i < 3 ; i ++)
         {
-            System.out.println(play_cruiser_pos[i]);
+            //System.out.println(play_cruiser_pos[i]);
         }
-        System.out.println("Destroyer Orientation : "+des_or);
+        //System.out.println("Destroyer Orientation : "+des_or);
         for(int i = 0 ; i < 2 ; i ++)
         {
-            System.out.println(play_destroyer_pos[i]);
+            //System.out.println(play_destroyer_pos[i]);
         }
     }
     public void loadscreen()

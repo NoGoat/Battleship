@@ -1162,22 +1162,22 @@ public class data extends JFrame implements MouseMotionListener
         if (load_screen == play_hits && turn_flag == 2)
         {
             play_hits.setBorderPainted(true);
-            System.out.println("In Play Hits");
+            //System.out.println("In Play Hits");
         }
         if (load_screen == com_hits && turn_flag == 2)
         {
             com_hits.setBorderPainted(true);
-            System.out.println("In Com Hits");
+            //System.out.println("In Com Hits");
         }
         else if (c == back_c && turn_flag == 2)
         {
             back_c.setBorderPainted(true);
-            System.out.println("In back_c");
+            //System.out.println("In back_c");
         }
         if (com == back_p && turn_flag == 2)
         {
             back_p.setBorderPainted(true);
-            System.out.println("In back_p");
+            //System.out.println("In back_p");
         }
     }
     public void explosion()
@@ -1186,13 +1186,13 @@ public class data extends JFrame implements MouseMotionListener
         {
             ac.setFramePosition(0);
             ac.start();
-            System.out.println("In Explosion try");
+            //System.out.println("In Explosion try");
         }
         catch (Exception ex)
         {
             ac.setFramePosition(0);
             ac.start();
-            System.out.println("In Explosion catch");
+            //System.out.println("In Explosion catch");
             ex.printStackTrace();
         }
     }
@@ -1202,13 +1202,13 @@ public class data extends JFrame implements MouseMotionListener
         {
             acm.setFramePosition(0);
             acm.start();
-            System.out.println("In Miss try");
+            //System.out.println("In Miss try");
         }
         catch (Exception ex)
         {
             acm.setFramePosition(0);
             acm.start();
-            System.out.println("In Miss catch");
+            //System.out.println("In Miss catch");
             ex.printStackTrace();
         }
     }
@@ -1218,13 +1218,13 @@ public class data extends JFrame implements MouseMotionListener
         {
             ac_p.setFramePosition(0);
             ac_p.start();
-            System.out.println("In Explosion try Player");
+            //System.out.println("In Explosion try Player");
         }
         catch (Exception ex)
         {
             ac_p.setFramePosition(0);
             ac_p.start();
-            System.out.println("In Explosion catch Player");
+            //System.out.println("In Explosion catch Player");
             ex.printStackTrace();
         }
     }
@@ -1234,13 +1234,13 @@ public class data extends JFrame implements MouseMotionListener
         {
             acm_p.setFramePosition(0);
             acm_p.start();
-            System.out.println("In Miss try Player");
+            //System.out.println("In Miss try Player");
         }
         catch (Exception ex)
         {
             acm_p.setFramePosition(0);
             acm_p.start();
-            System.out.println("In Miss catch Player");
+            //System.out.println("In Miss catch Player");
             ex.printStackTrace();
         }
     }
@@ -1251,7 +1251,7 @@ public class data extends JFrame implements MouseMotionListener
             int no_hits = 0;
             if (air_or_c == 0)
             {
-                System.out.println("In Aircraft 0");
+                //System.out.println("In Aircraft 0");
                 for (int i = 0; i < 5; i++)
                 {
                     if (com_aircraft_pos[i] == pos)
@@ -1262,7 +1262,7 @@ public class data extends JFrame implements MouseMotionListener
                         b.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-" + iconpos + ".png"));
                         com_hit_count++;
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_ai_count++;
                         no_hits = 1;
                         j.revalidate();
@@ -1273,7 +1273,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (air_or_c == 1)
             {
-                System.out.println("In Aircraft 1");
+                //System.out.println("In Aircraft 1");
                 for (int i = 0; i < 5; i++)
                 {
                     if (com_aircraft_pos[i] == pos)
@@ -1283,7 +1283,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_ai_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1295,7 +1295,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (bat_or_c == 0)
             {
-                System.out.println("In Battleship 0");
+                //System.out.println("In Battleship 0");
                 for (int i = 0; i < 4; i++)
                 {
                     if (com_battleship_pos[i] == pos)
@@ -1305,7 +1305,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_bat_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1317,7 +1317,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (bat_or_c == 1)
             {
-                System.out.println("In Battleship 1");
+                //System.out.println("In Battleship 1");
                 for (int i = 0; i < 4; i++)
                 {
                     if (com_battleship_pos[i] == pos)
@@ -1327,7 +1327,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_bat_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1339,7 +1339,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (sub_or_c == 0)
             {
-                System.out.println("In Submarine 0");
+                //System.out.println("In Submarine 0");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_submarine_pos[i] == pos)
@@ -1349,7 +1349,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_sub_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1361,7 +1361,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (sub_or_c == 1)
             {
-                System.out.println("In Submarine 1");
+                //System.out.println("In Submarine 1");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_submarine_pos[i] == pos)
@@ -1371,7 +1371,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_sub_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1383,7 +1383,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (cru_or_c == 0)
             {
-                System.out.println("In Cruiser 0");
+                //System.out.println("In Cruiser 0");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_cruiser_pos[i] == pos)
@@ -1393,7 +1393,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_cru_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1405,7 +1405,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (cru_or_c == 1)
             {
-                System.out.println("In Cruiser 1");
+                //System.out.println("In Cruiser 1");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_cruiser_pos[i] == pos)
@@ -1415,7 +1415,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_cru_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1427,7 +1427,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (des_or_c == 0)
             {
-                System.out.println("In Destroyer 0");
+                //System.out.println("In Destroyer 0");
                 for (int i = 0; i < 2; i++)
                 {
                     if (com_destroyer_pos[i] == pos)
@@ -1437,7 +1437,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_des_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1449,7 +1449,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (des_or_c == 1)
             {
-                System.out.println("In Destroyer 1");
+                //System.out.println("In Destroyer 1");
                 for (int i = 0; i < 2; i++)
                 {
                     if (com_destroyer_pos[i] == pos)
@@ -1459,7 +1459,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-" + iconpos + ".png");
                         com_des_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1475,7 +1475,7 @@ public class data extends JFrame implements MouseMotionListener
             int no_hits = 0;
             if (air_or_c == 0)
             {
-                System.out.println("In Aircraft 0");
+                //System.out.println("In Aircraft 0");
                 for (int i = 0; i < 5; i++)
                 {
                     if (com_aircraft_pos[i] == pos)
@@ -1486,7 +1486,7 @@ public class data extends JFrame implements MouseMotionListener
                         b.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-tile-" + iconpos + ".png"));
                         com_hit_count++;
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_ai_count++;
                         no_hits = 1;
                         j.revalidate();
@@ -1497,7 +1497,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (air_or_c == 1)
             {
-                System.out.println("In Aircraft 1");
+                //System.out.println("In Aircraft 1");
                 for (int i = 0; i < 5; i++)
                 {
                     if (com_aircraft_pos[i] == pos)
@@ -1507,7 +1507,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_ai_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1519,7 +1519,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (bat_or_c == 0)
             {
-                System.out.println("In Battleship 0");
+                //System.out.println("In Battleship 0");
                 for (int i = 0; i < 4; i++)
                 {
                     if (com_battleship_pos[i] == pos)
@@ -1529,7 +1529,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("battleship/battleship-h-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("battleship/battleship-h-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_bat_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1541,7 +1541,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (bat_or_c == 1)
             {
-                System.out.println("In Battleship 1");
+                //System.out.println("In Battleship 1");
                 for (int i = 0; i < 4; i++)
                 {
                     if (com_battleship_pos[i] == pos)
@@ -1551,7 +1551,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("battleship/battleship-v-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("battleship/battleship-v-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_bat_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1563,7 +1563,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (sub_or_c == 0)
             {
-                System.out.println("In Submarine 0");
+                //System.out.println("In Submarine 0");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_submarine_pos[i] == pos)
@@ -1573,7 +1573,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("submarine/submarine-h-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("submarine/submarine-h-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_sub_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1585,7 +1585,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (sub_or_c == 1)
             {
-                System.out.println("In Submarine 1");
+                //System.out.println("In Submarine 1");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_submarine_pos[i] == pos)
@@ -1595,7 +1595,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("submarine/submarine-v-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("submarine/submarine-v-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_sub_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1607,7 +1607,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (cru_or_c == 0)
             {
-                System.out.println("In Cruiser 0");
+                //System.out.println("In Cruiser 0");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_cruiser_pos[i] == pos)
@@ -1617,7 +1617,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("cruiser/cruiser-h-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_cru_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1629,7 +1629,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (cru_or_c == 1)
             {
-                System.out.println("In Cruiser 1");
+                //System.out.println("In Cruiser 1");
                 for (int i = 0; i < 3; i++)
                 {
                     if (com_cruiser_pos[i] == pos)
@@ -1639,7 +1639,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("cruiser/cruiser-v-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_cru_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1651,7 +1651,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (des_or_c == 0)
             {
-                System.out.println("In Destroyer 0");
+                //System.out.println("In Destroyer 0");
                 for (int i = 0; i < 2; i++)
                 {
                     if (com_destroyer_pos[i] == pos)
@@ -1661,7 +1661,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("destroyer/destroyer-h-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_des_count++;
                         no_hits = 1;
                         com_hit_count++;
@@ -1673,7 +1673,7 @@ public class data extends JFrame implements MouseMotionListener
             }
             if (des_or_c == 1)
             {
-                System.out.println("In Destroyer 1");
+                //System.out.println("In Destroyer 1");
                 for (int i = 0; i < 2; i++)
                 {
                     if (com_destroyer_pos[i] == pos)
@@ -1683,7 +1683,7 @@ public class data extends JFrame implements MouseMotionListener
                         com_is_hit_or_not = 1;
                         b.setIcon(new ImageIcon("destroyer/destroyer-v-tile-" + iconpos + ".png"));
                         b.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-tile-" + iconpos + ".png"));
-                        System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
+                        //System.out.println("aircraft-carrier/aircraft-v-tile-" + iconpos + ".png");
                         com_des_count++;
                         no_hits = 1;
                         com_hit_count++;

@@ -295,7 +295,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 6)
                         {
                             com_battleship_pos[0] = pos1;
@@ -328,7 +328,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 6)
                         {
                             com_battleship_pos[0] = pos1;
@@ -389,7 +389,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 10)
                         {
                             com_submarine_pos[0] = pos1;
@@ -427,7 +427,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 10)
                         {
                             com_submarine_pos[0] = pos1;
@@ -495,7 +495,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 13)
                         {
                             com_cruiser_pos[0] = pos1;
@@ -541,7 +541,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 13)
                         {
                             com_cruiser_pos[0] = pos1;
@@ -616,7 +616,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 16)
                         {
                             com_destroyer_pos[0] = pos1;
@@ -668,7 +668,7 @@ public class com_moves extends generation
                                 temp_flag++;
                             }
                         }
-                        System.out.println(temp_flag);
+                        //System.out.println(temp_flag);
                         if(temp_flag == 16)
                         {
                             com_destroyer_pos[0] = pos1;
@@ -697,28 +697,28 @@ public class com_moves extends generation
 
                     }
                 }
-                System.out.println("Computer Positions:\nAircraft Carrier: " + air_or_c);
-                System.out.println(com_aircraft_pos[0]);
-                System.out.println(com_aircraft_pos[1]);
-                System.out.println(com_aircraft_pos[2]);
-                System.out.println(com_aircraft_pos[3]);
-                System.out.println(com_aircraft_pos[4]);
-                System.out.println("Battleship: " + bat_or_c);
-                System.out.println(com_battleship_pos[0]);
-                System.out.println(com_battleship_pos[1]);
-                System.out.println(com_battleship_pos[2]);
-                System.out.println(com_battleship_pos[3]);
-                System.out.println("Submarine: " + sub_or_c);
-                System.out.println(com_submarine_pos[0]);
-                System.out.println(com_submarine_pos[1]);
-                System.out.println(com_submarine_pos[2]);
-                System.out.println("Cruiser: " + cru_or_c);
-                System.out.println(com_cruiser_pos[0]);
-                System.out.println(com_cruiser_pos[1]);
-                System.out.println(com_cruiser_pos[2]);
-                System.out.println("Destroyer: " + des_or_c);
-                System.out.println(com_destroyer_pos[0]);
-                System.out.println(com_destroyer_pos[1]);
+                //System.out.println("Computer Positions:\nAircraft Carrier: " + air_or_c);
+                //System.out.println(com_aircraft_pos[0]);
+                //System.out.println(com_aircraft_pos[1]);
+                //System.out.println(com_aircraft_pos[2]);
+                //System.out.println(com_aircraft_pos[3]);
+                //System.out.println(com_aircraft_pos[4]);
+                //System.out.println("Battleship: " + bat_or_c);
+                //System.out.println(com_battleship_pos[0]);
+                //System.out.println(com_battleship_pos[1]);
+                //System.out.println(com_battleship_pos[2]);
+                //System.out.println(com_battleship_pos[3]);
+                //System.out.println("Submarine: " + sub_or_c);
+                //System.out.println(com_submarine_pos[0]);
+                //System.out.println(com_submarine_pos[1]);
+                //System.out.println(com_submarine_pos[2]);
+                //System.out.println("Cruiser: " + cru_or_c);
+                //System.out.println(com_cruiser_pos[0]);
+                //System.out.println(com_cruiser_pos[1]);
+                //System.out.println(com_cruiser_pos[2]);
+                //System.out.println("Destroyer: " + des_or_c);
+                //System.out.println(com_destroyer_pos[0]);
+                //System.out.println(com_destroyer_pos[1]);
                 load.setText("Switching between bases");
                 return null;
             }
@@ -735,7 +735,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 60; i++)
         {
             com_air_place_h[i] = j;
-            System.out.println(com_air_place_h[i]);
+            //System.out.println(com_air_place_h[i]);
             if (j == 6)
             {
                 j = 11;
@@ -784,7 +784,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 60; i++)
         {
             com_air_place_v[i] = j;
-            System.out.println(com_air_place_v[i]);
+            //System.out.println(com_air_place_v[i]);
             if (j == 60)
             {
                 break;
@@ -797,7 +797,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 70; i++)
         {
             com_bat_place_h[i] = j;
-            System.out.println(com_bat_place_h[i]);
+            //System.out.println(com_bat_place_h[i]);
             if (j == 7)
             {
                 j = 11;
@@ -846,7 +846,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 70; i++)
         {
             com_bat_place_v[i] = j;
-            System.out.println(com_bat_place_v[i]);
+            //System.out.println(com_bat_place_v[i]);
             if (j == 70)
             {
                 break;
@@ -859,7 +859,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 80; i++)
         {
             com_sub_place_h[i] = j;
-            System.out.println(com_sub_place_h[i]);
+            //System.out.println(com_sub_place_h[i]);
             if (j == 8)
             {
                 j = 11;
@@ -908,7 +908,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 80; i++)
         {
             com_sub_place_v[i] = j;
-            System.out.println(com_sub_place_v[i]);
+            //System.out.println(com_sub_place_v[i]);
             if (j == 80)
             {
                 break;
@@ -921,7 +921,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 80; i++)
         {
             com_cru_place_h[i] = j;
-            System.out.println(com_cru_place_h[i]);
+            //System.out.println(com_cru_place_h[i]);
             if (j == 8)
             {
                 j = 11;
@@ -970,7 +970,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 80; i++)
         {
             com_cru_place_v[i] = j;
-            System.out.println(com_cru_place_v[i]);
+            //System.out.println(com_cru_place_v[i]);
             if (j == 80)
             {
                 break;
@@ -983,7 +983,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 90; i++)
         {
             com_des_place_h[i] = j;
-            System.out.println(com_des_place_h[i]);
+            //System.out.println(com_des_place_h[i]);
             if (j == 9)
             {
                 j = 11;
@@ -1032,7 +1032,7 @@ public class com_moves extends generation
         for(int i = 0, j = 1 ; i < 90; i++)
         {
             com_des_place_v[i] = j;
-            System.out.println(com_des_place_v[i]);
+            //System.out.println(com_des_place_v[i]);
             if (j == 90)
             {
                 break;
@@ -1247,7 +1247,7 @@ public class com_moves extends generation
                     {
                         hit_pos_index = next_move;
                     }
-                    System.out.println(hit_pos_index);
+                    //System.out.println(hit_pos_index);
                     if(com_hit_grid[hit_pos_index] != 6000)
                     {
                         com_hit_grid[hit_pos_index] = 6000;
@@ -1669,7 +1669,7 @@ public class com_moves extends generation
                             {
                                 if (air_already_assigned == 0)
                                 {
-                                    System.out.println("hit_pos_index = " + hit_pos_index);
+                                    //System.out.println("hit_pos_index = " + hit_pos_index);
                                     air_already_assigned = 1;
                                     up_move = hit_pos_index - 10;
                                     down_move = hit_pos_index + 10;
@@ -1974,7 +1974,7 @@ public class com_moves extends generation
                             {
                                 if (bat_already_assigned == 0)
                                 {
-                                    System.out.println("hit_pos_index = " + hit_pos_index);
+                                    //System.out.println("hit_pos_index = " + hit_pos_index);
                                     bat_already_assigned = 1;
                                     up_move = hit_pos_index - 10;
                                     down_move = hit_pos_index + 10;
@@ -2254,7 +2254,7 @@ public class com_moves extends generation
                                         sub_up_assigned_1 = 1;
                                         up_move = next_move - 10;
                                         other_move = down_move;
-                                        System.out.println("Other Move = " + other_move);
+                                        //System.out.println("Other Move = " + other_move);
                                     }
                                     if(up_move < 0 || com_hit_grid[up_move] == 6000 || up_move == -1)
                                     {
@@ -2295,7 +2295,7 @@ public class com_moves extends generation
                                         sub_left_assigned_1 = 1;
                                         left_move = next_move - 1;
                                         other_move = right_move;
-                                        System.out.println("Other Move = " + other_move);
+                                        //System.out.println("Other Move = " + other_move);
                                     }
                                     if((left_move + 1) % 10 == 0 || com_hit_grid[left_move] == 6000 || left_move  == -1)
                                     {
@@ -2568,7 +2568,7 @@ public class com_moves extends generation
         int no_hits = 0;
         if(air_or == 0)
         {
-            System.out.println("In Aircraft 0");
+            //System.out.println("In Aircraft 0");
             for(int i = 0 ; i < 5 ; i ++)
             {
                 if(play_aircraft_pos[i] == pos)
@@ -2579,7 +2579,7 @@ public class com_moves extends generation
                     b.setIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-h-destroyed-tile-"+iconpos+".png"));
                     com_hit_count++;
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_ai_count++;
                     no_hits = 1;
                     j.revalidate();
@@ -2590,7 +2590,7 @@ public class com_moves extends generation
         }
         if(air_or == 1)
         {
-            System.out.println("In Aircraft 1");
+            //System.out.println("In Aircraft 1");
             for(int i = 0 ; i < 5 ; i ++)
             {
                 if(play_aircraft_pos[i] == pos)
@@ -2600,7 +2600,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_ai_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2612,7 +2612,7 @@ public class com_moves extends generation
         }
         if(bat_or == 0)
         {
-            System.out.println("In Battleship 0");
+            //System.out.println("In Battleship 0");
             for(int i = 0 ; i < 4 ; i ++)
             {
                 if(play_battleship_pos[i] == pos)
@@ -2622,7 +2622,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("battleship/battleship-h-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_bat_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2634,7 +2634,7 @@ public class com_moves extends generation
         }
         if(bat_or == 1)
         {
-            System.out.println("In Battleship 1");
+            //System.out.println("In Battleship 1");
             for(int i = 0 ; i < 4 ; i ++)
             {
                 if(play_battleship_pos[i] == pos)
@@ -2644,7 +2644,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("battleship/battleship-v-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_bat_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2656,7 +2656,7 @@ public class com_moves extends generation
         }
         if(sub_or == 0)
         {
-            System.out.println("In Submarine 0");
+            //System.out.println("In Submarine 0");
             for(int i = 0 ; i < 3 ; i ++)
             {
                 if(play_submarine_pos[i] == pos)
@@ -2666,7 +2666,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("submarine/submarine-h-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_sub_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2678,7 +2678,7 @@ public class com_moves extends generation
         }
         if(sub_or == 1)
         {
-            System.out.println("In Submarine 1");
+            //System.out.println("In Submarine 1");
             for(int i = 0 ; i < 3 ; i ++)
             {
                 if(play_submarine_pos[i] == pos)
@@ -2688,7 +2688,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("submarine/submarine-v-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_sub_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2700,7 +2700,7 @@ public class com_moves extends generation
         }
         if(cru_or == 0)
         {
-            System.out.println("In Cruiser 0");
+            //System.out.println("In Cruiser 0");
             for(int i = 0 ; i < 3 ; i ++)
             {
                 if(play_cruiser_pos[i] == pos)
@@ -2710,7 +2710,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("cruiser/cruiser-h-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_cru_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2722,7 +2722,7 @@ public class com_moves extends generation
         }
         if(cru_or == 1)
         {
-            System.out.println("In Cruiser 1");
+            //System.out.println("In Cruiser 1");
             for(int i = 0 ; i < 3 ; i ++)
             {
                 if(play_cruiser_pos[i] == pos)
@@ -2732,7 +2732,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("cruiser/cruiser-v-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_cru_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2744,7 +2744,7 @@ public class com_moves extends generation
         }
         if(des_or == 0)
         {
-            System.out.println("In Destroyer 0");
+            //System.out.println("In Destroyer 0");
             for(int i = 0 ; i < 2 ; i ++)
             {
                 if(play_destroyer_pos[i] == pos)
@@ -2754,7 +2754,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("destroyer/destroyer-h-destroyed-tile"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_des_count++;
                     no_hits = 1;
                     com_hit_count++;
@@ -2766,7 +2766,7 @@ public class com_moves extends generation
         }
         if(des_or == 1)
         {
-            System.out.println("In Destroyer 1");
+            //System.out.println("In Destroyer 1");
             for(int i = 0 ; i < 2 ; i ++)
             {
                 if(play_destroyer_pos[i] == pos)
@@ -2776,7 +2776,7 @@ public class com_moves extends generation
                     com_is_hit_or_not = 1;
                     b.setIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-"+iconpos+".png"));
                     b.setDisabledIcon(new ImageIcon("destroyer/destroyer-v-destroyed-tile-"+iconpos+".png"));
-                    System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
+                    //System.out.println("aircraft-carrier/aircraft-v-destroyed-tile-"+iconpos+".png");
                     com_des_count++;
                     no_hits = 1;
                     com_hit_count++;
