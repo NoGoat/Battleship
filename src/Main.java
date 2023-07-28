@@ -2,12 +2,15 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
 import javax.swing.*;
+import javax.swing.plaf.ProgressBarUI;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Objects;
+
+
 
 public class Main extends play_place_10
 {
@@ -884,10 +887,11 @@ public class Main extends play_place_10
 
     public void welcome_screen()
     {
-        Icon logo = new ImageIcon("logo.png");
-        JLabel l = new JLabel(logo);
-        l.setBounds(65,100,666,122);
-        j.add(l);
+        Icon logo_game = new ImageIcon("logo.png");
+        logo = new JLabel();
+        logo.setIcon(logo_game);
+        logo.setBounds(65,100,666,122);
+        j.add(logo);
         JButton start = new JButton();
         JButton multiPlayer = new JButton();
         j.setBackground(Color.BLACK);
@@ -911,7 +915,7 @@ public class Main extends play_place_10
             {
                 j.remove(start);
                 j.remove(multiPlayer);
-                j.remove(l);
+                j.remove(logo);
                 j.revalidate();
                 j.repaint();
                 play_window();
@@ -925,68 +929,100 @@ public class Main extends play_place_10
             {
                 j.remove(start);
                 j.remove(multiPlayer);
-                j.remove(l);
+//                j.remove(logo);
                 j.revalidate();
                 j.repaint();
                 multiplayer_window();
             }
         });
     }
-    public String find_ip()
-    {
-        try {
-            // URL to the public IP service
-            URL url = new URL("https://api.ipify.org?format=text");
-
-            // Open a connection to the URL
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-            // Set the request method to GET
-            connection.setRequestMethod("GET");
-
-            // Get the response code
-            int responseCode = connection.getResponseCode();
-
-            String ipAddress;
-
-            // If the request was successful, read the response and print the IP address
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                ipAddress = reader.readLine();
-                reader.close();
-            } else {
-                return "Connection Failed";
-            }
-
-            // Close the connection
-            connection.disconnect();
-            return ipAddress;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "Connection Failed";
-    }
     public void multiplayer_window()
     {
+        j.add(logo);
+        JButton host = new JButton("Host Game");
+        JButton join = new JButton("Join Game");
+        JButton back = new JButton("Back");
+        host.setOpaque(true);
+        join.setOpaque(true);
+        host.setFocusPainted(false);
+        join.setFocusPainted(false);
+        host.setBounds(325, 300, 150, 50);
+        join.setBounds(325, 400, 150, 50);
+        back.setBounds(325, 500, 150, 50);
+        j.add(host);
+        j.add(join);
+        j.add(back);
+        host.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                j.remove(logo);
+                j.remove(host);
+                j.remove(join);
+                j.remove(back);
+                j.revalidate();
+                j.repaint();
+                multiplayer_window_host();
+            }
+        });
+        join.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                j.remove(logo);
+                j.remove(host);
+                j.remove(join);
+                j.remove(back);
+                j.revalidate();
+                j.repaint();
+                multiplayer_window_join();
+            }
+        });
+        back.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                j.remove(logo);
+                j.remove(host);
+                j.remove(join);
+                j.remove(back);
+                j.revalidate();
+                j.repaint();
+                welcome_screen();
+            }
+        });
+    }
+    public void multiplayer_window_host()
+    {
+        JButton back = new JButton("Back");
+        back.setBounds(0, 0, 75, 50);
         JLabel instructions = new JLabel("Your IP Address is :");
-        JLabel your_ip = new JLabel("Connecting ...");
-        JTextField ip_addr = new JTextField();
-        instructions.setBounds(275, 150, 400, 25);
-        your_ip.setBounds(300, 200, 400, 40);
-        ip_addr.setBounds(200, 300, 400, 25);
+        JLabel your_ip = new JLabel("Fetching ...");
+        JLabel waiting = new JLabel("Waiting for Connection");
+        JProgressBar loading_indeterminate = new JProgressBar();
+        loading_indeterminate.setIndeterminate(true);
+        back.setFocusPainted(false);
+        back.setOpaque(true);
+        back.setBorderPainted(false);
+        instructions.setBounds(300, 150, 400, 25);
+        your_ip.setBounds(342, 200, 400, 40);
+        waiting.setBounds(300, 250, 400, 40);
+        loading_indeterminate.setBounds(200, 350, 450, 25);
         your_ip.setForeground(Color.white);
         instructions.setForeground(Color.white);
+        waiting.setForeground(Color.white);
         Font f = new Font(your_ip.getFont().getName(), your_ip.getFont().getStyle(), 20);
         your_ip.setFont(f);
         instructions.setFont(f);
-        JButton connect = new JButton("Connect");
-        connect.setBounds(325, 400, 150, 50);
-        connect.setOpaque(true);
-        connect.setFocusPainted(false);
-        j.add(ip_addr);
-        j.add(connect);
+        waiting.setFont(f);
         j.add(your_ip);
         j.add(instructions);
+        j.add(back);
+        j.add(loading_indeterminate);
+        j.add(waiting);
         SwingWorker get_ip = new SwingWorker()
         {
             String ipAddress;
@@ -1033,6 +1069,57 @@ public class Main extends play_place_10
             }
         };
         get_ip.execute();
+        back.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                j.remove(back);
+                j.remove(your_ip);
+                j.remove(instructions);
+                j.remove(loading_indeterminate);
+                j.remove(waiting);
+                j.revalidate();
+                j.repaint();
+                multiplayer_window();
+            }
+        });
+    }
+    public void multiplayer_window_join()
+    {
+        JButton back = new JButton("Back");
+        back.setBounds(0, 0, 75, 50);
+        JLabel instructions = new JLabel("Enter the host IP Address :");
+        JTextField ip_addr = new JTextField();
+        instructions.setBounds(275, 250, 400, 25);
+        ip_addr.setBounds(200, 300, 400, 25);
+        instructions.setForeground(Color.white);
+        Font f = new Font(instructions.getFont().getName(), instructions.getFont().getStyle(), 20);
+        instructions.setFont(f);
+        JButton connect = new JButton("Connect");
+        connect.setBounds(325, 400, 150, 50);
+        connect.setOpaque(true);
+        back.setOpaque(true);
+        connect.setFocusPainted(false);
+        back.setFocusPainted(false);
+        j.add(ip_addr);
+        j.add(connect);
+        j.add(instructions);
+        j.add(back);
+        back.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                j.remove(back);
+                j.remove(instructions);
+                j.remove(ip_addr);
+                j.remove(connect);
+                j.revalidate();
+                j.repaint();
+                multiplayer_window();
+            }
+        });
     }
     public void play_window()
     {
