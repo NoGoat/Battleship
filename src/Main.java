@@ -968,13 +968,17 @@ public class Main extends play_place_10
     }
     public void multiplayer_window()
     {
-        JLabel your_ip = new JLabel(find_ip());
+        JLabel instructions = new JLabel("Your IP Address is :");
+        JLabel your_ip = new JLabel("Connecting ...");
         JTextField ip_addr = new JTextField();
-        your_ip.setBounds(150, 350, 400, 25);
+        instructions.setBounds(275, 150, 400, 25);
+        your_ip.setBounds(300, 200, 400, 40);
         ip_addr.setBounds(200, 300, 400, 25);
         your_ip.setForeground(Color.white);
-        Font f = new Font(your_ip.getFont().getName(), your_ip.getFont().getStyle(), 25);
+        instructions.setForeground(Color.white);
+        Font f = new Font(your_ip.getFont().getName(), your_ip.getFont().getStyle(), 20);
         your_ip.setFont(f);
+        instructions.setFont(f);
         JButton connect = new JButton("Connect");
         connect.setBounds(325, 400, 150, 50);
         connect.setOpaque(true);
@@ -982,6 +986,53 @@ public class Main extends play_place_10
         j.add(ip_addr);
         j.add(connect);
         j.add(your_ip);
+        j.add(instructions);
+        SwingWorker get_ip = new SwingWorker()
+        {
+            String ipAddress;
+            @Override
+            protected Object doInBackground() throws Exception
+            {
+
+                try {
+                    // URL to the public IP service
+                    URL url = new URL("https://api.ipify.org?format=text");
+
+                    // Open a connection to the URL
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                    // Set the request method to GET
+                    connection.setRequestMethod("GET");
+
+                    // Get the response code
+                    int responseCode = connection.getResponseCode();
+
+
+                    // If the request was successful, read the response and print the IP address
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                        ipAddress = reader.readLine();
+                        reader.close();
+                    } else {
+                        ipAddress = "Connection Failed";
+                    }
+
+                    // Close the connection
+                    connection.disconnect();
+                } catch (IOException e) {
+                    ipAddress = "Connection Failed";
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void done()
+            {
+                your_ip.setText(ipAddress);
+            }
+        };
+        get_ip.execute();
     }
     public void play_window()
     {
