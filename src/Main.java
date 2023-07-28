@@ -4,8 +4,9 @@ import javax.sound.sampled.DataLine;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Objects;
 
 public class Main extends play_place_10
@@ -888,26 +889,99 @@ public class Main extends play_place_10
         l.setBounds(65,100,666,122);
         j.add(l);
         JButton start = new JButton();
+        JButton multiPlayer = new JButton();
         j.setBackground(Color.BLACK);
         // start.setBackground(Color.LIGHT_GRAY);
         start.setOpaque(true);
+        multiPlayer.setOpaque(true);
         start.setFocusPainted(false);
-        start.setBounds(350, 500, 100, 50);
+        multiPlayer.setFocusPainted(false);
+        start.setBounds(325, 400, 150, 50);
+        multiPlayer.setBounds(325, 500, 150, 50);
         Icon si = new ImageIcon("start.png");
-        start.setIcon(si);
+//        start.setIcon(si);
+        start.setText("Singleplayer");
+        multiPlayer.setText("Multiplayer");
         j.add(start);
+        j.add(multiPlayer);
         start.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
                 j.remove(start);
+                j.remove(multiPlayer);
                 j.remove(l);
                 j.revalidate();
                 j.repaint();
                 play_window();
             }
         });
+
+        multiPlayer.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                j.remove(start);
+                j.remove(multiPlayer);
+                j.remove(l);
+                j.revalidate();
+                j.repaint();
+                multiplayer_window();
+            }
+        });
+    }
+    public String find_ip()
+    {
+        try {
+            // URL to the public IP service
+            URL url = new URL("https://api.ipify.org?format=text");
+
+            // Open a connection to the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method to GET
+            connection.setRequestMethod("GET");
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+
+            String ipAddress;
+
+            // If the request was successful, read the response and print the IP address
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                ipAddress = reader.readLine();
+                reader.close();
+            } else {
+                return "Connection Failed";
+            }
+
+            // Close the connection
+            connection.disconnect();
+            return ipAddress;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Connection Failed";
+    }
+    public void multiplayer_window()
+    {
+        JLabel your_ip = new JLabel(find_ip());
+        JTextField ip_addr = new JTextField();
+        your_ip.setBounds(150, 350, 400, 25);
+        ip_addr.setBounds(200, 300, 400, 25);
+        your_ip.setForeground(Color.white);
+        Font f = new Font(your_ip.getFont().getName(), your_ip.getFont().getStyle(), 25);
+        your_ip.setFont(f);
+        JButton connect = new JButton("Connect");
+        connect.setBounds(325, 400, 150, 50);
+        connect.setOpaque(true);
+        connect.setFocusPainted(false);
+        j.add(ip_addr);
+        j.add(connect);
+        j.add(your_ip);
     }
     public void play_window()
     {
