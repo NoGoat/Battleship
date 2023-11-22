@@ -1,6 +1,9 @@
 # Battleship
 A game of Battleship written in Java
 
+# Important
+This application will not be updated anymore. I designed this back when I knew coding but didn't know good coding practices. As a result, this codebase is a mess. I will start working on a new client over at [battleship-client](https://github.com/NoGoat/battleship-client). For funsies, I will document everything wrong with it here.
+
 # Why I made this
 When I was in school, our school used to have an annual event every year on November 14. The goal of this event was to give the students an oppurtunity to showcase someting creative. Well, during my last year in that school, I wanted to do something special. So, I started making this game in Python as a console game. And the same year, we got a new Principal, who in his infinite wisdom scheduled an exam for the final year students on that day. As a result, I stopped working on it. After November 14, the dude announced that final year students would get the chance to do the event on another day ... with 3 days notice. 
 
